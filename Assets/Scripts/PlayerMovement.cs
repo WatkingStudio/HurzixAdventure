@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 	//The controller for the player
 	public CharacterController2D controller;
+	public RuntimeAnimatorController standingController;
+	public RuntimeAnimatorController crouchingController;
 
 	public float runSpeed = 40f;
 
@@ -13,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	bool jump = false;
 	bool crouch = false;
 
-	Animator animator;
+	private Animator animator;
 
 	private void Start()
 	{
@@ -25,24 +27,37 @@ public class PlayerMovement : MonoBehaviour
     {
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
 		if(Input.GetButtonDown("Jump"))
 		{
 			jump = true;
-			animator.Play("Jump");
+			animator.SetBool("IsJumping", true);			
 		}
 
 		if(Input.GetButtonDown("Crouch"))
 		{
 			Debug.Log("Crouch");
-			animator.Play("2To4");
+			animator.SetBool("IsCrouching", true);
+			animator.runtimeAnimatorController = crouchingController;
+			animator.SetBool("IsCrouching", true);
+			//animator.Play("2To4");
 			crouch = true;
 		}
 		else if(Input.GetButtonUp("Crouch"))
 		{
 			Debug.Log("UnCrouch");
-			animator.Play("4To2");
+			animator.SetBool("IsCrouching", false);
+			animator.runtimeAnimatorController = standingController;
+			animator.SetBool("IsCrouching", false);
+			//animator.Play("4To2");
 			crouch = false;
 		}
+	}
+
+	public void OnLanding()
+	{
+		animator.SetBool("IsJumping", false);
 	}
 
 	//Use for Physics

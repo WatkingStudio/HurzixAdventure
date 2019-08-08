@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	float horizontalMove = 0f;
 	bool jump = false;
 	bool crouch = false;
+	bool sprint = false;
 
 	private Animator animator;
 
@@ -26,16 +27,31 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
     {
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+		
+		if(Input.GetButtonDown("Sprint"))
+		{
+			animator.SetBool("IsSprinting", true);
+			//horizontalMove *= 1.5f;
+			sprint = true;
+		}
+		else if(Input.GetButtonUp("Sprint"))
+		{
+			animator.SetBool("IsSprinting", false);
+			sprint = false;
+		}
 
 		if(Input.GetButtonDown("Jump"))
 		{
 			jump = true;
-			animator.SetBool("IsJumping", true);			
+			Debug.Log(animator.GetBool("IsJumping"));
+			animator.SetBool("IsJumping", true);
+			//animator.Play("Jump");
+			Debug.Log("Jump");
 		}
 
-		if(Input.GetButtonDown("Crouch"))
+		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+		if (Input.GetButtonDown("Crouch"))
 		{
 			Debug.Log("Crouch");
 			animator.SetBool("IsCrouching", true);
@@ -64,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		//Move character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, sprint);
 		jump = false;
 	}
 }

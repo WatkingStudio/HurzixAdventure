@@ -61,7 +61,7 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -80,7 +80,6 @@ public class CharacterController2D : MonoBehaviour
 			// If crouching
 			if (crouch)
 			{
-				//Debug.Log("Crouch True");
 				if (!m_wasCrouching)
 				{
 					m_wasCrouching = true;
@@ -95,10 +94,13 @@ public class CharacterController2D : MonoBehaviour
 					m_CrouchDisableCollider.enabled = false;
 			} else
 			{
-				//Debug.Log("Crouch False");
 				// Enable the collider when not crouching
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = true;
+
+				// If sprinting increase the speed
+				if(sprint && m_Grounded)
+					move *= 1.5f;
 
 				if (m_wasCrouching)
 				{

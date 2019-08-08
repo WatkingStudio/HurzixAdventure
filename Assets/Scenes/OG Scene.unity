@@ -1617,6 +1617,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 843905275}
   m_CeilingCheck: {fileID: 681299063}
   m_CrouchDisableCollider: {fileID: 1657548613}
+  m_Animator: {fileID: 1657548616}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1654,6 +1655,12 @@ MonoBehaviour:
   standingController: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
   crouchingController: {fileID: 9100000, guid: 5174d54e54aaee644aed9b3cdda2930f, type: 2}
   runSpeed: 40
+--- !u!95 &1657548616 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95427405674940160, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 896905799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1657548618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385863451500172, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05,

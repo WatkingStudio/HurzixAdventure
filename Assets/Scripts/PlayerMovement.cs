@@ -40,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
 			sprint = false;
 		}
 
+		if(Input.GetButtonDown("Attack"))
+		{
+			animator.SetTrigger("Attack");
+			Debug.Log("HUH");
+		}
+
 		if(Input.GetButtonDown("Jump"))
 		{
 			jump = true;

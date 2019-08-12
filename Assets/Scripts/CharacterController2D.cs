@@ -3,46 +3,60 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	[SerializeField] protected float m_JumpForce = 400f;							// Amount of force added when the player jumps.
-	[Range(0, 1)] [SerializeField] protected float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
-	[Range(0, .3f)] [SerializeField] protected float m_MovementSmoothing = .05f;	// How much to smooth out the movement
-	[SerializeField] protected bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] protected LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
-	[SerializeField] protected Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
-	[SerializeField] protected Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] protected Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-	[SerializeField] private Animator m_Animator;
+	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
+	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
+	[SerializeField] private float m_SprintSpeed = 1.5f;						// The multiplier applied to the speed of the player when sprinting
+	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
+	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
+	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
+	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
+	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+	[SerializeField] private Animator m_Animator;								// The animator of the character
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	protected bool m_Grounded;            // Whether or not the player is grounded.
+	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-	protected Rigidbody2D m_Rigidbody2D;
-	protected bool m_FacingRight = true;  // For determining which way the player is currently facing.
-	protected Vector3 m_Velocity = Vector3.zero;
+	const float k_SpriteFlipOffset = .5f;
+	private Rigidbody2D m_Rigidbody2D;
+	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	private Vector3 m_Velocity = Vector3.zero;
 
 	[Header("Events")]
 	[Space]
 
 	public UnityEvent OnLandEvent;
+	public UnityEvent OnStartFalling;
+	public UnityEvent OnStopFalling;
+	public UnityEvent OnStayCrouched;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
 
 	public BoolEvent OnCrouchEvent;
-	protected bool m_wasCrouching = false;
+	private bool m_wasCrouching = false;
 
-	protected void Awake()
+	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
+		if (OnStartFalling == null)
+			OnStartFalling = new UnityEvent();
+
+		if (OnStopFalling == null)
+			OnStopFalling = new UnityEvent();
+
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+		if (OnStayCrouched == null)
+			OnStayCrouched = new UnityEvent();
 	}
 
-	protected void FixedUpdate()
+	private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
@@ -59,6 +73,13 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
+		if (m_Rigidbody2D.velocity.y < -0.1)
+		{
+			OnStartFalling.Invoke();
+		}
+		else
+			OnStopFalling.Invoke();
 	}
 
 
@@ -70,14 +91,17 @@ public class CharacterController2D : MonoBehaviour
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
+				m_Animator.SetBool("IsCrouching", true);
 				crouch = true;
+				OnStayCrouched.Invoke();
 			}
 		}
 
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-
+			if (sprint && m_Grounded)
+				move *= m_SprintSpeed;
 			// If crouching
 			if (crouch)
 			{
@@ -100,8 +124,7 @@ public class CharacterController2D : MonoBehaviour
 					m_CrouchDisableCollider.enabled = true;
 
 				// If sprinting increase the speed
-				if(sprint && m_Grounded)
-					move *= 1.5f;
+				
 
 				if (m_wasCrouching)
 				{
@@ -113,15 +136,7 @@ public class CharacterController2D : MonoBehaviour
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-			if (m_Rigidbody2D.velocity.y < -0.1)
-			{
-				m_Animator.SetBool("IsFalling", true);
-				m_Animator.SetBool("IsJumping", false);
-			}
-			else
-				m_Animator.SetBool("IsFalling", false);
+			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);			
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
@@ -145,7 +160,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-	protected void Flip()
+	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
@@ -154,5 +169,15 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+
+		//Reposition - This is used so that the sprite doesn't turn and warp into a wall.
+		//This is an issue with the sprite and could be fixed by editing the sprite.
+		Vector3 pos = transform.localPosition;
+		if (!m_FacingRight)
+			pos.x -= k_SpriteFlipOffset;
+		else
+			pos.x += k_SpriteFlipOffset;
+		transform.localPosition = pos;
+			
 	}
 }

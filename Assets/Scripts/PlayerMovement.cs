@@ -5,88 +5,96 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	//The controller for the player
-	public CharacterController2D controller;
-	public RuntimeAnimatorController standingController;
-	public RuntimeAnimatorController crouchingController;
+	[SerializeField] private CharacterController2D m_Controller;
+	[SerializeField] private RuntimeAnimatorController m_StandingController;
+	[SerializeField] private RuntimeAnimatorController m_CrouchingController;
+	[SerializeField] private LayerMask m_WhatIsGround;
+	[SerializeField] private Transform m_CeilingCheck;
 
-	public float runSpeed = 40f;
+	[SerializeField] private float m_RunSpeed = 40f;
 
-	float horizontalMove = 0f;
-	bool jump = false;
-	bool crouch = false;
-	bool sprint = false;
+	private float m_HorizontalMove = 0f;
+	private bool m_Jump = false;
+	private bool m_Crouch = false;
+	private bool m_Sprint = false;
 
-	private Animator animator;
-
-	private void Start()
-	{
-		animator = GetComponent<Animator>();
-	}
+	[SerializeField] private Animator m_Animator;
 
 	// Update is called once per frame
 	void Update()
     {
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+		m_HorizontalMove = Input.GetAxisRaw("Horizontal") * m_RunSpeed;
 		
 		if(Input.GetButtonDown("Sprint"))
 		{
-			animator.SetBool("IsSprinting", true);
-			//horizontalMove *= 1.5f;
-			sprint = true;
+			m_Animator.SetBool("IsSprinting", true);
+			m_Sprint = true;
 		}
 		else if(Input.GetButtonUp("Sprint"))
 		{
-			animator.SetBool("IsSprinting", false);
-			sprint = false;
+			m_Animator.SetBool("IsSprinting", false);
+			m_Sprint = false;
 		}
 
 		if(Input.GetButtonDown("Attack"))
 		{
-			animator.SetTrigger("Attack");
-			Debug.Log("HUH");
+			m_Animator.SetTrigger("Attack");
 		}
 
 		if(Input.GetButtonDown("Jump"))
 		{
-			jump = true;
-			Debug.Log(animator.GetBool("IsJumping"));
-			animator.SetBool("IsJumping", true);
-			//animator.Play("Jump");
-			Debug.Log("Jump");
+			m_Jump = true;
+			m_Animator.SetBool("IsJumping", true);
 		}
 
-		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+		m_Animator.SetFloat("Speed", Mathf.Abs(m_HorizontalMove));
 
 		if (Input.GetButtonDown("Crouch"))
 		{
-			Debug.Log("Crouch");
-			animator.SetBool("IsCrouching", true);
-			animator.runtimeAnimatorController = crouchingController;
-			animator.SetBool("IsCrouching", true);
-			//animator.Play("2To4");
-			crouch = true;
-		}
-		else if(Input.GetButtonUp("Crouch"))
-		{
-			Debug.Log("UnCrouch");
-			animator.SetBool("IsCrouching", false);
-			animator.runtimeAnimatorController = standingController;
-			animator.SetBool("IsCrouching", false);
-			//animator.Play("4To2");
-			crouch = false;
+			//Crouch
+			if(!m_Crouch)
+			{
+				m_Animator.SetBool("IsCrouching", true);
+				m_Animator.runtimeAnimatorController = m_CrouchingController;
+				m_Animator.SetBool("IsCrouching", true);
+				m_Crouch = true;
+			}
+			//Stand Up
+			else
+			{
+				if(!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+				{
+					m_Animator.SetBool("IsCrouching", false);
+					m_Animator.runtimeAnimatorController = m_StandingController;
+					m_Animator.SetBool("IsCrouching", false);
+					m_Crouch = false;
+				}			
+			}
 		}
 	}
 
+	//This function is used to apply any code to the player when they land
 	public void OnLanding()
 	{
-		animator.SetBool("IsJumping", false);
+		m_Animator.SetBool("IsJumping", false);
+	}
+
+	public void StartFalling()
+	{
+		m_Animator.SetBool("IsFalling", true);
+		m_Animator.SetBool("IsJumping", false);
+	}
+
+	public void StopFalling()
+	{
+		m_Animator.SetBool("IsFalling", false);
 	}
 
 	//Use for Physics
 	private void FixedUpdate()
 	{
 		//Move character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, sprint);
-		jump = false;
+		m_Controller.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);
+		m_Jump = false;
 	}
 }

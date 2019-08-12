@@ -8,13 +8,15 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private CharacterController2D m_Controller;
 	[SerializeField] private RuntimeAnimatorController m_StandingController;
 	[SerializeField] private RuntimeAnimatorController m_CrouchingController;
+	[SerializeField] private LayerMask m_WhatIsGround;
+	[SerializeField] private Transform m_CeilingCheck;
 
 	[SerializeField] private float m_RunSpeed = 40f;
 
-	float m_HorizontalMove = 0f;
-	bool m_Jump = false;
-	bool m_Crouch = false;
-	bool m_Sprint = false;
+	private float m_HorizontalMove = 0f;
+	private bool m_Jump = false;
+	private bool m_Crouch = false;
+	private bool m_Sprint = false;
 
 	[SerializeField] private Animator m_Animator;
 
@@ -49,17 +51,25 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetButtonDown("Crouch"))
 		{
-			m_Animator.SetBool("IsCrouching", true);
-			m_Animator.runtimeAnimatorController = m_CrouchingController;
-			m_Animator.SetBool("IsCrouching", true);
-			m_Crouch = true;
-		}
-		else if(Input.GetButtonUp("Crouch"))
-		{
-			m_Animator.SetBool("IsCrouching", false);
-			m_Animator.runtimeAnimatorController = m_StandingController;
-			m_Animator.SetBool("IsCrouching", false);
-			m_Crouch = false;
+			//Crouch
+			if(!m_Crouch)
+			{
+				m_Animator.SetBool("IsCrouching", true);
+				m_Animator.runtimeAnimatorController = m_CrouchingController;
+				m_Animator.SetBool("IsCrouching", true);
+				m_Crouch = true;
+			}
+			//Stand Up
+			else
+			{
+				if(!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+				{
+					m_Animator.SetBool("IsCrouching", false);
+					m_Animator.runtimeAnimatorController = m_StandingController;
+					m_Animator.SetBool("IsCrouching", false);
+					m_Crouch = false;
+				}			
+			}
 		}
 	}
 

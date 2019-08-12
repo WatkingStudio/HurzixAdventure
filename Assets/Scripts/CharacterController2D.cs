@@ -17,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_SpriteFlipOffset = .5f;
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -27,6 +28,7 @@ public class CharacterController2D : MonoBehaviour
 	public UnityEvent OnLandEvent;
 	public UnityEvent OnStartFalling;
 	public UnityEvent OnStopFalling;
+	public UnityEvent OnStayCrouched;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -49,6 +51,9 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+		if (OnStayCrouched == null)
+			OnStayCrouched = new UnityEvent();
 	}
 
 	private void FixedUpdate()
@@ -88,6 +93,7 @@ public class CharacterController2D : MonoBehaviour
 			{
 				m_Animator.SetBool("IsCrouching", true);
 				crouch = true;
+				OnStayCrouched.Invoke();
 			}
 		}
 
@@ -166,18 +172,12 @@ public class CharacterController2D : MonoBehaviour
 
 		//Reposition - This is used so that the sprite doesn't turn and warp into a wall.
 		//This is an issue with the sprite and could be fixed by editing the sprite.
+		Vector3 pos = transform.localPosition;
 		if (!m_FacingRight)
-		{
-			Vector3 pos = transform.localPosition;
-			pos.x -= .5f;
-			transform.localPosition = pos;
-		}
+			pos.x -= k_SpriteFlipOffset;
 		else
-		{
-			Vector3 pos = transform.localPosition;
-			pos.x += .5f;
-			transform.localPosition = pos;
-		}
+			pos.x += k_SpriteFlipOffset;
+		transform.localPosition = pos;
 			
 	}
 }

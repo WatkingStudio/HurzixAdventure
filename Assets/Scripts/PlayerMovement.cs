@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private RuntimeAnimatorController m_CrouchingController;
 	[SerializeField] private LayerMask m_WhatIsGround;
 	[SerializeField] private Transform m_CeilingCheck;
+	[SerializeField] private Inventory m_Inventory;
 
 	[SerializeField] private float m_RunSpeed = 40f;
 
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
 		if(Input.GetButtonDown("Attack"))
 		{
+			m_Inventory.PickUpKeyOne();
 			m_Animator.SetTrigger("Attack");
 		}
 

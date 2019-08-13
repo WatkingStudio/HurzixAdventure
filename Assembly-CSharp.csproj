@@ -63,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\2D Free Platformer Char\Scripts\AnimDemo.cs" />
+    <Compile Include="Assets\Inventory.cs" />
+    <Compile Include="Assets\Item.cs" />
+    <Compile Include="Assets\LevelDictionary.cs" />
+    <Compile Include="Assets\LevelItems.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Atlas\Wolf.atlas.txt" />

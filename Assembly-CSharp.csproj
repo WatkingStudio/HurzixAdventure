@@ -64,6 +64,11 @@
   <ItemGroup>
     <Compile Include="Assets\2D Free Platformer Char\Scripts\AnimDemo.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\LevelDictionary.cs" />
+    <Compile Include="Assets\Scripts\LevelItems.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Atlas\Wolf.atlas.txt" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Spine\Spine 3.7.94\Wolf.atlas.txt" />

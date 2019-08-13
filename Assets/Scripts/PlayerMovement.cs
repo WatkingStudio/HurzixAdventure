@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
 		if(Input.GetButtonDown("Attack"))
 		{
-			m_Inventory.PickUpKeyOne();
 			m_Animator.SetTrigger("Attack");
 		}
 

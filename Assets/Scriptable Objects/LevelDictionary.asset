@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7555cc654b78f4e8e7e868afff3238, type: 3}
   m_Name: LevelDictionary
   m_EditorClassIdentifier: 
+  m_LevelData:
+  - ItemType: 1
+    AnimationController: {fileID: 9100000, guid: 76706931606f2ec4a852dbf70031276f,
+      type: 2}

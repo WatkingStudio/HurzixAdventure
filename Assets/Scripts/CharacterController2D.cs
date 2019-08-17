@@ -10,9 +10,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
-	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-	[SerializeField] private Animator m_Animator;								// The animator of the character
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -28,7 +26,6 @@ public class CharacterController2D : MonoBehaviour
 	public UnityEvent OnLandEvent;
 	public UnityEvent OnStartFalling;
 	public UnityEvent OnStopFalling;
-	public UnityEvent OnStayCrouched;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -51,9 +48,6 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
-
-		if (OnStayCrouched == null)
-			OnStayCrouched = new UnityEvent();
 	}
 
 	private void FixedUpdate()
@@ -85,18 +79,6 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
-		// If crouching, check to see if the character can stand up
-		if (!crouch)
-		{
-			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-			{
-				m_Animator.SetBool("IsCrouching", true);
-				crouch = true;
-				OnStayCrouched.Invoke();
-			}
-		}
-
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{

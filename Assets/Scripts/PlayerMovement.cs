@@ -5,12 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	//The controller for the player
-	[SerializeField] private CharacterController2D m_Controller;
-	[SerializeField] private RuntimeAnimatorController m_StandingController;
-	[SerializeField] private RuntimeAnimatorController m_CrouchingController;
-	[SerializeField] private LayerMask m_WhatIsGround;
-	[SerializeField] private Transform m_CeilingCheck;
-	[SerializeField] private Inventory m_Inventory;
+	[SerializeField]
+	private CharacterController2D m_Controller;
+	[SerializeField] 
+	private RuntimeAnimatorController m_StandingController;
+	[SerializeField] 
+	private RuntimeAnimatorController m_CrouchingController;
+	[SerializeField] 
+	private LayerMask m_WhatIsGround;
+	[SerializeField] 
+	private Transform m_CeilingCheck;
+	[SerializeField]
+	private Inventory m_Inventory;
 
 	[SerializeField] private float m_RunSpeed = 40f;
 

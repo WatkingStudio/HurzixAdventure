@@ -10,10 +10,13 @@ public class BasicEnemy : MonoBehaviour
 	private Transform m_PointB;
 
 	Vector3 m_WalkAmount;
-	float walkingDirection = 1.0f;
-	public float wallRight = 5.0f;
-	public float walkSpeed = 2.0f;
-	public float wallLeft = 0.0f;
+	float m_WalkingDirection = 1.0f;
+	[SerializeField]
+	private float m_WalkRight = 5.0f;
+	[SerializeField]
+	private float m_WalkSpeed = 2.0f;
+	[SerializeField]
+	private float m_WalkLeft = 0.0f;
 	const float k_SpriteFlipOffset = .5f;
 	private bool m_FacingRight = true;
 
@@ -23,15 +26,15 @@ public class BasicEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		m_WalkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
+		m_WalkAmount.x = m_WalkingDirection * m_WalkSpeed * Time.deltaTime;
 		if (transform.position.x > m_PointB.position.x)
 		{
-			walkingDirection = -1.0f;
+			m_WalkingDirection = -1.0f;
 			Flip();
 		}
 		else if (transform.position.x < m_PointA.position.x)
 		{
-			walkingDirection = 1.0f;
+			m_WalkingDirection = 1.0f;
 			Flip();
 		}
 			

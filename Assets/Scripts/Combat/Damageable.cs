@@ -109,4 +109,10 @@ public class Damageable : MonoBehaviour
 				gameObject.SetActive(false);
 		}
 	}
+
+	public void RegainHealth()
+	{
+		m_CurrentHealth++;
+		m_OnGainHealth.Invoke(1, this);
+	}
 }

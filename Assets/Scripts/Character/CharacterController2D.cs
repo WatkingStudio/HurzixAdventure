@@ -87,6 +87,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
+
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{

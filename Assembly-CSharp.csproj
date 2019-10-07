@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Level\LevelDictionary.cs" />
     <Compile Include="Assets\Scripts\Level\LevelItems.cs" />
+    <Compile Include="Assets\Scripts\UI\Health\HealthIcon.cs" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Atlas\Wolf.atlas.txt" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Spine\Spine 3.7.94\Wolf.atlas.txt" />
     <Reference Include="Unity.Timeline.Editor">

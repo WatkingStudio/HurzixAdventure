@@ -17,9 +17,13 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField]
 	private List<HealthIcon> m_HealthIcons;
 	[SerializeField]
-	private AudioSource m_AudioSource;
+	private AudioSource m_HurtAudio;
+	[SerializeField]
+	private AudioSource m_DeathAudio;
 	[SerializeField]
 	private PlayerMovement m_PlayerMovement;
+	[SerializeField]
+	private SpriteRenderer m_SpriteRenderer;
 
 	public void OnHurt()
 	{
@@ -34,6 +38,7 @@ public class PlayerCharacter : MonoBehaviour
 		m_Animator.SetBool("IsDead", true);
 		m_PlayerMovement.DisableMovement();
 		m_Damageable.EnableInvulnerability();
+		m_DeathAudio.Play();
 		//Respawn Player
 		StartCoroutine(DieRespawnCoroutine(false, true));
 	}
@@ -42,7 +47,15 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		m_Animator.SetTrigger("Hurt");
 		m_HealthIcons[m_Damageable.CurrentHealth()].TakeDamage();
-		m_AudioSource.Play();
+		m_HurtAudio.Play();
+		StartCoroutine(DamageTakenCoroutine());
+	}
+
+	IEnumerator DamageTakenCoroutine()
+	{
+		m_SpriteRenderer.color = new Color(255f, 255f, 255f, 0.5f);
+		yield return new WaitForSeconds(1f);
+		m_SpriteRenderer.color = new Color(255f, 255f, 255f, 1f);
 	}
 
 	public void RegainHealth()
@@ -61,7 +74,7 @@ public class PlayerCharacter : MonoBehaviour
 
 	IEnumerator DieRespawnCoroutine(bool useCheckpoint, bool resetHealth)
 	{
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 		Respawn(useCheckpoint, resetHealth);
 		yield return new WaitForEndOfFrame();
 	}
@@ -82,8 +95,8 @@ public class PlayerCharacter : MonoBehaviour
 			gameObject.transform.rotation = m_StartingPosition.rotation;
 		}
 		m_PlayerMovement.EnableMovement();
-		m_Damageable.DisableInvulnerability();
 		m_Animator.SetBool("IsDead", false);
 		m_Animator.SetTrigger("Idle");
+		m_Damageable.DisableInvulnerability();
 	}
 }

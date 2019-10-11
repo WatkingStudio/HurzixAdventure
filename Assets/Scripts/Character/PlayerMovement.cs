@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 	private Transform m_CeilingCheck;
 	[SerializeField]
 	private Inventory m_Inventory;
+	[SerializeField]
+	private Rigidbody2D m_Rigidbody2D;
 
 	[SerializeField] private float m_RunSpeed = 40f;
 
@@ -24,12 +26,31 @@ public class PlayerMovement : MonoBehaviour
 	private bool m_Jump = false;
 	private bool m_Crouch = false;
 	private bool m_Sprint = false;
+	private bool m_DisableMovement = false;
 
 	[SerializeField] private Animator m_Animator;
 
+	public void DisableMovement()
+	{
+		m_DisableMovement = true;
+		m_Rigidbody2D.velocity = Vector2.one;
+	}
+
+	public void EnableMovement()
+	{
+		m_DisableMovement = false;
+	}
+
 	// Update is called once per frame
 	void Update()
-    {
+	{
+		//If Movement has been disabled do not allow player to move.
+		if (m_DisableMovement)
+		{
+			m_HorizontalMove = 0;
+			return;
+		}
+
 		m_HorizontalMove = Input.GetAxisRaw("Horizontal") * m_RunSpeed;
 		
 		if(Input.GetButtonDown("Sprint"))

@@ -23,7 +23,7 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField]
 	private PlayerMovement m_PlayerMovement;
 	[SerializeField]
-	private SpriteRenderer m_SpriteRenderer;
+	private SpriteRenderer m_PlayerSprite;
 
 	public void OnHurt()
 	{
@@ -51,11 +51,12 @@ public class PlayerCharacter : MonoBehaviour
 		StartCoroutine(DamageTakenCoroutine());
 	}
 
+	//This function makes the character fade for 1 second, to show that they have taken damage
 	IEnumerator DamageTakenCoroutine()
 	{
-		m_SpriteRenderer.color = new Color(255f, 255f, 255f, 0.5f);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.5f);
 		yield return new WaitForSeconds(1f);
-		m_SpriteRenderer.color = new Color(255f, 255f, 255f, 1f);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
 	}
 
 	public void RegainHealth()

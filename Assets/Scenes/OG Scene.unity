@@ -3350,7 +3350,7 @@ MonoBehaviour:
   m_HurtAudio: {fileID: 1657548622}
   m_DeathAudio: {fileID: 1657548623}
   m_PlayerMovement: {fileID: 1657548615}
-  m_SpriteRenderer: {fileID: 1657548621}
+  m_PlayerSprite: {fileID: 1657548621}
 --- !u!212 &1657548621 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 212403299387223614, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05,

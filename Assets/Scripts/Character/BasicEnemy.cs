@@ -59,6 +59,5 @@ public class BasicEnemy : MonoBehaviour
 		else
 			pos.x += k_SpriteFlipOffset;
 		transform.localPosition = pos;
-
 	}
 }

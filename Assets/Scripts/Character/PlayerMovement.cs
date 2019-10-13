@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	//The controller for the player
 	[SerializeField]
-	private CharacterController2D m_Controller;
+	private CharacterMovement2D m_Movement;
 	[SerializeField] 
 	private RuntimeAnimatorController m_StandingController;
 	[SerializeField] 
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		//Move character
-		m_Controller.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);
+		m_Movement.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);
 		m_Jump = false;
 	}
 }

@@ -3197,8 +3197,8 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: CharacterMovement2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &1657548615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb26eda75f39194688c7b5dc230e86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Controller: {fileID: 1657548614}
+  m_Movement: {fileID: 1657548614}
   m_StandingController: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa,
     type: 2}
   m_CrouchingController: {fileID: 9100000, guid: 5174d54e54aaee644aed9b3cdda2930f,

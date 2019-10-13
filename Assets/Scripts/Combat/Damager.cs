@@ -24,7 +24,7 @@ public class Damager : MonoBehaviour
 	private Vector2 m_Size = new Vector2(2.5f, 1f);
 	[SerializeField, Tooltip("If set to true, the offset will take into account the facing of the sprite")]
 	private bool m_OffsetBaseOnSpriteFacing = true;
-	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by offset Based OnSprite Facing")]
+	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by m_OffsetBasedOnSpriteFacing")]
 	private SpriteRenderer m_SpriteRenderer;
 	[SerializeField, Tooltip("If disabled, will ignore triggers when applying damage")]
 	private bool m_CanHitTriggers;

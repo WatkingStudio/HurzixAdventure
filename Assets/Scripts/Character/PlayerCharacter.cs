@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** 
+ * \class Player Character
+ * 
+ * \brief This class is used to handle any interactions between the game and character
+ * 
+ * \date 2019/13/10
+ * 
+ */
 public class PlayerCharacter : MonoBehaviour
 {
 	[SerializeField]

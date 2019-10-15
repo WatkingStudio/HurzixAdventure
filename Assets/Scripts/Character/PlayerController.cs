@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/** 
+ * \class PlayerController
+ * 
+ * \brief This class is used to take the input of the player and apply it to the character
+ * 
+ * \date 2019/15/10
+ * 
+ */
 public class PlayerController : MonoBehaviour
 {
 	//The controller for the player

@@ -235,7 +235,7 @@ MonoBehaviour:
     type: 2}
   m_CrouchingController: {fileID: 9100000, guid: 5174d54e54aaee644aed9b3cdda2930f,
     type: 2}
-  m_ActiveAnimator: {fileID: 1657548616}
+  m_Animator: {fileID: 1657548616}
 --- !u!1 &279817281
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 378814556}
-  m_ActiveAction: {fileID: 1221097205}
+  m_AvailableActions: 00000000
 --- !u!114 &378814555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3156,8 +3156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9836affb32be3d64db9b607e063719b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PointA: {fileID: 1743725991}
-  m_PointB: {fileID: 1796701804}
+  m_WaypointA: {fileID: 1743725991}
+  m_WaypointB: {fileID: 1796701804}
   m_WalkSpeed: 2
   m_BasicEnemy: {fileID: 378814554}
 --- !u!4 &1221097206
@@ -3650,7 +3650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743725991}
   m_Layer: 0
-  m_Name: PointA
+  m_Name: WaypointA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3680,7 +3680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796701804}
   m_Layer: 0
-  m_Name: PointB
+  m_Name: WaypointB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

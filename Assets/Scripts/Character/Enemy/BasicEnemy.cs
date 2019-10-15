@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class BasicEnemy
+ * 
+ * \brief This class hold the functionality for a basic enemy AI
+ * 
+ * \date 2019/15/10
+ * 
+ */
 public class BasicEnemy : MonoBehaviour
 {
 	const float k_SpriteFlipOffset = .5f;
@@ -10,7 +18,7 @@ public class BasicEnemy : MonoBehaviour
 	[SerializeField]
 	private Animator m_Animator;
 	private EnemyAction m_ActiveAction;
-	[SerializeField]
+	[SerializeField, Tooltip("Which actions are available to this enemy")]
 	private List<EnemyAction.Actions> m_AvailableActions;
 
 	private void Start()

@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class EnemyMoveAction
+ * 
+ * \brief This class holds the functionality of an enemy move action
+ * 
+ * \date 2019/15/10
+ * 
+ */
 public class EnemyMoveAction : EnemyAction
 {
 	[SerializeField]
-	private Transform m_PointA;
+	private Transform m_WaypointA;
 	[SerializeField]
-	private Transform m_PointB;
+	private Transform m_WaypointB;
 	[SerializeField]
 	private float m_WalkSpeed = 2.0f;
 
@@ -27,12 +35,12 @@ public class EnemyMoveAction : EnemyAction
 		}
 
 		m_WalkAmount.x = m_WalkingDirection * m_WalkSpeed * Time.deltaTime;
-		if(m_BasicEnemy.transform.position.x > m_PointB.position.x)
+		if(m_BasicEnemy.transform.position.x > m_WaypointB.position.x)
 		{
 			m_WalkingDirection = -1.0f;
 			m_BasicEnemy.Flip();
 		}
-		else if(m_BasicEnemy.transform.position.x < m_PointA.position.x)
+		else if(m_BasicEnemy.transform.position.x < m_WaypointA.position.x)
 		{
 			m_WalkingDirection = 1.0f;
 			m_BasicEnemy.Flip();

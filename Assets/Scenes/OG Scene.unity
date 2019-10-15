@@ -517,9 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PointA: {fileID: 1743725991}
   m_PointB: {fileID: 1796701804}
-  m_WalkRight: 5
   m_WalkSpeed: 2
-  m_WalkLeft: 0
   m_Animator: {fileID: 378814556}
 --- !u!114 &378814555
 MonoBehaviour:
@@ -3431,7 +3429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHealth: 3
   m_InvulverableAfterDamage: 1
-  m_InvulnerableDuration: 1
+  m_InvulnerableDuration: 2
   m_DisableOnDeath: 0
   m_OnHeathSet:
     m_PersistentCalls:

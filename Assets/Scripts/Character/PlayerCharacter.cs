@@ -96,6 +96,5 @@ public class PlayerCharacter : MonoBehaviour
 		m_PlayerController.EnableMovement();
 		m_Animator.PlayerDead(false);
 		m_Animator.PlayerIdle();
-		m_Damageable.DisableInvulnerability();
 	}
 }

@@ -12,11 +12,7 @@ public class BasicEnemy : MonoBehaviour
 	Vector3 m_WalkAmount;
 	float m_WalkingDirection = 1.0f;
 	[SerializeField]
-	private float m_WalkRight = 5.0f;
-	[SerializeField]
 	private float m_WalkSpeed = 2.0f;
-	[SerializeField]
-	private float m_WalkLeft = 0.0f;
 	const float k_SpriteFlipOffset = .5f;
 	private bool m_FacingRight = true;
 

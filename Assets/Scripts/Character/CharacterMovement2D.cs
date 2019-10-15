@@ -178,7 +178,11 @@ public class CharacterMovement2D : MonoBehaviour
 			pos.x -= k_SpriteFlipOffset;
 		else
 			pos.x += k_SpriteFlipOffset;
-		transform.localPosition = pos;
-			
+		transform.localPosition = pos;			
+	}
+
+	public void ResetVelocity()
+	{
+		m_Rigidbody2D.velocity = Vector2.one;
 	}
 }

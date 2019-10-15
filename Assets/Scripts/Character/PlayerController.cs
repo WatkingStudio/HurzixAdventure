@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
 	private Transform m_CeilingCheck;
 	[SerializeField]
 	private Inventory m_Inventory;
-	[SerializeField]
-	private Rigidbody2D m_Rigidbody2D;
 
 	[SerializeField] private float m_RunSpeed = 40f;
 
@@ -29,7 +27,7 @@ public class PlayerController : MonoBehaviour
 	public void DisableMovement()
 	{
 		m_DisableMovement = true;
-		m_Rigidbody2D.velocity = Vector2.one;
+		m_Movement.ResetVelocity();
 	}
 
 	public void EnableMovement()

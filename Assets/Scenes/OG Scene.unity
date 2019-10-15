@@ -3026,6 +3026,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.9843137
       objectReference: {fileID: 0}
+    - target: {fileID: 95427405674940160, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5174d54e54aaee644aed9b3cdda2930f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05, type: 3}
 --- !u!1 &1180301252
@@ -3406,7 +3411,6 @@ MonoBehaviour:
     m_Bits: 55
   m_CeilingCheck: {fileID: 681299063}
   m_Inventory: {fileID: 702497307}
-  m_Rigidbody2D: {fileID: 1657548619}
   m_RunSpeed: 30
   m_Animator: {fileID: 198714585}
 --- !u!95 &1657548616 stripped

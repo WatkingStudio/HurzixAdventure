@@ -1,7 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour
+/** 
+ * \class CharacterMovement2D
+ * 
+ * \brief This class is used to control a 2D Characters Movement
+ * 
+ * This class applies, controls and reacts to the movement of the character
+ * 
+ * \date 2019/13/10
+ * 
+ */
+public class CharacterMovement2D : MonoBehaviour
 {
 	[SerializeField, Tooltip("Amount of force added when the player jumps")]
 	private float m_JumpForce = 400f;
@@ -168,7 +178,11 @@ public class CharacterController2D : MonoBehaviour
 			pos.x -= k_SpriteFlipOffset;
 		else
 			pos.x += k_SpriteFlipOffset;
-		transform.localPosition = pos;
-			
+		transform.localPosition = pos;			
+	}
+
+	public void ResetVelocity()
+	{
+		m_Rigidbody2D.velocity = Vector2.one;
 	}
 }

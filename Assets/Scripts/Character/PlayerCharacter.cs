@@ -7,7 +7,7 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField]
 	private Damageable m_Damageable;
 	[SerializeField]
-	private Animator m_Animator;
+	private PlayerAnimations m_Animator;
 	[SerializeField]
 	private Transform m_ActiveCheckpoint;
 	[SerializeField]
@@ -17,11 +17,9 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField]
 	private List<HealthIcon> m_HealthIcons;
 	[SerializeField]
-	private AudioSource m_HurtAudio;
+	private PlayerAudio m_PlayerAudio;
 	[SerializeField]
-	private AudioSource m_DeathAudio;
-	[SerializeField]
-	private PlayerMovement m_PlayerMovement;
+	private PlayerController m_PlayerController;
 	[SerializeField]
 	private SpriteRenderer m_PlayerSprite;
 
@@ -35,19 +33,19 @@ public class PlayerCharacter : MonoBehaviour
 	public void OnDie()
 	{
 		//Play Death animation
-		m_Animator.SetBool("IsDead", true);
-		m_PlayerMovement.DisableMovement();
+		m_Animator.PlayerDead(true);
+		m_PlayerController.DisableMovement();
 		m_Damageable.EnableInvulnerability();
-		m_DeathAudio.Play();
+		m_PlayerAudio.PlayDeathAudioClip();
 		//Respawn Player
 		StartCoroutine(DieRespawnCoroutine(false, true));
 	}
 
 	public void DamageTaken()
 	{
-		m_Animator.SetTrigger("Hurt");
+		m_Animator.PlayerHurt();
 		m_HealthIcons[m_Damageable.CurrentHealth()].TakeDamage();
-		m_HurtAudio.Play();
+		m_PlayerAudio.PlayHurtAudioClip();
 		StartCoroutine(DamageTakenCoroutine());
 	}
 
@@ -95,9 +93,9 @@ public class PlayerCharacter : MonoBehaviour
 			gameObject.transform.position = m_StartingPosition.position;
 			gameObject.transform.rotation = m_StartingPosition.rotation;
 		}
-		m_PlayerMovement.EnableMovement();
-		m_Animator.SetBool("IsDead", false);
-		m_Animator.SetTrigger("Idle");
+		m_PlayerController.EnableMovement();
+		m_Animator.PlayerDead(false);
+		m_Animator.PlayerIdle();
 		m_Damageable.DisableInvulnerability();
 	}
 }

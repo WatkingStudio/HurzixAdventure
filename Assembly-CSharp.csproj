@@ -65,8 +65,10 @@
     <Compile Include="Assets\2D Free Platformer Char\Scripts\AnimDemo.cs" />
     <Compile Include="Assets\Scripts\Character\BasicEnemy.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterMovement2D.cs" />
+    <Compile Include="Assets\Scripts\Character\PlayerAnimations.cs" />
+    <Compile Include="Assets\Scripts\Character\PlayerAudio.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerCharacter.cs" />
-    <Compile Include="Assets\Scripts\Character\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Combat\Damageable.cs" />
     <Compile Include="Assets\Scripts\Combat\Damager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />

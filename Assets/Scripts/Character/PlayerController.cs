@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 	//The controller for the player
 	[SerializeField]
 	private CharacterMovement2D m_Movement;
-	[SerializeField] 
-	private RuntimeAnimatorController m_StandingController;
-	[SerializeField] 
-	private RuntimeAnimatorController m_CrouchingController;
 	[SerializeField] 
 	private LayerMask m_WhatIsGround;
 	[SerializeField] 
@@ -28,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool m_Sprint = false;
 	private bool m_DisableMovement = false;
 
-	[SerializeField] private Animator m_Animator;
+	[SerializeField] private PlayerAnimations m_Animator;
 
 	public void DisableMovement()
 	{
@@ -55,36 +51,34 @@ public class PlayerMovement : MonoBehaviour
 		
 		if(Input.GetButtonDown("Sprint"))
 		{
-			m_Animator.SetBool("IsSprinting", true);
+			m_Animator.PlayerSprinting(true);
 			m_Sprint = true;
 		}
 		else if(Input.GetButtonUp("Sprint"))
 		{
-			m_Animator.SetBool("IsSprinting", false);
+			m_Animator.PlayerSprinting(false);
 			m_Sprint = false;
 		}
 
 		if(Input.GetButtonDown("Attack"))
 		{
-			m_Animator.SetTrigger("Attack");
+			m_Animator.PlayerAttack();
 		}
 
 		if(Input.GetButtonDown("Jump"))
 		{
 			m_Jump = true;
-			m_Animator.SetBool("IsJumping", true);
+			m_Animator.PlayerJumping(true);
 		}
 
-		m_Animator.SetFloat("Speed", Mathf.Abs(m_HorizontalMove));
+		m_Animator.PlayerSpeed(m_HorizontalMove);
 
 		if (Input.GetButtonDown("Crouch"))
 		{
 			//Crouch
 			if(!m_Crouch)
 			{
-				m_Animator.SetBool("IsCrouching", true);
-				m_Animator.runtimeAnimatorController = m_CrouchingController;
-				m_Animator.SetBool("IsCrouching", true);
+				m_Animator.PlayerCrouching(true);
 				m_Crouch = true;
 			}
 			//Stand Up
@@ -92,9 +86,7 @@ public class PlayerMovement : MonoBehaviour
 			{
 				if(!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
 				{
-					m_Animator.SetBool("IsCrouching", false);
-					m_Animator.runtimeAnimatorController = m_StandingController;
-					m_Animator.SetBool("IsCrouching", false);
+					m_Animator.PlayerCrouching(false);
 					m_Crouch = false;
 				}			
 			}
@@ -104,18 +96,18 @@ public class PlayerMovement : MonoBehaviour
 	//This function is used to apply any code to the player when they land
 	public void OnLanding()
 	{
-		m_Animator.SetBool("IsJumping", false);
+		m_Animator.PlayerJumping(false);
 	}
 
 	public void StartFalling()
 	{
-		m_Animator.SetBool("IsFalling", true);
-		m_Animator.SetBool("IsJumping", false);
+		m_Animator.PlayerFalling(true);
+		m_Animator.PlayerJumping(false);
 	}
 
 	public void StopFalling()
 	{
-		m_Animator.SetBool("IsFalling", false);
+		m_Animator.PlayerFalling(false);
 	}
 
 	//Use for Physics

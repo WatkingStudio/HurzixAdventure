@@ -3309,6 +3309,7 @@ GameObject:
   - component: {fileID: 1316452354}
   - component: {fileID: 1316452356}
   - component: {fileID: 1316452353}
+  - component: {fileID: 1316452357}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -3334,6 +3335,7 @@ MonoBehaviour:
     m_Bits: 256
   m_DisableOnEnter: 1
   m_Collider: {fileID: 1316452356}
+  m_ItemHalo: {fileID: 1316452357}
 --- !u!212 &1316452354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3412,6 +3414,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.28
+--- !u!122 &1316452357
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316452352}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 0.7
 --- !u!1 &1325670669
 GameObject:
   m_ObjectHideFlags: 0

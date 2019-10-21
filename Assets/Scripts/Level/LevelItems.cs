@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelItems : MonoBehaviour
 {
-	[SerializeField, Tooltip("This is a list of items that can be collected on this level")] private List<Item> m_CollectableItems;
+	[SerializeField, Tooltip("This is a list of items that can be collected on this level")] private List<InventoryItem> m_CollectableItems;
 
 	[SerializeField] Inventory m_Inventory;
 

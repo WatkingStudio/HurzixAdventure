@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
 	}
 
 	//For each level setup the inventory slots.
-	public void SetupInventory(List<Item> collectableItems)
+	public void SetupInventory(List<InventoryItem> collectableItems)
 	{
 		ResetInventory();
 

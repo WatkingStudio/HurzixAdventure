@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class Indicator
+ * 
+ * \brief This class holds the functionality for the Indicator used to show where the closest collectable
+ *         item is.
+ * 
+ * \date 2019/21/10
+ */ 
 public class Indicator : MonoBehaviour
 {
 	[SerializeField]

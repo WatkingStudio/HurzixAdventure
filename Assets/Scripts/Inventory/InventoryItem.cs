@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class InventoryItem
+ * 
+ * \brief This class inherits from the Item class and adds functionality to be used with the Inventory
+ *         class.
+ *         
+ * \date 2019/21/10
+ */ 
 [RequireComponent(typeof(CircleCollider2D))]
 public class InventoryItem : Item
 {

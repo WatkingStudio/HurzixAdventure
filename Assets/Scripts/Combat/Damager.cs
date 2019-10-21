@@ -2,6 +2,17 @@
 using System;
 using UnityEngine.Events;
 
+/**
+ * \class Damager
+ * 
+ * \brief This class is for any GameObject that can deal damage.
+ * 
+ *  This class only holds the generic damager functions, if there are specific interactions with
+ *   GameObject these should be called through the event system in the Inspector.
+ * 
+ * \date 2019/21/10
+ */ 
+
 public class Damager : MonoBehaviour
 {
 	[Serializable]

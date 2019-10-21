@@ -19,10 +19,9 @@ public class PlayerController : MonoBehaviour
 	private LayerMask m_WhatIsGround;
 	[SerializeField] 
 	private Transform m_CeilingCheck;
-	[SerializeField]
-	private Inventory m_Inventory;
 
-	[SerializeField] private float m_RunSpeed = 40f;
+	[SerializeField]
+	private float m_RunSpeed = 40f;
 
 	private float m_HorizontalMove = 0f;
 	private bool m_Jump = false;
@@ -30,7 +29,10 @@ public class PlayerController : MonoBehaviour
 	private bool m_Sprint = false;
 	private bool m_DisableMovement = false;
 
-	[SerializeField] private PlayerAnimations m_Animator;
+	[SerializeField]
+	private PlayerAnimations m_Animator;
+	[SerializeField]
+	private LevelItems m_CurrentLevelItems;
 
 	public void DisableMovement()
 	{
@@ -96,6 +98,12 @@ public class PlayerController : MonoBehaviour
 					m_Crouch = false;
 				}			
 			}
+		}
+
+		if(Input.GetButtonDown("Reveal"))
+		{
+			//Reveal the closest item
+			m_CurrentLevelItems.RevealClosestItem(transform);
 		}
 	}
 

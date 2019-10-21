@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\2D Free Platformer Char\Scripts\AnimDemo.cs" />
+    <Compile Include="Assets\Indicator.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyMoveAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BasicEnemy.cs" />

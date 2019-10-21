@@ -21,10 +21,10 @@ public class Item : MonoBehaviour
 	// to the components of the player.
 	public void RevealItem(Transform playerTransform)
 	{
+		//This if statement will trigger if the sprite is visable on the Scene View
 		if(GetComponent<SpriteRenderer>().isVisible)
 		{
 			GetComponent<SpriteRenderer>().color = Color.black;
-			playerTransform.GetComponentInChildren<Indicator>().DisplayIndicator(transform);
 		}
 		else
 		{

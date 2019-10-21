@@ -16,20 +16,24 @@ public class LevelItems : MonoBehaviour
 	public void RevealClosestItem(Transform playerTransform)
 	{
 		float shortestDistance = float.MaxValue;
-		int closestKey = 0;
+		int closestKey = -1;
 
 		for(int i = 0; i < m_CollectableItems.Count; ++i)
 		{
-			float tempDistance = Vector3.Distance(m_CollectableItems[i].transform.position, playerTransform.position);
-			if (tempDistance < shortestDistance)
+			if(m_CollectableItems[i].gameObject.activeSelf)
 			{
-				closestKey = i;
-				shortestDistance = tempDistance;
-			}
+				float tempDistance = Vector3.Distance(m_CollectableItems[i].transform.position, playerTransform.position);
+				if (tempDistance < shortestDistance)
+				{
+					closestKey = i;
+					shortestDistance = tempDistance;
+				}
+			}			
 		} 
 
 		//closestKey should now be revealed
-		m_CollectableItems[closestKey].RevealItem(playerTransform);
+		if(closestKey > -1)
+			m_CollectableItems[closestKey].RevealItem(playerTransform);
 		
 	}
 }

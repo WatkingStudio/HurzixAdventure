@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//This inventory is used to track the items found in each level.
-//It currently is not designed to carry items across levels.
+/**
+ * \class Inventory
+ * 
+ * \brief This class is used to track the items found in each level.
+ * 
+ * It currently is not designed to carry items across levels.
+ * 
+ * \date 2019/21/10
+ */ 
 public class Inventory : MonoBehaviour
 {
 	[SerializeField, Tooltip("An Array of Inventory Slots for the Players Inventory")] private InventorySlot[] m_InventorySlots;
-	[SerializeField, Tooltip("A Scriptable Object that holds a Directory of Items and Animators for the Current Level")] private LevelDictionary m_LevelDictionary;
+	[SerializeField, Tooltip("A Scriptable Object that holds a Dictionary of Items and Animators for the Current Level")] private LevelDictionary m_LevelDictionary;
 
 	[SerializeField, Tooltip("A Default Animator for Black Inventory Slots")] private RuntimeAnimatorController m_BlankInventorySlot;
 
@@ -26,7 +33,7 @@ public class Inventory : MonoBehaviour
 	}
 
 	//For each level setup the inventory slots.
-	public void SetupInventory(List<Item> collectableItems)
+	public void SetupInventory(List<InventoryItem> collectableItems)
 	{
 		ResetInventory();
 

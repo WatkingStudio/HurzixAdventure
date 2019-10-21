@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class HealthIcon
+ * 
+ * \brief This class holds the functionality for a health icon.
+ * 
+ * \date 2019/21/10
+ */ 
 public class HealthIcon : MonoBehaviour
 {
 	[SerializeField]

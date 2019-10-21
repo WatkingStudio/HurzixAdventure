@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Character\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Combat\Damageable.cs" />
     <Compile Include="Assets\Scripts\Combat\Damager.cs" />
+    <Compile Include="Assets\Scripts\Indicator.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />

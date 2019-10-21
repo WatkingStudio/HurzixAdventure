@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class InventorySlot
+ * 
+ * \brief This class holds the information for an InventorySlot. 
+ * 
+ * This will have a specific item assigned to it, and if the player collects the item this class will
+ *  execute the code the handle the collection.
+ *  
+ * \date 2019/21/10
+ */ 
 public class InventorySlot : MonoBehaviour
 {
 	[SerializeField] private Item.ItemType m_ItemName = Item.ItemType.None;

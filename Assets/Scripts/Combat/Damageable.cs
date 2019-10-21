@@ -4,6 +4,17 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+/**
+ * \class Damageable
+ * 
+ * \brief This class is for any GameObject that can be damaged.
+ * 
+ *  This class only holds the generic damageable functions, if there are specific interactions with
+ *   GameObjects these should be called through the event system in the Inspector.
+ * 
+ * \date 2019/21/10
+ * 
+ */ 
 public class Damageable : MonoBehaviour
 {
 	[Serializable]

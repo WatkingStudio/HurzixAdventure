@@ -53,6 +53,11 @@ public class PlayerCharacter : MonoBehaviour
 		StartCoroutine(DieRespawnCoroutine(false, true));
 	}
 
+	public void OnRespawn(bool resetHealth)
+	{
+		Respawn(true, resetHealth);
+	}
+
 	public void DamageTaken()
 	{
 		m_Animator.PlayerHurt();

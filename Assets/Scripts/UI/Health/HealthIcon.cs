@@ -28,11 +28,13 @@ public class HealthIcon : MonoBehaviour
 
 	public void GainHealth()
 	{
-		m_Animator.SetTrigger("Active");
+		m_Animator.SetBool("Active", true);
+		m_Animator.SetBool("InActive", false);
 	}
 
 	public void TakeDamage()
 	{
-		m_Animator.SetTrigger("InActive");
+		m_Animator.SetBool("Active", false);
+		m_Animator.SetBool("InActive", true);
 	}
 }

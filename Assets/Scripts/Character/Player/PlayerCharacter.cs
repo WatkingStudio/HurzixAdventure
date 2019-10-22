@@ -30,6 +30,10 @@ public class PlayerCharacter : MonoBehaviour
 	private PlayerController m_PlayerController;
 	[SerializeField]
 	private SpriteRenderer m_PlayerSprite;
+	[SerializeField, Tooltip("The Collider2D used to detect interaction with Colliders")]
+	private Collider2D m_InteractableCollider;
+	[SerializeField, Tooltip("The layers which this Player can interact with")]
+	private LayerMask m_InteractableLayers;
 
 	public void OnHurt()
 	{
@@ -104,5 +108,26 @@ public class PlayerCharacter : MonoBehaviour
 		m_PlayerController.EnableMovement();
 		m_Animator.PlayerDead(false);
 		m_Animator.PlayerIdle();
+	}
+
+	public void InteractWithObject()
+	{
+		List<Collider2D> interactableColliders = new List<Collider2D>();
+		ContactFilter2D contactFilter = new ContactFilter2D();
+		contactFilter.layerMask = m_InteractableLayers;
+		contactFilter.useLayerMask = true;
+		contactFilter.useTriggers = true;
+		Physics2D.OverlapCollider(m_InteractableCollider, contactFilter, interactableColliders);
+
+		if(interactableColliders.Count > 0)
+		{
+			foreach(Collider2D col in interactableColliders)
+			{
+				if(col.GetComponent<InteractableObjects>())
+				{
+					col.GetComponent<InteractableObjects>().Interact();
+				}
+			}
+		}
 	}
 }

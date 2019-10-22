@@ -104,7 +104,6 @@ public class Damageable : MonoBehaviour
 
 	public void RespawnTarget(bool resetHealth = true)
 	{
-		Debug.Log("Respawn");
 		m_RespawnEvent.Invoke(resetHealth);
 	}
 

@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2D Free Platformer Char\Scripts\AnimDemo.cs" />
+    <Compile Include="Assets\Characters\Wolf\Scripts\AnimDemo.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyMoveAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BasicEnemy.cs" />
@@ -84,8 +84,8 @@
     <Compile Include="Assets\Scripts\Level\LevelExitLock.cs" />
     <Compile Include="Assets\Scripts\Level\LevelItems.cs" />
     <Compile Include="Assets\Scripts\UI\Health\HealthIcon.cs" />
-    <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Atlas\Wolf.atlas.txt" />
-    <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Spine\Spine 3.7.94\Wolf.atlas.txt" />
+    <None Include="Assets\Characters\Wolf\2D Free Wolf\Atlas\Wolf.atlas.txt" />
+    <None Include="Assets\Characters\Wolf\2D Free Wolf\Spine\Spine 3.7.94\Wolf.atlas.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/Work/Coding/Repositories/2DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

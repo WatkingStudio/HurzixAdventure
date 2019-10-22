@@ -119,6 +119,11 @@ public class Damager : MonoBehaviour
 			//If the collided object has a Damageable component then deal damage
 			if(damageable)
 			{
+				if(m_ForceRespawn)
+				{
+					damageable.RespawnTarget();
+					break;
+				}
 				m_OnDamageableHit.Invoke(this, damageable);
 				damageable.TakeDamage(this, m_IgnoreInvincibility);
 				if (m_DisableDamageAfterHit)

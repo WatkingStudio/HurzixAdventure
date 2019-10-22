@@ -29,6 +29,10 @@ public class Damageable : MonoBehaviour
 	public class HealEvent : UnityEvent<int, Damageable>
 	{ }
 
+	[Serializable]
+	public class RespawnEvent : UnityEvent<bool>
+	{ }
+
 	[SerializeField, Tooltip("The starting health of this character")]
 	private int m_StartingHealth = 5;
 	[SerializeField, Tooltip("True if after taking damage from a source this character should be invulverable for a duration")]
@@ -45,6 +49,8 @@ public class Damageable : MonoBehaviour
 	private DamageEvent m_OnDie;
 	[SerializeField]
 	private HealEvent m_OnGainHealth;
+	[SerializeField]
+	private RespawnEvent m_RespawnEvent;
 
 	private bool m_IsInvulnerable = false;
 	private float m_InvulnerabilityTimer;
@@ -96,6 +102,12 @@ public class Damageable : MonoBehaviour
 		m_IsInvulnerable = false;
 	}
 
+	public void RespawnTarget(bool resetHealth = true)
+	{
+		Debug.Log("Respawn");
+		m_RespawnEvent.Invoke(resetHealth);
+	}
+
 	public void TakeDamage(Damager damager, bool ignoreInvincible = false)
 	{
 		//If the character should not take damage at this point return
@@ -105,7 +117,10 @@ public class Damageable : MonoBehaviour
 		//If the character is not invulnerable apply damage to them and invoke the OnHealthSet event to trigger any subscribed functions
 		if(!m_IsInvulnerable)
 		{
-			m_CurrentHealth -= damager.Damage;
+			if (damager.Damage < m_CurrentHealth)
+				m_CurrentHealth -= damager.Damage;
+			else
+				m_CurrentHealth = 0;
 			m_OnHeathSet.Invoke(this);
 		}
 

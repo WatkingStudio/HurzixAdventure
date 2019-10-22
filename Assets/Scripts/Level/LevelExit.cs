@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class LevelExit : InteractableObjects
 {
 	[SerializeField]
@@ -47,8 +48,6 @@ public class LevelExit : InteractableObjects
 
 	public void UnlockDoor()
 	{
-		Debug.Log("Unlock Door");
-
 		m_Animator.SetTrigger("Unlock");
 	}
 }

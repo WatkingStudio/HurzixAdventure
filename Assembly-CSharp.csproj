@@ -74,11 +74,14 @@
     <Compile Include="Assets\Scripts\Combat\Damageable.cs" />
     <Compile Include="Assets\Scripts\Combat\Damager.cs" />
     <Compile Include="Assets\Scripts\Indicator.cs" />
+    <Compile Include="Assets\Scripts\InteractableObjects.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Level\LevelDictionary.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelExit.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelExitLock.cs" />
     <Compile Include="Assets\Scripts\Level\LevelItems.cs" />
     <Compile Include="Assets\Scripts\UI\Health\HealthIcon.cs" />
     <None Include="Assets\2D Free Platformer Char\2D Free Wolf\Atlas\Wolf.atlas.txt" />

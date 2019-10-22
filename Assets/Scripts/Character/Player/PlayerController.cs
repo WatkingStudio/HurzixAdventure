@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private PlayerAnimations m_Animator;
 	[SerializeField]
+	private PlayerCharacter m_PlayerCharacter;
+	[SerializeField]
 	private LevelItems m_CurrentLevelItems;
 
 	public void DisableMovement()
@@ -104,6 +106,11 @@ public class PlayerController : MonoBehaviour
 		{
 			//Reveal the closest item
 			m_CurrentLevelItems.RevealClosestItem(transform);
+		}
+
+		if(Input.GetButtonDown("Interact"))
+		{
+			m_PlayerCharacter.InteractWithObject();
 		}
 	}
 

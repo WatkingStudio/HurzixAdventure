@@ -34,8 +34,6 @@ public class PlayerCharacter : MonoBehaviour
 	private Collider2D m_InteractableCollider;
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
-	[SerializeField]
-	private GameObject m_ControlsUI;
 
 	public void OnHurt()
 	{
@@ -136,10 +134,5 @@ public class PlayerCharacter : MonoBehaviour
 				}
 			}
 		}
-	}
-	
-	public void ToggleControls()
-	{
-		m_ControlsUI.SetActive(!m_ControlsUI.activeSelf);
 	}
 }

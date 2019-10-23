@@ -33,8 +33,6 @@ public class PlayerController : MonoBehaviour
 	private PlayerAnimations m_Animator;
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
-	[SerializeField]
-	private LevelItems m_CurrentLevelItems;
 
 	public void DisableMovement()
 	{
@@ -102,21 +100,10 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if(Input.GetButtonDown("Reveal"))
-		{
-			//Reveal the closest item
-			m_CurrentLevelItems.RevealClosestItem(transform);
-		}
-
 		if(Input.GetButtonDown("Interact"))
 		{
 			m_PlayerCharacter.InteractWithObject();
-		}
-
-		if(Input.GetButtonDown("ToggleControls"))
-		{
-			m_PlayerCharacter.ToggleControls();
-		}
+		}		
 	}
 
 	//This function is used to apply any code to the player when they land

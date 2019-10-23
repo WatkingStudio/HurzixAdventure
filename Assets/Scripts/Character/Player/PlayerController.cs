@@ -112,6 +112,11 @@ public class PlayerController : MonoBehaviour
 		{
 			m_PlayerCharacter.InteractWithObject();
 		}
+
+		if(Input.GetButtonDown("ToggleControls"))
+		{
+			m_PlayerCharacter.ToggleControls();
+		}
 	}
 
 	//This function is used to apply any code to the player when they land

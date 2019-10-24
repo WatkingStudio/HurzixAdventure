@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Characters\Wolf\Scripts\AnimDemo.cs" />
+    <Compile Include="Assets\Scripts\Base Classes\Clickable.cs" />
+    <Compile Include="Assets\Scripts\Base Classes\InteractableObjects.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Actions\EnemyMoveAction.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BasicEnemy.cs" />
@@ -71,10 +73,10 @@
     <Compile Include="Assets\Scripts\Character\Player\PlayerAudio.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\ClickManager.cs" />
     <Compile Include="Assets\Scripts\Combat\Damageable.cs" />
     <Compile Include="Assets\Scripts\Combat\Damager.cs" />
-    <Compile Include="Assets\Scripts\Indicator.cs" />
-    <Compile Include="Assets\Scripts\InteractableObjects.cs" />
+    <Compile Include="Assets\Scripts\Interaction\NarratorClickable.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventorySlot.cs" />
@@ -84,6 +86,8 @@
     <Compile Include="Assets\Scripts\Level\LevelExitLock.cs" />
     <Compile Include="Assets\Scripts\Level\LevelItems.cs" />
     <Compile Include="Assets\Scripts\UI\Health\HealthIcon.cs" />
+    <Compile Include="Assets\Scripts\User\Indicator.cs" />
+    <Compile Include="Assets\Scripts\User\KeyManager.cs" />
     <None Include="Assets\Characters\Wolf\2D Free Wolf\Atlas\Wolf.atlas.txt" />
     <None Include="Assets\Characters\Wolf\2D Free Wolf\Spine\Spine 3.7.94\Wolf.atlas.txt" />
     <Reference Include="Unity.Timeline.Editor">

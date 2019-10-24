@@ -26,6 +26,13 @@ public class EnemyMoveAction : EnemyAction
 	[SerializeField]
 	private BasicEnemy m_BasicEnemy;
 
+	private EnemyAudio m_EnemyAudio;
+
+	private void Start()
+	{
+		m_EnemyAudio = m_BasicEnemy.GetComponent<EnemyAudio>();
+	}
+
 	public override void PerformAction()
 	{
 		if (!m_IsWalking)
@@ -46,6 +53,7 @@ public class EnemyMoveAction : EnemyAction
 			m_BasicEnemy.Flip();
 		}
 
+		m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 	}
 }

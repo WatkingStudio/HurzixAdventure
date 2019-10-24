@@ -11,6 +11,8 @@ public class LevelExit : InteractableObjects
 	private Inventory m_Inventory;
 	[SerializeField]
 	private Animator m_Animator;
+	[SerializeField]
+	private ItemAudio m_ItemAudio;
 
 	private int m_NumberOfLocks;
 	private int m_LocksOpened = 0;
@@ -49,5 +51,6 @@ public class LevelExit : InteractableObjects
 	public void UnlockDoor()
 	{
 		m_Animator.SetTrigger("Unlock");
+		m_ItemAudio.PlayAudioClip();
 	}
 }

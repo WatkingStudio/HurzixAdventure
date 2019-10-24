@@ -21,7 +21,9 @@ public class InventoryItem : Item
 	[SerializeField]
 	private CircleCollider2D m_Collider;
 	[SerializeField]
-	public Behaviour m_ItemHalo;
+	private Behaviour m_ItemHalo;
+	[SerializeField]
+	private ItemAudio m_ItemAudio;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -32,6 +34,8 @@ public class InventoryItem : Item
 			
 			if(inv.PickupItem(m_ItemType))
 			{
+				if (m_ItemAudio != null)
+					m_ItemAudio.PlayAudioClip();
 				if (m_DisableOnEnter)
 				{
 					gameObject.SetActive(false);

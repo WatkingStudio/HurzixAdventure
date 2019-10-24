@@ -29,6 +29,8 @@ public class CharacterMovement2D : MonoBehaviour
 	private Transform m_GroundCheck;
 	[SerializeField, Tooltip("A collider that will be disabled when crouching")]
 	private Collider2D m_CrouchDisableCollider;
+	[SerializeField]
+	private PlayerAudio m_PlayerAudio;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -151,6 +153,15 @@ public class CharacterMovement2D : MonoBehaviour
 				// ... flip the player.
 				Flip();
 			}
+
+			if(move != 0 && m_Grounded)
+			{
+				if (sprint)
+					m_PlayerAudio.PlaySprintAudioClip();
+				else
+					m_PlayerAudio.PlayWalkAudioClip();
+			}
+			
 		}
 		// If the player should jump...
 		if (m_Grounded && jump)
@@ -158,6 +169,7 @@ public class CharacterMovement2D : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_PlayerAudio.PlayJumpingAudioClip();
 		}
 	}
 

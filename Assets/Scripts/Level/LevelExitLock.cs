@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class LevelExitLock
+ * 
+ * \brief This class holds the code for a lock on the level exit
+ * 
+ * \date 2019/23/10
+ * 
+ */
 [RequireComponent(typeof(Animator))]
 public class LevelExitLock : MonoBehaviour
 {

@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class NarratorClickable
+ * 
+ * \brief This class holds the code for when a Narrator window is clicked
+ * 
+ * \date 2019/24/10
+ * 
+ */
 public class NarratorClickable : Clickable
 {
 	[SerializeField]

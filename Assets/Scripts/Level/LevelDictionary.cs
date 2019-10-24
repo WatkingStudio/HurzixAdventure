@@ -17,8 +17,10 @@ public class LevelDictionary : ScriptableObject
 	[System.Serializable]
 	public struct CollectableItems
 	{
-		[SerializeField] private Item.ItemType ItemType;
-		[SerializeField] private RuntimeAnimatorController AnimationController;
+		[SerializeField]
+		private Item.ItemType ItemType;
+		[SerializeField]
+		private RuntimeAnimatorController AnimationController;
 
 		public Item.ItemType GetItemType()
 		{

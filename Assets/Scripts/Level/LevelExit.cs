@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class LevelExit
+ * 
+ * \brief This class holds the code for the Level Exit.
+ * 
+ * \date 2019/23/10
+ * 
+ */
 [RequireComponent(typeof(Animator))]
 public class LevelExit : InteractableObjects
 {

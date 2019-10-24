@@ -30,6 +30,8 @@ public class EnemyMoveAction : EnemyAction
 
 	private void Start()
 	{
+		//This is done instead of assigning the value through a SerializeField to ensure it is the EnemyAudio script
+		// attached to the same GameObject as the BasicEnemy script
 		m_EnemyAudio = m_BasicEnemy.GetComponent<EnemyAudio>();
 	}
 

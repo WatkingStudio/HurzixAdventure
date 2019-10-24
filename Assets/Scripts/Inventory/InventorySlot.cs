@@ -14,9 +14,12 @@ using UnityEngine;
  */ 
 public class InventorySlot : MonoBehaviour
 {
-	[SerializeField] private Item.ItemType m_ItemName = Item.ItemType.None;
-	[SerializeField] private bool m_IsCollected = false;
-	[SerializeField] private Animator m_Animation;
+	[SerializeField]
+	private Item.ItemType m_ItemName = Item.ItemType.None;
+	[SerializeField]
+	private bool m_IsCollected = false;
+	[SerializeField]
+	private Animator m_Animation;
 
 	public Item.ItemType GetItemName()
 	{

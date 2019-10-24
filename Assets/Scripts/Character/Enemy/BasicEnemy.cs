@@ -5,7 +5,7 @@ using UnityEngine;
 /**
  * \class BasicEnemy
  * 
- * \brief This class hold the functionality for a basic enemy AI
+ * \brief This class holds the functionality for a basic enemy AI
  * 
  * \date 2019/15/10
  * 

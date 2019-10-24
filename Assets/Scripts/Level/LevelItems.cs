@@ -5,8 +5,11 @@ using UnityEngine;
 /**
  * \class LevelItems
  * 
- * \brief This class 
- */ 
+ * \brief This class holds the data for each item in the level.
+ * 
+ * \date 2019/15/10
+ * 
+ */
 public class LevelItems : MonoBehaviour
 {
 	[SerializeField, Tooltip("This is a list of items that can be collected on this level")]

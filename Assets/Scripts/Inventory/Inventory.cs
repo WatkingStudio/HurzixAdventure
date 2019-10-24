@@ -14,10 +14,13 @@ using UnityEngine.UI;
  */ 
 public class Inventory : MonoBehaviour
 {
-	[SerializeField, Tooltip("An Array of Inventory Slots for the Players Inventory")] private InventorySlot[] m_InventorySlots;
-	[SerializeField, Tooltip("A Scriptable Object that holds a Dictionary of Items and Animators for the Current Level")] private LevelDictionary m_LevelDictionary;
+	[SerializeField, Tooltip("An Array of Inventory Slots for the Players Inventory")]
+	private InventorySlot[] m_InventorySlots;
+	[SerializeField, Tooltip("A Scriptable Object that holds a Dictionary of Items and Animators for the Current Level")]
+	private LevelDictionary m_LevelDictionary;
 
-	[SerializeField, Tooltip("A Default Animator for Black Inventory Slots")] private RuntimeAnimatorController m_BlankInventorySlot;
+	[SerializeField, Tooltip("A Default Animator for Black Inventory Slots")]
+	private RuntimeAnimatorController m_BlankInventorySlot;
 
 	private int m_NumberUsedSlots = 0;
 

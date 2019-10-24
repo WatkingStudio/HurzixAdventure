@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class ClickManager
+ * 
+ * \brief This class holds the code from when the user clicks on the game.
+ * 
+ * \date 2019/23/10
+ * 
+ */
 public class ClickManager : MonoBehaviour
 {
     // Update is called once per frame

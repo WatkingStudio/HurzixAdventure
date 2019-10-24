@@ -5,13 +5,22 @@ using UnityEngine;
 /**
  * \class LevelItems
  * 
- * \brief This class 
- */ 
+ * \brief This class holds the data for each item in the level.
+ * 
+ * \date 2019/15/10
+ * 
+ */
 public class LevelItems : MonoBehaviour
 {
-	[SerializeField, Tooltip("This is a list of items that can be collected on this level")] private List<InventoryItem> m_CollectableItems;
+	[SerializeField, Tooltip("This is a list of items that can be collected on this level")]
+	private List<InventoryItem> m_CollectableItems;
 
-	[SerializeField] Inventory m_Inventory;
+	[SerializeField]
+	private Inventory m_Inventory;
+	[SerializeField]
+	private AudioSource m_AudioSource;
+	[SerializeField]
+	private AudioClip m_RevealAudioClip;
 
 	private void Start()
 	{
@@ -34,11 +43,15 @@ public class LevelItems : MonoBehaviour
 					shortestDistance = tempDistance;
 				}
 			}			
-		} 
+		}
 
 		//closestKey should now be revealed
-		if(closestKey > -1)
+		if (closestKey > -1)
+		{
 			m_CollectableItems[closestKey].RevealItem(playerTransform);
+			m_AudioSource.clip = m_RevealAudioClip;
+			m_AudioSource.Play();
+		}
 		
 	}
 }

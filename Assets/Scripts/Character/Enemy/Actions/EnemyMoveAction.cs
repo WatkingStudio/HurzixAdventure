@@ -26,6 +26,15 @@ public class EnemyMoveAction : EnemyAction
 	[SerializeField]
 	private BasicEnemy m_BasicEnemy;
 
+	private EnemyAudio m_EnemyAudio;
+
+	private void Start()
+	{
+		//This is done instead of assigning the value through a SerializeField to ensure it is the EnemyAudio script
+		// attached to the same GameObject as the BasicEnemy script
+		m_EnemyAudio = m_BasicEnemy.GetComponent<EnemyAudio>();
+	}
+
 	public override void PerformAction()
 	{
 		if (!m_IsWalking)
@@ -46,6 +55,7 @@ public class EnemyMoveAction : EnemyAction
 			m_BasicEnemy.Flip();
 		}
 
+		m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 	}
 }

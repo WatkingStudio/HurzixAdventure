@@ -25,6 +25,8 @@ public class InventoryItem : Item
 	[SerializeField]
 	private ItemAudio m_ItemAudio;
 
+	private bool m_HaloActive = false;
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		//Check if the colliding object is on an interactable layer
@@ -55,7 +57,8 @@ public class InventoryItem : Item
 		//This if statement will trigger if the sprite is visable on the Scene View
 		if (GetComponent<SpriteRenderer>().isVisible)
 		{
-			StartCoroutine(EnableHalo());
+			if(!m_HaloActive)
+				StartCoroutine(EnableHalo());
 		}
 		else
 		{
@@ -65,8 +68,10 @@ public class InventoryItem : Item
 
 	IEnumerator EnableHalo()
 	{
+		m_HaloActive = true;
 		m_ItemHalo.enabled = true;
 		yield return new WaitForSeconds(2f);
 		m_ItemHalo.enabled = false;
+		m_HaloActive = false;
 	}
 }

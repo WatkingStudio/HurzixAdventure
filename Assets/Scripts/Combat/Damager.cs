@@ -135,4 +135,23 @@ public class Damager : MonoBehaviour
 			}
 		}
 	}
+
+	private void OnDrawGizmos()
+	{
+		//Create the collision area
+		Vector2 scale = transform.lossyScale;
+		Vector2 scaledSize = Vector2.Scale(m_Size, scale);
+
+		Gizmos.color = new Color(1f, 0f, 0f, 1f);
+		Gizmos.DrawWireCube(transform.position + (Vector3)m_Offset, (Vector3)scaledSize);
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Vector2 scale = transform.lossyScale;
+		Vector2 scaledSize = Vector2.Scale(m_Size, scale);
+
+		Gizmos.color = new Color(0f, 1f, 0f, 1f);
+		Gizmos.DrawWireCube(transform.position + (Vector3)m_Offset, (Vector3)scaledSize);
+	}
 }

@@ -13,9 +13,9 @@ using UnityEngine;
 public class EnemyMoveAction : EnemyAction
 {
 	[SerializeField]
-	private Transform m_WaypointA;
+	public Vector3 m_WaypointA;
 	[SerializeField]
-	private Transform m_WaypointB;
+	public Vector3 m_WaypointB;
 	[SerializeField]
 	private float m_WalkSpeed = 2.0f;
 
@@ -44,12 +44,12 @@ public class EnemyMoveAction : EnemyAction
 		}
 
 		m_WalkAmount.x = m_WalkingDirection * m_WalkSpeed * Time.deltaTime;
-		if(m_BasicEnemy.transform.position.x > m_WaypointB.position.x)
+		if(m_BasicEnemy.transform.position.x > m_WaypointB.x)
 		{
 			m_WalkingDirection = -1.0f;
 			m_BasicEnemy.Flip();
 		}
-		else if(m_BasicEnemy.transform.position.x < m_WaypointA.position.x)
+		else if(m_BasicEnemy.transform.position.x < m_WaypointA.x)
 		{
 			m_WalkingDirection = 1.0f;
 			m_BasicEnemy.Flip();

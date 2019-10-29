@@ -125,7 +125,6 @@ public class PlayerCharacter : MonoBehaviour
 		contactFilter.useLayerMask = true;
 		contactFilter.useTriggers = true;
 		Physics2D.OverlapCollider(m_InteractableCollider, contactFilter, interactableColliders);
-		//Physics2D.OverlapCollider(test, contactFilter, interactableColliders);
 
 		if (interactableColliders.Count > 0)
 		{

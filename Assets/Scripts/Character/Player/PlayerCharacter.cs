@@ -35,6 +35,8 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
 
+	public Collider2D test;
+
 	public void OnHurt()
 	{
 		m_Damageable.EnableInvulnerability();
@@ -124,7 +126,7 @@ public class PlayerCharacter : MonoBehaviour
 		contactFilter.useTriggers = true;
 		Physics2D.OverlapCollider(m_InteractableCollider, contactFilter, interactableColliders);
 
-		if(interactableColliders.Count > 0)
+		if (interactableColliders.Count > 0)
 		{
 			foreach(Collider2D col in interactableColliders)
 			{

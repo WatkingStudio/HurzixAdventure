@@ -14,11 +14,13 @@ public class Indicator : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject m_IndicatorArrow;
+	[SerializeField]
+	private float m_IndicatorOffset = 0;
 
     public void DisplayIndicator(Transform itemTransform)
 	{
 		m_IndicatorArrow.gameObject.SetActive(true);
-		m_IndicatorArrow.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		m_IndicatorArrow.transform.position = new Vector3(transform.position.x, transform.position.y + m_IndicatorOffset, transform.position.z);
 
 		Vector3 vectorToTarget = itemTransform.position - m_IndicatorArrow.transform.position;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;

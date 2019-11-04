@@ -35,8 +35,6 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
 
-	public Collider2D test;
-
 	public void OnHurt()
 	{
 		m_Damageable.EnableInvulnerability();

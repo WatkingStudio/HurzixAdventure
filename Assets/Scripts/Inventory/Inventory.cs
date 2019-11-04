@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
 	{
 		foreach(InventorySlot slot in m_InventorySlots)
 		{
-			if(slot.GetItemName() == item)
+			if(slot.GetItemName() == item && !slot.IsItemCollected())
 			{
 				slot.PickupItem();
 				return true;

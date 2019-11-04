@@ -622,7 +622,6 @@ MonoBehaviour:
   m_InteractableLayers:
     serializedVersion: 2
     m_Bits: 512
-  test: {fileID: 0}
 --- !u!114 &1220962392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca70a5929e58984893898de5a85caca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 420
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_SprintSpeed: 1.5

@@ -19,6 +19,8 @@ public class KeyManager : MonoBehaviour
 	private LevelItems m_CurrentLevelItems;
 	[SerializeField]
 	private GameObject m_ControlsUI;
+	[SerializeField]
+	private GameObject m_Player;
 
 	// Update is called once per frame
 	void Update()
@@ -26,7 +28,7 @@ public class KeyManager : MonoBehaviour
         if(Input.GetButtonDown("Reveal"))
 		{
 			//Reveal the closest item
-			m_CurrentLevelItems.RevealClosestItem(transform);
+			m_CurrentLevelItems.RevealClosestItem(m_Player.transform);
 		}
 
 		if (Input.GetButtonDown("ToggleControls"))

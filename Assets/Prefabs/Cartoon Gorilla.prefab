@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9836affb32be3d64db9b607e063719b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WaypointA: {x: 0.20924747, y: 3.86, z: 0}
-  m_WaypointB: {x: 5.641117, y: 3.86, z: 0}
+  m_WaypointA: {x: 24.217192, y: 0.76, z: 0}
+  m_WaypointB: {x: 31.46, y: 0.76, z: 0}
   m_WalkSpeed: 2
   m_BasicEnemy: {fileID: 6140492739695814613}
 --- !u!1 &6140492738960627750

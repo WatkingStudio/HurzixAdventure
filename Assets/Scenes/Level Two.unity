@@ -827,26 +827,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
-        type: 3}
-      propertyPath: m_WaypointA.x
-      value: 24.217192
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
-        type: 3}
-      propertyPath: m_WaypointA.y
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
-        type: 3}
-      propertyPath: m_WaypointB.x
-      value: 31.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
-        type: 3}
-      propertyPath: m_WaypointB.y
-      value: 0.76
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840a2fa33eb0944448d1abefdcea508d, type: 3}
 --- !u!1 &285164783
@@ -6672,6 +6652,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_InventorySlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_InventorySlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 580086073}
+    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_InventorySlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 1617066589}
+    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_InventorySlots.Array.data[2]
+      value: 
+      objectReference: {fileID: 602526206}
     - target: {fileID: 4041067102700289770, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6752,26 +6752,6 @@ PrefabInstance:
       propertyPath: m_StartingPosition
       value: 
       objectReference: {fileID: 560703506}
-    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_InventorySlots.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_InventorySlots.Array.data[0]
-      value: 
-      objectReference: {fileID: 580086073}
-    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_InventorySlots.Array.data[1]
-      value: 
-      objectReference: {fileID: 1617066589}
-    - target: {fileID: 4042919603464420556, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_InventorySlots.Array.data[2]
-      value: 
-      objectReference: {fileID: 602526206}
     - target: {fileID: 4042919604613626676, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_IndicatorArrow

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 /**
  * \class Damager
  * 
- * \brief This class is for any GameObject that can deal damage.
+ * \brief This class is for any GameObject that can deal damage
  * 
  *  This class only holds the generic damager functions, if there are specific interactions with
  *   GameObject these should be called through the event system in the Inspector.
@@ -55,7 +55,7 @@ public class Damager : MonoBehaviour
 	// Set to whether the sprite was flipped by default
 	protected bool m_SpriteOriginallyFlipped;
 	// If set then this Damager can cause damage
-	protected bool m_CanDamage = true;
+	public bool m_CanDamage = true;
 	// Filter to restrict what gameobjects this Damager interacts with
 	protected ContactFilter2D m_AttackContactFilter;
 	// An array to store the colliders found in a collision
@@ -119,7 +119,7 @@ public class Damager : MonoBehaviour
 			//If the collided object has a Damageable component then deal damage
 			if(damageable)
 			{
-				if(m_ForceRespawn)
+				if (m_ForceRespawn)
 				{
 					damageable.RespawnTarget();
 					break;

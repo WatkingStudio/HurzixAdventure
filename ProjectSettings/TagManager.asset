@@ -16,7 +16,7 @@ TagManager:
   - Player
   - Interactable
   - Ground
-  - 
+  - Breakable
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tilemap
+    uniqueID: 3992586083
+    locked: 0
+  - name: Objects
+    uniqueID: 2640480793
+    locked: 0
+  - name: Characters
+    uniqueID: 1479753727
     locked: 0

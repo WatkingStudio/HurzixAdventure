@@ -12,18 +12,20 @@ using UnityEngine;
  */
 public class PlayerCharacter : MonoBehaviour
 {
-	[SerializeField]
-	private Damageable m_Damageable;
-	[SerializeField]
-	private PlayerAnimations m_Animator;
+	[Header("External Variables")]
 	[SerializeField]
 	private Transform m_ActiveCheckpoint;
 	[SerializeField]
 	private Transform m_StartingPosition;
 	[SerializeField]
-	private Rigidbody2D m_RigidBody2D;
-	[SerializeField]
 	private List<HealthIcon> m_HealthIcons;
+	[Header("Player Variables")]
+	[SerializeField]
+	private Damageable m_Damageable;
+	[SerializeField]
+	private PlayerAnimations m_Animator;
+	[SerializeField]
+	private Rigidbody2D m_RigidBody2D;
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
 	[SerializeField]

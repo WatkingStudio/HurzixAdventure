@@ -12,6 +12,7 @@ using UnityEngine;
  */ 
 public class PlayerAnimations : MonoBehaviour
 {
+	[Header("Animator Controllers")]
 	[SerializeField, Tooltip("The animator for the player while standing")]
 	private RuntimeAnimatorController m_StandingController;
 	[SerializeField, Tooltip("The animator for the player while crouching")]

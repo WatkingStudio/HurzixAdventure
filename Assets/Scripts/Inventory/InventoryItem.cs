@@ -13,13 +13,14 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class InventoryItem : Item
 {
+	[Header("Collision Variables")]
 	[SerializeField, Tooltip("Which layers this object should be able to collect this item")]
 	private LayerMask m_InteractableLayers;
 	[SerializeField, Tooltip("When this object is picked up should it be disabled")]
 	private bool m_DisableOnEnter = false;
-
 	[SerializeField]
 	private CircleCollider2D m_Collider;
+	[Space]
 	[SerializeField]
 	private Behaviour m_ItemHalo;
 	[SerializeField]

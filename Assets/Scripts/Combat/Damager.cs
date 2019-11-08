@@ -27,16 +27,16 @@ public class Damager : MonoBehaviour
 	public Collider2D LastHit { get { return m_LastHit; } }
 	public int Damage { get { return m_Damage; } }
 
-	[SerializeField]
+	[SerializeField, Tooltip("How much damage this object deals each hit")]
 	private int m_Damage = 1;
+	[Header("Collision Box")]
 	[SerializeField]
 	private Vector2 m_Offset = new Vector2(1.5f, 1f);
 	[SerializeField, Tooltip("The size of the damage collision box")]
 	private Vector2 m_Size = new Vector2(2.5f, 1f);
 	[SerializeField, Tooltip("If set to true, the offset will take into account the facing of the sprite")]
 	private bool m_OffsetBaseOnSpriteFacing = true;
-	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by m_OffsetBasedOnSpriteFacing")]
-	private SpriteRenderer m_SpriteRenderer;
+	[Header("Damage Checks")]
 	[SerializeField, Tooltip("If disabled, will ignore triggers when applying damage")]
 	private bool m_CanHitTriggers;
 	[SerializeField]
@@ -47,6 +47,10 @@ public class Damager : MonoBehaviour
 	private bool m_IgnoreInvincibility = false;
 	[SerializeField, Tooltip("The layers which this Damager can interact with")]
 	private LayerMask m_HittableLayers;
+	[Header("Misc")]
+	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by m_OffsetBasedOnSpriteFacing")]
+	private SpriteRenderer m_SpriteRenderer;
+	[Header("Events")]
 	[SerializeField]
 	private DamagableEvent m_OnDamageableHit;
 	[SerializeField]

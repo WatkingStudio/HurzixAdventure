@@ -35,12 +35,14 @@ public class Damageable : MonoBehaviour
 
 	[SerializeField, Tooltip("The starting health of this character")]
 	private int m_StartingHealth = 5;
+	[Header("Damage Effects")]
 	[SerializeField, Tooltip("True if after taking damage from a source this character should be invulverable for a duration")]
 	private bool m_InvulverableAfterDamage = true;
 	[SerializeField, Tooltip("The duration that the character will be invulnerable for")]
 	private float m_InvulnerableDuration = 3f;
 	[SerializeField, Tooltip("If true then when the character dies the gameobject will be disabled")]
 	private bool m_DisableOnDeath = true;
+	[Header("Events")]
 	[SerializeField]
 	private HeathEvent m_OnHeathSet;
 	[SerializeField]

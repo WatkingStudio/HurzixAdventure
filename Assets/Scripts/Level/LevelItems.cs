@@ -15,8 +15,11 @@ public class LevelItems : MonoBehaviour
 	[SerializeField, Tooltip("This is a list of items that can be collected on this level")]
 	private List<InventoryItem> m_CollectableItems;
 
+	[Space]
 	[SerializeField]
 	private Inventory m_Inventory;
+
+	[Header("Audio")]
 	[SerializeField]
 	private AudioSource m_AudioSource;
 	[SerializeField]

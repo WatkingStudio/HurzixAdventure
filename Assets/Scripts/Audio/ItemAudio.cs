@@ -12,6 +12,7 @@ using UnityEngine;
  */
 public class ItemAudio : MonoBehaviour
 {
+	[Header("Audio")]
 	[SerializeField]
 	private AudioSource m_AudioSource;
 	[SerializeField]

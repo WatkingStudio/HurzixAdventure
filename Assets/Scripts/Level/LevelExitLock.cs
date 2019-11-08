@@ -15,6 +15,8 @@ public class LevelExitLock : MonoBehaviour
 {
 	[SerializeField]
 	private Animator m_LockAnimator;
+	[SerializeField]
+	private AnimationClip m_LockOpeningClip;
 
 	private bool m_IsLocked = true;
 
@@ -29,14 +31,13 @@ public class LevelExitLock : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Lock already unlocked");
 			return false;
 		}
 	}
 
 	IEnumerator DisableLock()
 	{
-		yield return new WaitForSeconds(1.15f);
+		yield return new WaitForSeconds(m_LockOpeningClip.length + 0.2f);
 		gameObject.SetActive(false);
 	}
 

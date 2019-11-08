@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 4042919604207388735}
   - component: {fileID: 4042919604207388732}
   - component: {fileID: 4042919604190805354}
+  - component: {fileID: 5162959369193355656}
   m_Layer: 8
   m_Name: Wolf
   m_TagString: Untagged
@@ -707,8 +708,8 @@ MonoBehaviour:
   m_RunSpeed: 30
   m_Animator: {fileID: 4042919604119968770}
   m_PlayerCharacter: {fileID: 4042919604207388721}
-  m_Damager: {fileID: 0}
-  m_AttackTimer: 0.1
+  m_Damager: {fileID: 5162959369193355656}
+  m_AttackClip: {fileID: 7400000, guid: cc5b565e0f30051449bc1b8fd864ad8b, type: 2}
 --- !u!114 &4042919604207388732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,3 +818,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5162959369193355656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043183952868579352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3045742284429ae4180c70792698482d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_Offset: {x: 0.09, y: 0.02}
+  m_Size: {x: 0.57, y: 1}
+  m_OffsetBaseOnSpriteFacing: 1
+  m_SpriteRenderer: {fileID: 0}
+  m_CanHitTriggers: 0
+  m_DisableDamageAfterHit: 1
+  m_ForceRespawn: 0
+  m_IgnoreInvincibility: 0
+  m_HittableLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_OnDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damager+DamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_OnNonDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_CanDamage: 0

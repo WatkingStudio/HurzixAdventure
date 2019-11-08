@@ -707,6 +707,8 @@ MonoBehaviour:
   m_RunSpeed: 30
   m_Animator: {fileID: 4042919604119968770}
   m_PlayerCharacter: {fileID: 4042919604207388721}
+  m_Damager: {fileID: 0}
+  m_AttackTimer: 0.1
 --- !u!114 &4042919604207388732
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -172,12 +172,12 @@ PrefabInstance:
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.11
+      value: 28.62
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.04
+      value: 10.13
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -277,6 +277,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_CanDamage: 0
 --- !u!1 &91109863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,7 +1474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601871451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2740374, y: 3.623873, z: -10}
+  m_LocalPosition: {x: 28.845976, y: 12.363873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2106,6 +2107,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_CanDamage: 1
 --- !u!1 &890721078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,6 +6524,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_CanDamage: 1
 --- !u!4 &1449666096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3052534148601126202, guid: 5b36abb1cc7a52a4d9133c230b4a4e27,
@@ -6790,12 +6793,12 @@ PrefabInstance:
     - target: {fileID: 4041067102700289770, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.18
+      value: 28.94
       objectReference: {fileID: 0}
     - target: {fileID: 4041067102700289770, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7
+      value: 11.44
       objectReference: {fileID: 0}
     - target: {fileID: 4041067102700289770, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
@@ -6892,11 +6895,21 @@ PrefabInstance:
       propertyPath: m_IndicatorArrow
       value: 
       objectReference: {fileID: 1026986924}
+    - target: {fileID: 4127640651647903590, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
     - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_Damager
       value: 
       objectReference: {fileID: 84921992}
+    - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_AttackTimer
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a1f65ac17a6534083d8b544daa2526, type: 3}
 --- !u!224 &1617066585 stripped
@@ -7017,12 +7030,12 @@ PrefabInstance:
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.71
+      value: 27.82
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.01
+      value: 10.1
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -7259,12 +7272,12 @@ PrefabInstance:
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.57
+      value: 29.39
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523008, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -7665,7 +7678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122812828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2740374, y: 3.623873, z: -10}
+  m_LocalPosition: {x: 28.845976, y: 12.363873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 983036882}
@@ -7872,6 +7885,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_CanDamage: 1
 --- !u!1 &2138235508
 GameObject:
   m_ObjectHideFlags: 0

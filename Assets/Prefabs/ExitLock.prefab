@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 6341359481211311699}
   - component: {fileID: 6341359481211311710}
   - component: {fileID: 6341359481211311709}
+  - component: {fileID: 7894960369271446172}
   m_Layer: 0
-  m_Name: Lock_0
+  m_Name: ExitLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LockAnimator: {fileID: 6341359481211311709}
   m_LockOpeningClip: {fileID: 7400000, guid: 07ada340d1da0464e8ab7464b43347ed, type: 2}
+  m_ItemAudio: {fileID: 7894960369271446172}
 --- !u!95 &6341359481211311709
 Animator:
   serializedVersion: 3
@@ -114,3 +116,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7894960369271446172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341359481211311698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b880c7f61ffa26242b4375ac3e31f4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioSource: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: f2ad5fb0d0d90c14ebcecb26f297505c, type: 3}

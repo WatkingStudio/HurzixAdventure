@@ -17,6 +17,8 @@ public class LevelExitLock : MonoBehaviour
 	private Animator m_LockAnimator;
 	[SerializeField]
 	private AnimationClip m_LockOpeningClip;
+	[SerializeField]
+	private ItemAudio m_ItemAudio;
 
 	private bool m_IsLocked = true;
 
@@ -37,6 +39,7 @@ public class LevelExitLock : MonoBehaviour
 
 	IEnumerator DisableLock()
 	{
+		m_ItemAudio.PlayAudioClip();
 		yield return new WaitForSeconds(m_LockOpeningClip.length + 0.2f);
 		gameObject.SetActive(false);
 	}

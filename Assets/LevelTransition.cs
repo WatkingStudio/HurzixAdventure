@@ -4,6 +4,14 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
+/**
+ * \class LevelTransition
+ * 
+ * \brief This class is used handle the transition between two levels in the game.
+ * 
+ * \date 2019/08/11
+ * 
+ */
 public class LevelTransition : MonoBehaviour
 {
 	[Serializable]

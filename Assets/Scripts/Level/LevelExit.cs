@@ -36,6 +36,7 @@ public class LevelExit : InteractableObjects
 
 	private int m_NumberOfLocks;
 	private int m_LocksOpened = 0;
+	private float m_ClipLengthExtraDelay = 0.2f;
 
 	public void Start()
 	{
@@ -77,7 +78,7 @@ public class LevelExit : InteractableObjects
 
 	IEnumerator WaitForDoorToOpen()
 	{
-		yield return new WaitForSeconds(m_ExitDoorOpeningClip.length + 0.2f);
+		yield return new WaitForSeconds(m_ExitDoorOpeningClip.length + m_ClipLengthExtraDelay);
 		m_DoorUnlockedEvent.Invoke(this);
 	}
 }

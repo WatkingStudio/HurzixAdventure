@@ -21,6 +21,7 @@ public class LevelExitLock : MonoBehaviour
 	private ItemAudio m_ItemAudio;
 
 	private bool m_IsLocked = true;
+	private float m_ClipLengthExtraDelay = 0.2f;
 
 	public bool Unlock()
 	{
@@ -40,7 +41,7 @@ public class LevelExitLock : MonoBehaviour
 	IEnumerator DisableLock()
 	{
 		m_ItemAudio.PlayAudioClip();
-		yield return new WaitForSeconds(m_LockOpeningClip.length + 0.2f);
+		yield return new WaitForSeconds(m_LockOpeningClip.length + m_ClipLengthExtraDelay);
 		gameObject.SetActive(false);
 	}
 

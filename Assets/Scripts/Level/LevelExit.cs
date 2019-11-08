@@ -22,15 +22,19 @@ public class LevelExit : InteractableObjects
 
 	[SerializeField]
 	private List<LevelExitLock> m_DoorLocks;
+	[Space]
 	[SerializeField]
 	private Inventory m_Inventory;
 	[SerializeField]
-	private Animator m_Animator;
-	[SerializeField]
 	private ItemAudio m_ItemAudio;
+
+	[Header("Animation")]
+	[SerializeField]
+	private Animator m_Animator;
 	[SerializeField]
 	private AnimationClip m_ExitDoorOpeningClip;
 
+	[Header("Events")]
 	[SerializeField]
 	private DoorUnlockedEvent m_DoorUnlockedEvent;
 

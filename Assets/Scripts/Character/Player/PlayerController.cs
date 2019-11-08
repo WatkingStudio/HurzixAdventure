@@ -12,14 +12,13 @@ using UnityEngine;
  */
 public class PlayerController : MonoBehaviour
 {
-	//The controller for the player
+	[Header("Movement")]
 	[SerializeField]
 	private CharacterMovement2D m_Movement;
 	[SerializeField] 
 	private LayerMask m_WhatIsGround;
 	[SerializeField] 
 	private Transform m_CeilingCheck;
-
 	[SerializeField]
 	private float m_RunSpeed = 40f;
 
@@ -29,13 +28,15 @@ public class PlayerController : MonoBehaviour
 	private bool m_Sprint = false;
 	private bool m_DisableMovement = false;
 
-	[SerializeField]
-	private PlayerAnimations m_Animator;
+	[Header("Misc")]
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
 	[SerializeField]
 	private Damager m_Damager;
 
+	[Header("Animation")]
+	[SerializeField]
+	private PlayerAnimations m_Animator;
 	[SerializeField]
 	private AnimationClip m_AttackClip;
 

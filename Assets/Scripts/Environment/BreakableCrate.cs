@@ -13,15 +13,17 @@ using UnityEngine;
 public class BreakableCrate : MonoBehaviour
 {
 	[SerializeField]
-	private Animator m_Animator;
-	[SerializeField]
-	private Damageable m_Damageable;
-	[SerializeField]
 	private int m_CrateHealth = 3;
+	[SerializeField]
+	private float m_DespawnTimer = 1f;
+
+	[Header("Self Variables")]
 	[SerializeField]
 	private Collider2D m_Collider2D;
 	[SerializeField]
-	private float m_DespawnTimer = 1f;
+	private Animator m_Animator;
+	[SerializeField]
+	private Damageable m_Damageable;
 
 	private void Start()
 	{

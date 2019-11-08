@@ -13,6 +13,7 @@ using UnityEngine.Events;
  */
 public class CharacterMovement2D : MonoBehaviour
 {
+	[Header("Movement Variables")]
 	[SerializeField, Tooltip("Amount of force added when the player jumps")]
 	private float m_JumpForce = 400f;
 	[Range(0, 1)] [SerializeField, Tooltip("Amount of maxSpeed applied to crouching movement. 1 = 100%")]
@@ -23,12 +24,14 @@ public class CharacterMovement2D : MonoBehaviour
 	private float m_SprintSpeed = 1.5f;
 	[SerializeField, Tooltip("Whether or not a player can steer while jumping")] 
 	private bool m_AirControl = false;
+	[Header("Collider Variables")]
 	[SerializeField, Tooltip("A mask determining what is ground to the character")]
 	private LayerMask m_WhatIsGround;
 	[SerializeField, Tooltip("A position marking where to check if the player is grounded")]
 	private Transform m_GroundCheck;
 	[SerializeField, Tooltip("A collider that will be disabled when crouching")]
 	private Collider2D m_CrouchDisableCollider;
+	[Header("Misc")]
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
 

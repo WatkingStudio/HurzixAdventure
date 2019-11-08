@@ -12,14 +12,14 @@ using UnityEngine;
  */
 public class BasicEnemy : MonoBehaviour
 {
-	const float k_SpriteFlipOffset = .5f;
-	private bool m_FacingRight = true;
-
 	[SerializeField]
 	private Animator m_Animator;
-	private EnemyAction m_ActiveAction;
 	[SerializeField, Tooltip("Which actions are available to this enemy")]
 	private List<EnemyAction.Actions> m_AvailableActions;
+
+	private EnemyAction m_ActiveAction;
+	const float k_SpriteFlipOffset = .5f;
+	private bool m_FacingRight = true;
 
 	private void Start()
 	{

@@ -14,20 +14,21 @@ public class PlayerAudio : MonoBehaviour
 {
 	[SerializeField]
 	private AudioSource m_AudioSource;
+	[Header("Audio Clips")]
 	[SerializeField]
 	private AudioClip m_HurtAudioClip;
 	[SerializeField]
 	private AudioClip m_DeathAudioClip;
+	[SerializeField]
+	private AudioClip m_JumpAudioClip;
+	[SerializeField]
+	private AudioClip m_IndicatorAudioClip;
 	[SerializeField]
 	private List<AudioClip> m_WalkingGrass;
 	[SerializeField]
 	private List<AudioClip> m_SprintingGrass;
 	[SerializeField]
 	private List<AudioClip> m_LandingGrass;
-	[SerializeField]
-	private AudioClip m_JumpAudioClip;
-	[SerializeField]
-	private AudioClip m_IndicatorAudioClip;
 
 	public void PlayHurtAudioClip()
 	{

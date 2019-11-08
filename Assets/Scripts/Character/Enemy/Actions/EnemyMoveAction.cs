@@ -12,20 +12,20 @@ using UnityEngine;
  */
 public class EnemyMoveAction : EnemyAction
 {
+	[Header("Waypoints")]
 	[SerializeField]
 	public Vector3 m_WaypointA;
 	[SerializeField]
 	public Vector3 m_WaypointB;
+	[Header("Enemy Data")]
 	[SerializeField]
 	private float m_WalkSpeed = 2.0f;
+	[SerializeField]
+	private BasicEnemy m_BasicEnemy;
 
 	private Vector3 m_WalkAmount;
 	private float m_WalkingDirection = 1.0f;
 	private bool m_IsWalking = false;
-
-	[SerializeField]
-	private BasicEnemy m_BasicEnemy;
-
 	private EnemyAudio m_EnemyAudio;
 
 	private void Start()

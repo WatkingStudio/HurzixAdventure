@@ -35,19 +35,23 @@ public class InventoryItem : Item
 		{
 			Inventory inv = collision.GetComponentInChildren<Inventory>();
 			
-			if(inv.PickupItem(m_ItemType))
+			if(inv != null)
 			{
-				if (m_ItemAudio != null)
-					m_ItemAudio.PlayAudioClip();
-				if (m_DisableOnEnter)
+				if (inv.PickupItem(m_ItemType))
 				{
-					gameObject.SetActive(false);
+					if (m_ItemAudio != null)
+						m_ItemAudio.PlayAudioClip();
+					if (m_DisableOnEnter)
+					{
+						gameObject.SetActive(false);
+					}
+				}
+				else
+				{
+					Debug.Log("Item Could Not be Picked Up!");
 				}
 			}
-			else
-			{
-				Debug.Log("Item Could Not be Picked Up!");
-			}			
+						
 		}
 	}
 

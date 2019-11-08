@@ -39,6 +39,7 @@ public class CharacterMovement2D : MonoBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	const float k_SpriteFlipOffset = .5f;
+	const float k_CrouchSoruteFlipOffset = -.5f;
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -148,13 +149,19 @@ public class CharacterMovement2D : MonoBehaviour
 			if (move > 0 && !m_FacingRight)
 			{
 				// ... flip the player.
-				Flip();
+				if (!crouch)
+					Flip(k_SpriteFlipOffset);
+				else
+					Flip(k_CrouchSoruteFlipOffset);
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
 			else if (move < 0 && m_FacingRight)
 			{
 				// ... flip the player.
-				Flip();
+				if (!crouch)
+					Flip(k_SpriteFlipOffset);
+				else
+					Flip(k_CrouchSoruteFlipOffset);
 			}
 
 			if(move != 0 && m_Grounded)
@@ -176,7 +183,7 @@ public class CharacterMovement2D : MonoBehaviour
 		}
 	}
 
-	private void Flip()
+	private void Flip(float xOffset)
 	{
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
@@ -190,9 +197,9 @@ public class CharacterMovement2D : MonoBehaviour
 		//This is an issue with the sprite and could be fixed by editing the sprite.
 		Vector3 pos = transform.localPosition;
 		if (!m_FacingRight)
-			pos.x -= k_SpriteFlipOffset;
+			pos.x -= xOffset;
 		else
-			pos.x += k_SpriteFlipOffset;
+			pos.x += xOffset;
 		transform.localPosition = pos;			
 	}
 

@@ -60,6 +60,11 @@ public class PlayerCharacter : MonoBehaviour
 		Respawn(true, resetHealth);
 	}
 
+	public void SetColliders(Collider2D circle)
+	{
+		m_InteractableCollider = circle;
+	}
+
 	public void DamageTaken()
 	{
 		m_Animator.PlayerHurt();

@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 16.4, y: 1}
   m_OffsetBaseOnSpriteFacing: 1
-  m_SpriteRenderer: {fileID: 122284225}
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
   m_ForceRespawn: 1
@@ -244,6 +243,7 @@ MonoBehaviour:
   m_HittableLayers:
     serializedVersion: 2
     m_Bits: 256
+  m_SpriteRenderer: {fileID: 122284225}
   m_OnDamageableHit:
     m_PersistentCalls:
       m_Calls: []
@@ -3994,6 +3994,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8587146516948647221, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4043183952868579352, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_Name
@@ -4094,6 +4099,31 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
+    - target: {fileID: 4042919604207388733, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388730, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388731, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_WallCheck.y
+      value: 2.3146944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_WallCheck.x
+      value: -6.6502256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a1f65ac17a6534083d8b544daa2526, type: 3}
 --- !u!1 &1410739368
@@ -5662,6 +5692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaypointB.y
       value: 3.7638786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492739695814609, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840a2fa33eb0944448d1abefdcea508d, type: 3}

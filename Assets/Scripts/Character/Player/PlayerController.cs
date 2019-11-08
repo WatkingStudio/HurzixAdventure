@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
 	private CharacterMovement2D m_Movement;
 	[SerializeField] 
 	private LayerMask m_WhatIsGround;
-	[SerializeField] 
-	private Transform m_CeilingCheck;
+	[Tooltip("This transform is used to check if the player can stand or if the ceiling is too low.")] 
+	public Transform m_CeilingCheck;
+	[Tooltip("This transform is used to check if the player can crouch or if a wall is too close.")]
+	public Transform m_WallCheck;
 	[SerializeField]
 	private float m_RunSpeed = 40f;
 
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
 	private bool m_Crouch = false;
 	private bool m_Sprint = false;
 	private bool m_DisableMovement = false;
+
+	[Header("Colliders")]
+	[SerializeField, Tooltip("The box collider for the player while standing")]
+	private BoxCollider2D m_StandingBoxCollider;
+	[SerializeField, Tooltip("The box collider for the player while crouching")]
+	private BoxCollider2D m_CrouchingBoxCollider;
+	[SerializeField, Tooltip("The circle collider for the player while standing")]
+	private CircleCollider2D m_StandingCircleCollider;
 
 	[Header("Misc")]
 	[SerializeField]
@@ -98,8 +108,12 @@ public class PlayerController : MonoBehaviour
 			//Crouch
 			if(!m_Crouch)
 			{
-				m_Animator.PlayerCrouching(true);
-				m_Crouch = true;
+				if(!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
+				{
+					m_Animator.PlayerCrouching(true);
+					m_Crouch = true;
+					SetCollidersCrouch();
+				}				
 			}
 			//Stand Up
 			else
@@ -108,6 +122,7 @@ public class PlayerController : MonoBehaviour
 				{
 					m_Animator.PlayerCrouching(false);
 					m_Crouch = false;
+					SetCollidersStand();
 				}			
 			}
 		}
@@ -151,4 +166,26 @@ public class PlayerController : MonoBehaviour
 		m_Damager.DisableDamage();
 		m_IsAttacking = false;
 	}
+
+	private void SetCollidersCrouch()
+	{
+		m_CrouchingBoxCollider.enabled = true;
+
+		m_StandingBoxCollider.enabled = false;
+		m_StandingCircleCollider.enabled = false;
+
+		m_PlayerCharacter.SetColliders(m_CrouchingBoxCollider);
+	}
+
+	private void SetCollidersStand()
+	{
+		m_StandingBoxCollider.enabled = true;
+		m_StandingCircleCollider.enabled = true;
+
+		m_CrouchingBoxCollider.enabled = false;
+
+		m_PlayerCharacter.SetColliders(m_StandingCircleCollider);
+	}
+
+
 }

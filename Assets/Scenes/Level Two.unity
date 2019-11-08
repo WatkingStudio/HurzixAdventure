@@ -277,7 +277,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_CanDamage: 0
 --- !u!1 &91109863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601871451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2741404, y: 3.623873, z: -10}
+  m_LocalPosition: {x: -7.2740374, y: 3.623873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2107,7 +2106,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_CanDamage: 1
 --- !u!1 &890721078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,7 +6522,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_CanDamage: 1
 --- !u!4 &1449666096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3052534148601126202, guid: 5b36abb1cc7a52a4d9133c230b4a4e27,
@@ -7668,7 +7665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122812828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2741404, y: 3.623873, z: -10}
+  m_LocalPosition: {x: -7.2740374, y: 3.623873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 983036882}
@@ -7875,7 +7872,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  m_CanDamage: 1
 --- !u!1 &2138235508
 GameObject:
   m_ObjectHideFlags: 0

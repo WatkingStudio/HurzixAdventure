@@ -12,6 +12,8 @@ public class BreakableCrate : MonoBehaviour
 	private int m_CrateHealth = 3;
 	[SerializeField]
 	private Collider2D m_Collider2D;
+	[SerializeField]
+	private float m_DespawnTimer = 1f;
 
 	private void Start()
 	{
@@ -31,7 +33,7 @@ public class BreakableCrate : MonoBehaviour
 
 	IEnumerator DespawnCrate()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(m_DespawnTimer);
 		gameObject.SetActive(false);
 	}
 }

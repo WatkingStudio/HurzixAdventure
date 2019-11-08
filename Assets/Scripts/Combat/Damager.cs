@@ -55,7 +55,7 @@ public class Damager : MonoBehaviour
 	// Set to whether the sprite was flipped by default
 	protected bool m_SpriteOriginallyFlipped;
 	// If set then this Damager can cause damage
-	public bool m_CanDamage = true;
+	protected bool m_CanDamage = true;
 	// Filter to restrict what gameobjects this Damager interacts with
 	protected ContactFilter2D m_AttackContactFilter;
 	// An array to store the colliders found in a collision

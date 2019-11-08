@@ -36,7 +36,7 @@ public class LevelExit : InteractableObjects
 		{
 			foreach (LevelExitLock exitLock in m_DoorLocks)
 			{
-				if (exitLock.Unlock())
+				if (exitLock.Unlock() && !exitLock.IsLocked())
 				{
 					m_LocksOpened++;
 					m_Inventory.DropItem(Item.ItemType.Key);

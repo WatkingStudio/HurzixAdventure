@@ -67,8 +67,8 @@ public class Inventory : MonoBehaviour
 		//If item collected return true.
 		foreach(InventorySlot slot in m_InventorySlots)
 		{
-			if (slot.GetItemName() == item)
-				return slot.IsItemCollected();
+			if (slot.GetItemName() == item && slot.IsItemCollected())
+				return true;
 		}
 
 		return false;
@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour
 	{
 		foreach(InventorySlot slot in m_InventorySlots)
 		{
-			if(slot.GetItemName() == item)
+			if(slot.GetItemName() == item && slot.IsItemCollected())
 			{
 				slot.DropItem();
 				return true;

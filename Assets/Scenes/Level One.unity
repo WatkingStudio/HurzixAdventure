@@ -254,6 +254,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_CanDamage: 1
 --- !u!212 &122284225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5431,7 +5432,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Inventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1947009433}
     - target: {fileID: 2445227939910328130, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
       propertyPath: m_AudioSource

@@ -39,4 +39,9 @@ public class LevelExitLock : MonoBehaviour
 		yield return new WaitForSeconds(1.15f);
 		gameObject.SetActive(false);
 	}
+
+	public bool IsLocked()
+	{
+		return m_IsLocked;
+	}
 }

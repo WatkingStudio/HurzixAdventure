@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
 
 /**
  * \class LevelExit
@@ -11,8 +13,13 @@ using UnityEngine;
  * 
  */
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(LevelTransition))]
 public class LevelExit : InteractableObjects
 {
+	[Serializable]
+	public class DoorUnlockedEvent : UnityEvent<LevelExit>
+	{ }
+
 	[SerializeField]
 	private List<LevelExitLock> m_DoorLocks;
 	[SerializeField]
@@ -21,9 +28,15 @@ public class LevelExit : InteractableObjects
 	private Animator m_Animator;
 	[SerializeField]
 	private ItemAudio m_ItemAudio;
+	[SerializeField]
+	private AnimationClip m_ExitDoorOpeningClip;
+
+	[SerializeField]
+	private DoorUnlockedEvent m_DoorUnlockedEvent;
 
 	private int m_NumberOfLocks;
 	private int m_LocksOpened = 0;
+	private float m_ClipLengthExtraDelay = 0.2f;
 
 	public void Start()
 	{
@@ -60,5 +73,12 @@ public class LevelExit : InteractableObjects
 	{
 		m_Animator.SetTrigger("Unlock");
 		m_ItemAudio.PlayAudioClip();
+		StartCoroutine(WaitForDoorToOpen());
+	}
+
+	IEnumerator WaitForDoorToOpen()
+	{
+		yield return new WaitForSeconds(m_ExitDoorOpeningClip.length + m_ClipLengthExtraDelay);
+		m_DoorUnlockedEvent.Invoke(this);
 	}
 }

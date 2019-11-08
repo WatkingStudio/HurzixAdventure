@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 	private Damager m_Damager;
 
 	[SerializeField]
-	private float m_AttackTimer = 0.1f;
+	private AnimationClip m_AttackClip;
 
 	private bool m_IsAttacking = false;
 
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
 	{
 		m_IsAttacking = true;
 		m_Damager.EnableDamage();
-		yield return new WaitForSeconds(m_AttackTimer);
+		yield return new WaitForSeconds(m_AttackClip.length);
 		m_Damager.DisableDamage();
 		m_IsAttacking = false;
 	}

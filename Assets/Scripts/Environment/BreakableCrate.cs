@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class BreakableCrate
+ * 
+ * \brief This class holds the functionality for a breakable crate.
+ * 
+ * \date 2019/08/11
+ * 
+ */
 public class BreakableCrate : MonoBehaviour
 {
 	[SerializeField]

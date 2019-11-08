@@ -5,7 +5,7 @@ using UnityEngine.Events;
 /**
  * \class Damager
  * 
- * \brief This class is for any GameObject that can deal damage.
+ * \brief This class is for any GameObject that can deal damage
  * 
  *  This class only holds the generic damager functions, if there are specific interactions with
  *   GameObject these should be called through the event system in the Inspector.
@@ -119,7 +119,7 @@ public class Damager : MonoBehaviour
 			//If the collided object has a Damageable component then deal damage
 			if(damageable)
 			{
-				if(m_ForceRespawn)
+				if (m_ForceRespawn)
 				{
 					damageable.RespawnTarget();
 					break;

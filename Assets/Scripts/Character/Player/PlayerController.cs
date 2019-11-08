@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
 	private PlayerAnimations m_Animator;
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
+	[SerializeField]
+	private Damager m_Damager;
+
+	[SerializeField]
+	private float m_AttackTimer = 0.1f;
 
 	public void DisableMovement()
 	{
@@ -71,6 +76,7 @@ public class PlayerController : MonoBehaviour
 		if(Input.GetButtonDown("Attack"))
 		{
 			m_Animator.PlayerAttack();
+			StartCoroutine(AttackTimer());
 		}
 
 		if(Input.GetButtonDown("Jump"))
@@ -129,5 +135,12 @@ public class PlayerController : MonoBehaviour
 		//Move character
 		m_Movement.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);
 		m_Jump = false;
+	}
+
+	IEnumerator AttackTimer()
+	{
+		m_Damager.EnableDamage();
+		yield return new WaitForSeconds(m_AttackTimer);
+		m_Damager.DisableDamage();
 	}
 }

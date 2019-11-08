@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private float m_AttackTimer = 0.1f;
 
+	private bool m_IsAttacking = false;
+
 	public void DisableMovement()
 	{
 		m_DisableMovement = true;
@@ -75,8 +77,11 @@ public class PlayerController : MonoBehaviour
 
 		if(Input.GetButtonDown("Attack"))
 		{
-			m_Animator.PlayerAttack();
-			StartCoroutine(AttackTimer());
+			if(!m_IsAttacking)
+			{
+				m_Animator.PlayerAttack();
+				StartCoroutine(AttackTimer());
+			}			
 		}
 
 		if(Input.GetButtonDown("Jump"))
@@ -139,8 +144,10 @@ public class PlayerController : MonoBehaviour
 
 	IEnumerator AttackTimer()
 	{
+		m_IsAttacking = true;
 		m_Damager.EnableDamage();
 		yield return new WaitForSeconds(m_AttackTimer);
 		m_Damager.DisableDamage();
+		m_IsAttacking = false;
 	}
 }

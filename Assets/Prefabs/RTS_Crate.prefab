@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Damageable: {fileID: 491974886875920064}
   m_CrateHealth: 3
   m_Collider2D: {fileID: 1449666097}
+  m_DespawnTimer: 1
 --- !u!114 &491974886875920064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHealth: 3
   m_InvulverableAfterDamage: 1
-  m_InvulnerableDuration: 0.5
+  m_InvulnerableDuration: 1
   m_DisableOnDeath: 0
   m_OnHeathSet:
     m_PersistentCalls:

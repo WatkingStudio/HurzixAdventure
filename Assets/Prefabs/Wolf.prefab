@@ -621,6 +621,7 @@ MonoBehaviour:
   m_InvulverableAfterDamage: 1
   m_InvulnerableDuration: 2
   m_DisableOnDeath: 0
+  m_HealingBuffer: 0.1
   m_OnHeathSet:
     m_PersistentCalls:
       m_Calls: []

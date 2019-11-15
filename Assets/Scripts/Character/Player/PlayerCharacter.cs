@@ -83,7 +83,8 @@ public class PlayerCharacter : MonoBehaviour
 
 	public void RegainHealth()
 	{
-		m_HealthIcons[m_Damageable.CurrentHealth() + 1].GainHealth();
+		Debug.Log(m_Damageable.CurrentHealth());
+		m_HealthIcons[m_Damageable.CurrentHealth() - 1].GainHealth();
 	}
 
 	private void ResetHealth()

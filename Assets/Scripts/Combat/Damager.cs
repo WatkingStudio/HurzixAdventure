@@ -30,16 +30,16 @@ public class Damager : MonoBehaviour
 	[SerializeField, Tooltip("How much damage this object deals each hit")]
 	private int m_Damage = 1;
 	[Header("Collision Box")]
-	[SerializeField]
-	private Vector2 m_Offset = new Vector2(1.5f, 1f);
-	[SerializeField, Tooltip("The size of the damage collision box")]
+	[SerializeField, Tooltip("The offset of the collision box from the Game Object")]
+	private Vector2 m_Offset = new Vector2(0f, 0f);
+	[SerializeField, Tooltip("The size of the collision box")]
 	private Vector2 m_Size = new Vector2(2.5f, 1f);
 	[SerializeField, Tooltip("If set to true, the offset will take into account the facing of the sprite")]
 	private bool m_OffsetBaseOnSpriteFacing = true;
 	[Header("Damage Checks")]
 	[SerializeField, Tooltip("If disabled, will ignore triggers when applying damage")]
 	private bool m_CanHitTriggers;
-	[SerializeField]
+	[SerializeField, Tooltip("If enabled, when this component has dealt damage this gameobject will be disabled")]
 	private bool m_DisableDamageAfterHit = false;
 	[SerializeField, Tooltip("If set causes the player to respawn from the latest checkpoint, in addition to losing a life")]
 	private bool m_ForceRespawn = false;

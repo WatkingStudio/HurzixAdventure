@@ -77,7 +77,7 @@ public class Inventory : MonoBehaviour
 	//Pickup the specified item, return false if pickup failed.
 	public bool PickupItem(Item.ItemType item)
 	{
-		foreach(InventorySlot slot in m_InventorySlots)
+		foreach (InventorySlot slot in m_InventorySlots)
 		{
 			if(slot.GetItemName() == item && !slot.IsItemCollected())
 			{

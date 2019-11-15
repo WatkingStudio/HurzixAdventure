@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2445227939910328128}
   - component: {fileID: 2445227939910328131}
   - component: {fileID: 2445227939910328130}
+  - component: {fileID: 6185070433731727884}
   m_Layer: 9
   m_Name: ExitDoor
   m_TagString: Untagged
@@ -98,8 +99,8 @@ MonoBehaviour:
   m_DoorLocks:
   - {fileID: 0}
   m_Inventory: {fileID: 0}
-  m_Animator: {fileID: 2445227939910328131}
   m_ItemAudio: {fileID: 2445227939910328130}
+  m_Animator: {fileID: 2445227939910328131}
   m_ExitDoorOpeningClip: {fileID: 7400000, guid: 933e8fecb81a5024295aa272ec26c14c,
     type: 2}
   m_DoorUnlockedEvent:
@@ -166,3 +167,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 0}
   m_AudioClip: {fileID: 8300000, guid: 81c0c753a4f6c434bb1e80764a143e69, type: 3}
+--- !u!114 &6185070433731727884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445227939910328140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e153038ff7bef4c8ac35665527209b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NextLevel: 1

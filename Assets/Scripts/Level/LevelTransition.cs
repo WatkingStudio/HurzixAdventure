@@ -18,7 +18,8 @@ public class LevelTransition : MonoBehaviour
 	private enum Levels
 	{
 		LEVEL_ONE,
-		LEVEL_TWO
+		LEVEL_TWO,
+		LEVEL_THREE
 	};
 
 	[SerializeField]
@@ -36,6 +37,8 @@ public class LevelTransition : MonoBehaviour
 			return "Level_One";
 		else if (m_NextLevel == Levels.LEVEL_TWO)
 			return "Level_Two";
+		else if (m_NextLevel == Levels.LEVEL_THREE)
+			return "Level_Three";
 
 		return "Invalid Level";
 	}

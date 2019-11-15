@@ -13,12 +13,12 @@ using UnityEngine;
 public class NarratorClickable : Clickable
 {
 	[SerializeField]
-	private SpriteRenderer m_SpriteRenderer;
+	private TextMesh m_TextMesh;
 	[Header("Message Sprites")]
-	[SerializeField, Tooltip("The Sprite for when the message is opened.")]
-	private Sprite m_OpenMessage;
-	[SerializeField, Tooltip("The Sprite for when the message is closed")]
-	private Sprite m_ClosedMessage;
+	[SerializeField, Tooltip("The GameObject for when the message is opened.")]
+	private GameObject m_OpenMessage;
+	[SerializeField, Tooltip("The GameObject for when the message is closed")]
+	private GameObject m_ClosedMessage;
 	[Space]
 	[SerializeField, Tooltip("Set to 'true' if the message is displayed by deafult, set 'false' if not")]
 	private bool m_MessageOpened = true;
@@ -35,19 +35,24 @@ public class NarratorClickable : Clickable
 	{
 		base.Clicked();
 
+		m_MessageOpened = !m_MessageOpened;
+
 		if (m_MessageOpened)
 		{
-			m_SpriteRenderer.sprite = m_ClosedMessage;
+			m_OpenMessage.SetActive(false);
+			m_ClosedMessage.SetActive(true);
 			m_AudioSource.clip = m_CloseMessageAudioClip;
+			m_TextMesh.gameObject.SetActive(false);
 		}
 		else
 		{
-			m_SpriteRenderer.sprite = m_OpenMessage;
+			m_OpenMessage.SetActive(true);
+			m_ClosedMessage.SetActive(false);
 			m_AudioSource.clip = m_OpenMessageAudioClip;
+			m_TextMesh.gameObject.SetActive(true);
 		}
 
 		m_AudioSource.Play();
-		m_MessageOpened = !m_MessageOpened;
 
 	}
 }

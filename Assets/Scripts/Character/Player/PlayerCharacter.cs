@@ -77,7 +77,7 @@ public class PlayerCharacter : MonoBehaviour
 	IEnumerator DamageTakenCoroutine()
 	{
 		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.5f);
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(m_Damageable.InvulnerableDuration);
 		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
 	}
 

@@ -58,6 +58,8 @@ public class Damageable : MonoBehaviour
 	private float m_InvulnerabilityTimer;
 	public int m_CurrentHealth { get; private set; }
 
+	public float InvulnerableDuration { get { return m_InvulnerableDuration; } }
+
 	//When this gameobject is enabled reset the starting health and make sure that they are not invulnerable.
 	private void OnEnable()
 	{

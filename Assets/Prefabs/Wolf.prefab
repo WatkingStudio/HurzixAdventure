@@ -605,6 +605,7 @@ MonoBehaviour:
   m_InteractableLayers:
     serializedVersion: 2
     m_Bits: 512
+  m_PriorityCollider: {fileID: 4042919604207388733}
 --- !u!114 &4042919604207388734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +622,7 @@ MonoBehaviour:
   m_InvulverableAfterDamage: 1
   m_InvulnerableDuration: 2
   m_DisableOnDeath: 0
+  m_HealingBuffer: 0.1
   m_OnHeathSet:
     m_PersistentCalls:
       m_Calls: []

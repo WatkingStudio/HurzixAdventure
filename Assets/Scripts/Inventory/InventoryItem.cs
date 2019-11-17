@@ -30,14 +30,19 @@ public class InventoryItem : Item
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (collision.GetComponent<PlayerCharacter>())
+		{
+			if (collision.GetComponent<PlayerCharacter>().PriorityCollider != collision)
+				return;
+		}
+
 		//Check if the colliding object is on an interactable layer
-		if((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)
+		if ((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)
 		{
 			Inventory inv = collision.GetComponentInChildren<Inventory>();
-			
 			if(inv != null)
 			{
-				if (inv.PickupItem(m_ItemType))
+				if (inv.PickupItem(m_ItemType) && gameObject.activeSelf)
 				{
 					if (m_ItemAudio != null)
 						m_ItemAudio.PlayAudioClip();

@@ -42,6 +42,9 @@ public class Damageable : MonoBehaviour
 	private float m_InvulnerableDuration = 3f;
 	[SerializeField, Tooltip("If true then when the character dies the gameobject will be disabled")]
 	private bool m_DisableOnDeath = true;
+	[SerializeField, Tooltip("The duration that the healing buffer will last for")]
+	private float m_HealingBuffer = 0.02f;
+
 	[Header("Events")]
 	[SerializeField]
 	private HeathEvent m_OnHeathSet;
@@ -55,10 +58,13 @@ public class Damageable : MonoBehaviour
 	private RespawnEvent m_RespawnEvent;
 
 	private bool m_IsInvulnerable = false;
+	private bool m_HealingBufferActive = false;
 	private float m_InvulnerabilityTimer;
+	private float m_HealingBufferTimer;
 	public int m_CurrentHealth { get; private set; }
 
 	public float InvulnerableDuration { get { return m_InvulnerableDuration; } }
+	public float HealingBufferDuration { get { return m_HealingBuffer; } }
 
 	//When this gameobject is enabled reset the starting health and make sure that they are not invulnerable.
 	private void OnEnable()
@@ -78,6 +84,22 @@ public class Damageable : MonoBehaviour
 			if (m_InvulnerabilityTimer <= 0f)
 				DisableInvulnerability();
 		}
+
+		if(m_HealingBufferActive)
+		{
+			m_HealingBufferTimer -= Time.deltaTime;
+
+			if (m_HealingBufferTimer <= 0f)
+				EnableHealing();
+		}
+	}
+
+	public bool IsFullHealth()
+	{
+		if (m_CurrentHealth < m_StartingHealth)
+			return false;
+		else
+			return true;
 	}
 
 	public int CurrentHealth()
@@ -104,6 +126,18 @@ public class Damageable : MonoBehaviour
 	public void DisableInvulnerability()
 	{
 		m_IsInvulnerable = false;
+	}
+
+	public void EnableHealing()
+	{
+		m_HealingBufferActive = false;
+	}
+
+	public void DisableHealing()
+	{
+		m_HealingBufferActive = true;
+
+		m_HealingBufferTimer = m_HealingBuffer;
 	}
 
 	public void RespawnTarget(bool resetHealth = true)
@@ -141,7 +175,21 @@ public class Damageable : MonoBehaviour
 
 	public void RegainHealth()
 	{
+		if (m_HealingBufferActive)
+			return;
+
 		m_CurrentHealth++;
 		m_OnGainHealth.Invoke(1, this);
+		DisableHealing();
+	}
+
+	public void RegainHealth(int val)
+	{
+		if (m_HealingBufferActive)
+			return;
+
+		m_CurrentHealth += val;
+		m_OnGainHealth.Invoke(val, this);
+		DisableHealing();
 	}
 }

@@ -30,12 +30,6 @@ public class InventoryItem : Item
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		//This works for the wolf as they have multiple colliders, but this is not dynamic
-		if (collision.GetType() != typeof(BoxCollider2D))
-		{
-			return;
-		}
-
 		if (collision.GetComponent<PlayerCharacter>())
 		{
 			if (collision.GetComponent<PlayerCharacter>().PriorityCollider != collision)

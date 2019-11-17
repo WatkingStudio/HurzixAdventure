@@ -33,7 +33,7 @@ public class Damager : MonoBehaviour
 	[SerializeField, Tooltip("The offset of the collision box from the Game Object")]
 	private Vector2 m_Offset = new Vector2(0f, 0f);
 	[SerializeField, Tooltip("The size of the collision box")]
-	private Vector2 m_Size = new Vector2(2.5f, 1f);
+	private Vector2 m_Size = new Vector2(1f, 1f);
 	[SerializeField, Tooltip("If set to true, the offset will take into account the facing of the sprite")]
 	private bool m_OffsetBaseOnSpriteFacing = true;
 	[Header("Damage Checks")]

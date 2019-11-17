@@ -36,6 +36,10 @@ public class PlayerCharacter : MonoBehaviour
 	private Collider2D m_InteractableCollider;
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
+	[SerializeField, Tooltip("The priority collider for this character")]
+	private Collider2D m_PriorityCollider;
+
+	public Collider2D PriorityCollider { get { return m_PriorityCollider; } }
 
 	public void OnHurt()
 	{

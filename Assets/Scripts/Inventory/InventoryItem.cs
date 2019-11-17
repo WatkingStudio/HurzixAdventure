@@ -36,6 +36,12 @@ public class InventoryItem : Item
 			return;
 		}
 
+		if (collision.GetComponent<PlayerCharacter>())
+		{
+			if (collision.GetComponent<PlayerCharacter>().PriorityCollider != collision)
+				return;
+		}
+
 		//Check if the colliding object is on an interactable layer
 		if ((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)
 		{

@@ -96,14 +96,28 @@ public class PlayerCharacter : MonoBehaviour
 		m_Animator.PlayerHurt();
 		m_HealthIcons[m_Damageable.CurrentHealth()].TakeDamage();
 		m_PlayerAudio.PlayHurtAudioClip();
-		StartCoroutine(DamageTakenCoroutine());
+		if(m_Damageable.CurrentHealth() > 0)
+			StartCoroutine(DamageTakenCoroutine());
 	}
 
 	//This function makes the character fade for 1 second, to show that they have taken damage
 	IEnumerator DamageTakenCoroutine()
 	{
-		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.5f);
-		yield return new WaitForSeconds(m_Damageable.InvulnerableDuration);
+		float delay = m_Damageable.InvulnerableDuration / 7;
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.2f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.2f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.2f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
+		yield return new WaitForSeconds(delay);
+		m_PlayerSprite.color = new Color(255f, 255f, 255f, 0.2f);
+		yield return new WaitForSeconds(delay);
 		m_PlayerSprite.color = new Color(255f, 255f, 255f, 1f);
 	}
 

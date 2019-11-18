@@ -31,6 +31,11 @@ public class NarratorClickable : Clickable
 	[SerializeField]
 	private AudioClip m_CloseMessageAudioClip;
 
+	private void Start()
+	{
+		m_TextMesh.GetComponent<Renderer>().sortingLayerName = m_OpenMessage.GetComponent<Renderer>().sortingLayerName;
+	}
+
 	public override void Clicked()
 	{
 		base.Clicked();

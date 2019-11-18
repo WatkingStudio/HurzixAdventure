@@ -13,7 +13,9 @@ using UnityEngine;
 public class PlayerAudio : MonoBehaviour
 {
 	[SerializeField]
-	private AudioSource m_AudioSource;
+	private AudioSource m_PlayerMovementSource;
+	[SerializeField]
+	private AudioSource m_PlayerEffectsSource;
 	[Header("Audio Clips")]
 	[SerializeField]
 	private AudioClip m_HurtAudioClip;
@@ -32,8 +34,10 @@ public class PlayerAudio : MonoBehaviour
 
 	private void Start()
 	{
-		if (!m_AudioSource)
-			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		if (!m_PlayerMovementSource)
+			Debug.LogError("No Audio Source for movement has been assigned to " + gameObject.name);
+		if (!m_PlayerEffectsSource)
+			Debug.LogError("No Audio Source for effects has been assigned to " + gameObject.name);
 		if (!m_HurtAudioClip)
 			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for being hurt");
 		if (!m_DeathAudioClip)
@@ -52,53 +56,53 @@ public class PlayerAudio : MonoBehaviour
 
 	public void PlayHurtAudioClip()
 	{
-		m_AudioSource.Stop();
-		m_AudioSource.clip = m_HurtAudioClip;
-		m_AudioSource.Play();
+		m_PlayerEffectsSource.Stop();
+		m_PlayerEffectsSource.clip = m_HurtAudioClip;
+		m_PlayerEffectsSource.Play();
 	}
 
 	public void PlayDeathAudioClip()
 	{
-		m_AudioSource.Stop();
-		m_AudioSource.clip = m_DeathAudioClip;
-		m_AudioSource.Play();
+		m_PlayerEffectsSource.Stop();
+		m_PlayerEffectsSource.clip = m_DeathAudioClip;
+		m_PlayerEffectsSource.Play();
 	}
 
 	public void PlayWalkAudioClip()
 	{
-		if(!m_AudioSource.isPlaying)
+		if(!m_PlayerMovementSource.isPlaying)
 		{
-			m_AudioSource.clip = m_WalkingGrass[Random.Range(0, m_WalkingGrass.Count)];
-			m_AudioSource.Play();
+			m_PlayerMovementSource.clip = m_WalkingGrass[Random.Range(0, m_WalkingGrass.Count)];
+			m_PlayerMovementSource.Play();
 		}		
 	}
 
 	public void PlaySprintAudioClip()
 	{
-		if(!m_AudioSource.isPlaying)
+		if(!m_PlayerMovementSource.isPlaying)
 		{
-			m_AudioSource.clip = m_SprintingGrass[Random.Range(0, m_SprintingGrass.Count)];
-			m_AudioSource.Play();
+			m_PlayerMovementSource.clip = m_SprintingGrass[Random.Range(0, m_SprintingGrass.Count)];
+			m_PlayerMovementSource.Play();
 		}
 	}
 
 	public void PlayLandingAudioClip()
 	{
-		m_AudioSource.Stop();
-		m_AudioSource.clip = m_LandingGrass[Random.Range(0, m_LandingGrass.Count)];
-		m_AudioSource.Play();
+		m_PlayerMovementSource.Stop();
+		m_PlayerMovementSource.clip = m_LandingGrass[Random.Range(0, m_LandingGrass.Count)];
+		m_PlayerMovementSource.Play();
 	}
 
 	public void PlayJumpingAudioClip()
 	{
-		m_AudioSource.Stop();
-		m_AudioSource.clip = m_JumpAudioClip;
-		m_AudioSource.Play();
+		m_PlayerMovementSource.Stop();
+		m_PlayerMovementSource.clip = m_JumpAudioClip;
+		m_PlayerMovementSource.Play();
 	}
 
 	public void PlayerIndicatorAudioClip()
 	{
-		m_AudioSource.clip = m_IndicatorAudioClip;
-		m_AudioSource.Play();
+		m_PlayerEffectsSource.clip = m_IndicatorAudioClip;
+		m_PlayerEffectsSource.Play();
 	}
 }

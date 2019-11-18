@@ -24,6 +24,16 @@ public class Inventory : MonoBehaviour
 
 	private int m_NumberUsedSlots = 0;
 
+	private void Start()
+	{
+		if (m_InventorySlots.Length == 0)
+			Debug.LogError("No Inventory Slots have been assigned to " + gameObject.name);
+		if (!m_LevelDictionary)
+			Debug.LogError("No Level Dictionary has been assigned to " + gameObject.name);
+		if (!m_BlankInventorySlot)
+			Debug.LogError("No Blank Inventory Animator Controller has been assigned to " + gameObject.name);
+	}
+
 	private void ResetInventory()
 	{
 		m_NumberUsedSlots = 0;

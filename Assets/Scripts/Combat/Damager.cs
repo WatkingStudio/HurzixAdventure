@@ -70,6 +70,12 @@ public class Damager : MonoBehaviour
 	// The last collider this Damager collided with
 	protected Collider2D m_LastHit;
 
+	private void Start()
+	{
+		if (!m_SpriteRenderer)
+			Debug.LogWarning("No Sprite Renderer has been assigned to " + gameObject.name);
+	}
+
 	private void Awake()
 	{
 		m_AttackContactFilter.layerMask = m_HittableLayers;

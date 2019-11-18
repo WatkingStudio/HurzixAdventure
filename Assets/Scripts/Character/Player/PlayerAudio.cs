@@ -30,6 +30,26 @@ public class PlayerAudio : MonoBehaviour
 	[SerializeField]
 	private List<AudioClip> m_LandingGrass;
 
+	private void Start()
+	{
+		if (!m_AudioSource)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		if (!m_HurtAudioClip)
+			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for being hurt");
+		if (!m_DeathAudioClip)
+			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for dying");
+		if (!m_JumpAudioClip)
+			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for jumping");
+		if (!m_IndicatorAudioClip)
+			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for the indicator");
+		if (m_WalkingGrass.Count == 0)
+			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for walking on grass");
+		if (m_SprintingGrass.Count == 0)
+			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for sprinting on grass");
+		if (m_LandingGrass.Count == 0)
+			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for landing on the grass");
+	}
+
 	public void PlayHurtAudioClip()
 	{
 		m_AudioSource.Stop();

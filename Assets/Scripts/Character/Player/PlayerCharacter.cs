@@ -37,6 +37,32 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
 
+	private void Start()
+	{
+		if (!m_ActiveCheckpoint)
+			Debug.LogWarning("No active checkpoint has been set for " + gameObject.name);
+		if (!m_StartingPosition)
+			Debug.LogError("No starting checkpoint has been set for " + gameObject.name);
+		if (!m_Damageable)
+			Debug.LogError("No Damageable has been assigned to " + gameObject.name);
+		if (m_HealthIcons.Count == 0)
+			Debug.LogError("No health icons have been assigned to " + gameObject.name);
+		else if (m_HealthIcons.Count < m_Damageable.StartingHealth)
+			Debug.LogWarning("The number of health icons assigned to " + gameObject.name + " are less that the starting health of " + m_Damageable.name);
+		if (!m_Animator)
+			Debug.LogError("No Player Animations script has been assigned to " + gameObject.name);
+		if (!m_RigidBody2D)
+			Debug.LogError("No RigidBody2D has been assigned to " + gameObject.name);
+		if (!m_PlayerAudio)
+			Debug.LogError("No Player Audio has been assigned to " + gameObject.name);
+		if (!m_PlayerController)
+			Debug.LogError("No Player Controller has been assigned to " + gameObject.name);
+		if (!m_PlayerSprite)
+			Debug.LogWarning("No Sprite has been asigned to " + gameObject.name);
+		if (!m_InteractableCollider)
+			Debug.LogError("No Interactable Collider has been set for " + gameObject.name);
+	}
+
 	public void OnHurt()
 	{
 		m_Damageable.EnableInvulnerability();

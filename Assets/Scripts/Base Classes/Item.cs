@@ -11,7 +11,7 @@ using UnityEngine;
  */ 
 public class Item : MonoBehaviour
 {
-	[SerializeField] protected ItemType m_ItemType;
+	[SerializeField] protected ItemType m_ItemType = ItemType.None;
 
 	public enum ItemType
 	{

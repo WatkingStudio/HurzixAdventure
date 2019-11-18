@@ -23,6 +23,15 @@ public class PlayerAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		if (!m_StandingController)
+			Debug.LogError("No Animator Controller has been assigned to " + gameObject.name + " while standing");
+
+		if (!m_CrouchingController)
+			Debug.LogWarning("No Animator Controller has been assigned to " + gameObject.name + "while crouching");
+
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+
 		m_Animator.runtimeAnimatorController = m_StandingController;
     }
 

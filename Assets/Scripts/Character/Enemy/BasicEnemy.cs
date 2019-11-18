@@ -24,6 +24,12 @@ public class BasicEnemy : MonoBehaviour
 	private void Start()
 	{
 		SetActiveAction(EnemyAction.Actions.EnemyMoveAction);
+
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+
+		if (m_AvailableActions.Count == 0)
+			Debug.LogWarning("No actions have been assigned to " + gameObject.name);
 	}
 
 	// Update is called once per frame

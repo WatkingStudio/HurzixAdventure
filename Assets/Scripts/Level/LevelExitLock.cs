@@ -23,6 +23,16 @@ public class LevelExitLock : MonoBehaviour
 	private bool m_IsLocked = true;
 	private float m_ClipLengthExtraDelay = 0.2f;
 
+	private void Start()
+	{
+		if (!m_LockAnimator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		if (!m_LockOpeningClip)
+			Debug.LogError("No Animation Clip has been assigned to " + gameObject.name);
+		if (!m_ItemAudio)
+			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+	}
+
 	public bool Unlock()
 	{
 		if(m_IsLocked)

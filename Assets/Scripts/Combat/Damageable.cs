@@ -62,6 +62,7 @@ public class Damageable : MonoBehaviour
 	private float m_InvulnerabilityTimer;
 	private float m_HealingBufferTimer;
 	public int m_CurrentHealth { get; private set; }
+	public int StartingHealth { get { return m_StartingHealth; }}
 
 	public float InvulnerableDuration { get { return m_InvulnerableDuration; } }
 	public float HealingBufferDuration { get { return m_HealingBuffer; } }

@@ -57,7 +57,6 @@ public class PlayerAudio : MonoBehaviour
 	public void PlayHurtAudioClip()
 	{
 		m_PlayerEffectsSource.Stop();
-		Debug.Log("Play Hurt");
 		m_PlayerEffectsSource.clip = m_HurtAudioClip;
 		m_PlayerEffectsSource.Play();
 	}

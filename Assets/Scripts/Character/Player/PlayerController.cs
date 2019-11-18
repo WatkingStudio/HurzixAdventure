@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 	private BoxCollider2D m_CrouchingBoxCollider;
 	[SerializeField, Tooltip("The circle collider for the player while standing")]
 	private CircleCollider2D m_StandingCircleCollider;
+	[SerializeField, Tooltip("The priority collider for this character")]
+	private Collider2D m_PriorityCollider;
 
 	[Header("Misc")]
 	[SerializeField]
@@ -50,7 +52,10 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private AnimationClip m_AttackClip;
 
+	public Collider2D PriorityCollider { get { return m_PriorityCollider; } }
+
 	private bool m_IsAttacking = false;
+	private bool m_IsGrounded = true;
 
 	public void DisableMovement()
 	{
@@ -99,6 +104,7 @@ public class PlayerController : MonoBehaviour
 		{
 			m_Jump = true;
 			m_Animator.PlayerJumping(true);
+			m_IsGrounded = false;
 		}
 
 		m_Animator.PlayerSpeed(m_HorizontalMove);
@@ -106,24 +112,27 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Crouch"))
 		{
 			//Crouch
-			if(!m_Crouch)
+			if (m_IsGrounded)
 			{
-				if(!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
+				if (!m_Crouch)
 				{
-					m_Animator.PlayerCrouching(true);
-					m_Crouch = true;
-					SetCollidersCrouch();
-				}				
-			}
-			//Stand Up
-			else
-			{
-				if(!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+					if (!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
+					{
+						m_Animator.PlayerCrouching(true);
+						m_Crouch = true;
+						SetCollidersCrouch();
+					}
+				}
+				//Stand Up
+				else
 				{
-					m_Animator.PlayerCrouching(false);
-					m_Crouch = false;
-					SetCollidersStand();
-				}			
+					if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+					{
+						m_Animator.PlayerCrouching(false);
+						m_Crouch = false;
+						SetCollidersStand();
+					}
+				}
 			}
 		}
 
@@ -137,17 +146,20 @@ public class PlayerController : MonoBehaviour
 	public void OnLanding()
 	{
 		m_Animator.PlayerJumping(false);
+		m_IsGrounded = true;
 	}
 
 	public void StartFalling()
 	{
 		m_Animator.PlayerFalling(true);
 		m_Animator.PlayerJumping(false);
+		m_IsGrounded = false;
 	}
 
 	public void StopFalling()
 	{
 		m_Animator.PlayerFalling(false);
+		m_IsGrounded = true;
 	}
 
 	//Use for Physics
@@ -170,6 +182,7 @@ public class PlayerController : MonoBehaviour
 	private void SetCollidersCrouch()
 	{
 		m_CrouchingBoxCollider.enabled = true;
+		m_PriorityCollider = m_CrouchingBoxCollider;
 
 		m_StandingBoxCollider.enabled = false;
 		m_StandingCircleCollider.enabled = false;
@@ -181,6 +194,7 @@ public class PlayerController : MonoBehaviour
 	{
 		m_StandingBoxCollider.enabled = true;
 		m_StandingCircleCollider.enabled = true;
+		m_PriorityCollider = m_StandingBoxCollider;
 
 		m_CrouchingBoxCollider.enabled = false;
 

@@ -30,9 +30,9 @@ public class InventoryItem : Item
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.GetComponent<PlayerCharacter>())
+		if (collision.GetComponent<PlayerController>())
 		{
-			if (collision.GetComponent<PlayerCharacter>().PriorityCollider != collision)
+			if (collision.GetComponent<PlayerController>().PriorityCollider != collision)
 				return;
 		}
 

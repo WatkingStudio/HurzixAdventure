@@ -27,6 +27,9 @@ public class LevelItems : MonoBehaviour
 
 	private void Start()
 	{
+		if (m_CollectableItems.Count == 0)
+			Debug.LogError("Collectable Items Set To 0");
+
 		m_Inventory.SetupInventory(m_CollectableItems);
 	}
 

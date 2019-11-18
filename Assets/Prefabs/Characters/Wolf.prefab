@@ -605,7 +605,6 @@ MonoBehaviour:
   m_InteractableLayers:
     serializedVersion: 2
     m_Bits: 512
-  m_PriorityCollider: {fileID: 4042919604207388733}
 --- !u!114 &4042919604207388734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +713,7 @@ MonoBehaviour:
   m_StandingBoxCollider: {fileID: 4042919604207388733}
   m_CrouchingBoxCollider: {fileID: 8587146516948647221}
   m_StandingCircleCollider: {fileID: 4042919604207388731}
+  m_PriorityCollider: {fileID: 4042919604207388733}
   m_PlayerCharacter: {fileID: 4042919604207388721}
   m_Damager: {fileID: 5162959369193355656}
   m_Animator: {fileID: 4042919604119968770}

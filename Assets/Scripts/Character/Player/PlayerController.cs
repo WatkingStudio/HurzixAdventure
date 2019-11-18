@@ -57,6 +57,32 @@ public class PlayerController : MonoBehaviour
 	private bool m_IsAttacking = false;
 	private bool m_IsGrounded = true;
 
+	private void Start()
+	{
+		if (!m_Movement)
+			Debug.LogError("No Character Movement has been assigned to " + gameObject.name);
+		if (!m_CeilingCheck)
+			Debug.LogError("No Transform has been assigned to " + gameObject.name + " to check for ceiling collisions");
+		if (!m_WallCheck)
+			Debug.LogError("No Transform has been assigned to " + gameObject.name + " to check if infront of a wall");
+		if (!m_StandingBoxCollider)
+			Debug.LogError("No Collider has been assigned to " + gameObject.name + " for the standing box collider");
+		if (!m_CrouchingBoxCollider)
+			Debug.LogWarning("No Collider has been assigned to " + gameObject.name + " for the crouching box collider");
+		if (!m_StandingCircleCollider)
+			Debug.LogError("No Collider has been assigned to " + gameObject.name + " for the standing circle collider");
+		if (!m_PriorityCollider)
+			Debug.LogError("No priority Collider has been assigned to " + gameObject.name);
+		if (!m_PlayerCharacter)
+			Debug.LogError("No Player Character has been assigned to " + gameObject.name);
+		if (!m_Damager)
+			Debug.LogError("No Damager has been assigned to " + gameObject.name);
+		if (!m_Animator)
+			Debug.LogError("No PlayerAnimations script has been assigned to " + gameObject.name);
+		if (!m_AttackClip)
+			Debug.LogWarning("No Attack Animation Clip has been assigned to " + gameObject.name);
+	}
+
 	public void DisableMovement()
 	{
 		m_DisableMovement = true;

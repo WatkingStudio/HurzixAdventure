@@ -54,6 +54,12 @@ public class Healer : MonoBehaviour
 	//The last collider this Healer collided with
 	protected Collider2D m_LastHit;
 
+	private void Start()
+	{
+		if (!m_SpriteRenderer)
+			Debug.LogError("No Sprite Renderer has been assigned to " + gameObject.name);
+	}
+
 	private void Awake()
 	{
 		m_HealContactFilter.layerMask = m_HittableLayers;

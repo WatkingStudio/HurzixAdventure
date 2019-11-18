@@ -33,6 +33,19 @@ public class NarratorClickable : Clickable
 
 	private void Start()
 	{
+		if (!m_TextMesh)
+			Debug.LogError("No Text Mesh has been assigned to " + gameObject.name);
+		if (!m_OpenMessage)
+			Debug.LogError("No Open Message game object has been assigned to " + gameObject.name);
+		if (!m_ClosedMessage)
+			Debug.LogError("No Closed Message game object has been assigned to " + gameObject.name);
+		if (!m_AudioSource)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		if (!m_OpenMessageAudioClip)
+			Debug.LogError("No Open Message Audio Clip has been assigned to " + gameObject.name);
+		if (!m_CloseMessageAudioClip)
+			Debug.LogError("No Close Message Audio Clip has been assigned to " + gameObject.name);
+
 		m_TextMesh.GetComponent<Renderer>().sortingLayerName = m_OpenMessage.GetComponent<Renderer>().sortingLayerName;
 	}
 

@@ -22,6 +22,16 @@ public class KeyManager : MonoBehaviour
 	[SerializeField]
 	private GameObject m_Player;
 
+	private void Start()
+	{
+		if (!m_CurrentLevelItems)
+			Debug.LogError("No Level Items script has been assigned to " + gameObject.name);
+		if (!m_ControlsUI)
+			Debug.LogError("No Controls UI game object has been assigned to " + gameObject.name);
+		if (!m_Player)
+			Debug.LogError("No Player game object has been assigned to " + gameObject.name);
+	}
+
 	// Update is called once per frame
 	void Update()
     {

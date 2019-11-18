@@ -21,6 +21,12 @@ public class InventorySlot : MonoBehaviour
 	[SerializeField]
 	private Animator m_Animation;
 
+	private void Start()
+	{
+		if (!m_Animation)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+	}
+
 	public Item.ItemType GetItemName()
 	{
 		return m_ItemName;

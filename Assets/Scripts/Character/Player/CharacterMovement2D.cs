@@ -57,6 +57,18 @@ public class CharacterMovement2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	private void Start()
+	{
+		if (!m_GroundCheck)
+			Debug.LogError("No transform has been assigned to " + gameObject.name + " to check if the player is grounded");
+
+		if (!m_CrouchDisableCollider)
+			Debug.LogWarning("No collider has been assigned to " + gameObject.name + " to be disabled if the player crouches");
+
+		if (!m_PlayerAudio)
+			Debug.LogError("No Player Audio has been assigned to " + gameObject.name);
+	}
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();

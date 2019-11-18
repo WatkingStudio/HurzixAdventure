@@ -30,6 +30,12 @@ public class EnemyMoveAction : EnemyAction
 
 	private void Start()
 	{
+		if (!m_BasicEnemy)
+			Debug.LogError("No Basic Enemy script attached to " + gameObject.name);
+
+		if (m_WaypointA.Equals(m_WaypointB))
+			Debug.LogWarning("Both waypoints for " + gameObject.name + " are equal.");
+
 		//This is done instead of assigning the value through a SerializeField to ensure it is the EnemyAudio script
 		// attached to the same GameObject as the BasicEnemy script
 		m_EnemyAudio = m_BasicEnemy.GetComponent<EnemyAudio>();

@@ -27,6 +27,13 @@ public class BreakableCrate : MonoBehaviour
 
 	private void Start()
 	{
+		if (!m_Collider2D)
+			Debug.LogError("No Collider2D has been assigned to " + gameObject.name);
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		if (!m_Damageable)
+			Debug.LogError("No Damageable has been assigned to " + gameObject.name);
+
 		m_Damageable.ResetHealth(m_CrateHealth);
 	}
 

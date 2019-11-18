@@ -18,6 +18,15 @@ public class EnemyAudio : MonoBehaviour
 	[SerializeField]
 	private List<AudioClip> m_WalkAudio;
 
+	private void Start()
+	{
+		if (!m_AudioSource)
+			Debug.LogError("No Audio source connected to " + gameObject.name);
+
+		if (m_WalkAudio.Count == 0)
+			Debug.LogError("No Walk Audio has been assigned to " + gameObject.name);
+	}
+
 	public void PlayWalkAudioClip()
 	{
 		if(!m_AudioSource.isPlaying)

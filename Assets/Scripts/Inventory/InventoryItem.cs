@@ -28,6 +28,16 @@ public class InventoryItem : Item
 
 	private bool m_HaloActive = false;
 
+	private void Start()
+	{
+		if (!m_Collider)
+			Debug.LogError("No Collider has been assigned to " + gameObject.name);
+		if (!m_ItemHalo)
+			Debug.LogError("No Halo Behaviour has been assigned to " + gameObject.name);
+		if (!m_ItemAudio)
+			Debug.LogError("No Item Audio script has been assigned to " + gameObject.name);
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponent<PlayerController>())

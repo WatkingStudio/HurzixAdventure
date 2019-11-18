@@ -16,6 +16,12 @@ public class HealthIcon : MonoBehaviour
 
 	private bool m_IsActive = true;
 
+	private void Start()
+	{
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+	}
+
 	public bool IsActive()
 	{
 		return m_IsActive;

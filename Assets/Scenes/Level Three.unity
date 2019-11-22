@@ -279,16 +279,6 @@ PrefabInstance:
 
         to regain missing health.'
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.72
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -323,6 +313,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.0215023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -1243,6 +1243,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5616093146545632542, guid: 7504eadce205ae94abbfe29e3f6da2f0,
+        type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 1114711435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504eadce205ae94abbfe29e3f6da2f0, type: 3}
 --- !u!4 &806763548 stripped
@@ -1384,11 +1389,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6185070433731727884, guid: cdd05c03a1ac07043a82da84b923b19d,
-        type: 3}
-      propertyPath: m_NextLevel
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2445227939910328129, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
       propertyPath: m_DoorUnlockedEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1454,6 +1454,11 @@ PrefabInstance:
       propertyPath: m_AudioSource
       value: 
       objectReference: {fileID: 1114711435}
+    - target: {fileID: 6185070433731727884, guid: cdd05c03a1ac07043a82da84b923b19d,
+        type: 3}
+      propertyPath: m_NextLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd05c03a1ac07043a82da84b923b19d, type: 3}
 --- !u!114 &856980454 stripped
@@ -1707,16 +1712,6 @@ PrefabInstance:
       value: "Some obstacles in the world\nlike these spikes will hurt the \nplayer
         if they come into \ncontact with them. Find a way\nto avoid them if you can."
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.84
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1751,6 +1746,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 4.970022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -1961,6 +1966,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388733, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388730, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388731, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4218727144965971296, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1980,21 +2000,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.057
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388733, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388730, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388731, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388734, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
@@ -2335,6 +2340,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5616093146545632542, guid: 7504eadce205ae94abbfe29e3f6da2f0,
+        type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 1114711435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504eadce205ae94abbfe29e3f6da2f0, type: 3}
 --- !u!4 &1252878534 stripped
@@ -2871,16 +2881,6 @@ PrefabInstance:
       value: "Some areas require the player \nto crouch to proceed. Press S \nto crouch
         and standup"
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.56
-      objectReference: {fileID: 0}
     - target: {fileID: 595614741323906421, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2895,6 +2895,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -3366,11 +3376,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagement
       objectReference: {fileID: 0}
-    - target: {fileID: 2035283665611281930, guid: d37e17924dc962041b71a227a7fa9d19,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2035283664299762382, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3476,6 +3481,11 @@ PrefabInstance:
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 985798959}
+    - target: {fileID: 2035283665611281930, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37e17924dc962041b71a227a7fa9d19, type: 3}
 --- !u!4 &2035283664565924738 stripped
@@ -10444,6 +10454,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5616093146545632542, guid: 7504eadce205ae94abbfe29e3f6da2f0,
+        type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 1114711435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7504eadce205ae94abbfe29e3f6da2f0, type: 3}
 --- !u!1001 &5022848476076072116
@@ -10457,11 +10472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022848476332001476, guid: 48407ebb758907a40b640d895c40a2bf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5022848477106646029, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
@@ -10566,6 +10576,11 @@ PrefabInstance:
     - target: {fileID: 5022848477106646029, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022848476332001476, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1186705466176342888, guid: 48407ebb758907a40b640d895c40a2bf,

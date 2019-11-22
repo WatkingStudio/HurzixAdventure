@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4220138384524716789}
   - component: {fileID: 4220138384524716788}
   - component: {fileID: 4220138384524716791}
+  - component: {fileID: 5616093146545632542}
   m_Layer: 0
   m_Name: HealthPack
   m_TagString: Untagged
@@ -67,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1654486503
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eceb55e8d421f9c4fb8761e3bffc226d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,4 +103,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_SpriteRenderer: {fileID: 4220138384524716788}
+  m_ItemAudio: {fileID: 5616093146545632542}
   m_CanHeal: 1
+--- !u!114 &5616093146545632542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220138384524716790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b880c7f61ffa26242b4375ac3e31f4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioSource: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: 251d0d06f0383e44784c87e96b8ad1c8, type: 3}

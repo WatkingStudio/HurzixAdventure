@@ -39,6 +39,8 @@ public class Healer : MonoBehaviour
 	[Header("Misc")]
 	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by m_OffsetBasedOnSpriteFacing")]
 	private SpriteRenderer m_SpriteRenderer;
+	[SerializeField, Tooltip("An Item Audio for when the healer class heals a target")]
+	private ItemAudio m_ItemAudio;
 
 	//Set to whether the sprite was flipped by default
 	protected bool m_SpriteOriginallyFlipped;
@@ -58,6 +60,8 @@ public class Healer : MonoBehaviour
 	{
 		if (!m_SpriteRenderer)
 			Debug.LogError("No Sprite Renderer has been assigned to " + gameObject.name);
+		if (!m_ItemAudio)
+			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
 	}
 
 	private void Awake()
@@ -115,6 +119,7 @@ public class Healer : MonoBehaviour
 			if(damageable && !damageable.IsFullHealth())
 			{
 				damageable.RegainHealth(m_Healing);
+				m_ItemAudio.PlayAudioClip();
 				if(m_DisableAfterUse)
 				{
 					DisableHeal();

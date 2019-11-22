@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
 		if(Input.GetButtonDown("Attack"))
 		{
-			if(!m_IsAttacking)
+			if(!m_IsAttacking && m_IsGrounded)
 			{
 				m_Animator.PlayerAttack();
 				StartCoroutine(AttackTimer());

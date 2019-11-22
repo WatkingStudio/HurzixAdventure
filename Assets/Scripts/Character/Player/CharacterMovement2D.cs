@@ -104,7 +104,7 @@ public class CharacterMovement2D : MonoBehaviour
 			}
 		}
 
-		if (m_Rigidbody2D.velocity.y < -0.1)
+		if (m_Rigidbody2D.velocity.y < -0.1 && !m_Grounded)
 		{
 			OnStartFalling.Invoke();
 		}

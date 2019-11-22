@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 	public Collider2D PriorityCollider { get { return m_PriorityCollider; } }
 
 	private bool m_IsAttacking = false;
-	public bool m_IsGrounded = true;
+	private bool m_IsGrounded = true;
 	//If equal to 0 crouch, if equal to 1 stand up, if equal to 2 ignore
 	private int m_MakeCrouched = 2;
 
@@ -123,7 +123,6 @@ public class PlayerController : MonoBehaviour
 		{
 			if(!m_IsAttacking && m_IsGrounded)
 			{
-				Debug.Log("ATTACK");
 				m_Animator.PlayerAttack();
 				StartCoroutine(AttackTimer());
 			}			
@@ -157,7 +156,6 @@ public class PlayerController : MonoBehaviour
 	public void OnLanding()
 	{
 		m_Animator.PlayerJumping(false);
-		Debug.Log("Landed");
 		m_IsGrounded = true;
 	}
 
@@ -165,14 +163,13 @@ public class PlayerController : MonoBehaviour
 	{
 		m_Animator.PlayerFalling(true);
 		m_Animator.PlayerJumping(false);
-		Debug.Log("Falling");
 		m_IsGrounded = false;
 	}
 
 	public void StopFalling()
 	{
 		m_Animator.PlayerFalling(false);
-		//m_IsGrounded = true;
+		m_IsGrounded = true;
 	}
 
 	//Use for Physics

@@ -44,7 +44,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
 	[SerializeField]
-	private Damager m_Damager;
+	private Damager m_StandingDamager;
+	[SerializeField]
+	private Damager m_CrouchingDamager;
 
 	[Header("Animation")]
 	[SerializeField]
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
 	public Collider2D PriorityCollider { get { return m_PriorityCollider; } }
 
+	private Damager m_ActiveDamager;
 	private bool m_IsAttacking = false;
 	private bool m_IsGrounded = true;
 	//If equal to 0 crouch, if equal to 1 stand up, if equal to 2 ignore
@@ -77,12 +80,16 @@ public class PlayerController : MonoBehaviour
 			Debug.LogError("No priority Collider has been assigned to " + gameObject.name);
 		if (!m_PlayerCharacter)
 			Debug.LogError("No Player Character has been assigned to " + gameObject.name);
-		if (!m_Damager)
-			Debug.LogError("No Damager has been assigned to " + gameObject.name);
-		if (!m_Animator)
+		if (!m_StandingDamager)
+			Debug.LogError("No Standing Damager has been assigned to " + gameObject.name);
+		if (!m_CrouchingDamager)
+			Debug.LogError("No Crouching Damager has been assigned to " + gameObject.name);
+			if (!m_Animator)
 			Debug.LogError("No PlayerAnimations script has been assigned to " + gameObject.name);
 		if (!m_AttackClip)
 			Debug.LogWarning("No Attack Animation Clip has been assigned to " + gameObject.name);
+
+		m_ActiveDamager = m_StandingDamager;
 	}
 
 	public void DisableMovement()
@@ -137,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
 		m_Animator.PlayerSpeed(m_HorizontalMove);
 
-		if (Input.GetButtonDown("Crouch"))
+		if (Input.GetButtonDown("Crouch") && m_IsGrounded)
 		{
 			m_MakeCrouched = 0;
 		}
@@ -205,9 +212,9 @@ public class PlayerController : MonoBehaviour
 	IEnumerator AttackTimer()
 	{
 		m_IsAttacking = true;
-		m_Damager.EnableDamage();
+		m_ActiveDamager.EnableDamage();
 		yield return new WaitForSeconds(m_AttackClip.length);
-		m_Damager.DisableDamage();
+		m_ActiveDamager.DisableDamage();
 		m_IsAttacking = false;
 	}
 
@@ -220,6 +227,8 @@ public class PlayerController : MonoBehaviour
 		m_StandingCircleCollider.enabled = false;
 
 		m_PlayerCharacter.SetColliders(m_CrouchingBoxCollider);
+
+		m_ActiveDamager = m_CrouchingDamager;
 	}
 
 	private void SetCollidersStand()
@@ -231,6 +240,8 @@ public class PlayerController : MonoBehaviour
 		m_CrouchingBoxCollider.enabled = false;
 
 		m_PlayerCharacter.SetColliders(m_StandingCircleCollider);
+
+		m_ActiveDamager = m_StandingDamager;
 	}
 
 

@@ -113,7 +113,7 @@ public class Healer : MonoBehaviour
 		{
 			//Store the last collision hit
 			m_LastHit = m_HealOverlapResults[i];
-			Damageable damageable = m_LastHit.GetComponent<Damageable>();
+			Damageable damageable = m_LastHit.GetComponentInParent<Damageable>();
 
 			//If the collided object has a Damageable component then deal damage
 			if(damageable && !damageable.IsFullHealth())

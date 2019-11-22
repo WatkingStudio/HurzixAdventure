@@ -125,7 +125,7 @@ public class Damager : MonoBehaviour
 		{
 			//Store the latest collision hit
 			m_LastHit = m_AttackOverlapResults[i];
-			Damageable damageable = m_LastHit.GetComponent<Damageable>();
+			Damageable damageable = m_LastHit.GetComponentInParent<Damageable>(); 
 			
 			//If the collided object has a Damageable component then deal damage
 			if(damageable)

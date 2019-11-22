@@ -40,24 +40,31 @@ public class InventoryItem : Item
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.GetComponent<PlayerController>())
+		Debug.Log("ONE");
+		if (collision.GetComponentInParent<PlayerController>())
 		{
-			if (collision.GetComponent<PlayerController>().PriorityCollider != collision)
+			Debug.Log("TWO");
+			if (collision.GetComponentInParent<PlayerController>().PriorityCollider != collision) 
 				return;
 		}
-
+		Debug.Log("FOUR");
 		//Check if the colliding object is on an interactable layer
 		if ((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)
 		{
-			Inventory inv = collision.GetComponentInChildren<Inventory>();
+			Debug.Log("FIVE");
+			//Inventory inv = collision.GetComponentInChildren<Inventory>();
+			Inventory inv = collision.transform.parent.GetComponentInChildren<Inventory>();
 			if(inv != null)
 			{
+				Debug.Log("SIX");
 				if (inv.PickupItem(m_ItemType) && gameObject.activeSelf)
 				{
+					Debug.Log("SEVEN");
 					if (m_ItemAudio != null)
 						m_ItemAudio.PlayAudioClip();
 					if (m_DisableOnEnter)
 					{
+						Debug.Log("EIGHT");
 						gameObject.SetActive(false);
 					}
 				}
@@ -66,7 +73,8 @@ public class InventoryItem : Item
 					Debug.Log("Item Could Not be Picked Up!");
 				}
 			}
-						
+			Debug.Log("NINE");
+
 		}
 	}
 

@@ -206,18 +206,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1596501717}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &84921992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5162959369193355656, guid: e8a1f65ac17a6534083d8b544daa2526,
-    type: 3}
-  m_PrefabInstance: {fileID: 1596501717}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84921980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3045742284429ae4180c70792698482d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &113428071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -357,12 +345,12 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.624098
+      value: -6.9341736
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.613874
+      value: 3.4838736
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -999,16 +987,6 @@ PrefabInstance:
       value: "If you want to close a narrator\nat an point just click on the \ntext
         box. To see it again click\non it again."
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1043,6 +1021,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 5.0066357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -4579,16 +4567,6 @@ PrefabInstance:
 
         until it has been destroyed.'
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.77
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4623,6 +4601,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.1222756
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -4777,7 +4765,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9340973
+      value: -6.9341736
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -4929,16 +4917,6 @@ PrefabInstance:
       value: "Most levels require multiple \nkeys to open the exit. As \nthey are
         located around the \nlevel press R to locate the \nclosest key."
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.87
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4974,6 +4952,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 4.6060286
       objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
 --- !u!4 &1099922487 stripped
@@ -4999,11 +4987,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022848476332001476, guid: 48407ebb758907a40b640d895c40a2bf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5022848477106646029, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
@@ -5108,6 +5091,11 @@ PrefabInstance:
     - target: {fileID: 5022848477106646029, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022848476332001476, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1186705466176342889, guid: 48407ebb758907a40b640d895c40a2bf,
@@ -5245,11 +5233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6185070433731727884, guid: cdd05c03a1ac07043a82da84b923b19d,
-        type: 3}
-      propertyPath: m_NextLevel
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2445227939910328129, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
       propertyPath: m_DoorLocks.Array.size
@@ -5310,6 +5293,11 @@ PrefabInstance:
       propertyPath: m_AudioSource
       value: 
       objectReference: {fileID: 1759820328}
+    - target: {fileID: 6185070433731727884, guid: cdd05c03a1ac07043a82da84b923b19d,
+        type: 3}
+      propertyPath: m_NextLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2445227939910328143, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5639,11 +5627,6 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
     - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
-      propertyPath: m_Damager
-      value: 
-      objectReference: {fileID: 84921992}
-    - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
       propertyPath: m_AttackTimer
       value: 0.3
       objectReference: {fileID: 0}
@@ -5651,6 +5634,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042919604207388733, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381595923957839618, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.283
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381595923957839618, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a1f65ac17a6534083d8b544daa2526, type: 3}
@@ -6268,16 +6266,6 @@ PrefabInstance:
 
         top right of the screen.'
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.74
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6312,6 +6300,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7825434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}

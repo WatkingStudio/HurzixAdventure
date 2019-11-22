@@ -141,13 +141,10 @@ public class PlayerController : MonoBehaviour
 		{
 			m_MakeCrouched = 0;
 		}
-
-		if(Input.GetButtonUp("Crouch"))
+		else if(Input.GetButtonUp("Crouch"))
 		{
 			m_MakeCrouched = 1;
-		}
-
-		
+		}		
 
 		if (Input.GetButtonDown("Interact"))
 		{

@@ -25,6 +25,10 @@ public class BreakableCrate : MonoBehaviour
 	[SerializeField]
 	private Damageable m_Damageable;
 
+	[Header("Audio")]
+	[SerializeField]
+	private AudioSource m_AudioSource;
+
 	private void Start()
 	{
 		if (!m_Collider2D)
@@ -33,6 +37,8 @@ public class BreakableCrate : MonoBehaviour
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
 		if (!m_Damageable)
 			Debug.LogError("No Damageable has been assigned to " + gameObject.name);
+		if (!m_AudioSource)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
 
 		m_Damageable.ResetHealth(m_CrateHealth);
 	}
@@ -40,6 +46,7 @@ public class BreakableCrate : MonoBehaviour
 	public void CrateDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
+		m_AudioSource.Play();
 	}
 
 	public void CrateBroken()

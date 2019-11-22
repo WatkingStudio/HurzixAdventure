@@ -60,6 +60,8 @@ public class Healer : MonoBehaviour
 	{
 		if (!m_SpriteRenderer)
 			Debug.LogError("No Sprite Renderer has been assigned to " + gameObject.name);
+		if (!m_ItemAudio)
+			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
 	}
 
 	private void Awake()

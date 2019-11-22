@@ -4672,12 +4672,12 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.624098
+      value: -6.9341736
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4938736
+      value: 3.4838736
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -4819,16 +4819,6 @@ PrefabInstance:
       value: "Move the player left by \npressing A. Move the \nplayer right by pressing
         D. \nSprint by holding down SHIFT."
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.68
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4873,6 +4863,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.0706928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 1797973056764918452, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
@@ -5065,16 +5065,6 @@ PrefabInstance:
       value: "Falling out of the map \nwill cause the player to \nrespawn, to avoid
         this \npress SPACE to jump."
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.73600006
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.40499973
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5119,6 +5109,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 4.034846
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.73600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.40499973
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -5940,21 +5940,6 @@ PrefabInstance:
       propertyPath: m_OffsetZ
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.23
-      objectReference: {fileID: 0}
     - target: {fileID: 9203007596183495373, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5989,6 +5974,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071719113660967457, guid: ae0d123ba12f278489aadd228d9cbb64,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d123ba12f278489aadd228d9cbb64, type: 3}
@@ -6128,7 +6128,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.624098
+      value: -27.624174
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}

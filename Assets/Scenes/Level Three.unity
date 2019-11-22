@@ -3476,11 +3476,6 @@ PrefabInstance:
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 985798959}
-    - target: {fileID: 2035283665044513124, guid: d37e17924dc962041b71a227a7fa9d19,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37e17924dc962041b71a227a7fa9d19, type: 3}
 --- !u!4 &2035283664565924738 stripped
@@ -10323,7 +10318,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.624113
+      value: -27.624174
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -10704,7 +10699,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.624113
+      value: -27.624174
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}

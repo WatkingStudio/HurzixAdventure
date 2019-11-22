@@ -2878,8 +2878,7 @@ PrefabInstance:
     - target: {fileID: 1966711549549676133, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}
       propertyPath: m_Text
-      value: "Some areas require the player \nto crouch to proceed. Press S \nto crouch
-        and standup"
+      value: "Some areas require the player \nto crouch to proceed. Hold S \nto crouch."
       objectReference: {fileID: 0}
     - target: {fileID: 595614741323906421, guid: ae0d123ba12f278489aadd228d9cbb64,
         type: 3}

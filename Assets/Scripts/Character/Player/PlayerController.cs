@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
 	private bool m_IsAttacking = false;
 	private bool m_IsGrounded = true;
+	//If equal to 0 crouch, if equal to 1 stand up, if equal to 2 ignore
+	private int m_MakeCrouched = 2;
 
 	private void Start()
 	{
@@ -137,35 +139,17 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Crouch"))
 		{
-			//Crouch
-			if (m_IsGrounded)
-			{
-				if (!m_Crouch)
-				{
-					if (!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
-					{
-						m_Animator.PlayerCrouching(true);
-						m_Crouch = true;
-						SetCollidersCrouch();
-					}
-				}
-				//Stand Up
-				else
-				{
-					if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
-					{
-						m_Animator.PlayerCrouching(false);
-						m_Crouch = false;
-						SetCollidersStand();
-					}
-				}
-			}
+			m_MakeCrouched = 0;
 		}
+		else if(Input.GetButtonUp("Crouch"))
+		{
+			m_MakeCrouched = 1;
+		}		
 
-		if(Input.GetButtonDown("Interact"))
+		if (Input.GetButtonDown("Interact"))
 		{
 			m_PlayerCharacter.InteractWithObject();
-		}		
+		}
 	}
 
 	//This function is used to apply any code to the player when they land
@@ -191,6 +175,28 @@ public class PlayerController : MonoBehaviour
 	//Use for Physics
 	private void FixedUpdate()
 	{
+		if (m_MakeCrouched == 0)
+		{
+			if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+			{
+				m_Animator.PlayerCrouching(true);
+				m_Crouch = true;
+				SetCollidersCrouch();
+			}
+
+			m_MakeCrouched = 2;
+		}
+		else if (m_MakeCrouched == 1)
+		{
+			if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+			{
+				m_Animator.PlayerCrouching(false);
+				m_Crouch = false;
+				SetCollidersStand();
+				m_MakeCrouched = 2;
+			}
+		}
+
 		//Move character
 		m_Movement.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);
 		m_Jump = false;

@@ -868,6 +868,7 @@ MonoBehaviour:
   m_StandingBoxCollider: {fileID: 7543125078189630372}
   m_CrouchingBoxCollider: {fileID: 7821587116243411304}
   m_StandingCircleCollider: {fileID: 1671798499369475734}
+  m_StandingCircleCollider2: {fileID: 5635465497563184877}
   m_PriorityCollider: {fileID: 1671798499369475734}
   m_PlayerCharacter: {fileID: 4042919604207388721}
   m_StandingDamager: {fileID: 2787633717656048230}

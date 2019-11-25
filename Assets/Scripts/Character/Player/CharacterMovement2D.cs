@@ -35,7 +35,7 @@ public class CharacterMovement2D : MonoBehaviour
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	const float k_SpriteFlipOffset = .5f;

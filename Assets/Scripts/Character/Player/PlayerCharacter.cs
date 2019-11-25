@@ -25,7 +25,7 @@ public class PlayerCharacter : MonoBehaviour
 	[SerializeField]
 	private PlayerAnimations m_Animator;
 	[SerializeField]
-	public Rigidbody2D m_RigidBody2D;
+	private Rigidbody2D m_RigidBody2D;
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
 	[SerializeField]

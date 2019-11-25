@@ -162,7 +162,6 @@ public class PlayerController : MonoBehaviour
 	//This function is used to apply any code to the player when they land
 	public void OnLanding()
 	{
-		Debug.Log(m_PlayerCharacter.m_RigidBody2D.velocity);
 		m_Animator.PlayerJumping(false);
 		m_IsGrounded = true;
 	}

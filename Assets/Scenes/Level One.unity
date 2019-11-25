@@ -4672,12 +4672,12 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9341736
+      value: -27.624174
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4838736
+      value: 4.593874
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -4960,12 +4960,6 @@ PrefabInstance:
       objectReference: {fileID: 1498831985}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e217b21efb43dab4b90742d91700692b, type: 3}
---- !u!4 &904761033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4042919603812213261, guid: e8a1f65ac17a6534083d8b544daa2526,
-    type: 3}
-  m_PrefabInstance: {fileID: 1387343845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1117991240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3415821829798317674, guid: ae0d123ba12f278489aadd228d9cbb64,
@@ -5562,9 +5556,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388732, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
-      propertyPath: m_GroundCheck
-      value: 
-      objectReference: {fileID: 904761033}
+      propertyPath: m_AirControl
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388730, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_Enabled
@@ -6618,6 +6612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492739695814609, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}

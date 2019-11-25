@@ -115,7 +115,6 @@ public class CharacterMovement2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
-
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
@@ -143,8 +142,6 @@ public class CharacterMovement2D : MonoBehaviour
 					m_CrouchDisableCollider.enabled = true;
 
 				// If sprinting increase the speed
-				
-
 				if (m_wasCrouching)
 				{
 					m_wasCrouching = false;
@@ -153,9 +150,17 @@ public class CharacterMovement2D : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			Vector3 targetVelocity;
+			if (m_Rigidbody2D.velocity == new Vector2(0, 0) && !m_Grounded)
+			{
+				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y - 10);
+			}
+			else
+			{
+				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			}
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);			
+			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
@@ -182,8 +187,7 @@ public class CharacterMovement2D : MonoBehaviour
 					m_PlayerAudio.PlaySprintAudioClip();
 				else
 					m_PlayerAudio.PlayWalkAudioClip();
-			}
-			
+			}			
 		}
 		// If the player should jump...
 		if (m_Grounded && jump)

@@ -175,6 +175,8 @@ MonoBehaviour:
   m_GameAudio: {fileID: 11400000, guid: 50f5b1ae26f49e24bbf7af450aeaf3d1, type: 2}
   m_BackgroundAudioSlider: {fileID: 210681278}
   m_SoundEffectAudioSlider: {fileID: 896364056}
+  m_InGameMenu: 0
+  m_LevelAudio: {fileID: 0}
 --- !u!1 &152624379
 GameObject:
   m_ObjectHideFlags: 0

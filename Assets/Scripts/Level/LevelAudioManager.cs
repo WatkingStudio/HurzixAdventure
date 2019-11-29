@@ -28,8 +28,7 @@ public class LevelAudioManager : MonoBehaviour
 		if (m_SoundEffectsAudioSources.Count <= 0)
 			Debug.LogError("No Sound Effects Audio Sources have been assigned to " + gameObject.name);
 
-		SetBackgroundAudio();
-		SetSoundEffectsAudio();
+		UpdateLevelAudio();
 	}
 
 	private void SetBackgroundAudio()
@@ -43,5 +42,11 @@ public class LevelAudioManager : MonoBehaviour
 		{
 			au.volume = m_GameAudio.SoundEffectVolume;
 		}
+	}
+
+	public void UpdateLevelAudio()
+	{
+		SetBackgroundAudio();
+		SetSoundEffectsAudio();
 	}
 }

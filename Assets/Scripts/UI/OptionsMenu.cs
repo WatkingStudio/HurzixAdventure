@@ -19,6 +19,11 @@ public class OptionsMenu : MonoBehaviour
 	[SerializeField]
 	private Slider m_SoundEffectAudioSlider;
 
+	[SerializeField]
+	private bool m_InGameMenu = false;
+	[SerializeField]
+	private LevelAudioManager m_LevelAudio;
+
 	private void Start()
 	{
 		if (!m_GameAudio)
@@ -27,6 +32,8 @@ public class OptionsMenu : MonoBehaviour
 			Debug.LogError("No Background Audio Slider has been assigned to " + gameObject.name);
 		if (!m_SoundEffectAudioSlider)
 			Debug.LogError("No Sound Effect Audio Slider has been assigned to " + gameObject.name);
+		if (m_InGameMenu && !m_LevelAudio)
+			Debug.LogError("No LevelAudioManager has been assigned to " + gameObject.name);
 
 		m_BackgroundAudioSlider.SetValueWithoutNotify(m_GameAudio.BackgroundVolume);
 		m_SoundEffectAudioSlider.SetValueWithoutNotify(m_GameAudio.SoundEffectVolume);
@@ -35,10 +42,16 @@ public class OptionsMenu : MonoBehaviour
 	public void BackGroundAudioUpdate()
 	{
 		m_GameAudio.SetBackgroundVolume(m_BackgroundAudioSlider.value);
+
+		if(m_InGameMenu)
+			m_LevelAudio.UpdateLevelAudio();
 	}
 
 	public void SoundEffectAudioUpdate()
 	{
 		m_GameAudio.SetSoundEffectVolume(m_SoundEffectAudioSlider.value);
+
+		if (m_InGameMenu)
+			m_LevelAudio.UpdateLevelAudio();
 	}
 }

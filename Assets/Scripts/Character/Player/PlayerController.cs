@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
 	private Damager m_StandingDamager;
 	[SerializeField]
 	private Damager m_CrouchingDamager;
+	[SerializeField]
+	private GameObject m_GameMenu;
+	[SerializeField]
+	private GameObject m_OptionsMenu;
 
 	[Header("Animation")]
 	[SerializeField]
@@ -160,6 +164,14 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Interact"))
 		{
 			m_PlayerCharacter.InteractWithObject();
+		}
+
+		if(Input.GetButtonDown("Menu"))
+		{
+			if (m_GameMenu.activeSelf)
+				m_GameMenu.SetActive(false);
+			else if (!m_GameMenu.activeSelf && !m_OptionsMenu.activeSelf)
+				m_GameMenu.SetActive(true);
 		}
 	}
 

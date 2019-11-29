@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * \class MainMenu
+ * 
+ * \brief This class is used to control the functionality of the main menu
+ * 
+ * \date 2019/29/11
+ */
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame()

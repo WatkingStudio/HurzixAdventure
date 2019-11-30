@@ -17,9 +17,11 @@ public class LevelTransition : MonoBehaviour
 	[Serializable]
 	private enum Levels
 	{
+		MAIN_MENU,
 		LEVEL_ONE,
 		LEVEL_TWO,
-		LEVEL_THREE
+		LEVEL_THREE,
+		GAME_COMPLETE
 	};
 
 	[SerializeField]
@@ -33,13 +35,20 @@ public class LevelTransition : MonoBehaviour
 
 	private string LevelsEnumToString()
 	{
-		if (m_NextLevel == Levels.LEVEL_ONE)
-			return "Level_One";
-		else if (m_NextLevel == Levels.LEVEL_TWO)
-			return "Level_Two";
-		else if (m_NextLevel == Levels.LEVEL_THREE)
-			return "Level_Three";
-
-		return "Invalid Level";
+		switch(m_NextLevel)
+		{
+			case Levels.MAIN_MENU:
+				return "Main_Menu";
+			case Levels.LEVEL_ONE:
+				return "Level_One";
+			case Levels.LEVEL_TWO:
+				return "Level_Two";
+			case Levels.LEVEL_THREE:
+				return "Level_Three";
+			case Levels.GAME_COMPLETE:
+				return "Game_Complete";
+			default:
+				return "Invalid Level";
+		}
 	}
 }

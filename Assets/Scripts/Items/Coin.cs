@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class Coin
+ * 
+ * \brief This class is used to control a Coin
+ * 
+ * \date 2019/02/12
+ */ 
 public class Coin : MonoBehaviour
 {
 	[Header("Collision Variables")]
@@ -9,8 +16,6 @@ public class Coin : MonoBehaviour
 	private LayerMask m_InteractableLayers;
 	[SerializeField, Tooltip("When this object is picked up should it be disabled")]
 	private bool m_DisableOnEnter = false;
-	[SerializeField]
-	private CircleCollider2D m_Collider;
 	[SerializeField]
 	private ItemAudio m_ItemAudio;
 

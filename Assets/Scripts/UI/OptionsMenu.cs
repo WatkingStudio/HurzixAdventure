@@ -36,6 +36,14 @@ public class OptionsMenu : MonoBehaviour
 
 	private void Start()
 	{
+		if (!m_SceneAudio)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name); ;
+		if (!m_ButtonPressClip)
+			Debug.Log("No Button Press Audio Clip has been assigned to " + gameObject.name);
+		if (!m_MainMenu)
+			Debug.LogError("No Main Menu has been assigned to " + gameObject.name);
+		if (!m_OptionsMenu)
+			Debug.LogError("No Options Menu has been assigned to " + gameObject.name);
 		if (!m_GameAudio)
 			Debug.LogError("No GameAudioSO has been assigned to " + gameObject.name);
 		if (!m_BackgroundAudioSlider)

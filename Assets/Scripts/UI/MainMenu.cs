@@ -22,7 +22,19 @@ public class MainMenu : MonoBehaviour
 	[SerializeField]
 	private GameObject m_OptionsMenu;
 
-    public void PlayGame()
+	private void Start()
+	{
+		if (!m_SceneAudio)
+			Debug.LogError("No Audio Source has been added to " + gameObject.name);
+		if (!m_ButtonPressClip)
+			Debug.LogError("No Button Press Audio Clip has been assigned to " + gameObject.name);
+		if (!m_MainMenu)
+			Debug.LogError("No Main Menu has been assigned to " + gameObject.name);
+		if (!m_OptionsMenu)
+			Debug.LogError("No Options Menu has been assigned to " + gameObject.name);
+	}
+
+	public void PlayGame()
 	{
 		StartCoroutine(PlayGameButton());
 	}

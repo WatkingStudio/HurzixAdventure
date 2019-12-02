@@ -172,6 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e3d8dad531a9644bbd4a64df9a28e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SceneAudio: {fileID: 1915662023}
+  m_ButtonPressClip: {fileID: 8300000, guid: 9f6c4aacb5b5b984e9ff4f86aeb9e995, type: 3}
+  m_MainMenu: {fileID: 1877140926}
+  m_OptionsMenu: {fileID: 79264928}
   m_GameAudio: {fileID: 11400000, guid: 50f5b1ae26f49e24bbf7af450aeaf3d1, type: 2}
   m_BackgroundAudioSlider: {fileID: 210681278}
   m_SoundEffectAudioSlider: {fileID: 896364056}
@@ -644,30 +648,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 79264928}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1877140926}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 319029404}
-        m_MethodName: Play
+      - m_Target: {fileID: 1877140928}
+        m_MethodName: Options
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1499,17 +1481,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 931202125}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &931202123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,17 +2058,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1262443283}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1262443281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2312,20 +2272,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1877140926}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 79264928}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 79264930}
+        m_MethodName: Back
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3201,6 +3150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9684a32532a57dc41a325e64d309cb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SceneAudio: {fileID: 1915662023}
+  m_ButtonPressClip: {fileID: 8300000, guid: 9f6c4aacb5b5b984e9ff4f86aeb9e995, type: 3}
+  m_MainMenu: {fileID: 1877140926}
+  m_OptionsMenu: {fileID: 79264928}
 --- !u!1 &1913322489
 GameObject:
   m_ObjectHideFlags: 0

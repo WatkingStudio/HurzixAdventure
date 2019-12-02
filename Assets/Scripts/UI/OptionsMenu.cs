@@ -13,6 +13,16 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
 	[SerializeField]
+	private AudioSource m_SceneAudio;
+	[SerializeField]
+	private AudioClip m_ButtonPressClip;
+
+	[SerializeField]
+	private GameObject m_MainMenu;
+	[SerializeField]
+	private GameObject m_OptionsMenu;
+
+	[SerializeField]
 	private GameAudioSO m_GameAudio;
 	[SerializeField]
 	private Slider m_BackgroundAudioSlider;
@@ -26,6 +36,14 @@ public class OptionsMenu : MonoBehaviour
 
 	private void Start()
 	{
+		if (!m_SceneAudio)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name); ;
+		if (!m_ButtonPressClip)
+			Debug.Log("No Button Press Audio Clip has been assigned to " + gameObject.name);
+		if (!m_MainMenu)
+			Debug.LogError("No Main Menu has been assigned to " + gameObject.name);
+		if (!m_OptionsMenu)
+			Debug.LogError("No Options Menu has been assigned to " + gameObject.name);
 		if (!m_GameAudio)
 			Debug.LogError("No GameAudioSO has been assigned to " + gameObject.name);
 		if (!m_BackgroundAudioSlider)
@@ -37,6 +55,19 @@ public class OptionsMenu : MonoBehaviour
 
 		m_BackgroundAudioSlider.SetValueWithoutNotify(m_GameAudio.BackgroundVolume);
 		m_SoundEffectAudioSlider.SetValueWithoutNotify(m_GameAudio.SoundEffectVolume);
+	}
+
+	public void Back()
+	{
+		StartCoroutine(BackButton());
+	}
+
+	public IEnumerator BackButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_MainMenu.SetActive(true);
+		m_OptionsMenu.SetActive(false);
 	}
 
 	public void BackGroundAudioUpdate()
@@ -53,5 +84,12 @@ public class OptionsMenu : MonoBehaviour
 
 		if (m_LiveUpdate)
 			m_LevelAudio.UpdateLevelAudio();
+	}
+
+	private void PlayButtonClick()
+	{
+		m_SceneAudio.Stop();
+		m_SceneAudio.clip = m_ButtonPressClip;
+		m_SceneAudio.Play();
 	}
 }

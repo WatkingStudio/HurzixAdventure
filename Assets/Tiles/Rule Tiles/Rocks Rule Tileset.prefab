@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 955457989026520595}
   - component: {fileID: 5185191088176845322}
   m_Layer: 31
-  m_Name: Rule Tile
+  m_Name: Rocks Rule Tileset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,14 +93,14 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 2
-      m_ColliderType: 1
+      m_ColliderType: 2
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8a96761bb9b9a9e46976da549f4257c2, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -5206460828241014077, guid: 4e55f2dd0566df84e846c6b4bf6be275,
+    m_Data: {fileID: 5658244735937066567, guid: 4e55f2dd0566df84e846c6b4bf6be275,
       type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
@@ -172,6 +172,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

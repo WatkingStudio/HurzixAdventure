@@ -11,9 +11,70 @@ using UnityEngine;
  */
 public class GameMenu : MonoBehaviour
 {
-    public void QuitGame()
+	[SerializeField]
+	private AudioSource m_SceneAudio;
+	[SerializeField]
+	private AudioClip m_ButtonPressClip;
+
+	[SerializeField]
+	private GameObject m_GameMenu;
+	[SerializeField]
+	private GameObject m_OptionsMenu;
+
+	private void Start()
 	{
+		if (!m_SceneAudio)
+			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		if (!m_ButtonPressClip)
+			Debug.LogError("No Button Press Audio Clip has been assigned to " + gameObject.name);
+		if (!m_GameMenu)
+			Debug.LogError("No Game Menu has been assigned to " + gameObject.name);
+		if (!m_OptionsMenu)
+			Debug.LogError("No Options Menu has been assigned to " + gameObject.name);
+	}
+
+	public void Continue()
+	{
+		StartCoroutine(ContinueButton());
+	}
+
+	public IEnumerator ContinueButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_GameMenu.SetActive(false);
+	}
+
+	public void Options()
+	{
+		StartCoroutine(OptionsButton());
+	}
+
+	public IEnumerator OptionsButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_GameMenu.SetActive(false);
+		m_OptionsMenu.SetActive(true);
+	}
+
+	public void QuitGame()
+	{
+		StartCoroutine(QuitGameButton());
+	}
+
+	public IEnumerator QuitGameButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
 		Debug.Log("QUIT!");
 		Application.Quit();
+	}
+
+	private void PlayButtonClick()
+	{
+		m_SceneAudio.Stop();
+		m_SceneAudio.clip = m_ButtonPressClip;
+		m_SceneAudio.Play();
 	}
 }

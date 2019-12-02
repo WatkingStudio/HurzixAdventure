@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GameAudio: {fileID: 11400000, guid: 50f5b1ae26f49e24bbf7af450aeaf3d1, type: 2}
-  m_BackgroundAudioSource: {fileID: 0}
+  m_BackgroundAudioSource: {fileID: 2035283665044513124}
   m_SoundEffectsAudioSources: []
 --- !u!1 &2035283664299762383
 GameObject:

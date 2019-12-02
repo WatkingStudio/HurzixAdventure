@@ -40,6 +40,8 @@ public class PlayerCharacter : MonoBehaviour
 	[Header("Score")]
 	[SerializeField]
 	private TMPro.TextMeshProUGUI m_ScoreText;
+	[SerializeField]
+	private PlayerGlobals m_PlayerGlobals;
 
 	private int m_PlayerScore;
 
@@ -67,6 +69,28 @@ public class PlayerCharacter : MonoBehaviour
 			Debug.LogWarning("No Sprite has been asigned to " + gameObject.name);
 		if (!m_InteractableCollider)
 			Debug.LogError("No Interactable Collider has been set for " + gameObject.name);
+		if (!m_ScoreText)
+			Debug.LogWarning("No Score Text has been assigned to " + gameObject.name);
+		if (!m_PlayerGlobals)
+			Debug.LogError("No Player Globals have been assiged to " + gameObject.name);
+
+		m_PlayerScore = m_PlayerGlobals.PlayerScore;
+		SetHealth();
+
+		if(m_ScoreText)
+			m_ScoreText.SetText(m_PlayerScore.ToString());
+	}
+
+	public void SetHealth()
+	{
+		m_Damageable.SetHealth(m_PlayerGlobals.PlayerHealth);
+
+		int num = m_HealthIcons.Count;
+		while(num != m_Damageable.CurrentHealth())
+		{
+			num--;
+			m_HealthIcons[num].TakeDamage();
+		}
 	}
 
 	public void OnHurt()
@@ -193,5 +217,11 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		m_PlayerScore++;
 		m_ScoreText.SetText(m_PlayerScore.ToString());
+	}
+
+	public void UpdatePlayerGlobals()
+	{
+		m_PlayerGlobals.PlayerHealth = m_Damageable.m_CurrentHealth;
+		m_PlayerGlobals.PlayerScore = m_PlayerScore;
 	}
 }

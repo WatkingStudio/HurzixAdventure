@@ -5081,6 +5081,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthIcon_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1130342899348366182, guid: d76bf748e8641344faffd51f96232775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76bf748e8641344faffd51f96232775, type: 3}
 --- !u!224 &3250724794727557195 stripped
@@ -5330,6 +5335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthIcon_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130342899348366182, guid: d76bf748e8641344faffd51f96232775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76bf748e8641344faffd51f96232775, type: 3}

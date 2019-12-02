@@ -27,9 +27,12 @@ public class LevelTransition : MonoBehaviour
 
 	[SerializeField]
 	private Levels m_NextLevel;
+	[SerializeField]
+	private PlayerCharacter m_PlayerCharacter;
 
-    public void GoToNextLevel()
+	public void GoToNextLevel()
 	{
+		m_PlayerCharacter.UpdatePlayerGlobals();
 		SceneManager.LoadScene((int)m_NextLevel);
 		Debug.Log("Loading Scene: " + LevelsEnumToString());
 	}

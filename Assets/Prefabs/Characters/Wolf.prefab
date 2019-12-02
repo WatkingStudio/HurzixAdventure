@@ -757,6 +757,8 @@ MonoBehaviour:
   m_InteractableLayers:
     serializedVersion: 2
     m_Bits: 512
+  m_ScoreText: {fileID: 0}
+  m_PlayerGlobals: {fileID: 11400000, guid: 0aa80eb5910ac1f47bf2f42427795ef1, type: 2}
 --- !u!114 &4042919604207388734
 MonoBehaviour:
   m_ObjectHideFlags: 0

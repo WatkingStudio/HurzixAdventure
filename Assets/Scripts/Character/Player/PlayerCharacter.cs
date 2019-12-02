@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /** 
  * \class Player Character
@@ -36,6 +37,11 @@ public class PlayerCharacter : MonoBehaviour
 	private Collider2D m_InteractableCollider;
 	[SerializeField, Tooltip("The layers which this Player can interact with")]
 	private LayerMask m_InteractableLayers;
+	[Header("Score")]
+	[SerializeField]
+	private TMPro.TextMeshProUGUI m_ScoreText;
+
+	private int m_PlayerScore;
 
 	private void Start()
 	{
@@ -181,5 +187,11 @@ public class PlayerCharacter : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	public void CollectCoin()
+	{
+		m_PlayerScore++;
+		m_ScoreText.SetText(m_PlayerScore.ToString());
 	}
 }

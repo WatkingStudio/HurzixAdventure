@@ -13907,6 +13907,11 @@ PrefabInstance:
       propertyPath: m_ItemName
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_SceneAudio
+      value: 
+      objectReference: {fileID: 1114711435}
     - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_LevelAudio
@@ -13922,6 +13927,11 @@ PrefabInstance:
       propertyPath: m_LiveUpdate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_SceneAudio
+      value: 
+      objectReference: {fileID: 1114711435}
     - target: {fileID: 5022848475829331472, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_AnchoredPosition.x

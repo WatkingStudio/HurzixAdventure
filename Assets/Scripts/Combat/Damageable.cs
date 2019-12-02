@@ -193,4 +193,9 @@ public class Damageable : MonoBehaviour
 		m_OnGainHealth.Invoke(val, this);
 		DisableHealing();
 	}
+
+	public void SetHealth(int val)
+	{
+		m_CurrentHealth = val;
+	}
 }

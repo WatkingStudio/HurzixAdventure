@@ -61,13 +61,9 @@ MonoBehaviour:
   m_OnDamageableHit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Damager+DamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_OnNonDamageableHit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_CanDamage: 0
 --- !u!58 &1671798499369475734
 CircleCollider2D:
@@ -152,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2888818626981951098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -0.188, z: 0}
+  m_LocalPosition: {x: 0.057, y: -0.304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4041067102700289770}
@@ -690,6 +686,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -723,7 +720,7 @@ Animator:
   m_GameObject: {fileID: 4043183952868579352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5174d54e54aaee644aed9b3cdda2930f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 54755effa97de6b409475be2913c47fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -776,12 +773,10 @@ MonoBehaviour:
   m_InvulverableAfterDamage: 1
   m_InvulnerableDuration: 2
   m_DisableOnDeath: 0
-  m_HealingBuffer: 0.1
+  m_HealingBuffer: 0.01
   m_OnHeathSet:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Damageable+HeathEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -796,8 +791,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_OnDie:
     m_PersistentCalls:
       m_Calls:
@@ -812,8 +805,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_OnGainHealth:
     m_PersistentCalls:
       m_Calls:
@@ -828,8 +819,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Damageable+HealEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_RespawnEvent:
     m_PersistentCalls:
       m_Calls:
@@ -844,8 +833,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Damageable+RespawnEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &4042919604207388735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,6 +860,8 @@ MonoBehaviour:
   m_PlayerCharacter: {fileID: 4042919604207388721}
   m_StandingDamager: {fileID: 2787633717656048230}
   m_CrouchingDamager: {fileID: 1450391704981248889}
+  m_GameMenu: {fileID: 0}
+  m_OptionsMenu: {fileID: 0}
   m_Animator: {fileID: 4042919604119968770}
   m_AttackClip: {fileID: 7400000, guid: cc5b565e0f30051449bc1b8fd864ad8b, type: 2}
 --- !u!114 &4042919604207388732
@@ -923,8 +912,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   OnStartFalling:
     m_PersistentCalls:
       m_Calls:
@@ -939,8 +926,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   OnStopFalling:
     m_PersistentCalls:
       m_Calls:
@@ -955,13 +940,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: CharacterMovement2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!50 &4042919604190805354
 Rigidbody2D:
   serializedVersion: 4
@@ -1125,13 +1106,9 @@ MonoBehaviour:
   m_OnDamageableHit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Damager+DamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_OnNonDamageableHit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   m_CanDamage: 0
 --- !u!1 &7818071659839168199
 GameObject:
@@ -1158,7 +1135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7818071659839168199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.211, y: 0.739, z: 0}
+  m_LocalPosition: {x: -0.099, y: 0.482, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4041067102700289770}

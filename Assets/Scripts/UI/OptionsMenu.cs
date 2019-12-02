@@ -13,6 +13,16 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
 	[SerializeField]
+	private AudioSource m_SceneAudio;
+	[SerializeField]
+	private AudioClip m_ButtonPressClip;
+
+	[SerializeField]
+	private GameObject m_MainMenu;
+	[SerializeField]
+	private GameObject m_OptionsMenu;
+
+	[SerializeField]
 	private GameAudioSO m_GameAudio;
 	[SerializeField]
 	private Slider m_BackgroundAudioSlider;
@@ -39,6 +49,19 @@ public class OptionsMenu : MonoBehaviour
 		m_SoundEffectAudioSlider.SetValueWithoutNotify(m_GameAudio.SoundEffectVolume);
 	}
 
+	public void Back()
+	{
+		StartCoroutine(BackButton());
+	}
+
+	public IEnumerator BackButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_MainMenu.SetActive(true);
+		m_OptionsMenu.SetActive(false);
+	}
+
 	public void BackGroundAudioUpdate()
 	{
 		m_GameAudio.SetBackgroundVolume(m_BackgroundAudioSlider.value);
@@ -53,5 +76,12 @@ public class OptionsMenu : MonoBehaviour
 
 		if (m_LiveUpdate)
 			m_LevelAudio.UpdateLevelAudio();
+	}
+
+	private void PlayButtonClick()
+	{
+		m_SceneAudio.Stop();
+		m_SceneAudio.clip = m_ButtonPressClip;
+		m_SceneAudio.Play();
 	}
 }

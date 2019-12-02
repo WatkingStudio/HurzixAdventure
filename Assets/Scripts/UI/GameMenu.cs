@@ -11,9 +11,58 @@ using UnityEngine;
  */
 public class GameMenu : MonoBehaviour
 {
-    public void QuitGame()
+	[SerializeField]
+	private AudioSource m_SceneAudio;
+	[SerializeField]
+	private AudioClip m_ButtonPressClip;
+
+	[SerializeField]
+	private GameObject m_GameMenu;
+	[SerializeField]
+	private GameObject m_OptionsMenu;
+
+	public void Continue()
 	{
+		StartCoroutine(ContinueButton());
+	}
+
+	public IEnumerator ContinueButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_GameMenu.SetActive(false);
+	}
+
+	public void Options()
+	{
+		StartCoroutine(OptionsButton());
+	}
+
+	public IEnumerator OptionsButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_GameMenu.SetActive(false);
+		m_OptionsMenu.SetActive(true);
+	}
+
+	public void QuitGame()
+	{
+		StartCoroutine(QuitGameButton());
+	}
+
+	public IEnumerator QuitGameButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
 		Debug.Log("QUIT!");
 		Application.Quit();
+	}
+
+	private void PlayButtonClick()
+	{
+		m_SceneAudio.Stop();
+		m_SceneAudio.clip = m_ButtonPressClip;
+		m_SceneAudio.Play();
 	}
 }

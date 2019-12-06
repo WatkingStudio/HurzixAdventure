@@ -3152,6 +3152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneAudio: {fileID: 1915662023}
   m_ButtonPressClip: {fileID: 8300000, guid: 9f6c4aacb5b5b984e9ff4f86aeb9e995, type: 3}
+  m_PlayerVariables: {fileID: 11400000, guid: 0aa80eb5910ac1f47bf2f42427795ef1, type: 2}
   m_MainMenu: {fileID: 1877140926}
   m_OptionsMenu: {fileID: 79264928}
 --- !u!1 &1913322489

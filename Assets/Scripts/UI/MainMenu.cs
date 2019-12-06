@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
 	private AudioSource m_SceneAudio;
 	[SerializeField]
 	private AudioClip m_ButtonPressClip;
+	[SerializeField]
+	private PlayerGlobals m_PlayerVariables;
 
 	[SerializeField]
 	private GameObject m_MainMenu;
@@ -39,11 +41,18 @@ public class MainMenu : MonoBehaviour
 		StartCoroutine(PlayGameButton());
 	}
 
-	public IEnumerator PlayGameButton()
+	private IEnumerator PlayGameButton()
 	{
+		ResetPlayerVariables();
 		PlayButtonClick();
 		yield return new WaitForSeconds(m_ButtonPressClip.length);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
+	private void ResetPlayerVariables()
+	{
+		m_PlayerVariables.PlayerScore = 0;
+		m_PlayerVariables.PlayerHealth = m_PlayerVariables.DefaultHealth;
 	}
 
 	public void Options()
@@ -51,7 +60,7 @@ public class MainMenu : MonoBehaviour
 		StartCoroutine(OptionsButton());
 	}
 
-	public IEnumerator OptionsButton()
+	private IEnumerator OptionsButton()
 	{
 		PlayButtonClick();
 		yield return new WaitForSeconds(m_ButtonPressClip.length);
@@ -64,7 +73,7 @@ public class MainMenu : MonoBehaviour
 		StartCoroutine(QuitGameButton());
 	}
 
-	public IEnumerator QuitGameButton()
+	private IEnumerator QuitGameButton()
 	{
 		PlayButtonClick();
 		yield return new WaitForSeconds(m_ButtonPressClip.length);

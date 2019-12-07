@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
 	[Header("Colliders")]
 	[SerializeField, Tooltip("The box collider for the player while standing")]
 	private BoxCollider2D m_StandingBoxCollider;
+	[SerializeField, Tooltip("The second box collider for the player while standing")]
+	private BoxCollider2D m_StandingBoxCollider2;
 	[SerializeField, Tooltip("The box collider for the player while crouching")]
 	private BoxCollider2D m_CrouchingBoxCollider;
 	[SerializeField, Tooltip("The circle collider for the player while standing")]
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
 			Debug.LogError("No Transform has been assigned to " + gameObject.name + " to check if infront of a wall");
 		if (!m_StandingBoxCollider)
 			Debug.LogError("No Collider has been assigned to " + gameObject.name + " for the standing box collider");
+		if (!m_StandingBoxCollider2)
+			Debug.LogError("No secondary Collider has been assigned to " + gameObject.name + " for the standing box collider 2");
 		if (!m_CrouchingBoxCollider)
 			Debug.LogWarning("No Collider has been assigned to " + gameObject.name + " for the crouching box collider");
 		if (!m_StandingCircleCollider)
@@ -240,6 +244,7 @@ public class PlayerController : MonoBehaviour
 		m_PriorityCollider = m_CrouchingBoxCollider;
 
 		m_StandingBoxCollider.enabled = false;
+		m_StandingBoxCollider2.enabled = false;
 		m_StandingCircleCollider.enabled = false;
 		m_StandingCircleCollider2.enabled = false;
 
@@ -251,6 +256,7 @@ public class PlayerController : MonoBehaviour
 	private void SetCollidersStand()
 	{
 		m_StandingBoxCollider.enabled = true;
+		m_StandingBoxCollider2.enabled = true;
 		m_StandingCircleCollider.enabled = true;
 		m_StandingCircleCollider2.enabled = true;
 		m_PriorityCollider = m_StandingBoxCollider;

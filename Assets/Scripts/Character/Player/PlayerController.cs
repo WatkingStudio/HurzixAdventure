@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (m_MakeCrouched == 0)
 		{
-			if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+			if (!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
 			{
 				m_Animator.PlayerCrouching(true);
 				m_Crouch = true;

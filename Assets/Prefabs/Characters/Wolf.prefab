@@ -882,6 +882,7 @@ MonoBehaviour:
   m_WallCheck: {fileID: 5381595923957839618}
   m_RunSpeed: 30
   m_StandingBoxCollider: {fileID: 7543125078189630372}
+  m_StandingBoxCollider2: {fileID: 4662739822378595053}
   m_CrouchingBoxCollider: {fileID: 7821587116243411304}
   m_StandingCircleCollider: {fileID: 1671798499369475734}
   m_StandingCircleCollider2: {fileID: 5635465497563184877}

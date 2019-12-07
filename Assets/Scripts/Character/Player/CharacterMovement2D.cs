@@ -31,6 +31,8 @@ public class CharacterMovement2D : MonoBehaviour
 	private Transform m_GroundCheck;
 	[SerializeField, Tooltip("A collider that will be disabled when crouching")]
 	private Collider2D m_CrouchDisableCollider;
+	[SerializeField]
+	private Collider2D m_CollisionCheckerCollider;
 	[Header("Misc")]
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
@@ -151,16 +153,11 @@ public class CharacterMovement2D : MonoBehaviour
 
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity;
-			if (m_Rigidbody2D.velocity == new Vector2(0, 0) && !m_Grounded)
-			{
-				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y - 10);
-			}
-			else
-			{
-				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-			}
+			targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			if(!CheckForCollision())
+				m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
@@ -222,5 +219,13 @@ public class CharacterMovement2D : MonoBehaviour
 	public void ResetVelocity()
 	{
 		m_Rigidbody2D.velocity = Vector2.one;
+	}
+
+	private bool CheckForCollision()
+	{
+		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))
+		        return true;
+		
+		return false;
 	}
 }

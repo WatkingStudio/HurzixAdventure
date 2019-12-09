@@ -44,6 +44,9 @@ TagManager:
   - name: Tilemap
     uniqueID: 3992586083
     locked: 0
+  - name: Environment
+    uniqueID: 2004645799
+    locked: 0
   - name: Narrators
     uniqueID: 1378779021
     locked: 0

@@ -24,7 +24,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000100000001000000000000000100000000000000
     m_Sprites:
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000200000001000000010000000100000000000000
     m_Sprites:
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000200000001000000000000000100000000000000
     m_Sprites:
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000001000000020000000100000001000000000000000100000002000000
     m_Sprites:
@@ -64,7 +64,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0200000001000000000000000100000001000000000000000100000002000000
     m_Sprites:
@@ -74,7 +74,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0200000001000000000000000100000001000000000000000100000000000000
     m_Sprites:
@@ -94,7 +94,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000001000000000000000200000001000000000000000100000000000000
     m_Sprites:
@@ -104,7 +104,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000001000000000000000100000002000000000000000100000000000000
     m_Sprites:
@@ -114,7 +114,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000200000001000000000000000200000000000000
     m_Sprites:
@@ -134,7 +134,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000002000000000000000100000002000000000000000200000000000000
     m_Sprites:
@@ -144,7 +144,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0200000001000000000000000100000000000000000000000200000000000000
     m_Sprites:
@@ -154,7 +154,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0
   - m_Neighbors: 0000000001000000000000000100000001000000000000000200000000000000
     m_Sprites:
@@ -184,5 +184,5 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_RuleTransform: 2
     m_Output: 0
-    m_ColliderType: 1
+    m_ColliderType: 2
     m_RandomTransform: 0

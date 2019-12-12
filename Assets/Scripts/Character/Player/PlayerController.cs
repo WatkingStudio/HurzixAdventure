@@ -62,8 +62,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private AnimationClip m_AttackClip;
 
-	public List<Collider2D> PriorityCollider { get { return m_PriorityCollider; } }
-
 	private Damager m_ActiveDamager;
 	private bool m_IsAttacking = false;
 	private bool m_IsGrounded = true;

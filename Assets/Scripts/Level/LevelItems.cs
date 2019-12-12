@@ -13,7 +13,7 @@ using UnityEngine;
 public class LevelItems : MonoBehaviour
 {
 	[SerializeField, Tooltip("This is a list of items that can be collected on this level")]
-	private List<InventoryItem> m_CollectableItems;
+	private List<InventoryItem> m_CollectableInventoryItems;
 
 	[Space]
 	[SerializeField]
@@ -27,7 +27,7 @@ public class LevelItems : MonoBehaviour
 
 	private void Start()
 	{
-		if (m_CollectableItems.Count == 0)
+		if (m_CollectableInventoryItems.Count == 0)
 			Debug.LogError("Collectable Items Set To 0 for " + gameObject.name);
 		if (!m_Inventory)
 			Debug.LogError("No Inventory has been assigned to " + gameObject.name);
@@ -36,7 +36,7 @@ public class LevelItems : MonoBehaviour
 		if (!m_RevealAudioClip)
 			Debug.LogError("No Audio Clip has been assigned to " + gameObject.name);
 
-		m_Inventory.SetupInventory(m_CollectableItems);
+		m_Inventory.SetupInventory(m_CollectableInventoryItems);
 	}
 
 	public void RevealClosestItem(Transform playerTransform)
@@ -44,11 +44,11 @@ public class LevelItems : MonoBehaviour
 		float shortestDistance = float.MaxValue;
 		int closestKey = -1;
 
-		for(int i = 0; i < m_CollectableItems.Count; ++i)
+		for(int i = 0; i < m_CollectableInventoryItems.Count; ++i)
 		{
-			if(m_CollectableItems[i].gameObject.activeSelf)
+			if(m_CollectableInventoryItems[i].gameObject.activeSelf)
 			{
-				float tempDistance = Vector3.Distance(m_CollectableItems[i].transform.position, playerTransform.position);
+				float tempDistance = Vector3.Distance(m_CollectableInventoryItems[i].transform.position, playerTransform.position);
 				if (tempDistance < shortestDistance)
 				{
 					closestKey = i;
@@ -60,7 +60,7 @@ public class LevelItems : MonoBehaviour
 		//closestKey should now be revealed
 		if (closestKey > -1)
 		{
-			m_CollectableItems[closestKey].RevealItem(playerTransform);
+			m_CollectableInventoryItems[closestKey].RevealItem(playerTransform);
 			m_AudioSource.clip = m_RevealAudioClip;
 			m_AudioSource.Play();
 		}

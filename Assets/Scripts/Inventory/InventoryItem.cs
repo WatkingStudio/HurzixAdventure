@@ -41,7 +41,7 @@ public class InventoryItem : Item
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponentInParent<PlayerController>())
-			if (collision.GetComponentInParent<PlayerController>().PriorityCollider != collision) 
+			if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision)) 
 				return;
 
 		//Check if the colliding object is on an interactable layer

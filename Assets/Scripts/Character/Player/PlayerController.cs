@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField, Tooltip("The circle collider for the player while standing")]
 	private CircleCollider2D m_StandingCircleCollider2;
 	[SerializeField, Tooltip("The priority collider for this character")]
-	private Collider2D m_PriorityCollider;
+	private List<Collider2D> m_PriorityCollider;
 
 	[Header("Misc")]
 	[SerializeField]
@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviour
 	private PlayerAnimations m_Animator;
 	[SerializeField]
 	private AnimationClip m_AttackClip;
-
-	public Collider2D PriorityCollider { get { return m_PriorityCollider; } }
 
 	private Damager m_ActiveDamager;
 	private bool m_IsAttacking = false;
@@ -88,8 +86,8 @@ public class PlayerController : MonoBehaviour
 			Debug.LogError("No Collider has been assigned to " + gameObject.name + " for the standing circle collider");
 		if (!m_StandingCircleCollider2)
 			Debug.LogError("No Collider has been assigned to " + gameObject.name + " for the standing circle collider");
-		if (!m_PriorityCollider)
-			Debug.LogError("No priority Collider has been assigned to " + gameObject.name);
+		if (m_PriorityCollider.Count <= 0)
+			Debug.LogError("Number of priority colliders for " + gameObject.name + " is set to 0");
 		if (!m_PlayerCharacter)
 			Debug.LogError("No Player Character has been assigned to " + gameObject.name);
 		if (!m_StandingDamager)
@@ -102,6 +100,15 @@ public class PlayerController : MonoBehaviour
 			Debug.LogWarning("No Attack Animation Clip has been assigned to " + gameObject.name);
 
 		m_ActiveDamager = m_StandingDamager;
+	}
+
+	public bool IsPriorityCollider(Collider2D collider)
+	{
+		foreach(var col in m_PriorityCollider)
+			if (col == collider)
+				return true;
+
+		return false;
 	}
 
 	public void DisableMovement()
@@ -241,7 +248,8 @@ public class PlayerController : MonoBehaviour
 	private void SetCollidersCrouch()
 	{
 		m_CrouchingBoxCollider.enabled = true;
-		m_PriorityCollider = m_CrouchingBoxCollider;
+		m_PriorityCollider.Clear();
+		m_PriorityCollider.Add(m_CrouchingBoxCollider);
 
 		m_StandingBoxCollider.enabled = false;
 		m_StandingBoxCollider2.enabled = false;
@@ -259,7 +267,9 @@ public class PlayerController : MonoBehaviour
 		m_StandingBoxCollider2.enabled = true;
 		m_StandingCircleCollider.enabled = true;
 		m_StandingCircleCollider2.enabled = true;
-		m_PriorityCollider = m_StandingBoxCollider;
+		m_PriorityCollider.Clear();
+		m_PriorityCollider.Add(m_StandingCircleCollider);
+		m_PriorityCollider.Add(m_StandingCircleCollider2);
 
 		m_CrouchingBoxCollider.enabled = false;
 

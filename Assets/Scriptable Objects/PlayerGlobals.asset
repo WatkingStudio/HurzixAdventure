@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d12f2b73afcad4eb83726dcc5716de, type: 3}
   m_Name: PlayerGlobals
   m_EditorClassIdentifier: 
-  m_PlayerHealth: 2
-  m_PlayerScore: 0
+  m_DefaultHealth: 3
+  m_PlayerHealth: 3
+  m_PlayerScore: 20

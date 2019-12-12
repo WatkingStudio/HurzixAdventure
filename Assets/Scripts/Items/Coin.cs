@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponentInParent<PlayerController>())
-			if (collision.GetComponentInParent<PlayerController>().PriorityCollider != collision)
+			if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision))
 				return;
 
 		if((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)

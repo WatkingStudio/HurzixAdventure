@@ -27,6 +27,7 @@ public class InventoryItem : Item
 	private ItemAudio m_ItemAudio;
 
 	private bool m_HaloActive = false;
+	private bool m_Collected = false;
 
 	private void Start()
 	{
@@ -40,9 +41,14 @@ public class InventoryItem : Item
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (m_Collected)
+			return;
+
 		if (collision.GetComponentInParent<PlayerController>())
-			if (collision.GetComponentInParent<PlayerController>().PriorityCollider != collision) 
+			if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision))
 				return;
+			else
+				m_Collected = true;
 
 		//Check if the colliding object is on an interactable layer
 		if ((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)

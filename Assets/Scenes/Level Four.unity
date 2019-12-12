@@ -2846,7 +2846,7 @@ PrefabInstance:
     - target: {fileID: 8100418763502523011, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Key_3
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523012, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -10755,7 +10755,7 @@ PrefabInstance:
     - target: {fileID: 8100418763502523011, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Key_0
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523012, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -14091,6 +14091,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 1257561309}
@@ -14112,6 +14117,26 @@ PrefabInstance:
     - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_CollectableItems.Array.data[3]
+      value: 
+      objectReference: {fileID: 884912127}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 712159102}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 533367010}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 1153359747}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[3]
       value: 
       objectReference: {fileID: 884912127}
     - target: {fileID: 2035283665943670453, guid: d37e17924dc962041b71a227a7fa9d19,
@@ -17764,7 +17789,7 @@ PrefabInstance:
     - target: {fileID: 8100418763502523011, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Key_2
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523012, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
@@ -18607,7 +18632,7 @@ PrefabInstance:
     - target: {fileID: 8100418763502523011, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Key_1
       objectReference: {fileID: 0}
     - target: {fileID: 8100418763502523012, guid: 9c63af01c86e2e743bdcc6e43bf90fb6,
         type: 3}

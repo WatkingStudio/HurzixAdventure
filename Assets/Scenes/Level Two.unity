@@ -1043,12 +1043,12 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.354059
+      value: -6.934059
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5938737
+      value: 3.4838736
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -1263,6 +1263,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cartoon Gorilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_WaypointB.x
+      value: 32.866978
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_WaypointA.x
+      value: 23.451271
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_WaypointA.y
+      value: 0.956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
+        type: 3}
+      propertyPath: m_WaypointB.y
+      value: 0.956
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840a2fa33eb0944448d1abefdcea508d, type: 3}
@@ -12128,6 +12148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
       propertyPath: m_CollectableItems.Array.data[0]
       value: 
       objectReference: {fileID: 1750346982}
@@ -12151,6 +12176,21 @@ PrefabInstance:
       propertyPath: m_AudioSource
       value: 
       objectReference: {fileID: 1759820328}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 1750346982}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 2130281334}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 1477456506}
     - target: {fileID: 2035283665943670453, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_LocalPosition.x

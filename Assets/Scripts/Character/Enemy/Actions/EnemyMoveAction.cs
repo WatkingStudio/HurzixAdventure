@@ -35,7 +35,7 @@ public class EnemyMoveAction : EnemyAction
 
 		if (m_WaypointA.Equals(m_WaypointB))
 			Debug.LogWarning("Both waypoints for " + gameObject.name + " are equal.");
-		else if (m_WaypointB.y < m_WaypointA.y)
+		else if (m_WaypointB.x < m_WaypointA.x)
 			Debug.LogError("Invalid Waypoint positions. Waypoint B cannot be positioned before Waypoint A");
 
 		//This is done instead of assigning the value through a SerializeField to ensure it is the EnemyAudio script

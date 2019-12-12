@@ -7726,12 +7726,12 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.354059
+      value: -27.414059
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5938737
+      value: 4.593874
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -10028,6 +10028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
       propertyPath: m_CollectableItems.Array.data[0]
       value: 
       objectReference: {fileID: 1316452353}
@@ -10036,6 +10041,11 @@ PrefabInstance:
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 1947009433}
+    - target: {fileID: 2035283664921056810, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_CollectableInventoryItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 1316452353}
     - target: {fileID: 2035283664921056811, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -11984,7 +11994,7 @@ PrefabInstance:
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
       propertyPath: m_WaypointA.y
-      value: 3.843391
+      value: 3.962
       objectReference: {fileID: 0}
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
@@ -11994,7 +12004,7 @@ PrefabInstance:
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
       propertyPath: m_WaypointB.y
-      value: 3.7638786
+      value: 3.962
       objectReference: {fileID: 0}
     - target: {fileID: 6140492739695814609, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}

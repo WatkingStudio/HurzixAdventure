@@ -108,7 +108,7 @@ public class PlayerCharacter : MonoBehaviour
 		m_Damageable.EnableInvulnerability();
 		m_PlayerAudio.PlayDeathAudioClip();
 		//Respawn Player
-		StartCoroutine(DieRespawnCoroutine(false, true));
+		StartCoroutine(DieRespawnCoroutine(true, true));
 	}
 
 	public void OnRespawn(bool resetHealth)
@@ -223,5 +223,10 @@ public class PlayerCharacter : MonoBehaviour
 	{
 		m_PlayerGlobals.PlayerHealth = m_Damageable.m_CurrentHealth;
 		m_PlayerGlobals.PlayerScore = m_PlayerScore;
+	}
+
+	public void UpdateCheckpoint(Transform newCheckpoint)
+	{
+		m_ActiveCheckpoint = newCheckpoint;
 	}
 }

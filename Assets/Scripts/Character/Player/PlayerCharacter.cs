@@ -16,6 +16,7 @@ public class PlayerCharacter : MonoBehaviour
 	[Header("External Variables")]
 	[SerializeField]
 	private Transform m_ActiveCheckpoint;
+	private int m_ActiveCheckpointID;
 	[SerializeField]
 	private Transform m_StartingPosition;
 	[SerializeField]
@@ -225,8 +226,12 @@ public class PlayerCharacter : MonoBehaviour
 		m_PlayerGlobals.PlayerScore = m_PlayerScore;
 	}
 
-	public void UpdateCheckpoint(Transform newCheckpoint)
+	public void UpdateCheckpoint(Transform newCheckpoint, int checkpointID)
 	{
-		m_ActiveCheckpoint = newCheckpoint;
+		if(checkpointID > m_ActiveCheckpointID)
+		{
+			m_ActiveCheckpoint = newCheckpoint;
+			m_ActiveCheckpointID = checkpointID;
+		}
 	}
 }

@@ -63,7 +63,6 @@ public class Gravestone : MonoBehaviour
 	public void GravestoneDestroyed(Damager damager, Damageable damageable)
 	{
 		int random = Random.Range(0, 3);
-		Debug.Log(random);
 
 		if (random == 0) //Give Coins
 		{
@@ -80,7 +79,7 @@ public class Gravestone : MonoBehaviour
 		else if (random == 2) //Deal Damage
 		{
 			m_Animator.SetBool("DamageDrop", true);
-			m_DespawnTimer = m_HealthAnimation.length + 0.5f;
+			m_DespawnTimer = m_DamageAnimation.length + 0.5f;
 			damager.GetComponentInParent<Damageable>().TakeDamage(m_Damager, true);
 		}
 

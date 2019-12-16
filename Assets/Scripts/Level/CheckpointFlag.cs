@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class Checkpoint : MonoBehaviour
+public class CheckpointFlag : MonoBehaviour
 {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

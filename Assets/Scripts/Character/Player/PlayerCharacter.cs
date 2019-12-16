@@ -228,6 +228,5 @@ public class PlayerCharacter : MonoBehaviour
 	public void UpdateCheckpoint(Transform newCheckpoint)
 	{
 		m_ActiveCheckpoint = newCheckpoint;
-		Debug.Log("Checkpoint Set");
 	}
 }

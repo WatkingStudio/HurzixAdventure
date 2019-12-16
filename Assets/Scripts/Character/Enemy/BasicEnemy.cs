@@ -16,6 +16,8 @@ public class BasicEnemy : MonoBehaviour
 	private Animator m_Animator;
 	[SerializeField, Tooltip("Which actions are available to this enemy")]
 	private List<EnemyAction.Actions> m_AvailableActions;
+	[SerializeField]
+	private EnemyAction.Actions m_DefaultAction;
 
 	private EnemyAction m_ActiveAction;
 	const float k_SpriteFlipOffset = .5f;
@@ -23,7 +25,7 @@ public class BasicEnemy : MonoBehaviour
 
 	private void Start()
 	{
-		SetActiveAction(EnemyAction.Actions.EnemyMoveAction);
+		SetActiveAction(m_DefaultAction);
 
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
@@ -89,6 +91,9 @@ public class BasicEnemy : MonoBehaviour
 		{
 			case EnemyAction.Actions.EnemyMoveAction:
 				m_ActiveAction = GetComponentInChildren<EnemyMoveAction>();
+				break;
+			case EnemyAction.Actions.EnemyPlayerDetection:
+				m_ActiveAction = GetComponentInChildren<EnemyPlayerDetection>();
 				break;
 		}
 	}

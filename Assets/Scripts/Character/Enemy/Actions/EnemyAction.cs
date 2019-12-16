@@ -19,7 +19,8 @@ public class EnemyAction : MonoBehaviour
 {
 	public enum Actions
 	{
-		EnemyMoveAction
+		EnemyMoveAction,
+		EnemyPlayerDetection
 	}
 
     public virtual void PerformAction()

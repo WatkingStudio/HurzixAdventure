@@ -891,6 +891,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd073d2c9977cf14fa1a7a20b8559dd7, type: 3}
+--- !u!82 &673250570 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1066841088104706229, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
+    type: 3}
+  m_PrefabInstance: {fileID: 1758451213591807073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &683002387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4043183952868579352, guid: e8a1f65ac17a6534083d8b544daa2526,
@@ -13225,13 +13231,23 @@ PrefabInstance:
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_SoundEffectsAudioSources.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_SoundEffectsAudioSources.Array.data[0]
       value: 
       objectReference: {fileID: 1018783657}
+    - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_SoundEffectsAudioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 673250570}
+    - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_SoundEffectsAudioSources.Array.data[2]
+      value: 
+      objectReference: {fileID: 337381517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37e17924dc962041b71a227a7fa9d19, type: 3}
 --- !u!4 &1421239614 stripped
@@ -14396,11 +14412,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gravestone_0
       objectReference: {fileID: 0}
-    - target: {fileID: 1758451212179845534, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
-        type: 3}
-      propertyPath: m_AudioSource
-      value: 
-      objectReference: {fileID: 337381517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7fbfbdf439e10a4e9d35db1f83e4f17, type: 3}
 --- !u!1001 &3344522502995698045

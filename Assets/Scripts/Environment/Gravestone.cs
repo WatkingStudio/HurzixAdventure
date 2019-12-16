@@ -26,6 +26,8 @@ public class Gravestone : MonoBehaviour
 	private Animator m_Animator;
 	[SerializeField]
 	private AudioSource m_AudioSource;
+	[SerializeField]
+	private AudioClip m_CrumbleAudioClip;
 
 	[SerializeField]
 	private AnimationClip m_CoinAnimation;
@@ -40,6 +42,8 @@ public class Gravestone : MonoBehaviour
 	{
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		if (!m_CrumbleAudioClip)
+			Debug.LogError("No Crumbling audio clip has been assigned to " + gameObject.name);
 		if (!m_CoinAnimation)
 			Debug.LogError("No Coin Animation has been assigned to " + gameObject.name);
 		if (!m_HealthAnimation)
@@ -51,6 +55,8 @@ public class Gravestone : MonoBehaviour
 	public void GravestoneDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
+		if (m_Damageable.CurrentHealth() == 0)
+			m_AudioSource.clip = m_CrumbleAudioClip;
 		m_AudioSource.Play();
 	}
 

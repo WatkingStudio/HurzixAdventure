@@ -179,6 +179,9 @@ public class Damageable : MonoBehaviour
 		if (m_HealingBufferActive)
 			return;
 
+		if (m_CurrentHealth >= m_StartingHealth)
+			return;
+
 		m_CurrentHealth++;
 		m_OnGainHealth.Invoke(1, this);
 		DisableHealing();
@@ -187,6 +190,9 @@ public class Damageable : MonoBehaviour
 	public void RegainHealth(int val)
 	{
 		if (m_HealingBufferActive)
+			return;
+
+		if (m_CurrentHealth >= m_StartingHealth)
 			return;
 
 		m_CurrentHealth += val;

@@ -25,18 +25,26 @@ public class EnemyPlayerDetection : EnemyAction
 	private Transform m_LineOfSightEnd;
 	[SerializeField]
 	private Transform m_Player;
+	[SerializeField]
+	private float m_MinLOSAngle = 30;
+	[SerializeField]
+	private float m_MaxLOSAngle = 150;
+	[SerializeField]
+	private BasicEnemy m_BasicEnemy;
+
+	private PlayerCharacter m_PlayerCharacter;
+
+	public PlayerCharacter PlayerCharacter { get { return m_PlayerCharacter; } }
 
 	public bool PlayerInRange { get { return m_PlayerInRange; } }
 
 	public override void PerformAction()
 	{
 		if (CanPlayerBeSeen())
-			m_Sprite.color = Color.green;
-		else
-			m_Sprite.color = Color.red;
+			m_BasicEnemy.SetActiveAction(Actions.EnemyMoveToPlayer);
 	}
 
-	private bool CanPlayerBeSeen()
+	public bool CanPlayerBeSeen()
 	{
 		//Only need to check visibility if the player is within range of the enemy
 		if(m_PlayerInRange)
@@ -68,9 +76,12 @@ public class EnemyPlayerDetection : EnemyAction
 		Vector2 lineOfSight = m_LineOfSightEnd.position - transform.position;
 		Debug.DrawLine(transform.position, m_LineOfSightEnd.position, Color.yellow);
 
-		float angle = Vector2.Angle(directionToPlayer, lineOfSight);
+		//float angle = Vector2.Angle(directionToPlayer, lineOfSight);
+		float angle = Vector2.SignedAngle(directionToPlayer, lineOfSight);
 
-		if (angle < 65)
+		//Debug.Log(angle);
+
+		if (angle > m_MinLOSAngle && angle < m_MaxLOSAngle)
 			return true;
 
 		return false;
@@ -91,6 +102,8 @@ public class EnemyPlayerDetection : EnemyAction
 
 			if (hit.transform.tag != "Player")
 				return true;
+			else
+				m_PlayerCharacter = hit.transform.gameObject.GetComponent<PlayerCharacter>();		
 		}
 
 		return false;

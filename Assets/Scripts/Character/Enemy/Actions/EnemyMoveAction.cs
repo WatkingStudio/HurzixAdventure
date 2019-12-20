@@ -66,4 +66,10 @@ public class EnemyMoveAction : EnemyAction
 		m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 	}
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = new Color(1f, 0f, 0f, 1f);
+		Gizmos.DrawLine(m_WaypointA, m_WaypointB);
+	}
 }

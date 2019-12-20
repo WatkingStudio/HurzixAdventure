@@ -911,7 +911,7 @@ MonoBehaviour:
   m_JumpForce: 420
   m_CrouchSpeed: 0.468
   m_MovementSmoothing: 0.05
-  m_SprintSpeed: 1.5
+  m_SprintSpeed: 1.75
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2

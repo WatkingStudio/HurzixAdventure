@@ -13,15 +13,15 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
 	[SerializeField]
-	private Animator m_Animator;
+	protected Animator m_Animator;
 	[SerializeField, Tooltip("Which actions are available to this enemy")]
-	private List<EnemyAction.Actions> m_AvailableActions;
+	protected List<EnemyAction.Actions> m_AvailableActions;
 	[SerializeField]
-	private EnemyAction.Actions m_DefaultAction;
+	protected EnemyAction.Actions m_DefaultAction;
 
-	private EnemyAction m_ActiveAction;
+	protected EnemyAction m_ActiveAction;
 	const float k_SpriteFlipOffset = .5f;
-	private bool m_FacingRight = true;
+	protected bool m_FacingRight = true;
 
 	private void Start()
 	{
@@ -35,7 +35,7 @@ public class BasicEnemy : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	private void Update()
     {
 		if (m_ActiveAction == null)
 			return;
@@ -75,7 +75,12 @@ public class BasicEnemy : MonoBehaviour
 		}
 	}
 
-	private bool CheckValidAction(EnemyAction.Actions action)
+	public void SetDefaultAction()
+	{
+		AssignValidAction(m_DefaultAction);
+	}
+
+	protected bool CheckValidAction(EnemyAction.Actions action)
 	{
 		foreach (EnemyAction.Actions act in m_AvailableActions)
 		{
@@ -85,7 +90,7 @@ public class BasicEnemy : MonoBehaviour
 		return false;
 	}
 
-	private void AssignValidAction(EnemyAction.Actions action)
+	protected void AssignValidAction(EnemyAction.Actions action)
 	{
 		switch(action)
 		{
@@ -94,6 +99,9 @@ public class BasicEnemy : MonoBehaviour
 				break;
 			case EnemyAction.Actions.EnemyPlayerDetection:
 				m_ActiveAction = GetComponentInChildren<EnemyPlayerDetection>();
+				break;
+			case EnemyAction.Actions.EnemyMoveToPlayer:
+				m_ActiveAction = GetComponentInChildren<EnemyMoveToPlayerAction>();
 				break;
 		}
 	}

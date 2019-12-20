@@ -25,6 +25,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private BasicEnemy m_BasicEnemy;
 	[SerializeField]
 	private float m_Speed = 1f;
+	[SerializeField]
+	private Animator m_Animator;
 
 	private PlayerCharacter m_PlayerCharacter;
 	private bool m_IsInitialised = false;
@@ -40,6 +42,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 
 		if(m_PlayerCharacter.transform.position.x > transform.position.x)
 		{
+			SetAnimationRight(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(m_Speed, m_RigidBody2D.velocity.y);
 
@@ -48,6 +51,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		}
 		else
 		{
+			SetAnimationLeft(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(-m_Speed, m_RigidBody2D.velocity.y);
 
@@ -59,7 +63,10 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private bool CheckForCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))
+		{
+			StopEnemy();
 			return true;
+		}
 
 		return false;
 	}
@@ -68,5 +75,20 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	{
 		Vector2 vec = new Vector2(0, m_RigidBody2D.velocity.y);
 		m_RigidBody2D.velocity = vec;
+		m_Animator.SetFloat("Speed", 0);
+	}
+
+	private void SetAnimationRight(float speed = 0)
+	{
+		m_Animator.SetBool("Left", false);
+		m_Animator.SetBool("Right", true);
+		m_Animator.SetFloat("Speed", speed);
+	}
+
+	private void SetAnimationLeft(float speed = 0)
+	{
+		m_Animator.SetBool("Right", false);
+		m_Animator.SetBool("Left", true);
+		m_Animator.SetFloat("Speed", speed);
 	}
 }

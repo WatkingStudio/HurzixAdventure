@@ -103,6 +103,9 @@ public class BasicEnemy : MonoBehaviour
 			case EnemyAction.Actions.EnemyMoveToPlayer:
 				m_ActiveAction = GetComponentInChildren<EnemyMoveToPlayerAction>();
 				break;
+			case EnemyAction.Actions.EnemyMeleeAttack:
+				m_ActiveAction = GetComponentInChildren<EnemyMeleeAttack>();
+				break;
 		}
 	}
 }

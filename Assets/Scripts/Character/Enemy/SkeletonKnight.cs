@@ -16,8 +16,12 @@ public class SkeletonKnight : BasicEnemy
 	private EnemyPlayerDetection m_EnemyPlayerDetection;
 	[SerializeField]
 	private EnemyMoveToPlayerAction m_EnemyMoveToPlayer;
+	[SerializeField]
+	private BoxCollider2D m_CollisionBox;
+	[SerializeField, Tooltip("Which layers will this enemy target with attacks")]
+	private LayerMask m_WhatIsTarget;
 
-	private float m_DetectionTimerDefault = 2f;
+	private float m_DetectionTimerDefault = 0.5f;
 	private float m_DetectionTimer;
 
     // Start is called before the first frame update
@@ -43,14 +47,22 @@ public class SkeletonKnight : BasicEnemy
 			return;
 		m_ActiveAction.PerformAction();
 
-		m_DetectionTimer -= Time.deltaTime;
-		if(m_DetectionTimer < 0)
+		if(m_ActiveAction.Action == EnemyAction.Actions.EnemyMoveToPlayer)
 		{
-			m_DetectionTimer = m_DetectionTimerDefault;
-			if(!m_EnemyPlayerDetection.CanPlayerBeSeen())
+			m_DetectionTimer -= Time.deltaTime;
+			if (m_DetectionTimer < 0)
 			{
-				m_EnemyMoveToPlayer.StopEnemy();
-				SetActiveAction(EnemyAction.Actions.EnemyPlayerDetection);
+				m_DetectionTimer = m_DetectionTimerDefault;
+				if (!m_EnemyPlayerDetection.CanPlayerBeSeen())
+				{
+					m_EnemyMoveToPlayer.StopEnemy();
+					SetActiveAction(EnemyAction.Actions.EnemyPlayerDetection);
+				}
+			}
+
+			if(m_CollisionBox.IsTouchingLayers(m_WhatIsTarget))
+			{
+				SetActiveAction(EnemyAction.Actions.EnemyMeleeAttack);
 			}
 		}
 	}

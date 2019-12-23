@@ -32,6 +32,11 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private bool m_IsInitialised = false;
 	private Vector3 m_Velocity = Vector3.zero;
 
+	private void Start()
+	{
+		m_Action = Actions.EnemyMoveToPlayer;
+	}
+
 	public override void PerformAction()
 	{
 		if (!m_IsInitialised)

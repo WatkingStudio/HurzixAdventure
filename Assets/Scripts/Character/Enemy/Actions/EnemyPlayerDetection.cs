@@ -33,10 +33,16 @@ public class EnemyPlayerDetection : EnemyAction
 	private BasicEnemy m_BasicEnemy;
 
 	private PlayerCharacter m_PlayerCharacter;
+	
 
 	public PlayerCharacter PlayerCharacter { get { return m_PlayerCharacter; } }
 
 	public bool PlayerInRange { get { return m_PlayerInRange; } }
+
+	private void Start()
+	{
+		m_Action = Actions.EnemyPlayerDetection;
+	}
 
 	public override void PerformAction()
 	{

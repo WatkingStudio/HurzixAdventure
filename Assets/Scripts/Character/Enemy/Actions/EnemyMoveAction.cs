@@ -41,6 +41,7 @@ public class EnemyMoveAction : EnemyAction
 		//This is done instead of assigning the value through a SerializeField to ensure it is the EnemyAudio script
 		// attached to the same GameObject as the BasicEnemy script
 		m_EnemyAudio = m_BasicEnemy.GetComponent<EnemyAudio>();
+		m_Action = Actions.EnemyMoveAction;
 	}
 
 	public override void PerformAction()
@@ -65,5 +66,11 @@ public class EnemyMoveAction : EnemyAction
 
 		m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
+	}
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = new Color(1f, 0f, 0f, 1f);
+		Gizmos.DrawLine(m_WaypointA, m_WaypointB);
 	}
 }

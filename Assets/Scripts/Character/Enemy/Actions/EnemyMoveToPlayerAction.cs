@@ -35,6 +35,17 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private void Start()
 	{
 		m_Action = Actions.EnemyMoveToPlayer;
+
+		if (!m_EnemyPlayerDetectionAction)
+			Debug.LogError("No Enemy Player Detection script has been assigned to " + gameObject.name);
+		if (!m_RigidBody2D)
+			Debug.LogError("No RigidBody2D has been assigned to " + gameObject.name);
+		if (!m_CollisionCheckerCollider)
+			Debug.LogError("No Collision Check Collider has been assigned to " + gameObject.name);
+		if (!m_BasicEnemy)
+			Debug.LogError("No Basic Enemy script has been assigned to " + gameObject.name);
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
 	}
 
 	public override void PerformAction()

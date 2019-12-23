@@ -38,6 +38,8 @@ public class SkeletonKnight : BasicEnemy
 			Debug.LogError("No Enemy Player Detection script has been assigned to " + gameObject.name);
 		if (!m_EnemyMoveToPlayer)
 			Debug.LogError("No Enemy Move To Player script has been assigned to " + gameObject.name);
+		if (!m_CollisionBox)
+			Debug.LogError("No Collision Box has been assigned to " + gameObject.name);
 	}
 
     // Update is called once per frame

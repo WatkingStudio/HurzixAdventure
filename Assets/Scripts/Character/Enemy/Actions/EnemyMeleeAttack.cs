@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class EnemyMeleeAttack
+ * 
+ * \brief This class holds the functionality of an enemy performing an attack
+ * 
+ * \date 2019/23/12
+ */ 
 public class EnemyMeleeAttack : EnemyAction
 {
 	[SerializeField]
@@ -18,6 +25,15 @@ public class EnemyMeleeAttack : EnemyAction
 	private void Start()
 	{
 		m_Action = Actions.EnemyMeleeAttack;
+
+		if (!m_Damager)
+			Debug.LogError("No Damager has been assigned to " + gameObject.name);
+		if (!m_Animator)
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		if (!m_AttackClip)
+			Debug.LogError("No Attack Clip has been assigned to " + gameObject.name);
+		if (!m_BasicEnemy)
+			Debug.LogError("No Basic Enemy script has been assigned to " + gameObject.name);
 	}
 
 	public override void PerformAction()

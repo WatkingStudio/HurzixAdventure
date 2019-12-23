@@ -42,6 +42,15 @@ public class EnemyPlayerDetection : EnemyAction
 	private void Start()
 	{
 		m_Action = Actions.EnemyPlayerDetection;
+
+		if (!m_Sprite)
+			Debug.LogError("No Sprite Renderer has been assigned to " + gameObject.name);
+		if (!m_LineOfSightEnd)
+			Debug.LogError("No Line Of Sight End Transform has been assigned to " + gameObject.name);
+		if (!m_Player)
+			Debug.LogError("No Player Transform has been assigned to " + gameObject.name);
+		if (!m_BasicEnemy)
+			Debug.LogError("No Basic Enemy has been assigned to " + gameObject.name);
 	}
 
 	public override void PerformAction()
@@ -82,10 +91,7 @@ public class EnemyPlayerDetection : EnemyAction
 		Vector2 lineOfSight = m_LineOfSightEnd.position - transform.position;
 		Debug.DrawLine(transform.position, m_LineOfSightEnd.position, Color.yellow);
 
-		//float angle = Vector2.Angle(directionToPlayer, lineOfSight);
 		float angle = Vector2.SignedAngle(directionToPlayer, lineOfSight);
-
-		//Debug.Log(angle);
 
 		if (angle > m_MinLOSAngle && angle < m_MaxLOSAngle)
 			return true;

@@ -27,6 +27,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private float m_Speed = 1f;
 	[SerializeField]
 	private Animator m_Animator;
+	[SerializeField]
+	private EnemyAudio m_EnemyAudio;
 
 	private PlayerCharacter m_PlayerCharacter;
 	private bool m_IsInitialised = false;
@@ -46,6 +48,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 			Debug.LogError("No Basic Enemy script has been assigned to " + gameObject.name);
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		if (!m_EnemyAudio)
+			Debug.LogError("No Enemy Audio has been assigned to " + gameObject.name);
 	}
 
 	public override void PerformAction()
@@ -74,6 +78,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 			if (!CheckForCollision())
 				m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 		}
+
+		m_EnemyAudio.PlayWalkAudioClip();
 	}
 
 	private bool CheckForCollision()

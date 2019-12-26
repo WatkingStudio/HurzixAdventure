@@ -14,11 +14,11 @@ public class EnemyAudio : MonoBehaviour
 {
 	[Header("Audio")]
 	[SerializeField]
-	private AudioSource m_AudioSource;
+	protected AudioSource m_AudioSource;
 	[SerializeField]
-	private List<AudioClip> m_WalkAudio;
+	protected List<AudioClip> m_WalkAudio;
 
-	private void Start()
+	protected void Start()
 	{
 		if (!m_AudioSource)
 			Debug.LogError("No Audio source connected to " + gameObject.name);

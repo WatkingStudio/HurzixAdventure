@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /**
  * \class EnemyMeleeAttack
@@ -20,6 +21,8 @@ public class EnemyMeleeAttack : EnemyAction
 	[SerializeField]
 	private BasicEnemy m_BasicEnemy;
 
+	public UnityEvent OnAttackEvent;
+
 	private bool m_IsAttacking = false;
 
 	private void Start()
@@ -34,6 +37,12 @@ public class EnemyMeleeAttack : EnemyAction
 			Debug.LogError("No Attack Clip has been assigned to " + gameObject.name);
 		if (!m_BasicEnemy)
 			Debug.LogError("No Basic Enemy script has been assigned to " + gameObject.name);
+	}
+
+	private void Awake()
+	{
+		if (OnAttackEvent == null)
+			OnAttackEvent = new UnityEvent();
 	}
 
 	public override void PerformAction()
@@ -53,5 +62,6 @@ public class EnemyMeleeAttack : EnemyAction
 		m_Damager.DisableDamage();
 		m_IsAttacking = false;
 		m_BasicEnemy.SetDefaultAction();
+		OnAttackEvent.Invoke();
 	}
 }

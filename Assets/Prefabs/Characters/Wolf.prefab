@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Offset: {x: 0.09, y: 0.02}
   m_Size: {x: 0.57, y: 1}
   m_OffsetBaseOnSpriteFacing: 1
-  m_CanHitTriggers: 0
+  m_CanHitTriggers: 1
   m_DisableDamageAfterHit: 1
   m_ForceRespawn: 0
   m_IgnoreInvincibility: 0

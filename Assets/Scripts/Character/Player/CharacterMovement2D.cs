@@ -52,6 +52,7 @@ public class CharacterMovement2D : MonoBehaviour
 	public UnityEvent OnLandEvent;
 	public UnityEvent OnStartFalling;
 	public UnityEvent OnStopFalling;
+	public UnityEvent OnJump;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -83,6 +84,9 @@ public class CharacterMovement2D : MonoBehaviour
 
 		if (OnStopFalling == null)
 			OnStopFalling = new UnityEvent();
+
+		if (OnJump == null)
+			OnJump = new UnityEvent();
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
@@ -193,6 +197,7 @@ public class CharacterMovement2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			m_PlayerAudio.PlayJumpingAudioClip();
+			OnJump.Invoke();
 		}
 	}
 

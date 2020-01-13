@@ -786,6 +786,9 @@ MonoBehaviour:
     m_Bits: 512
   m_ScoreText: {fileID: 0}
   m_PlayerGlobals: {fileID: 11400000, guid: 0aa80eb5910ac1f47bf2f42427795ef1, type: 2}
+  m_ResetLevelEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4042919604207388734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +967,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4042919604207388735}
         m_MethodName: StopFalling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4042919604207388735}
+        m_MethodName: JustStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

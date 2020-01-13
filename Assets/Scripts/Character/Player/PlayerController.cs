@@ -206,30 +206,38 @@ public class PlayerController : MonoBehaviour
 		m_IsGrounded = true;
 	}
 
+	public void JustStart()
+	{
+		m_IsGrounded = false;
+	}
+
 	//Use for Physics
 	private void FixedUpdate()
 	{
-		if (m_MakeCrouched == 0)
+		if(m_IsGrounded)
 		{
-			if (!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
+			if (m_MakeCrouched == 0 && !m_Crouch)
 			{
-				m_Animator.PlayerCrouching(true);
-				m_Crouch = true;
-				SetCollidersCrouch();
-			}
+				if (!Physics2D.OverlapCircle(m_WallCheck.position, .2f, m_WhatIsGround))
+				{
+					m_Animator.PlayerCrouching(true);
+					m_Crouch = true;
+					SetCollidersCrouch();
+				}
 
-			m_MakeCrouched = 2;
-		}
-		else if (m_MakeCrouched == 1)
-		{
-			if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
-			{
-				m_Animator.PlayerCrouching(false);
-				m_Crouch = false;
-				SetCollidersStand();
 				m_MakeCrouched = 2;
 			}
-		}
+			else if (m_MakeCrouched == 1 && m_Crouch)
+			{
+				if (!Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+				{
+					m_Animator.PlayerCrouching(false);
+					m_Crouch = false;
+					SetCollidersStand();
+					m_MakeCrouched = 2;
+				}
+			}
+		}		
 
 		//Move character
 		m_Movement.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);

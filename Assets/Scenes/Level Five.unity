@@ -419,7 +419,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -28875,7 +28875,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -29337,7 +29337,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -31960,7 +31960,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -33255,11 +33255,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1431935013592031831, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1263554100}
+    - target: {fileID: 1431935013592031831, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RespawnPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio
       value: 
       objectReference: {fileID: 1028237789}
+    - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_PlayerCharacter
+      value: 
+      objectReference: {fileID: 219976469}
     - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio
@@ -33270,6 +33285,11 @@ PrefabInstance:
       propertyPath: m_LevelAudio
       value: 
       objectReference: {fileID: 1028237787}
+    - target: {fileID: 2863350987336561958, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3675825051050380593, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -33425,6 +33445,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9016547916876986666, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016547916876986666, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016547916876986666, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016547916876986666, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48407ebb758907a40b640d895c40a2bf, type: 3}
 --- !u!114 &1263554092 stripped
@@ -33499,6 +33539,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1263554091}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263554100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263554091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263554097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bbea8295046a846aa1d86079a85aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1274556825
 GameObject:
   m_ObjectHideFlags: 0
@@ -33552,7 +33604,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -41575,7 +41627,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:

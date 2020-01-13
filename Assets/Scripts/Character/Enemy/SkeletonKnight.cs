@@ -29,6 +29,7 @@ public class SkeletonKnight : BasicEnemy
     {
 		SetActiveAction(m_DefaultAction);
 		m_DetectionTimer = m_DetectionTimerDefault;
+		m_StartPosition = gameObject.transform.position;
 
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
@@ -67,5 +68,10 @@ public class SkeletonKnight : BasicEnemy
 				SetActiveAction(EnemyAction.Actions.EnemyMeleeAttack);
 			}
 		}
+	}
+
+	public override void ResetEnemy()
+	{
+		base.ResetEnemy();
 	}
 }

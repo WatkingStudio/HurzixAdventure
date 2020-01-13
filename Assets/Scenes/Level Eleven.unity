@@ -37827,6 +37827,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d6add93ea5f848989084b89dfa96b, type: 3}
+--- !u!114 &765673767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9159490105813903428, guid: a23d6add93ea5f848989084b89dfa96b,
+    type: 3}
+  m_PrefabInstance: {fileID: 765673766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa2bf20b55f5ae409b0d99037a60cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775371927
 GameObject:
   m_ObjectHideFlags: 0
@@ -41672,6 +41684,21 @@ PrefabInstance:
       propertyPath: m_SoundEffectsAudioSources.Array.data[8]
       value: 
       objectReference: {fileID: 1122808869}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 765673767}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1775058763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37e17924dc962041b71a227a7fa9d19, type: 3}
 --- !u!1001 &1470696199
@@ -44169,6 +44196,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d6add93ea5f848989084b89dfa96b, type: 3}
+--- !u!114 &1775058763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9159490105813903428, guid: a23d6add93ea5f848989084b89dfa96b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1775058762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa2bf20b55f5ae409b0d99037a60cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1783728875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6678653023555215510, guid: ca901869a6ea99240a77d2fea0d05194,

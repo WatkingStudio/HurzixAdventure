@@ -95,8 +95,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 
 	public void StopEnemy()
 	{
-		Vector2 vec = new Vector2(0, m_RigidBody2D.velocity.y);
-		m_RigidBody2D.velocity = vec;
+		m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
 		m_Animator.SetFloat("Speed", 0);
 	}
 

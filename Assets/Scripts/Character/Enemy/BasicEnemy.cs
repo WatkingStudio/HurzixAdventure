@@ -19,6 +19,7 @@ public class BasicEnemy : MonoBehaviour
 	[SerializeField]
 	protected EnemyAction.Actions m_DefaultAction;
 
+	protected Vector3 m_StartPosition;
 	protected EnemyAction m_ActiveAction;
 	const float k_SpriteFlipOffset = .5f;
 	protected bool m_FacingRight = true;
@@ -26,6 +27,8 @@ public class BasicEnemy : MonoBehaviour
 	private void Start()
 	{
 		SetActiveAction(m_DefaultAction);
+		m_StartPosition = gameObject.transform.position;
+		Debug.Log(m_StartPosition);
 
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
@@ -107,5 +110,12 @@ public class BasicEnemy : MonoBehaviour
 				m_ActiveAction = GetComponentInChildren<EnemyMeleeAttack>();
 				break;
 		}
+	}
+
+	public virtual void ResetEnemy()
+	{
+		transform.position = m_StartPosition;
+		m_Animator.SetTrigger("Idle");
+		m_Animator.SetFloat("Speed", 0);
 	}
 }

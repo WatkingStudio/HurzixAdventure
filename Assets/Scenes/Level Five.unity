@@ -3022,7 +3022,7 @@ PrefabInstance:
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7894960369271446172, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
@@ -4625,7 +4625,7 @@ PrefabInstance:
     - target: {fileID: 6138858052014487432, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
       propertyPath: m_Name
-      value: Cartoon Gorilla
+      value: CartoonGorilla_0
       objectReference: {fileID: 0}
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
@@ -4661,6 +4661,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 339409064}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &339409067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6140492739695814613, guid: 840a2fa33eb0944448d1abefdcea508d,
+    type: 3}
+  m_PrefabInstance: {fileID: 339409064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3239d5658ceb572418249e7f038b6481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &343270709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4681,7 +4693,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7440586
+      value: -6.7440534
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -6597,7 +6609,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7440586
+      value: -6.7440534
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -29399,7 +29411,7 @@ PrefabInstance:
     - target: {fileID: 6138858052014487432, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
       propertyPath: m_Name
-      value: Cartoon Gorilla (2)
+      value: CartoonGorilla_2
       objectReference: {fileID: 0}
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
@@ -29435,6 +29447,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 985084757}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &985084760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6140492739695814613, guid: 840a2fa33eb0944448d1abefdcea508d,
+    type: 3}
+  m_PrefabInstance: {fileID: 985084757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3239d5658ceb572418249e7f038b6481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &988880110
 GameObject:
   m_ObjectHideFlags: 0
@@ -30225,6 +30249,26 @@ PrefabInstance:
       propertyPath: m_SoundEffectsAudioSources.Array.data[4]
       value: 
       objectReference: {fileID: 1028237789}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 339409067}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 985084760}
+    - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_EnemiesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1157473803}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37e17924dc962041b71a227a7fa9d19, type: 3}
 --- !u!114 &1028237787 stripped
@@ -31990,7 +32034,7 @@ PrefabInstance:
     - target: {fileID: 6138858052014487432, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
       propertyPath: m_Name
-      value: Cartoon Gorilla (1)
+      value: CartoonGorilla_1
       objectReference: {fileID: 0}
     - target: {fileID: 6140492738651689338, guid: 840a2fa33eb0944448d1abefdcea508d,
         type: 3}
@@ -32026,6 +32070,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1157473800}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1157473803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6140492739695814613, guid: 840a2fa33eb0944448d1abefdcea508d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1157473800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3239d5658ceb572418249e7f038b6481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1161516154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37258,6 +37314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.617251
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7894960369271446172, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}

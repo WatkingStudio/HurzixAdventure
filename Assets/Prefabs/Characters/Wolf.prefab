@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Offset: {x: 0.09, y: 0.02}
   m_Size: {x: 0.57, y: 1}
   m_OffsetBaseOnSpriteFacing: 1
-  m_CanHitTriggers: 0
+  m_CanHitTriggers: 1
   m_DisableDamageAfterHit: 1
   m_ForceRespawn: 0
   m_IgnoreInvincibility: 0
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 4042919604190805354}
   m_Layer: 8
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Movement: {fileID: 4042919604207388732}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 3127
+    m_Bits: 3073
   m_CeilingCheck: {fileID: 4218727144965971296}
   m_WallCheck: {fileID: 5381595923957839618}
   m_RunSpeed: 30
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_JumpForce: 420
   m_CrouchSpeed: 0.468
   m_MovementSmoothing: 0.05
-  m_SprintSpeed: 1.5
+  m_SprintSpeed: 1.75
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2

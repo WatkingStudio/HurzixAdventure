@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c82b3125ffc421429e819e332407076, type: 3}
   m_Name: GameAudioSO
   m_EditorClassIdentifier: 
-  m_BackgroundVolume: 0.34023237
-  m_SoundEffectVolume: 0.26397967
+  m_BackgroundVolume: 0.1
+  m_SoundEffectVolume: 0.1

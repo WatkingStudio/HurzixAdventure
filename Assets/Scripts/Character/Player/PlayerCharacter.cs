@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
 
 /** 
  * \class Player Character
@@ -13,9 +15,14 @@ using UnityEngine.UIElements;
  */
 public class PlayerCharacter : MonoBehaviour
 {
+	[Serializable]
+	public class ResetLevelEvent : UnityEvent<bool>
+	{ }
+
 	[Header("External Variables")]
 	[SerializeField]
 	private Transform m_ActiveCheckpoint;
+	private int m_ActiveCheckpointID;
 	[SerializeField]
 	private Transform m_StartingPosition;
 	[SerializeField]
@@ -42,6 +49,10 @@ public class PlayerCharacter : MonoBehaviour
 	private TMPro.TextMeshProUGUI m_ScoreText;
 	[SerializeField]
 	private PlayerGlobals m_PlayerGlobals;
+
+	[Header("Events")]
+	[SerializeField]
+	private ResetLevelEvent m_ResetLevelEvent;
 
 	private int m_PlayerScore;
 
@@ -113,6 +124,7 @@ public class PlayerCharacter : MonoBehaviour
 
 	public void OnRespawn(bool resetHealth)
 	{
+		m_PlayerAudio.PlayHurtAudioClip();
 		Respawn(true, resetHealth);
 	}
 
@@ -190,6 +202,8 @@ public class PlayerCharacter : MonoBehaviour
 		m_PlayerController.EnableMovement();
 		m_Animator.PlayerDead(false);
 		m_Animator.PlayerIdle();
+
+		m_ResetLevelEvent.Invoke(true);
 	}
 
 	public void InteractWithObject()
@@ -225,8 +239,12 @@ public class PlayerCharacter : MonoBehaviour
 		m_PlayerGlobals.PlayerScore = m_PlayerScore;
 	}
 
-	public void UpdateCheckpoint(Transform newCheckpoint)
+	public void UpdateCheckpoint(Transform newCheckpoint, int checkpointID)
 	{
-		m_ActiveCheckpoint = newCheckpoint;
+		if(checkpointID > m_ActiveCheckpointID)
+		{
+			m_ActiveCheckpoint = newCheckpoint;
+			m_ActiveCheckpointID = checkpointID;
+		}
 	}
 }

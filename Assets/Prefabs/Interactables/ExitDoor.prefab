@@ -61,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -105,9 +106,18 @@ MonoBehaviour:
     type: 2}
   m_DoorUnlockedEvent:
     m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: LevelExit+DoorUnlockedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+      m_Calls:
+      - m_Target: {fileID: 6185070433731727884}
+        m_MethodName: GoToNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &2445227939910328128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NextLevel: 1
+  m_PlayerCharacter: {fileID: 0}

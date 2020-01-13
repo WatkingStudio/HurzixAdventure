@@ -13,17 +13,22 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
 	[SerializeField]
-	private Animator m_Animator;
+	protected Animator m_Animator;
 	[SerializeField, Tooltip("Which actions are available to this enemy")]
-	private List<EnemyAction.Actions> m_AvailableActions;
+	protected List<EnemyAction.Actions> m_AvailableActions;
+	[SerializeField]
+	protected EnemyAction.Actions m_DefaultAction;
 
-	private EnemyAction m_ActiveAction;
+	protected Vector3 m_StartPosition;
+	protected EnemyAction m_ActiveAction;
 	const float k_SpriteFlipOffset = .5f;
-	private bool m_FacingRight = true;
+	protected bool m_FacingRight = true;
 
 	private void Start()
 	{
-		SetActiveAction(EnemyAction.Actions.EnemyMoveAction);
+		SetActiveAction(m_DefaultAction);
+		m_StartPosition = gameObject.transform.position;
+		Debug.Log(m_StartPosition);
 
 		if (!m_Animator)
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
@@ -33,7 +38,7 @@ public class BasicEnemy : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	private void Update()
     {
 		if (m_ActiveAction == null)
 			return;
@@ -73,7 +78,12 @@ public class BasicEnemy : MonoBehaviour
 		}
 	}
 
-	private bool CheckValidAction(EnemyAction.Actions action)
+	public void SetDefaultAction()
+	{
+		AssignValidAction(m_DefaultAction);
+	}
+
+	protected bool CheckValidAction(EnemyAction.Actions action)
 	{
 		foreach (EnemyAction.Actions act in m_AvailableActions)
 		{
@@ -83,13 +93,29 @@ public class BasicEnemy : MonoBehaviour
 		return false;
 	}
 
-	private void AssignValidAction(EnemyAction.Actions action)
+	protected void AssignValidAction(EnemyAction.Actions action)
 	{
 		switch(action)
 		{
 			case EnemyAction.Actions.EnemyMoveAction:
 				m_ActiveAction = GetComponentInChildren<EnemyMoveAction>();
 				break;
+			case EnemyAction.Actions.EnemyPlayerDetection:
+				m_ActiveAction = GetComponentInChildren<EnemyPlayerDetection>();
+				break;
+			case EnemyAction.Actions.EnemyMoveToPlayer:
+				m_ActiveAction = GetComponentInChildren<EnemyMoveToPlayerAction>();
+				break;
+			case EnemyAction.Actions.EnemyMeleeAttack:
+				m_ActiveAction = GetComponentInChildren<EnemyMeleeAttack>();
+				break;
 		}
+	}
+
+	public virtual void ResetEnemy()
+	{
+		transform.position = m_StartPosition;
+		m_Animator.SetTrigger("Idle");
+		m_Animator.SetFloat("Speed", 0);
 	}
 }

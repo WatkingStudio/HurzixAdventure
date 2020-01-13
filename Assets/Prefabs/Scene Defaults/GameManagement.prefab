@@ -280,6 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035283664921056811}
   - component: {fileID: 2035283664921056810}
+  - component: {fileID: 8945535980531570698}
   m_Layer: 0
   m_Name: LevelData
   m_TagString: Untagged
@@ -313,10 +314,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e54b021e8ab7704fbd48de631ad40fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CollectableItems: []
+  m_CollectableInventoryItems: []
   m_Inventory: {fileID: 0}
   m_AudioSource: {fileID: 2035283665611281930}
   m_RevealAudioClip: {fileID: 8300000, guid: ed597cc7003e6d24fbb95353ab0b0689, type: 3}
+--- !u!114 &8945535980531570698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035283664921056808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f519b1ec2e0bb1c48a50bb4becdeedda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemiesList: []
 --- !u!1 &2035283665044513122
 GameObject:
   m_ObjectHideFlags: 0

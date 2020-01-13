@@ -24,6 +24,8 @@ public class LevelTransition : MonoBehaviour
 		LEVEL_FOUR,
 		LEVEL_FIVE,
 		LEVEL_SIX,
+		LEVEL_TEN,
+		LEVEL_ELEVEN,
 		GAME_COMPLETE
 	};
 
@@ -57,6 +59,10 @@ public class LevelTransition : MonoBehaviour
 				return "Level_Five";
 			case Levels.LEVEL_SIX:
 				return "Level_Six";
+			case Levels.LEVEL_TEN:
+				return "Level_Ten";
+			case Levels.LEVEL_ELEVEN:
+				return "Level_Eleven";
 			case Levels.GAME_COMPLETE:
 				return "Game_Complete";
 			default:

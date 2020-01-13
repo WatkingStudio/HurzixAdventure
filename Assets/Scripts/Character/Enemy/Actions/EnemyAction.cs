@@ -17,9 +17,16 @@ using UnityEngine;
 
 public class EnemyAction : MonoBehaviour
 {
+	protected Actions m_Action;
+
+	public Actions Action { get { return m_Action; } private set { } }
+
 	public enum Actions
 	{
-		EnemyMoveAction
+		EnemyMoveAction,
+		EnemyPlayerDetection,
+		EnemyMoveToPlayer,
+		EnemyMeleeAttack
 	}
 
     public virtual void PerformAction()

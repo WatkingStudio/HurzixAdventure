@@ -468,12 +468,12 @@ PrefabInstance:
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.43
+      value: 75.86641
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.3848095
+      value: -6.442189
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
@@ -19796,8 +19796,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277247068}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4364092, y: 2.9426203, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1948988925}
@@ -20220,12 +20220,12 @@ PrefabInstance:
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.4995575
+      value: 10.9359665
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.39062
+      value: -7.448
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
@@ -23532,6 +23532,11 @@ PrefabInstance:
       propertyPath: m_SceneAudio
       value: 
       objectReference: {fileID: 337381517}
+    - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_PlayerCharacter
+      value: 
+      objectReference: {fileID: 683002395}
     - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio
@@ -24459,12 +24464,12 @@ PrefabInstance:
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.79
+      value: 49.22641
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.39262
+      value: -9.45
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
@@ -26438,7 +26443,7 @@ PrefabInstance:
     - target: {fileID: 2445227939910328142, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2445227939910328142, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
@@ -27578,12 +27583,12 @@ PrefabInstance:
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.74
+      value: 28.176409
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: 3.5326202
       objectReference: {fileID: 0}
     - target: {fileID: 1758451212179845532, guid: e7fbfbdf439e10a4e9d35db1f83e4f17,
         type: 3}

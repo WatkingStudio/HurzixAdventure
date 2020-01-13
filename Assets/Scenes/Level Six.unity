@@ -22668,7 +22668,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -24129,7 +24129,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -24464,7 +24464,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -30209,6 +30209,11 @@ PrefabInstance:
       propertyPath: m_SceneAudio
       value: 
       objectReference: {fileID: 105386559}
+    - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_PlayerCharacter
+      value: 
+      objectReference: {fileID: 1307609253}
     - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio
@@ -32043,7 +32048,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -33406,7 +33411,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:
@@ -40295,7 +40300,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:

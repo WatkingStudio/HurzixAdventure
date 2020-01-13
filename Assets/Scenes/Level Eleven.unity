@@ -35494,6 +35494,11 @@ PrefabInstance:
       propertyPath: m_SceneAudio
       value: 
       objectReference: {fileID: 1317001429}
+    - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_PlayerCharacter
+      value: 
+      objectReference: {fileID: 632058657}
     - target: {fileID: 2687414848107076386, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio

@@ -2,14 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class Fireball
+ * 
+ * \brief This class is used to control the mechanics of a Fireball
+ * 
+ * \date 2020/18/01
+ */
 public class Fireball : MonoBehaviour
 {
+	[Header("Projectile")]
 	[SerializeField]
 	Rigidbody2D m_ProjectileRigidBody;
 	[SerializeField]
 	GameObject m_Projectile;
+
+	[Header("Fireball Variables")]
 	[SerializeField]
-	float m_Force;
+	private float m_Force = 12.8f;
+	[SerializeField]
+	private float m_FireballDelay = 2.0f;
+
+	[Header("Misc")]
 	[SerializeField]
 	public Vector3 m_BasePoint;
 	[SerializeField]
@@ -49,12 +63,11 @@ public class Fireball : MonoBehaviour
 			m_Animator.SetBool("Up", false);
 			m_Animator.SetBool("Down", true);
 		}
-		Debug.Log(m_ProjectileRigidBody.velocity.y);
     }
 
 	IEnumerator PrepareFireball()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(m_FireballDelay);
 		m_ProjectileRigidBody.AddForce(new Vector2(0, m_Force));
 	}
 }

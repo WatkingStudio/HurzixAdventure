@@ -300,12 +300,13 @@ GameObject:
   - component: {fileID: 10259981}
   - component: {fileID: 10259980}
   - component: {fileID: 10259979}
-  m_Layer: 0
+  - component: {fileID: 10259984}
+  m_Layer: 10
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &10259978
 Transform:
@@ -13461,6 +13462,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &10259984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10259977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48282815e486f6348b71137283a62e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GroundSurface: 0
 --- !u!114 &20440241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1758224961727137570, guid: 99caf6f64d5e09b47adc6e8bae243239,

@@ -1160,6 +1160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitLock_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311698, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2978,6 +2983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExitLock_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311698, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
@@ -7836,6 +7846,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitLock_4
       objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311698, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8634,12 +8649,13 @@ GameObject:
   - component: {fileID: 645668793}
   - component: {fileID: 645668792}
   - component: {fileID: 645668791}
-  m_Layer: 0
+  - component: {fileID: 645668796}
+  m_Layer: 10
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &645668790
 Transform:
@@ -25342,6 +25358,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &645668796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645668789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48282815e486f6348b71137283a62e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GroundSurface: 0
 --- !u!1 &646413484
 GameObject:
   m_ObjectHideFlags: 0
@@ -28080,11 +28109,11 @@ GameObject:
   - component: {fileID: 881368974}
   - component: {fileID: 881368975}
   m_Layer: 0
-  m_Name: Sign_3 (2)
+  m_Name: Sign_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &881368974
 Transform:
@@ -29903,11 +29932,11 @@ GameObject:
   - component: {fileID: 1014537208}
   - component: {fileID: 1014537209}
   m_Layer: 0
-  m_Name: Sign_3 (1)
+  m_Name: Sign_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1014537208
 Transform:
@@ -37327,6 +37356,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitLock_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311698, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37952,6 +37986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExitDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2445227939910328140, guid: cdd05c03a1ac07043a82da84b923b19d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2445227939910328142, guid: cdd05c03a1ac07043a82da84b923b19d,
         type: 3}
@@ -41110,6 +41149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitLock_3
       objectReference: {fileID: 0}
+    - target: {fileID: 6341359481211311698, guid: e217b21efb43dab4b90742d91700692b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6341359481211311708, guid: e217b21efb43dab4b90742d91700692b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43785,11 +43829,11 @@ GameObject:
   - component: {fileID: 2105011991}
   - component: {fileID: 2105011992}
   m_Layer: 0
-  m_Name: Sign_3 (3)
+  m_Name: Sign_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2105011991
 Transform:

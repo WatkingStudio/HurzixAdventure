@@ -716,11 +716,11 @@ Transform:
   m_Children:
   - {fileID: 1848740411}
   - {fileID: 1277247069}
-  - {fileID: 1480255291}
   - {fileID: 875509405}
   - {fileID: 339440324}
   - {fileID: 1200528628}
   - {fileID: 2025295712}
+  - {fileID: 1480255291}
   - {fileID: 1282577065}
   - {fileID: 1072187719}
   - {fileID: 2022606356}
@@ -2405,7 +2405,7 @@ Transform:
   - {fileID: 320041396}
   - {fileID: 1478508210}
   m_Father: {fileID: 147885298}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &344370822
 PrefabInstance:
@@ -6426,7 +6426,7 @@ Transform:
   - {fileID: 1808409962}
   - {fileID: 681646364}
   m_Father: {fileID: 147885298}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &878166965
 PrefabInstance:
@@ -7239,12 +7239,13 @@ GameObject:
   - component: {fileID: 962742573}
   - component: {fileID: 962742572}
   - component: {fileID: 962742571}
-  m_Layer: 0
+  - component: {fileID: 962742576}
+  m_Layer: 10
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &962742570
 Transform:
@@ -18582,6 +18583,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &962742576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962742569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48282815e486f6348b71137283a62e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GroundSurface: 0
 --- !u!114 &982728698 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6341359481211311710, guid: e217b21efb43dab4b90742d91700692b,
@@ -19587,7 +19601,7 @@ Transform:
   - {fileID: 609341261}
   - {fileID: 1667852434}
   m_Father: {fileID: 147885298}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203212563
 GameObject:
@@ -26969,7 +26983,7 @@ Transform:
   - {fileID: 269147506}
   - {fileID: 179321019}
   m_Father: {fileID: 147885298}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034575362
 GameObject:

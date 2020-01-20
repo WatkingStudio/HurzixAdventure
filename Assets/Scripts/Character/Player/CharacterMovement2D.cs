@@ -46,6 +46,11 @@ public class CharacterMovement2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	//Surface Info
+	private GroundFeatures.Surface m_CurrentSurface;
+	private float m_SurfaceFriction;
+	private float m_OnIceMovement = 0.0f;
+
 	[Header("Events")]
 	[Space]
 
@@ -118,12 +123,13 @@ public class CharacterMovement2D : MonoBehaviour
 			OnStopFalling.Invoke();
 	}
 
-
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+			if (m_SurfaceFriction != 1)
+				move *= m_SurfaceFriction;
 			if (sprint && m_Grounded)
 				move *= m_SprintSpeed;
 			// If crouching
@@ -153,6 +159,13 @@ public class CharacterMovement2D : MonoBehaviour
 					m_wasCrouching = false;
 					OnCrouchEvent.Invoke(false);
 				}
+			}
+
+			if(m_CurrentSurface == GroundFeatures.Surface.ICE)
+			{
+				if(move == 0)
+					move = Mathf.Lerp(m_OnIceMovement, m_OnIceMovement * 0.95f, 0.95f);
+				m_OnIceMovement = move;
 			}
 
 			// Move the character by finding the target velocity
@@ -232,5 +245,28 @@ public class CharacterMovement2D : MonoBehaviour
 		        return true;
 		
 		return false;
+	}
+
+	//Make this also change the audio clip played when the player walks.
+	public void SetSurface(GroundFeatures.Surface newSurface)
+	{
+		m_CurrentSurface = newSurface;
+
+		switch(m_CurrentSurface)
+		{
+			case GroundFeatures.Surface.DIRT:
+				m_SurfaceFriction = 1;
+				break;
+			case GroundFeatures.Surface.ICE:
+				m_SurfaceFriction = 1.2f;
+				m_OnIceMovement = 0;
+				break;
+			case GroundFeatures.Surface.ROCK:
+				m_SurfaceFriction = 1;
+				break;
+			case GroundFeatures.Surface.WOOD:
+				m_SurfaceFriction = 1;
+				break;
+		}
 	}
 }

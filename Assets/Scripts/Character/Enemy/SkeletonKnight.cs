@@ -20,6 +20,8 @@ public class SkeletonKnight : BasicEnemy
 	private BoxCollider2D m_CollisionBox;
 	[SerializeField, Tooltip("Which layers will this enemy target with attacks")]
 	private LayerMask m_WhatIsTarget;
+	[SerializeField]
+	private Rigidbody2D m_RigidBody2D;
 
 	private float m_DetectionTimerDefault = 0.5f;
 	private float m_DetectionTimer;
@@ -73,5 +75,25 @@ public class SkeletonKnight : BasicEnemy
 	public override void ResetEnemy()
 	{
 		base.ResetEnemy();
+	}
+
+	public void SetAnimationRight(float speed = 0)
+	{
+		m_Animator.SetBool("Left", false);
+		m_Animator.SetBool("Right", true);
+		m_Animator.SetFloat("Speed", speed);
+	}
+
+	public void SetAnimationLeft(float speed = 0)
+	{
+		m_Animator.SetBool("Right", false);
+		m_Animator.SetBool("Left", true);
+		m_Animator.SetFloat("Speed", speed);
+	}
+
+	public void StopEnemy()
+	{
+		m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
+		m_Animator.SetFloat("Speed", 0);
 	}
 }

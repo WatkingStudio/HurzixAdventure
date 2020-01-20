@@ -8056,7 +8056,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7439384
+      value: -6.7441187
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -8164,6 +8164,48 @@ MonoBehaviour:
   m_Speed: 2.77
   m_Animator: {fileID: 8282438939932053920}
   m_EnemyAudio: {fileID: 1591938221}
+  m_MoveRight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591938222}
+        m_MethodName: SetAnimationRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_MoveLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591938222}
+        m_MethodName: SetAnimationLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_StopEnemy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591938222}
+        m_MethodName: StopEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &626005687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3668433960595176218, guid: 5f71fdd0008010c4a983a93f87471642,
@@ -9465,6 +9507,11 @@ MonoBehaviour:
   m_AttackableLayers:
     serializedVersion: 2
     m_Bits: 256
+  m_GroundLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_EnemyPlayerDetection: {fileID: 144213696}
+  m_EnemyMoveToPlayer: {fileID: 474861474}
 --- !u!82 &1591938223
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9792,7 +9839,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06, y: 0.72}
+  m_Offset: {x: -0.03, y: 0.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9889,6 +9936,7 @@ MonoBehaviour:
   m_WalkSpeed: 2
   m_BasicEnemy: {fileID: 1591938222}
   m_EnemyPlayerDetection: {fileID: 144213696}
+  m_Animator: {fileID: 8282438939932053920}
   m_PlayerDetected:
     m_PersistentCalls:
       m_Calls:
@@ -10044,7 +10092,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7439384
+      value: -6.7441187
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}

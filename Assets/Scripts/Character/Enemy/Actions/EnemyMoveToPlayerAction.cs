@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using System;
 
 /**
  * \class EnemyMoveToPlayerAction
@@ -11,6 +13,10 @@ using UnityEngine;
  */ 
 public class EnemyMoveToPlayerAction : EnemyAction
 {
+	[Serializable]
+	public class SetAnimationEvent : UnityEvent<float>
+	{ }
+
 	[SerializeField]
 	private EnemyPlayerDetection m_EnemyPlayerDetectionAction;
 	[SerializeField]
@@ -33,6 +39,10 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private PlayerCharacter m_PlayerCharacter;
 	private bool m_IsInitialised = false;
 	private Vector3 m_Velocity = Vector3.zero;
+
+	public SetAnimationEvent m_MoveRight;
+	public SetAnimationEvent m_MoveLeft;
+	public UnityEvent m_StopEnemy;
 
 	private void Start()
 	{
@@ -62,7 +72,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 
 		if(m_PlayerCharacter.transform.position.x > transform.position.x)
 		{
-			SetAnimationRight(m_Speed);
+			//SetAnimationRight(m_Speed);
+			m_MoveRight.Invoke(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(m_Speed, m_RigidBody2D.velocity.y);
 
@@ -71,7 +82,8 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		}
 		else
 		{
-			SetAnimationLeft(m_Speed);
+			//SetAnimationLeft(m_Speed);
+			m_MoveLeft.Invoke(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(-m_Speed, m_RigidBody2D.velocity.y);
 
@@ -94,22 +106,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	}
 
 	public void StopEnemy()
-	{
-		m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
-		m_Animator.SetFloat("Speed", 0);
-	}
-
-	private void SetAnimationRight(float speed = 0)
-	{
-		m_Animator.SetBool("Left", false);
-		m_Animator.SetBool("Right", true);
-		m_Animator.SetFloat("Speed", speed);
-	}
-
-	private void SetAnimationLeft(float speed = 0)
-	{
-		m_Animator.SetBool("Right", false);
-		m_Animator.SetBool("Left", true);
-		m_Animator.SetFloat("Speed", speed);
+	{		
+		m_StopEnemy.Invoke();
 	}
 }

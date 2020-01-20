@@ -62,4 +62,29 @@ public class IncaTribe : BasicEnemy
 	{
 		SetActiveAction(EnemyAction.Actions.EnemyMoveToPlayer);
 	}
+
+	public void SetAnimationRight()
+	{
+		m_Animator.SetBool("IsWalking", true);
+		if(!m_FacingRight)
+			Flip();
+	}
+
+	public void SetAnimationLeft()
+	{
+		m_Animator.SetBool("IsWalking", true);
+		if (m_FacingRight)
+			Flip();
+	}
+
+	public void StopEnemy()
+	{
+		m_Animator.SetBool("IsWalking", false);
+		m_Animator.SetTrigger("Idle");
+	}
+
+	public override void IsWalking(bool walking)
+	{
+		m_Animator.SetBool("IsWalking", false);
+	}
 }

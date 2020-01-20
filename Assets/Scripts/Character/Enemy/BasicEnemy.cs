@@ -24,6 +24,8 @@ public class BasicEnemy : MonoBehaviour
 	const float k_SpriteFlipOffset = .5f;
 	protected bool m_FacingRight = true;
 
+	public bool FacingRight { get { return m_FacingRight; } }
+
 	private void Start()
 	{
 		SetActiveAction(m_DefaultAction);
@@ -65,7 +67,7 @@ public class BasicEnemy : MonoBehaviour
 		transform.localPosition = pos;
 	}
 
-	public void IsWalking(bool walking)
+	public virtual void IsWalking(bool walking)
 	{
 		m_Animator.SetBool("Walking", walking);
 	}

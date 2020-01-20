@@ -28,6 +28,8 @@ public class EnemyPatrolAction : EnemyAction
 	private BasicEnemy m_BasicEnemy;
 	[SerializeField]
 	private EnemyPlayerDetection m_EnemyPlayerDetection;
+	[SerializeField]
+	private Animator m_Animator;
 
 	public UnityEvent m_PlayerDetected;
 
@@ -49,6 +51,11 @@ public class EnemyPatrolAction : EnemyAction
 		{
 			m_BasicEnemy.IsWalking(true);
 			m_IsWalking = true;
+			m_Animator.SetBool("IsWalking", true);
+			if (m_WalkingDirection == 1 && !m_BasicEnemy.FacingRight)
+				m_BasicEnemy.Flip();
+			else if (m_WalkingDirection == -1 && m_BasicEnemy.FacingRight)
+				m_BasicEnemy.Flip();
 		}
 
 		m_WalkAmount.x = m_WalkingDirection * m_WalkSpeed * Time.deltaTime;
@@ -70,6 +77,7 @@ public class EnemyPatrolAction : EnemyAction
 		if (m_EnemyPlayerDetection.CanPlayerBeSeen())
 		{
 			m_PlayerDetected.Invoke();
+			m_IsWalking = false;
 		}
 	}
 }

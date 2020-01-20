@@ -87,12 +87,12 @@ public class EnemyPlayerDetection : EnemyAction
 	{
 		Vector2 directionToPlayer = m_Player.position - transform.position;
 		Debug.DrawLine(transform.position, m_Player.position, Color.magenta);
-
+		
 		Vector2 lineOfSight = m_LineOfSightEnd.position - transform.position;
 		Debug.DrawLine(transform.position, m_LineOfSightEnd.position, Color.yellow);
 
 		float angle = Vector2.SignedAngle(directionToPlayer, lineOfSight);
-
+		
 		if (angle > m_MinLOSAngle && angle < m_MaxLOSAngle)
 			return true;
 
@@ -104,7 +104,7 @@ public class EnemyPlayerDetection : EnemyAction
 		float distanceToPlayer = Vector2.Distance(transform.position, m_Player.position);
 		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, m_Player.position - transform.position, distanceToPlayer);
 		Debug.DrawRay(transform.position, m_Player.position - transform.position, Color.blue);
-
+		
 		List<float> distances = new List<float>();
 
 		foreach(RaycastHit2D hit in hits)
@@ -117,7 +117,6 @@ public class EnemyPlayerDetection : EnemyAction
 			else
 				m_PlayerCharacter = hit.transform.gameObject.GetComponent<PlayerCharacter>();		
 		}
-
 		return false;
 	}
 }

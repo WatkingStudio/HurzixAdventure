@@ -33,8 +33,6 @@ public class Fireball : MonoBehaviour
 	[SerializeField]
 	private AudioSource m_AudioSource;
 
-	private bool m_FireballPreparingFlight = false;
-
 	public void FireballCausesDamage()
 	{
 		if (!m_AudioSource.isPlaying)

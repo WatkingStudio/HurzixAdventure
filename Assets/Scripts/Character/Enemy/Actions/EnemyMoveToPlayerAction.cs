@@ -79,7 +79,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 				m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 		}
 
-		m_EnemyAudio.PlayWalkAudioClip();
+		//m_EnemyAudio.PlayWalkAudioClip();
 	}
 
 	private bool CheckForCollision()

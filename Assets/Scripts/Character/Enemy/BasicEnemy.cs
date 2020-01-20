@@ -76,6 +76,10 @@ public class BasicEnemy : MonoBehaviour
 		{
 			AssignValidAction(action);
 		}
+		else
+		{
+			Debug.LogError("Invalid Enemy Action");
+		}
 	}
 
 	public void SetDefaultAction()
@@ -108,6 +112,9 @@ public class BasicEnemy : MonoBehaviour
 				break;
 			case EnemyAction.Actions.EnemyMeleeAttack:
 				m_ActiveAction = GetComponentInChildren<EnemyMeleeAttack>();
+				break;
+			case EnemyAction.Actions.EnemyPatrol:
+				m_ActiveAction = GetComponentInChildren<EnemyPatrolAction>();
 				break;
 		}
 	}

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class IncaTribe
+ * 
+ * \brief This class holds the functionality for a Inca Tribe AI
+ * 
+ * \date 2020/22/01
+ */ 
 public class IncaTribe : BasicEnemy
 {
 	[SerializeField]

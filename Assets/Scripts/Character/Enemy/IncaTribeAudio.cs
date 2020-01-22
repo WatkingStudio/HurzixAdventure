@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class IncaTribeAudio
+ * 
+ * \brief This class is used to hold and control the audio for the Inca Tribe Enemy
+ * 
+ * \date 2020/22/01
+ */ 
 public class IncaTribeAudio : EnemyAudio
 {
 	[SerializeField]

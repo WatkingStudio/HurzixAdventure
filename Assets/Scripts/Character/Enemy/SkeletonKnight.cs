@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * \class BasicEnemy
+ * \class SkeletonKnight
  * 
  * \brief This class holds the functionality for a Skeleton Knight AI
  * 

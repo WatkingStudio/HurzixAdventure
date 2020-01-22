@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class SkeletonKnightAudio
+ * 
+ * \brief This class is used to hold and control the audio for the Skeleton Knight Audio
+ * 
+ * \date 2020/22/01
+ */ 
 public class SkeletonKnightAudio : EnemyAudio
 {
 	[SerializeField]

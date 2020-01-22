@@ -72,7 +72,6 @@ public class EnemyMoveToPlayerAction : EnemyAction
 
 		if(m_PlayerCharacter.transform.position.x > transform.position.x)
 		{
-			//SetAnimationRight(m_Speed);
 			m_MoveRight.Invoke(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(m_Speed, m_RigidBody2D.velocity.y);
@@ -82,7 +81,6 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		}
 		else
 		{
-			//SetAnimationLeft(m_Speed);
 			m_MoveLeft.Invoke(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(-m_Speed, m_RigidBody2D.velocity.y);

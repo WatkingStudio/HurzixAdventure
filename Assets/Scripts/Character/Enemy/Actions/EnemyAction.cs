@@ -26,7 +26,8 @@ public class EnemyAction : MonoBehaviour
 		EnemyMoveAction,
 		EnemyPlayerDetection,
 		EnemyMoveToPlayer,
-		EnemyMeleeAttack
+		EnemyMeleeAttack,
+		EnemyPatrol
 	}
 
     public virtual void PerformAction()

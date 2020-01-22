@@ -35,4 +35,9 @@ public class EnemyAudio : MonoBehaviour
 			m_AudioSource.Play();
 		}
 	}
+
+	public void StopAudioClip()
+	{
+		m_AudioSource.Stop();
+	}
 }

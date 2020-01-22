@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * \class SkeletonKnightAudio
+ * \class IncaTribeAudio
  * 
- * \brief This class is used to hold and control the audio for the Skeleton Knight Audio
+ * \brief This class is used to hold and control the audio for the Inca Tribe Enemy
  * 
  * \date 2020/22/01
  */ 
-public class SkeletonKnightAudio : EnemyAudio
+public class IncaTribeAudio : EnemyAudio
 {
 	[SerializeField]
 	private AudioClip m_AttackAudioClip;
 
-    public void PlayAttackAudioClip()
+	public void PlayerAttackAudioClip()
 	{
 		if (m_AudioSource.isPlaying)
 			m_AudioSource.Stop();
-		
+
 		m_AudioSource.clip = m_AttackAudioClip;
 		m_AudioSource.Play();
 	}

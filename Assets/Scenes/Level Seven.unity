@@ -9183,7 +9183,18 @@ MonoBehaviour:
   m_BasicEnemy: {fileID: 1591938222}
   OnAttackEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1591938221}
+        m_MethodName: PlayerAttackAudioClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1315950710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9486,8 +9497,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioSource: {fileID: 1591938223}
-  m_WalkAudio: []
-  m_AttackAudioClip: {fileID: 0}
+  m_WalkAudio:
+  - {fileID: 8300000, guid: 48335c5748747e2448d832d382df4d96, type: 3}
+  - {fileID: 8300000, guid: 4793d631e20c20e43ac3f40e852d071a, type: 3}
+  - {fileID: 8300000, guid: 81cb2b17e55af3c4e8e07e181150fb72, type: 3}
+  - {fileID: 8300000, guid: 6cf30aa79fe2ec34893ddb746d24f287, type: 3}
+  - {fileID: 8300000, guid: 2b963f65b106fc44f8839926bff874e1, type: 3}
+  - {fileID: 8300000, guid: 72537db5cba5c3f4191f5715d93a9e7b, type: 3}
+  - {fileID: 8300000, guid: 3408bdbb3d9d2f8409cefced33272bd0, type: 3}
+  - {fileID: 8300000, guid: db393f575f6d1bb43984c2df1286808c, type: 3}
+  m_AttackAudioClip: {fileID: 8300000, guid: 64e26a50b8c744a45877bc6de484e49f, type: 3}
 --- !u!114 &1591938222
 MonoBehaviour:
   m_ObjectHideFlags: 0

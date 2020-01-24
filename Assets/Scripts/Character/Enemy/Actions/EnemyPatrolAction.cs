@@ -71,7 +71,7 @@ public class EnemyPatrolAction : EnemyAction
 			m_BasicEnemy.Flip();
 		}
 
-		m_EnemyAudio.PlayWalkAudioClip();
+		//m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 		
 		if (m_EnemyPlayerDetection.CanPlayerBeSeen())

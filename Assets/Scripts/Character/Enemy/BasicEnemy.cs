@@ -127,4 +127,9 @@ public class BasicEnemy : MonoBehaviour
 		m_Animator.SetTrigger("Idle");
 		m_Animator.SetFloat("Speed", 0);
 	}
+
+	public virtual void StopEnemy()
+	{
+
+	}
 }

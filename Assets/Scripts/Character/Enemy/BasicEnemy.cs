@@ -118,6 +118,9 @@ public class BasicEnemy : MonoBehaviour
 			case EnemyAction.Actions.EnemyPatrol:
 				m_ActiveAction = GetComponentInChildren<EnemyPatrolAction>();
 				break;
+			case EnemyAction.Actions.EnemyRangedAttack:
+				m_ActiveAction = GetComponentInChildren<EnemyRangedAttack>();
+				break;
 		}
 	}
 

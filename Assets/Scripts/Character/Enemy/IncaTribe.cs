@@ -59,7 +59,7 @@ public class IncaTribe : BasicEnemy
 			}
 		}
     }
-
+	
 	public override void ResetEnemy()
 	{
 		base.ResetEnemy();

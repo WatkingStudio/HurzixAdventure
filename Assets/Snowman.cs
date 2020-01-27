@@ -11,8 +11,11 @@ using UnityEngine;
  */ 
 public class Snowman : BasicEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+	[SerializeField]
+	private EnemyPlayerDetection m_EnemyPlayerDetection;
+
+	// Start is called before the first frame update
+	void Start()
     {
 		SetActiveAction(m_DefaultAction);
 		m_StartPosition = gameObject.transform.position;
@@ -25,8 +28,15 @@ public class Snowman : BasicEnemy
 			return;
 		m_ActiveAction.PerformAction();
 
-
+		if(m_ActiveAction.Action == EnemyAction.Actions.EnemyRangedAttack)
+			if(!m_EnemyPlayerDetection.CanPlayerBeSeen())
+				SetActiveAction(EnemyAction.Actions.EnemyPatrol);
     }
+
+	public void PlayerDetected()
+	{
+		SetActiveAction(EnemyAction.Actions.EnemyRangedAttack);
+	}
 
 	public override void ResetEnemy()
 	{

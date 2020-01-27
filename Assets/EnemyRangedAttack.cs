@@ -39,10 +39,8 @@ public class EnemyRangedAttack : EnemyAction
 		if(m_AttackTimer < 0)
 		{
 			m_AttackTimer = m_AttackIntival;
-			var snowball = Instantiate((GameObject)m_Projectile, m_ProjectileOrigin.transform.position, m_ProjectileOrigin.transform.rotation);
-			snowball.GetComponent<Snowball>().SetDestinationPoint(m_PlayerTransform.position);
-			snowball.GetComponent<Snowball>().SetProjectileSpeed(m_ProjectileSpeed);
-			StartCoroutine(snowball.GetComponent<Snowball>().CountDown());
+			var projectile = Instantiate((GameObject)m_Projectile, m_ProjectileOrigin.transform.position, m_ProjectileOrigin.transform.rotation);
+			projectile.GetComponent<Projectile>().Instantiate(m_PlayerTransform.position, m_ProjectileSpeed);
 			m_RangedAttackMade.Invoke();
 		}
 	}

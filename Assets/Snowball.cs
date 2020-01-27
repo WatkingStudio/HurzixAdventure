@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snowball : MonoBehaviour
+public class Snowball : Projectile
 {
 	[SerializeField]
 	private float m_LiveSpan = 3;
@@ -15,6 +15,13 @@ public class Snowball : MonoBehaviour
 	private float m_ProjectileSpeed;
 
 	private bool m_Despawned = false;
+
+	public override void Instantiate(Vector3 destination, float speed)
+	{
+		m_DestinationPoint = destination;
+		m_ProjectileSpeed = speed;
+		StartCoroutine(CountDown());
+	}
 
 	public void Update()
 	{

@@ -44,9 +44,4 @@ public class EnemyRangedAttack : EnemyAction
 			m_RangedAttackMade.Invoke();
 		}
 	}
-
-	public void DestroyObject()
-	{
-
-	}
 }

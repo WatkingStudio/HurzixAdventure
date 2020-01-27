@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2765456336427109577}
   - component: {fileID: 3417783297889080685}
   - component: {fileID: 6110028580319358061}
+  - component: {fileID: 5036239511301913613}
   m_Layer: 12
   m_Name: Snowball
   m_TagString: Untagged
@@ -99,8 +100,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1280
   m_Collision: {fileID: 6110028580319358061}
-  m_AudioSource: {fileID: 0}
-  m_DespawnAudioClip: {fileID: 8300000, guid: 0c66c85a6e7f82b46b0b406ec1d132ae, type: 3}
 --- !u!58 &6110028580319358061
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -117,3 +116,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.41
+--- !u!114 &5036239511301913613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115343192715747583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3045742284429ae4180c70792698482d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.8, y: 0.8}
+  m_OffsetBaseOnSpriteFacing: 1
+  m_CanHitTriggers: 1
+  m_DisableDamageAfterHit: 0
+  m_ForceRespawn: 0
+  m_IgnoreInvincibility: 0
+  m_HittableLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_SpriteRenderer: {fileID: 0}
+  m_OnDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnNonDamageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CanDamage: 1

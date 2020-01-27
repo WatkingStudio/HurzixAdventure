@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * \class Snowball
+ * 
+ * \brief This class holds the functionality for a Snowball projectile
+ * 
+ * \date 2020/27/01
+ */ 
 public class Snowball : Projectile
 {
 	[SerializeField]

@@ -91,7 +91,7 @@ public class SkeletonKnight : BasicEnemy
 		m_Animator.SetFloat("Speed", speed);
 	}
 
-	public void StopEnemy()
+	public override void StopEnemy()
 	{
 		m_RigidBody2D.velocity = new Vector2(0, m_RigidBody2D.velocity.y);
 		m_Animator.SetFloat("Speed", 0);

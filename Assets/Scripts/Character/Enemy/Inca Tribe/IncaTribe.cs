@@ -59,7 +59,7 @@ public class IncaTribe : BasicEnemy
 			}
 		}
     }
-
+	
 	public override void ResetEnemy()
 	{
 		base.ResetEnemy();
@@ -84,7 +84,7 @@ public class IncaTribe : BasicEnemy
 			Flip();
 	}
 
-	public void StopEnemy()
+	public override void StopEnemy()
 	{
 		m_Animator.SetBool("IsWalking", false);
 		m_Animator.SetTrigger("Idle");

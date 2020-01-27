@@ -195,7 +195,7 @@ public class CharacterMovement2D : MonoBehaviour
 					Flip(k_CrouchSoruteFlipOffset);
 			}
 
-			if(move != 0 && m_Grounded)
+			if(move >= 0.1 || move <= -0.1 && m_Grounded)
 			{
 				if (sprint)
 					m_PlayerAudio.PlaySprintAudioClip();

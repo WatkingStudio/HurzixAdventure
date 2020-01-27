@@ -118,6 +118,9 @@ public class BasicEnemy : MonoBehaviour
 			case EnemyAction.Actions.EnemyPatrol:
 				m_ActiveAction = GetComponentInChildren<EnemyPatrolAction>();
 				break;
+			case EnemyAction.Actions.EnemyRangedAttack:
+				m_ActiveAction = GetComponentInChildren<EnemyRangedAttack>();
+				break;
 		}
 	}
 
@@ -126,5 +129,10 @@ public class BasicEnemy : MonoBehaviour
 		transform.position = m_StartPosition;
 		m_Animator.SetTrigger("Idle");
 		m_Animator.SetFloat("Speed", 0);
+	}
+
+	public virtual void StopEnemy()
+	{
+
 	}
 }

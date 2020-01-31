@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.26
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -861,6 +861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -1031,6 +1036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InitialTimer
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -16775,6 +16785,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &297647639 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1469203752424762424, guid: e8a1f65ac17a6534083d8b544daa2526,
+    type: 3}
+  m_PrefabInstance: {fileID: 694573677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301647531
 GameObject:
   m_ObjectHideFlags: 0
@@ -17878,7 +17894,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.744147
+      value: -6.743788
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -18513,6 +18529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -19452,12 +19473,12 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_InitialTimer
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -19920,6 +19941,11 @@ PrefabInstance:
       propertyPath: m_BasePoint.y
       value: -6.79
       objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Name
@@ -20280,6 +20306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -4.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -20870,7 +20901,7 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.26
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -21218,12 +21249,12 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_InitialTimer
-      value: 1.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -21694,6 +21725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -23343,6 +23379,11 @@ PrefabInstance:
       propertyPath: m_BasePoint.y
       value: -4.74
       objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Name
@@ -23501,6 +23542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -24947,12 +24993,12 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_InitialTimer
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -26475,6 +26521,11 @@ PrefabInstance:
       propertyPath: m_BasePoint.y
       value: -4.74
       objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Name
@@ -26832,6 +26883,11 @@ PrefabInstance:
       propertyPath: m_BasePoint.y
       value: -3.99
       objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Name
@@ -26999,7 +27055,7 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.26
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -27671,7 +27727,7 @@ PrefabInstance:
     - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Force
-      value: 13.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -27756,6 +27812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InitialTimer
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
@@ -28596,7 +28657,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.744147
+      value: -6.743788
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -29924,6 +29985,11 @@ PrefabInstance:
       propertyPath: m_BasePoint.y
       value: -6.79
       objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}
       propertyPath: m_Name
@@ -30255,7 +30321,7 @@ PrefabInstance:
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_SoundEffectsAudioSources.Array.size
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
@@ -30417,6 +30483,11 @@ PrefabInstance:
       propertyPath: m_SoundEffectsAudioSources.Array.data[31]
       value: 
       objectReference: {fileID: 1614664378}
+    - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_SoundEffectsAudioSources.Array.data[32]
+      value: 
+      objectReference: {fileID: 297647639}
     - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_EnemiesList.Array.size
@@ -31190,6 +31261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BasePoint.y
       value: -3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668433960595176220, guid: 5f71fdd0008010c4a983a93f87471642,
+        type: 3}
+      propertyPath: m_Force
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3668433960595176221, guid: 5f71fdd0008010c4a983a93f87471642,
         type: 3}

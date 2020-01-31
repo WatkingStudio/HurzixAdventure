@@ -79,7 +79,7 @@ public class Fireball : MonoBehaviour
 	IEnumerator PrepareFireball()
 	{
 		yield return new WaitForSeconds(m_FireballDelay);
-		m_ProjectileRigidBody.AddForce(new Vector2(0, m_Force));
+		m_ProjectileRigidBody.velocity = new Vector2(m_ProjectileRigidBody.velocity.x, m_Force);
 	}
 
 	IEnumerator InitialTimer()

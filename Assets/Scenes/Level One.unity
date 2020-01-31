@@ -7660,7 +7660,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.414053
+      value: -27.414085
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -9793,6 +9793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9062b7fd38853594aa2a057511fa4107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1387343849 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1469203752424762424, guid: e8a1f65ac17a6534083d8b544daa2526,
+    type: 3}
+  m_PrefabInstance: {fileID: 1387343845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421123831
 GameObject:
   m_ObjectHideFlags: 0
@@ -10128,7 +10134,7 @@ PrefabInstance:
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_SoundEffectsAudioSources.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
@@ -10175,6 +10181,11 @@ PrefabInstance:
       propertyPath: m_SoundEffectsAudioSources.Array.data[7]
       value: 
       objectReference: {fileID: 200052484}
+    - target: {fileID: 5579246158821067813, guid: d37e17924dc962041b71a227a7fa9d19,
+        type: 3}
+      propertyPath: m_SoundEffectsAudioSources.Array.data[8]
+      value: 
+      objectReference: {fileID: 1387343849}
     - target: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
         type: 3}
       propertyPath: m_EnemiesList.Array.size
@@ -10946,7 +10957,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.414053
+      value: -27.414085
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}

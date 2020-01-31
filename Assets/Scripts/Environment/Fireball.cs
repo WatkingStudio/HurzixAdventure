@@ -23,6 +23,11 @@ public class Fireball : MonoBehaviour
 	[SerializeField]
 	private float m_FireballDelay = 2.0f;
 
+	[Header("Initial Delay")]
+	[SerializeField]
+	private float m_InitialTimer;
+	private bool m_InitialTimerDone = false;
+
 	[Header("Misc")]
 	[SerializeField]
 	public Vector3 m_BasePoint;
@@ -41,31 +46,45 @@ public class Fireball : MonoBehaviour
 		}		
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		if(m_Projectile.transform.position.y < m_BasePoint.y)
-		{
-			m_ProjectileRigidBody.velocity = Vector2.zero;
-			m_Projectile.transform.position = new Vector2(m_Projectile.transform.position.x, m_BasePoint.y);
-			StartCoroutine(PrepareFireball());
-		}
+	private void Start()
+	{
+		StartCoroutine(InitialTimer());
+	}
 
-		if(m_ProjectileRigidBody.velocity.y > 0) 
+	// Update is called once per frame
+	void Update()
+    {
+		if(m_InitialTimerDone)
 		{
-			m_Animator.SetBool("Up", true);
-			m_Animator.SetBool("Down", false);
-		}
-		else
-		{
-			m_Animator.SetBool("Up", false);
-			m_Animator.SetBool("Down", true);
-		}
+			if (m_Projectile.transform.position.y < m_BasePoint.y)
+			{
+				m_ProjectileRigidBody.velocity = Vector2.zero;
+				m_Projectile.transform.position = new Vector2(m_Projectile.transform.position.x, m_BasePoint.y);
+				StartCoroutine(PrepareFireball());
+			}
+
+			if (m_ProjectileRigidBody.velocity.y > 0)
+			{
+				m_Animator.SetBool("Up", true);
+				m_Animator.SetBool("Down", false);
+			}
+			else
+			{
+				m_Animator.SetBool("Up", false);
+				m_Animator.SetBool("Down", true);
+			}
+		}		
     }
 
 	IEnumerator PrepareFireball()
 	{
 		yield return new WaitForSeconds(m_FireballDelay);
-		m_ProjectileRigidBody.AddForce(new Vector2(0, m_Force));
+		m_ProjectileRigidBody.velocity = new Vector2(m_ProjectileRigidBody.velocity.x, m_Force);
+	}
+
+	IEnumerator InitialTimer()
+	{
+		yield return new WaitForSeconds(m_InitialTimer);
+		m_InitialTimerDone = true;
 	}
 }

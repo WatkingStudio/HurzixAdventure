@@ -42,6 +42,7 @@ public class LevelAudioManager : MonoBehaviour
 		foreach(AudioSource au in m_SoundEffectsAudioSources)
 		{
 			au.volume = m_GameAudio.SoundEffectVolume;
+			Debug.Log(au.gameObject.name + au.volume);
 		}
 	}
 

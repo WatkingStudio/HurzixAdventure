@@ -56,11 +56,8 @@ public class PlayerAudio : MonoBehaviour
 
 	public void PlayHurtAudioClip()
 	{
-		Debug.Log(m_PlayerEffectsSource.volume);
 		m_PlayerEffectsSource.Stop();
-		Debug.Log(m_PlayerEffectsSource.volume);
 		m_PlayerEffectsSource.clip = m_HurtAudioClip;
-		Debug.Log(m_PlayerEffectsSource.volume);
 		m_PlayerEffectsSource.Play();
 	}
 

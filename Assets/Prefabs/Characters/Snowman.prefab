@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttackIntival: 1.5
-  m_ProjectileSpeed: 20
+  m_ProjectileSpeed: 15
   m_Projectile: {fileID: 9115343192715747583, guid: 0dd1dfb3862c87a4d879e58c2e7baae6,
     type: 3}
   m_PlayerTransform: {fileID: 0}

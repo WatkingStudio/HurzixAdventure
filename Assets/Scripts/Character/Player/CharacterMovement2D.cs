@@ -16,11 +16,9 @@ public class CharacterMovement2D : MonoBehaviour
 	[Header("Movement Variables")]
 	[SerializeField, Tooltip("Amount of force added when the player jumps")]
 	private float m_JumpForce = 400f;
-	[Range(0, 1)]
-	[SerializeField, Tooltip("Amount of maxSpeed applied to crouching movement. 1 = 100%")]
+	[SerializeField, Tooltip("Amount of maxSpeed applied to crouching movement. 1 = 100%"), Range(0, 1)]
 	private float m_CrouchSpeed = .36f;
-	[Range(0, .3f)]
-	[SerializeField, Tooltip("How much to smooth out the movement")]
+	[SerializeField, Tooltip("How much to smooth out the movement"), Range(0, .3f)]
 	private float m_MovementSmoothing = .05f;
 	[SerializeField, Tooltip("The multiplier applied to the speed of the player when sprinting")]
 	private float m_SprintSpeed = 1.5f;
@@ -130,7 +128,6 @@ public class CharacterMovement2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-			Debug.Log(m_SurfaceFriction);
 			if (m_SurfaceFriction != 1)
 				move *= m_SurfaceFriction;
 			if (sprint && m_Grounded)
@@ -176,7 +173,7 @@ public class CharacterMovement2D : MonoBehaviour
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-			Debug.Log(targetVelocity);
+			
 			// And then smoothing it out and applying it to the character
 			if (!CheckForCollision())
 				m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
@@ -256,7 +253,6 @@ public class CharacterMovement2D : MonoBehaviour
 		return false;
 	}
 
-	//Make this also change the audio clip played when the player walks.
 	public void SetSurface(GroundFeatures.Surface newSurface)
 	{
 		m_CurrentSurface = newSurface;

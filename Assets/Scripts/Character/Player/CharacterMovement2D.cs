@@ -16,13 +16,15 @@ public class CharacterMovement2D : MonoBehaviour
 	[Header("Movement Variables")]
 	[SerializeField, Tooltip("Amount of force added when the player jumps")]
 	private float m_JumpForce = 400f;
-	[Range(0, 1)] [SerializeField, Tooltip("Amount of maxSpeed applied to crouching movement. 1 = 100%")]
+	[Range(0, 1)]
+	[SerializeField, Tooltip("Amount of maxSpeed applied to crouching movement. 1 = 100%")]
 	private float m_CrouchSpeed = .36f;
-	[Range(0, .3f)] [SerializeField, Tooltip("How much to smooth out the movement")]
+	[Range(0, .3f)]
+	[SerializeField, Tooltip("How much to smooth out the movement")]
 	private float m_MovementSmoothing = .05f;
-	[SerializeField, Tooltip("The multiplier applied to the speed of the player when sprinting")] 
+	[SerializeField, Tooltip("The multiplier applied to the speed of the player when sprinting")]
 	private float m_SprintSpeed = 1.5f;
-	[SerializeField, Tooltip("Whether or not a player can steer while jumping")] 
+	[SerializeField, Tooltip("Whether or not a player can steer while jumping")]
 	private bool m_AirControl = false;
 	[Header("Collider Variables")]
 	[SerializeField, Tooltip("A mask determining what is ground to the character")]
@@ -33,7 +35,7 @@ public class CharacterMovement2D : MonoBehaviour
 	private Collider2D m_CrouchDisableCollider;
 	[SerializeField]
 	private Collider2D m_CollisionCheckerCollider;
-	[Header("Misc")]
+	[Header("Audio")]
 	[SerializeField]
 	private PlayerAudio m_PlayerAudio;
 
@@ -128,10 +130,12 @@ public class CharacterMovement2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+			Debug.Log(m_SurfaceFriction);
 			if (m_SurfaceFriction != 1)
 				move *= m_SurfaceFriction;
 			if (sprint && m_Grounded)
 				move *= m_SprintSpeed;
+			
 			// If crouching
 			if (crouch)
 			{
@@ -147,7 +151,8 @@ public class CharacterMovement2D : MonoBehaviour
 				// Disable one of the colliders when crouching
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = false;
-			} else
+			}
+			else
 			{
 				// Enable the collider when not crouching
 				if (m_CrouchDisableCollider != null)
@@ -161,9 +166,9 @@ public class CharacterMovement2D : MonoBehaviour
 				}
 			}
 
-			if(m_CurrentSurface == GroundFeatures.Surface.ICE)
+			if (m_CurrentSurface == GroundFeatures.Surface.SNOW)
 			{
-				if(move == 0)
+				if (move == 0)
 					move = Mathf.Lerp(m_OnIceMovement, m_OnIceMovement * 0.95f, 0.95f);
 				m_OnIceMovement = move;
 			}
@@ -171,11 +176,11 @@ public class CharacterMovement2D : MonoBehaviour
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-			
+			Debug.Log(targetVelocity);
 			// And then smoothing it out and applying it to the character
-			if(!CheckForCollision())
+			if (!CheckForCollision())
 				m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
+				
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
 			{
@@ -195,16 +200,17 @@ public class CharacterMovement2D : MonoBehaviour
 					Flip(k_CrouchSoruteFlipOffset);
 			}
 
-			if(move >= 0.1 || move <= -0.1)
+			if (move >= 0.1 || move <= -0.1)
 			{
-				if(m_Grounded)
+				if (m_Grounded)
 				{
+
 					if (sprint)
 						m_PlayerAudio.PlaySprintAudioClip();
 					else
 						m_PlayerAudio.PlayWalkAudioClip();
-				}				
-			}			
+				}
+			}
 		}
 		// If the player should jump...
 		if (m_Grounded && jump)
@@ -234,7 +240,7 @@ public class CharacterMovement2D : MonoBehaviour
 			pos.x -= xOffset;
 		else
 			pos.x += xOffset;
-		transform.localPosition = pos;			
+		transform.localPosition = pos;
 	}
 
 	public void ResetVelocity()
@@ -245,8 +251,8 @@ public class CharacterMovement2D : MonoBehaviour
 	private bool CheckForCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))
-		        return true;
-		
+			return true;
+
 		return false;
 	}
 
@@ -255,17 +261,20 @@ public class CharacterMovement2D : MonoBehaviour
 	{
 		m_CurrentSurface = newSurface;
 
-		switch(m_CurrentSurface)
+		switch (m_CurrentSurface)
 		{
 			case GroundFeatures.Surface.DIRT:
 				m_SurfaceFriction = 1;
+				m_PlayerAudio.SetDirtMovement();
 				break;
-			case GroundFeatures.Surface.ICE:
+			case GroundFeatures.Surface.SNOW:
 				m_SurfaceFriction = 1.2f;
 				m_OnIceMovement = 0;
+				m_PlayerAudio.SetSnowMovement();
 				break;
 			case GroundFeatures.Surface.ROCK:
 				m_SurfaceFriction = 1;
+				m_PlayerAudio.SetConcreteMovement();
 				break;
 			case GroundFeatures.Surface.WOOD:
 				m_SurfaceFriction = 1;

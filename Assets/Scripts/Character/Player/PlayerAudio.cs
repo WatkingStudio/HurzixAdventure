@@ -25,12 +25,19 @@ public class PlayerAudio : MonoBehaviour
 	private AudioClip m_JumpAudioClip;
 	[SerializeField]
 	private AudioClip m_IndicatorAudioClip;
+	[Header("Player Movement Audio")]
 	[SerializeField]
-	private List<AudioClip> m_WalkingGrass;
+	private GroundFeatures.Surface m_DefaultLevelSurface;
 	[SerializeField]
-	private List<AudioClip> m_SprintingGrass;
+	private PlayerMovementAudio m_DirtAudio;
 	[SerializeField]
-	private List<AudioClip> m_LandingGrass;
+	private PlayerMovementAudio m_ConcreteAudio;
+	[SerializeField]
+	private PlayerMovementAudio m_SnowAudio;
+
+	private List<AudioClip> m_ActiveWalkingClips;
+	private List<AudioClip> m_ActiveSprintingClips;
+	private List<AudioClip> m_ActiveLandingClips;
 
 	private void Start()
 	{
@@ -46,12 +53,19 @@ public class PlayerAudio : MonoBehaviour
 			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for jumping");
 		if (!m_IndicatorAudioClip)
 			Debug.LogWarning("No Audio Clip has been assigned to " + gameObject.name + " for the indicator");
-		if (m_WalkingGrass.Count == 0)
-			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for walking on grass");
-		if (m_SprintingGrass.Count == 0)
-			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for sprinting on grass");
-		if (m_LandingGrass.Count == 0)
-			Debug.LogWarning("No Audio Clips have been assigned to " + gameObject.name + " for landing on the grass");
+
+		switch(m_DefaultLevelSurface)
+		{
+			case GroundFeatures.Surface.DIRT:
+				SetDirtMovement();
+				break;
+			case GroundFeatures.Surface.ROCK:
+				SetConcreteMovement();
+				break;
+			case GroundFeatures.Surface.SNOW:
+				SetSnowMovement();
+				break;
+		}
 	}
 
 	public void PlayHurtAudioClip()
@@ -72,7 +86,7 @@ public class PlayerAudio : MonoBehaviour
 	{
 		if(!m_PlayerMovementSource.isPlaying)
 		{
-			m_PlayerMovementSource.clip = m_WalkingGrass[Random.Range(0, m_WalkingGrass.Count)];
+			m_PlayerMovementSource.clip = m_ActiveWalkingClips[Random.Range(0, m_ActiveWalkingClips.Count)];
 			m_PlayerMovementSource.Play();
 		}		
 	}
@@ -81,7 +95,7 @@ public class PlayerAudio : MonoBehaviour
 	{
 		if(!m_PlayerMovementSource.isPlaying)
 		{
-			m_PlayerMovementSource.clip = m_SprintingGrass[Random.Range(0, m_SprintingGrass.Count)];
+			m_PlayerMovementSource.clip = m_ActiveSprintingClips[Random.Range(0, m_ActiveSprintingClips.Count)];
 			m_PlayerMovementSource.Play();
 		}
 	}
@@ -89,7 +103,7 @@ public class PlayerAudio : MonoBehaviour
 	public void PlayLandingAudioClip()
 	{
 		m_PlayerMovementSource.Stop();
-		m_PlayerMovementSource.clip = m_LandingGrass[Random.Range(0, m_LandingGrass.Count)];
+		m_PlayerMovementSource.clip = m_ActiveLandingClips[Random.Range(0, m_ActiveLandingClips.Count)];
 		m_PlayerMovementSource.Play();
 	}
 
@@ -104,5 +118,26 @@ public class PlayerAudio : MonoBehaviour
 	{
 		m_PlayerEffectsSource.clip = m_IndicatorAudioClip;
 		m_PlayerEffectsSource.Play();
+	}
+
+	public void SetDirtMovement()
+	{
+		m_ActiveLandingClips = m_DirtAudio.Landing;
+		m_ActiveSprintingClips = m_DirtAudio.Sprinting;
+		m_ActiveWalkingClips = m_DirtAudio.Walking;
+	}
+
+	public void SetConcreteMovement()
+	{
+		m_ActiveLandingClips = m_ConcreteAudio.Landing;
+		m_ActiveSprintingClips = m_ConcreteAudio.Sprinting;
+		m_ActiveWalkingClips = m_ConcreteAudio.Walking;
+	}
+
+	public void SetSnowMovement()
+	{
+		m_ActiveLandingClips = m_SnowAudio.Landing;
+		m_ActiveSprintingClips = m_SnowAudio.Sprinting;
+		m_ActiveWalkingClips = m_SnowAudio.Walking;
 	}
 }

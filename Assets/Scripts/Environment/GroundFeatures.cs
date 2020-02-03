@@ -16,7 +16,7 @@ public class GroundFeatures : MonoBehaviour
 		DIRT,
 		ROCK,
 		WOOD,
-		ICE
+		SNOW
 	}
 
 	[SerializeField]
@@ -32,4 +32,5 @@ public class GroundFeatures : MonoBehaviour
 			charMove2D.SetSurface(m_GroundSurface);
 		}
 	}
+	
 }

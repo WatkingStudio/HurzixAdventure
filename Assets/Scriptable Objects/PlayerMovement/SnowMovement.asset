@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c85926460c9a5b4b867255d85f02775, type: 3}
+  m_Name: SnowMovement
+  m_EditorClassIdentifier: 
+  m_WalkingClips:
+  - {fileID: 8300000, guid: ef94fb6e4b2535248aceba14799c51b1, type: 3}
+  - {fileID: 8300000, guid: adf12deb866e36643bf4e9d25387e251, type: 3}
+  - {fileID: 8300000, guid: fc0696bad6acc7445aafc487ea547bed, type: 3}
+  - {fileID: 8300000, guid: bade5d2512248d647b37310dacb5fdde, type: 3}
+  - {fileID: 8300000, guid: 6cee091a453ea1e48b8c81e59b565828, type: 3}
+  - {fileID: 8300000, guid: fc725ce6bbfe5b54689a23cfb0caef65, type: 3}
+  - {fileID: 8300000, guid: 32ad739ea4249a04f87b7905ecc812cb, type: 3}
+  - {fileID: 8300000, guid: 8e0fb95ace4558b4199b9079053c1b2f, type: 3}
+  - {fileID: 8300000, guid: 9b39cc309d7d82742aca82901d890bda, type: 3}
+  - {fileID: 8300000, guid: 1ea2c433bdac2604d9ab66c26c32b296, type: 3}
+  - {fileID: 8300000, guid: bb2d7ccde2f867540aa7131f8f73deca, type: 3}
+  - {fileID: 8300000, guid: 90a5cd15e819eb74fa07b0d7fb349b49, type: 3}
+  - {fileID: 8300000, guid: 37cb109e5721506418d0decfee20c26b, type: 3}
+  - {fileID: 8300000, guid: 6c9e8630f4e095e489d435d25376f549, type: 3}
+  - {fileID: 8300000, guid: 0e262166e56f7ca4d86922cb1790a468, type: 3}
+  - {fileID: 8300000, guid: 254873caec5cb834e8f69a689bfbf2b0, type: 3}
+  - {fileID: 8300000, guid: 8a92a863438e8774fa8d5f82e887001c, type: 3}
+  - {fileID: 8300000, guid: 0800c99772ba82e4497d43e422c966bb, type: 3}
+  - {fileID: 8300000, guid: ed8ed527dc187944cbc2a157b4013e6d, type: 3}
+  - {fileID: 8300000, guid: 2102385869bce5143b4f493484635a20, type: 3}
+  - {fileID: 8300000, guid: f5ad14de550c2724f91e7f72afa6d015, type: 3}
+  - {fileID: 8300000, guid: 50dfeea1029113a468dd9006bf83da27, type: 3}
+  - {fileID: 8300000, guid: 52dfe5a04662ba346a247347ae4697db, type: 3}
+  - {fileID: 8300000, guid: b9decfd1e4aa9694f85a8b3efc1227d7, type: 3}
+  - {fileID: 8300000, guid: 63e85c28809021144985f9b210e2d1e4, type: 3}
+  - {fileID: 8300000, guid: e581abab6f8c7e44095007539dba3986, type: 3}
+  - {fileID: 8300000, guid: 97b24bf71a0e9ef41845362c6393477e, type: 3}
+  - {fileID: 8300000, guid: 92a37615bd8aa0545bf1e40a6bc7ea75, type: 3}
+  - {fileID: 8300000, guid: 94fbdaad5ad9de448a0834d63e449a2c, type: 3}
+  - {fileID: 8300000, guid: 5e055f16ffa308948b5605129c83256d, type: 3}
+  - {fileID: 8300000, guid: 911975842c7086f4787f19cc62431bf9, type: 3}
+  - {fileID: 8300000, guid: 2cece5967c0d5374684d3945fea30b19, type: 3}
+  - {fileID: 8300000, guid: ee337c1b6b975294482d4679b56c0e6d, type: 3}
+  - {fileID: 8300000, guid: 4f4e0094987b2564f8c62cb2c460c076, type: 3}
+  - {fileID: 8300000, guid: df55548504e45bb4789ba0fa6f20c86d, type: 3}
+  m_SprintingClips:
+  - {fileID: 8300000, guid: f5ba51ae32c331949a2f04b8e5334883, type: 3}
+  - {fileID: 8300000, guid: 0fe5eee21daba934cb9c4cf3ec54e02d, type: 3}
+  - {fileID: 8300000, guid: 222a974c8c9192344947ec2ca8bc7245, type: 3}
+  - {fileID: 8300000, guid: 212ded3d69f2efe42a803607f9ec285b, type: 3}
+  - {fileID: 8300000, guid: 67bfcb41571cd3b4394d8616294f7ef2, type: 3}
+  - {fileID: 8300000, guid: d2566389b94aec64e9250c4abe065846, type: 3}
+  - {fileID: 8300000, guid: 1c45164a84f024b48bd80aebfaf437c0, type: 3}
+  - {fileID: 8300000, guid: 53a83573a6c1017478c5b1b6b4c29ed0, type: 3}
+  - {fileID: 8300000, guid: 8053038d88d6fc541b083bf05a8f312a, type: 3}
+  - {fileID: 8300000, guid: 0077c6e742739f44da5bb79137c95a06, type: 3}
+  - {fileID: 8300000, guid: b68b433598ee2ee4ba731b13890ef071, type: 3}
+  - {fileID: 8300000, guid: 2d2757015649e0f45a7cc23525a46b2a, type: 3}
+  - {fileID: 8300000, guid: 6781a6af83c6b9f479e6b94c1ed35e72, type: 3}
+  - {fileID: 8300000, guid: 4a132c2f751852e49919afd355eb8ec3, type: 3}
+  - {fileID: 8300000, guid: 93a6d9b8a7343c74db1c4624bb2fc6a4, type: 3}
+  - {fileID: 8300000, guid: 58fbc9f0aca84f340af8e3625c860825, type: 3}
+  - {fileID: 8300000, guid: 079ccbc1b060d2d44ab471404df21377, type: 3}
+  - {fileID: 8300000, guid: 92cc8db01f26af246b7f595029b0f4cf, type: 3}
+  - {fileID: 8300000, guid: 76db906bb20830c4fb758549a53fece6, type: 3}
+  - {fileID: 8300000, guid: 045c486ec081aaa448844a5eb3c12d80, type: 3}
+  - {fileID: 8300000, guid: 6966ce6f17ca9e048937168de929363a, type: 3}
+  m_LandingClips:
+  - {fileID: 8300000, guid: 938c9a028100efc44a50cf845a539da6, type: 3}
+  - {fileID: 8300000, guid: 0cf0ab8a4e2041949b8868f25e05b7a2, type: 3}
+  - {fileID: 8300000, guid: ba76fbaeca455b740b3f2f52f82b2c4a, type: 3}
+  - {fileID: 8300000, guid: 99819d08a83e9ad47bb32206504d6017, type: 3}
+  - {fileID: 8300000, guid: a648a2ca59e249c478df0b28f90ca1da, type: 3}
+  - {fileID: 8300000, guid: 500b48a4a801a094d96e13e1f3059f21, type: 3}

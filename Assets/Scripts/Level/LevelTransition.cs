@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
 	[Serializable]
-	private enum Levels
+	public enum Levels
 	{
 		MAIN_MENU,
 		LEVEL_ONE,

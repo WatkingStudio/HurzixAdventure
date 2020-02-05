@@ -23,6 +23,8 @@ public class MainMenu : MonoBehaviour
 	private GameObject m_MainMenu;
 	[SerializeField]
 	private GameObject m_OptionsMenu;
+	[SerializeField]
+	private GameObject m_ZoneSelectionMenu;
 
 	private void Start()
 	{
@@ -86,5 +88,11 @@ public class MainMenu : MonoBehaviour
 		m_SceneAudio.Stop();
 		m_SceneAudio.clip = m_ButtonPressClip;
 		m_SceneAudio.Play();
+	}
+
+	public void ZoneSelection()
+	{
+		m_MainMenu.SetActive(false);
+		m_ZoneSelectionMenu.SetActive(true);
 	}
 }

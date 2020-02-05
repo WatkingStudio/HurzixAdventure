@@ -80,13 +80,14 @@ public class EnemyMoveToPlayerAction : EnemyAction
 				m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 		}
 		else
-		{
+		{			
 			m_MoveLeft.Invoke(m_Speed);
 			Vector3 targetVelocity;
 			targetVelocity = new Vector2(-m_Speed, m_RigidBody2D.velocity.y);
-
 			if (!CheckForCollision())
+			{
 				m_RigidBody2D.velocity = Vector3.SmoothDamp(m_RigidBody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			}
 		}
 
 		m_EnemyAudio.PlayWalkAudioClip();

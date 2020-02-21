@@ -125,6 +125,15 @@ public class CharacterMovement2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
+		// If the player should jump...
+		if (m_Grounded && jump)
+		{
+			// Add a vertical force to the player.
+			m_Grounded = false;
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_PlayerAudio.PlayJumpingAudioClip();
+			OnJump.Invoke();
+		}
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
@@ -208,16 +217,7 @@ public class CharacterMovement2D : MonoBehaviour
 						m_PlayerAudio.PlayWalkAudioClip();
 				}
 			}
-		}
-		// If the player should jump...
-		if (m_Grounded && jump)
-		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			m_PlayerAudio.PlayJumpingAudioClip();
-			OnJump.Invoke();
-		}
+		}		
 	}
 
 	private void Flip(float xOffset)

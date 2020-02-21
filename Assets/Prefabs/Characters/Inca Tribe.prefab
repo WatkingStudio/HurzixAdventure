@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 3167071440109428147}
   - component: {fileID: 3167071440109428146}
   - component: {fileID: 3167071440109428145}
+  - component: {fileID: 4501136976507611399}
   m_Layer: 12
   m_Name: Inca Tribe
   m_TagString: Enemy
@@ -463,9 +464,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.62}
+  m_Offset: {x: 0, y: 0.75}
   serializedVersion: 2
-  m_Radius: 0.59
+  m_Radius: 0.7
 --- !u!82 &3167071440109428147
 AudioSource:
   m_ObjectHideFlags: 0
@@ -609,6 +610,38 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3408bdbb3d9d2f8409cefced33272bd0, type: 3}
   - {fileID: 8300000, guid: db393f575f6d1bb43984c2df1286808c, type: 3}
   m_AttackAudioClip: {fileID: 8300000, guid: 64e26a50b8c744a45877bc6de484e49f, type: 3}
+--- !u!114 &4501136976507611399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167071440109428144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba336bd250f45864bb95ee53a0f8a7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartingHealth: 1
+  m_InvulverableAfterDamage: 0
+  m_InvulnerableDuration: 3
+  m_DisableOnDeath: 1
+  m_HealingBuffer: 0.02
+  m_OnHeathSet:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnGainHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RespawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3167071440298070505
 GameObject:
   m_ObjectHideFlags: 0

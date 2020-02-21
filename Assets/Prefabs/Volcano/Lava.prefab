@@ -105,7 +105,7 @@ MonoBehaviour:
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   m_SpriteRenderer: {fileID: 0}
   m_OnDamageableHit:
     m_PersistentCalls:

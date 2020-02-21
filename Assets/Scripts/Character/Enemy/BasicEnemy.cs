@@ -126,6 +126,7 @@ public class BasicEnemy : MonoBehaviour
 
 	public virtual void ResetEnemy()
 	{
+		gameObject.SetActive(true);
 		transform.position = m_StartPosition;
 		m_Animator.SetTrigger("Idle");
 		m_Animator.SetFloat("Speed", 0);

@@ -158,12 +158,9 @@ public class PlayerController : MonoBehaviour
 		{
 			bool jump = true;
 			if(m_Crouch)
-			{
 				if (Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
-				{
 					jump = false;
-				}
-			}
+
 			if(jump)
 			{
 				m_Jump = true;

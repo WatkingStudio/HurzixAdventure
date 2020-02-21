@@ -2838,6 +2838,16 @@ PrefabInstance:
       propertyPath: m_ScoreText
       value: 
       objectReference: {fileID: 1652560331}
+    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1232003188}
+    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetEnemies
+      objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_GameMenu
@@ -5853,6 +5863,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d52db3dffba71d438a6bacb4ca5cd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1232003188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1232003186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f519b1ec2e0bb1c48a50bb4becdeedda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1232003189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2035283665943670453, guid: d37e17924dc962041b71a227a7fa9d19,
@@ -6045,7 +6067,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.143787
+      value: -8.144033
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -6109,7 +6131,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.143787
+      value: -8.144033
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}

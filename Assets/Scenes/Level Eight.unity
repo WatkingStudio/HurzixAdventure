@@ -34462,6 +34462,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1405941408}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1405941412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8945535980531570698, guid: d37e17924dc962041b71a227a7fa9d19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405941408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f519b1ec2e0bb1c48a50bb4becdeedda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1409904234
 GameObject:
   m_ObjectHideFlags: 0
@@ -40594,6 +40606,16 @@ PrefabInstance:
       propertyPath: m_ScoreText
       value: 
       objectReference: {fileID: 1560186920}
+    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1405941412}
+    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
+        type: 3}
+      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetEnemies
+      objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388735, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_GameMenu

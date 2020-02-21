@@ -62,6 +62,7 @@ public class IncaTribe : BasicEnemy
 	
 	public override void ResetEnemy()
 	{
+		GetComponent<Damageable>().SetHealth(1);
 		base.ResetEnemy();
 	}
 

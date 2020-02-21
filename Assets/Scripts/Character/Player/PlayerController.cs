@@ -156,9 +156,17 @@ public class PlayerController : MonoBehaviour
 
 		if(Input.GetButtonDown("Jump"))
 		{
-			m_Jump = true;
-			m_Animator.PlayerJumping(true);
-			m_IsGrounded = false;
+			bool jump = true;
+			if(m_Crouch)
+				if (Physics2D.OverlapCircle(m_CeilingCheck.position, .2f, m_WhatIsGround))
+					jump = false;
+
+			if(jump)
+			{
+				m_Jump = true;
+				m_Animator.PlayerJumping(true);
+				m_IsGrounded = false;
+			}			
 		}
 
 		m_Animator.PlayerSpeed(m_HorizontalMove);
@@ -237,7 +245,7 @@ public class PlayerController : MonoBehaviour
 					m_MakeCrouched = 2;
 				}
 			}
-		}		
+		}
 
 		//Move character
 		m_Movement.Move(m_HorizontalMove * Time.fixedDeltaTime, m_Crouch, m_Jump, m_Sprint);

@@ -241,7 +241,7 @@ public class PlayerCharacter : MonoBehaviour
 
 	public void UpdateCheckpoint(Transform newCheckpoint, int checkpointID)
 	{
-		if(checkpointID > m_ActiveCheckpointID)
+		if(checkpointID != m_ActiveCheckpointID)
 		{
 			m_ActiveCheckpoint = newCheckpoint;
 			m_ActiveCheckpointID = checkpointID;

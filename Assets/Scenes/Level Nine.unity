@@ -5763,11 +5763,6 @@ PrefabInstance:
       objectReference: {fileID: 698571974}
     - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
-      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
       propertyPath: m_ActiveCheckpoint
       value: 
       objectReference: {fileID: 1780589723}
@@ -5798,29 +5793,9 @@ PrefabInstance:
       objectReference: {fileID: 427182237}
     - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
-      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
       propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1249867467}
-    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetEnemies
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042919604207388721, guid: e8a1f65ac17a6534083d8b544daa2526,
-        type: 3}
-      propertyPath: m_ResetLevelEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4042919604207388734, guid: e8a1f65ac17a6534083d8b544daa2526,
         type: 3}
       propertyPath: m_RespawnEvent.m_PersistentCalls.m_Calls.Array.size
@@ -24669,7 +24644,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.633787
+      value: -11.634151
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
@@ -26149,7 +26124,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.633787
+      value: -11.634151
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}

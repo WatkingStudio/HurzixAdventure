@@ -74,8 +74,7 @@ public class GameMenu : MonoBehaviour
 		PlayButtonClick();
 		yield return new WaitForSeconds(m_ButtonPressClip.length);
 		Debug.Log("QUIT!");
-		SceneManager.LoadScene(0);
-		//Application.Quit();
+		SceneManager.LoadScene((int)LevelTransition.Levels.MAIN_MENU);
 	}
 
 	private void PlayButtonClick()

@@ -22683,7 +22683,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -24144,7 +24144,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -24479,7 +24479,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -27610,7 +27610,7 @@ PrefabInstance:
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.354087
+      value: -7.3541274
       objectReference: {fileID: 0}
     - target: {fileID: 4049033130367069436, guid: 0e089b9d4ed53f44ebb5f597ad4ba128,
         type: 3}
@@ -30223,6 +30223,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1431935013592031831, guid: 48407ebb758907a40b640d895c40a2bf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RespawnPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 1738996671914490777, guid: 48407ebb758907a40b640d895c40a2bf,
         type: 3}
       propertyPath: m_SceneAudio
@@ -32069,7 +32074,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -33432,7 +33437,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -40321,7 +40326,7 @@ MonoBehaviour:
   m_OffsetBaseOnSpriteFacing: 1
   m_CanHitTriggers: 0
   m_DisableDamageAfterHit: 0
-  m_ForceRespawn: 0
+  m_ForceRespawn: 1
   m_IgnoreInvincibility: 0
   m_HittableLayers:
     serializedVersion: 2
@@ -43231,7 +43236,7 @@ PrefabInstance:
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.354087
+      value: -7.3541274
       objectReference: {fileID: 0}
     - target: {fileID: 7028233785419960951, guid: 9e997ffb82a0cb84f80cec6a002d4025,
         type: 3}

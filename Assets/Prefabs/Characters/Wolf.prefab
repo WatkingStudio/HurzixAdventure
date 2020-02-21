@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Movement: {fileID: 4042919604207388732}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 3073
+    m_Bits: 3072
   m_CeilingCheck: {fileID: 4218727144965971296}
   m_WallCheck: {fileID: 5381595923957839618}
   m_RunSpeed: 30
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 3073
+    m_Bits: 3072
   m_GroundCheck: {fileID: 4042919603812213261}
   m_CrouchDisableCollider: {fileID: 5984478123445601699}
   m_CollisionCheckerCollider: {fileID: 4662739822378595053}

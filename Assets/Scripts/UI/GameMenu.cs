@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
  * \class GameMenu
@@ -18,6 +19,7 @@ public class GameMenu : MonoBehaviour
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
 
+	[Header("UI Items")]
 	[SerializeField]
 	private GameObject m_GameMenu;
 	[SerializeField]
@@ -72,7 +74,7 @@ public class GameMenu : MonoBehaviour
 		PlayButtonClick();
 		yield return new WaitForSeconds(m_ButtonPressClip.length);
 		Debug.Log("QUIT!");
-		Application.Quit();
+		SceneManager.LoadScene((int)LevelTransition.Levels.MAIN_MENU);
 	}
 
 	private void PlayButtonClick()

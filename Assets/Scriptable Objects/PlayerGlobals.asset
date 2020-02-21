@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DefaultHealth: 3
   m_PlayerHealth: 3
-  m_PlayerScore: 20
+  m_PlayerScore: 111

@@ -35,4 +35,9 @@ public class EnemyAction : MonoBehaviour
 	{
 
 	}
+
+	public virtual void InitialiseAction()
+	{
+		Debug.Log(gameObject.name + " initialised");
+	}
 }

@@ -122,6 +122,7 @@ public class BasicEnemy : MonoBehaviour
 				m_ActiveAction = GetComponentInChildren<EnemyRangedAttack>();
 				break;
 		}
+		m_ActiveAction.InitialiseAction();
 	}
 
 	public virtual void ResetEnemy()

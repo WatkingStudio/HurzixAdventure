@@ -105,29 +105,24 @@ public class BasicEnemy : MonoBehaviour
 		{
 			case EnemyAction.Actions.EnemyMoveAction:
 				m_ActiveAction = GetComponentInChildren<EnemyMoveAction>();
-				m_ActiveAction.InitialiseAction();
 				break;
 			case EnemyAction.Actions.EnemyPlayerDetection:
 				m_ActiveAction = GetComponentInChildren<EnemyPlayerDetection>();
-				m_ActiveAction.InitialiseAction();
 				break;
 			case EnemyAction.Actions.EnemyMoveToPlayer:
 				m_ActiveAction = GetComponentInChildren<EnemyMoveToPlayerAction>();
-				m_ActiveAction.InitialiseAction();
 				break;
 			case EnemyAction.Actions.EnemyMeleeAttack:
 				m_ActiveAction = GetComponentInChildren<EnemyMeleeAttack>();
-				m_ActiveAction.InitialiseAction();
 				break;
 			case EnemyAction.Actions.EnemyPatrol:
 				m_ActiveAction = GetComponentInChildren<EnemyPatrolAction>();
-				m_ActiveAction.InitialiseAction();
 				break;
 			case EnemyAction.Actions.EnemyRangedAttack:
 				m_ActiveAction = GetComponentInChildren<EnemyRangedAttack>();
-				m_ActiveAction.InitialiseAction();
 				break;
 		}
+		m_ActiveAction.InitialiseAction();
 	}
 
 	public virtual void ResetEnemy()

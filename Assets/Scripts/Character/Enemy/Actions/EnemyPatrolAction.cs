@@ -30,6 +30,8 @@ public class EnemyPatrolAction : EnemyAction
 	private EnemyPlayerDetection m_EnemyPlayerDetection;
 	[SerializeField]
 	private Animator m_Animator;
+	[SerializeField]
+	private float m_PatrolCooldownTime = 1.0f;
 
 	public UnityEvent m_PlayerDetected;
 
@@ -37,6 +39,7 @@ public class EnemyPatrolAction : EnemyAction
 	private float m_WalkingDirection = 1.0f;
 	private bool m_IsWalking = false;
 	private EnemyAudio m_EnemyAudio;
+	private bool m_PatrolCooldown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -74,10 +77,23 @@ public class EnemyPatrolAction : EnemyAction
 		m_EnemyAudio.PlayWalkAudioClip();
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 		
-		if (m_EnemyPlayerDetection.CanPlayerBeSeen())
+		if (m_EnemyPlayerDetection.CanPlayerBeSeen() && !m_PatrolCooldown)
 		{
 			m_PlayerDetected.Invoke();
 			m_IsWalking = false;
 		}
+	}
+
+	public override void InitialiseAction()
+	{
+		base.InitialiseAction();
+		m_PatrolCooldown = true;
+		StartCoroutine(PatrolCooldown());
+	}
+
+	private IEnumerator PatrolCooldown()
+	{
+		yield return new WaitForSeconds(m_PatrolCooldownTime);
+		m_PatrolCooldown = false;
 	}
 }

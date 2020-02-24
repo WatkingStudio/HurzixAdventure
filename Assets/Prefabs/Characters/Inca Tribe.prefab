@@ -375,6 +375,7 @@ MonoBehaviour:
   m_BasicEnemy: {fileID: 3167071440109428146}
   m_EnemyPlayerDetection: {fileID: 3167071439211354076}
   m_Animator: {fileID: 6413848131752001724}
+  m_PatrolCooldownTime: 1
   m_PlayerDetected:
     m_PersistentCalls:
       m_Calls:

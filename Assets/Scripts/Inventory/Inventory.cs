@@ -84,6 +84,17 @@ public class Inventory : MonoBehaviour
 		return false;
 	}
 
+	public int NumberOfItem(Item.ItemType item)
+	{
+		int val = 0;
+		foreach(InventorySlot slot in m_InventorySlots)
+		{
+			if (slot.GetItemName() == item && slot.IsItemCollected())
+				val++;
+		}
+		return val;
+	}
+
 	//Pickup the specified item, return false if pickup failed.
 	public bool PickupItem(Item.ItemType item)
 	{

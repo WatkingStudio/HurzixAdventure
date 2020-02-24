@@ -62,20 +62,36 @@ public class LevelExit : InteractableObjects
 	{
 		if(m_Inventory.HasItem(Item.ItemType.Key))
 		{
-			foreach (LevelExitLock exitLock in m_DoorLocks)
+			if(m_Inventory.NumberOfItem(Item.ItemType.Key) == m_NumberOfLocks)
 			{
-				if (exitLock.Unlock() && !exitLock.IsLocked())
+				foreach(LevelExitLock exitLock in m_DoorLocks)
 				{
-					m_LocksOpened++;
-					m_Inventory.DropItem(Item.ItemType.Key);
-					break;
+					if(exitLock.Unlock() && !exitLock.IsLocked())
+					{
+						m_LocksOpened++;
+						m_Inventory.DropItem(Item.ItemType.Key);
+					}
 				}
-			}
-
-			if (m_LocksOpened == m_NumberOfLocks)
-			{
 				UnlockDoor();
+				
 			}
+			else
+			{
+				foreach (LevelExitLock exitLock in m_DoorLocks)
+				{
+					if (exitLock.Unlock() && !exitLock.IsLocked())
+					{
+						m_LocksOpened++;
+						m_Inventory.DropItem(Item.ItemType.Key);
+						break;
+					}
+				}
+
+				if (m_LocksOpened == m_NumberOfLocks)
+				{
+					UnlockDoor();
+				}
+			}			
 		}
 		
 		if(m_Animator.GetCurrentAnimatorStateInfo(0).IsName("OpenDoor"))

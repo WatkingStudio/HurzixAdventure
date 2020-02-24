@@ -1,0 +1,14 @@
+##Changes in Version 1.2
+* Fixed Menu Buttons Target
+* Increased Size of Floating Rocks
+* Updated Flame Worshippers
+* Updated Checkpoints
+* Added Lava Escapes
+* Updated Coin UI
+* Fixed Enemy Respawn Bug
+* Quit to Menu Added
+* Fixed Player Movement Bug
+* Made Jump Priority
+* Modified Camera Settings
+* Updated Coin Location
+* Added Full Keys Feature

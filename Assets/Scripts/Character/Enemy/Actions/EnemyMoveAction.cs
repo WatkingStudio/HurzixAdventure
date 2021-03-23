@@ -53,7 +53,7 @@ public class EnemyMoveAction : EnemyAction
 	{
 		if (!m_IsWalking)
 		{
-			m_BasicEnemy.IsWalking(true);
+			m_BasicEnemy.SetWalking(true);
 			m_IsWalking = true;
 		}
 

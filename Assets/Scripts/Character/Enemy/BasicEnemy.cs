@@ -67,7 +67,7 @@ public class BasicEnemy : MonoBehaviour
 		transform.localPosition = pos;
 	}
 
-	public virtual void IsWalking(bool walking)
+	public virtual void SetWalking(bool walking)
 	{
 		m_Animator.SetBool("Walking", walking);
 	}

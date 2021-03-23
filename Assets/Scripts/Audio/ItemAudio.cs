@@ -14,19 +14,23 @@ public class ItemAudio : MonoBehaviour
 {
 	[Header("Audio")]
 	[SerializeField]
-	private AudioSource m_AudioSource;
-	[SerializeField]
 	private AudioClip m_AudioClip;
+	[SerializeField]
+	private AudioSource m_AudioSource;
 
 	private void Start()
 	{
 		if (!m_AudioSource)
+		{
 			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
-
+		}
 		if (!m_AudioClip)
+		{
 			Debug.LogError("No Audio Clip has been assigned to " + gameObject.name);
+		}
 	}
 
+	// Play the Attached Audio Clip
 	public void PlayAudioClip()
 	{
 		m_AudioSource.clip = m_AudioClip;

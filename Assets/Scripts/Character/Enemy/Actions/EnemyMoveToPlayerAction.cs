@@ -17,10 +17,6 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	public class SetAnimationEvent : UnityEvent<float>
 	{ }
 
-	public SetAnimationEvent m_MoveLeft;
-	public SetAnimationEvent m_MoveRight;
-	public UnityEvent m_StopEnemy;
-
 	[SerializeField]
 	private Animator m_Animator;
 	[SerializeField]
@@ -40,6 +36,10 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	private float m_Speed = 1f;
 	[SerializeField, Tooltip("A mask determining what is ground to the character")]
 	private LayerMask m_WhatIsGround;
+
+	public SetAnimationEvent m_MoveLeft;
+	public SetAnimationEvent m_MoveRight;
+	public UnityEvent m_StopEnemy;
 
 	private bool m_IsInitialised = false;
 	private PlayerCharacter m_PlayerCharacter;
@@ -75,7 +75,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		}
 	}
 
-	// Sets the Velocity of the Enemy Towars the Player
+	// Sets the Velocity of the Enemy Towars the Player.
 	public override void PerformAction()
 	{
 		if (!m_IsInitialised)
@@ -104,13 +104,13 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		m_EnemyAudio.PlayWalkAudioClip();
 	}
 
-	// Invokes the Stop Enemy Event
+	// Invokes the Stop Enemy Event.
 	public void StopEnemy()
 	{
 		m_StopEnemy.Invoke();
 	}
 
-	// Checks if the Collision Box Collides with the Floor
+	// Checks if the Collision Box Collides with the Floor.
 	private bool CheckForCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))

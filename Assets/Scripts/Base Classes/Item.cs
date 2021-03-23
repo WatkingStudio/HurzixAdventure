@@ -19,7 +19,7 @@ public class Item : MonoBehaviour
 		Key
 	};
 
-	// Get the Type of the Item
+	// Get the Type of the Item.
 	public ItemType GetItemType()
 	{
 		return m_ItemType;

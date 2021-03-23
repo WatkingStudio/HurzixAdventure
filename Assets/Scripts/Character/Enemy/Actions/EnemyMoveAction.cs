@@ -48,7 +48,7 @@ public class EnemyMoveAction : EnemyAction
 		m_Action = Actions.EnemyMoveAction;
 	}
 
-	// Sets up the Move Action
+	// Sets up the Move Action.
 	public override void PerformAction()
 	{
 		if (!m_IsWalking)
@@ -73,7 +73,7 @@ public class EnemyMoveAction : EnemyAction
 		m_BasicEnemy.transform.Translate(m_WalkAmount);
 	}
 
-	// Draws Interactable Gizmos in the Editor
+	// Draws Interactable Gizmos in the Editor.
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = new Color(1f, 0f, 0f, 1f);

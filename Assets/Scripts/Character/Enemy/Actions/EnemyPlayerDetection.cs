@@ -16,74 +16,94 @@ using UnityEngine;
  */ 
 public class EnemyPlayerDetection : EnemyAction
 {
-	//Is the player within the enemy's sight rangle collider
-	private bool m_PlayerInRange = false;
-
 	[SerializeField]
-	private SpriteRenderer m_Sprite;
+	private BasicEnemy m_BasicEnemy;
 	[SerializeField]
 	private Transform m_LineOfSightEnd;
 	[SerializeField]
-	private Transform m_Player;
+	private float m_MaxLOSAngle = 150;
 	[SerializeField]
 	private float m_MinLOSAngle = 30;
 	[SerializeField]
-	private float m_MaxLOSAngle = 150;
+	private Transform m_Player;
 	[SerializeField]
-	private BasicEnemy m_BasicEnemy;
-
-	private PlayerCharacter m_PlayerCharacter;
-	
+	private SpriteRenderer m_Sprite;
 
 	public PlayerCharacter PlayerCharacter { get { return m_PlayerCharacter; } }
-
 	public bool PlayerInRange { get { return m_PlayerInRange; } }
+
+	//Is the player within the enemy's sight rangle collider
+	private PlayerCharacter m_PlayerCharacter;
+	private bool m_PlayerInRange = false;
 
 	private void Start()
 	{
 		m_Action = Actions.EnemyPlayerDetection;
 
 		if (!m_Sprite)
+		{
 			Debug.LogError("No Sprite Renderer has been assigned to " + gameObject.name);
+		}
 		if (!m_LineOfSightEnd)
+		{
 			Debug.LogError("No Line Of Sight End Transform has been assigned to " + gameObject.name);
+		}
 		if (!m_Player)
+		{
 			Debug.LogError("No Player Transform has been assigned to " + gameObject.name);
+		}
 		if (!m_BasicEnemy)
+		{
 			Debug.LogError("No Basic Enemy has been assigned to " + gameObject.name);
+		}
 	}
 
+	// Perform the Player Detection Action.
 	public override void PerformAction()
 	{
 		if (CanPlayerBeSeen())
+		{
 			m_BasicEnemy.SetActiveAction(Actions.EnemyMoveToPlayer);
+		}
 	}
 
+	// Can a Player be Seen.
 	public bool CanPlayerBeSeen()
 	{
-		//Only need to check visibility if the player is within range of the enemy
-		if(m_PlayerInRange)
-			if (PlayerInFieldOfView())
-				return (!PlayerHiddenByObstacles());
+		//Only need to check visibility if the player is within range of the enemy.
+		if (m_PlayerInRange)
+		{
+            if (IsPlayerInFieldOfView())
+            {
+                return (!PlayerHiddenByObstacles());
+            }
+		}
 
 		return false;
 	}
 
+	// Trigger if a Player is in this Objects Collision Box.
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		//If the collider is the player then they are in range.
 		if (collision.GetComponentInParent<PlayerCharacter>())
+		{
 			m_PlayerInRange = true;
+		}
 	}
 
+	// Trigger if a Player Leaves this Objects Collision Box.
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		//If the collider is the player then they are no longer in range.
-		if (collision.GetComponentInParent<PlayerCharacter>())
-			m_PlayerInRange = false;
+        //If the collider is the player then they are no longer in range.
+        if (collision.GetComponentInParent<PlayerCharacter>())
+        {
+            m_PlayerInRange = false;
+        }
 	}
 
-	private bool PlayerInFieldOfView()
+	// Is the Player in this Objects Field Of View.
+	private bool IsPlayerInFieldOfView()
 	{
 		Vector2 directionToPlayer = m_Player.position - transform.position;
 		Debug.DrawLine(transform.position, m_Player.position, Color.magenta);
@@ -92,13 +112,16 @@ public class EnemyPlayerDetection : EnemyAction
 		Debug.DrawLine(transform.position, m_LineOfSightEnd.position, Color.yellow);
 
 		float angle = Vector2.SignedAngle(directionToPlayer, lineOfSight);
-		
+
 		if (angle > m_MinLOSAngle && angle < m_MaxLOSAngle)
+		{
 			return true;
+		}
 
 		return false;
 	}
 
+	// Is the Player Hidden by Obstacles.
 	private bool PlayerHiddenByObstacles()
 	{
 		float distanceToPlayer = Vector2.Distance(transform.position, m_Player.position);
@@ -110,12 +133,18 @@ public class EnemyPlayerDetection : EnemyAction
 		foreach(RaycastHit2D hit in hits)
 		{
 			if (hit.transform.tag == "Enemy")
+			{
 				continue;
+			}
 
 			if (hit.transform.tag != "Player")
+			{
 				return true;
+			}
 			else
-				m_PlayerCharacter = hit.transform.gameObject.GetComponent<PlayerCharacter>();		
+			{
+				m_PlayerCharacter = hit.transform.gameObject.GetComponent<PlayerCharacter>();
+			}
 		}
 		return false;
 	}

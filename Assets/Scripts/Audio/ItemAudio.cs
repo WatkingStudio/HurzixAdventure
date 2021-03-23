@@ -30,7 +30,7 @@ public class ItemAudio : MonoBehaviour
 		}
 	}
 
-	// Play the Attached Audio Clip
+	// Play the Attached Audio Clip.
 	public void PlayAudioClip()
 	{
 		m_AudioSource.clip = m_AudioClip;

@@ -1,7 +1,7 @@
 # Class Organization
 Classes should be organized with the reader in mind rather than the writer. Monobehaviour funtions should be at the top of the class, then since most readers are going to be using the public interface of the class, that should be declared next, followed by the class’s protected members, and finally the class’s private members. Each section should also be organized in alphabetical order, for a similar reason.  
 
-Member variables should all be declared at the top of the class, with static variables at the very top.
+Member variables should all be declared at the top of the class, with SerializeField variables at the very top.
 # Naming Conventions
 * Class methods and variables should use PascalCasing.
 * Use camelCasing for method arguments and local variables.

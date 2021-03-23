@@ -13,13 +13,13 @@ using UnityEngine.Events;
 public class EnemyMeleeAttack : EnemyAction
 {
 	[SerializeField]
-	private Damager m_Damager;
-	[SerializeField]
 	private Animator m_Animator;
 	[SerializeField]
 	private AnimationClip m_AttackClip;
 	[SerializeField]
 	private BasicEnemy m_BasicEnemy;
+	[SerializeField]
+	private Damager m_Damager;
 
 	public UnityEvent OnAttackEvent;
 

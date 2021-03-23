@@ -30,21 +30,32 @@ public class EnemyMeleeAttack : EnemyAction
 		m_Action = Actions.EnemyMeleeAttack;
 
 		if (!m_Damager)
+		{
 			Debug.LogError("No Damager has been assigned to " + gameObject.name);
+		}
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_AttackClip)
+		{
 			Debug.LogError("No Attack Clip has been assigned to " + gameObject.name);
+		}
 		if (!m_BasicEnemy)
+		{
 			Debug.LogError("No Basic Enemy script has been assigned to " + gameObject.name);
+		}
 	}
 
 	private void Awake()
 	{
 		if (OnAttackEvent == null)
+		{
 			OnAttackEvent = new UnityEvent();
+		}
 	}
 
+	// Sets up the Melee Attack Action
 	public override void PerformAction()
 	{
 		if(!m_IsAttacking)
@@ -54,6 +65,7 @@ public class EnemyMeleeAttack : EnemyAction
 		}
 	}
 
+	// Performs the Attack Action
 	IEnumerator AttackTimer()
 	{
 		m_IsAttacking = true;

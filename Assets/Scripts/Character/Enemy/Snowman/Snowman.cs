@@ -48,8 +48,8 @@ public class Snowman : BasicEnemy
 		
 	}
 
-	public override void IsWalking(bool walking)
+	public override void SetWalking(bool walking)
 	{
-		base.IsWalking(walking);
+		base.SetWalking(walking);
 	}
 }

@@ -81,7 +81,7 @@ public class EnemyPatrolAction : EnemyAction
 	{
 		if(!m_IsWalking)
 		{
-			m_BasicEnemy.IsWalking(true);
+			m_BasicEnemy.SetWalking(true);
 			m_IsWalking = true;
 			m_Animator.SetBool("IsWalking", true);
 			if (m_WalkingDirection == 1 && !m_BasicEnemy.FacingRight)

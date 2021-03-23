@@ -12,15 +12,15 @@ using UnityEngine;
 public class IncaTribe : BasicEnemy
 {
 	[SerializeField]
-	private BoxCollider2D m_FrontCollider;
-	[SerializeField]
 	private LayerMask m_AttackableLayers;
 	[SerializeField]
-	private LayerMask m_GroundLayers;
+	private EnemyMoveToPlayerAction m_EnemyMoveToPlayer;
 	[SerializeField]
 	private EnemyPlayerDetection m_EnemyPlayerDetection;
 	[SerializeField]
-	private EnemyMoveToPlayerAction m_EnemyMoveToPlayer;
+	private BoxCollider2D m_FrontCollider;
+	[SerializeField]
+	private LayerMask m_GroundLayers;
 
 	private float m_DetectionTimerDefault = 0.5f;
 	private float m_DetectionTimer;
@@ -36,8 +36,23 @@ public class IncaTribe : BasicEnemy
     // Update is called once per frame
     void Update()
     {
+		if(!m_EnemyMoveToPlayer)
+        {
+			Debug.LogError("No Enemy Move To Player Action script attached to " + gameObject.name);
+		}
+		if(!m_EnemyPlayerDetection)
+        {
+			Debug.LogError("No Enemy Player Detection script attached to " + gameObject.name);
+		}
+		if(!m_FrontCollider)
+        {
+			Debug.LogError("No Box Collider 2D attached to " + gameObject.name);
+		}
+
 		if (m_ActiveAction == null)
+		{
 			return;
+		}
 		m_ActiveAction.PerformAction();
 
 		if(m_FrontCollider.IsTouchingLayers(m_AttackableLayers))
@@ -58,40 +73,50 @@ public class IncaTribe : BasicEnemy
 				}
 			}
 		}
-    }
-	
-	public override void ResetEnemy()
-	{
-		base.ResetEnemy();
 	}
 
+	// Tells the Animator to Set the IsWalking Bool (Hard Coded For False).
+	public override void SetWalking(bool walking)
+	{
+		m_Animator.SetBool("IsWalking", false);
+	}
+
+	// Performs the Code in Response to Detecting the Player.
 	public void PlayerDetected()
 	{
 		SetActiveAction(EnemyAction.Actions.EnemyMoveToPlayer);
 	}
 
-	public void SetAnimationRight()
+	// Resets the Enemy.
+	public override void ResetEnemy()
 	{
-		m_Animator.SetBool("IsWalking", true);
-		if(!m_FacingRight)
-			Flip();
+		base.ResetEnemy();
 	}
 
+	// Sets the Animation to Left.
 	public void SetAnimationLeft()
 	{
 		m_Animator.SetBool("IsWalking", true);
 		if (m_FacingRight)
+		{
 			Flip();
+		}
 	}
 
+	// Sets the Animation to Right.
+	public void SetAnimationRight()
+	{
+		m_Animator.SetBool("IsWalking", true);
+		if (!m_FacingRight)
+		{
+			Flip();
+		}
+	}
+
+	// Tells the Animator the Enemy has Stopped.
 	public override void StopEnemy()
 	{
 		m_Animator.SetBool("IsWalking", false);
 		m_Animator.SetTrigger("Idle");
-	}
-
-	public override void IsWalking(bool walking)
-	{
-		m_Animator.SetBool("IsWalking", false);
 	}
 }

@@ -22,19 +22,25 @@ public class LevelDictionary : ScriptableObject
 		[SerializeField]
 		private RuntimeAnimatorController AnimationController;
 
-		public Item.ItemType GetItemType()
-		{
-			return ItemType;
-		}
-
+		// Get The Animator Controller of the Item.
+		// @return The Runtime Animator Controller of the Item.
 		public RuntimeAnimatorController GetAnimatorController()
 		{
 			return AnimationController;
+		}
+
+		// Get the Item Type of the Item.
+		// @return The Item Type of the Item.
+		public Item.ItemType GetItemType()
+		{
+			return ItemType;
 		}
 	}
 
 	[SerializeField] public CollectableItems[] m_LevelData;
 	
+	// Get the Data From the Specified Level.
+	// @return The CollectableItems Data for the Specified Level.
 	public CollectableItems GetData(int numerator)
 	{
 		return m_LevelData[numerator];

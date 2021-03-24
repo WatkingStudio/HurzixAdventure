@@ -38,26 +38,37 @@ public class LevelExit : InteractableObjects
 	[SerializeField]
 	private DoorUnlockedEvent m_DoorUnlockedEvent;
 
-	private int m_NumberOfLocks;
-	private int m_LocksOpened = 0;
 	private float m_ClipLengthExtraDelay = 0.2f;
+	private int m_LocksOpened = 0;
+	private int m_NumberOfLocks;
 
 	public void Start()
 	{
 		if (m_DoorLocks.Count == 0)
+		{
 			Debug.LogError("No Door Locks have been assigned to " + gameObject.name);
+		}
 		if (!m_Inventory)
+		{
 			Debug.LogError("No Inventory has been assigned to " + gameObject.name);
+		}
 		if (!m_ItemAudio)
+		{
 			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+		}
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_ExitDoorOpeningClip)
+		{
 			Debug.LogError("No Animation Clip has been assigned to " + gameObject.name);
+		}
 
 		m_NumberOfLocks = m_DoorLocks.Count;
 	}
 
+	// Execute This Code When the Level Exit is Interacted With.
 	public override void Interact()
 	{
 		if(m_Inventory.HasItem(Item.ItemType.Key))
@@ -100,6 +111,7 @@ public class LevelExit : InteractableObjects
 		}
 	}
 
+	// Unlock the Door.
 	public void UnlockDoor()
 	{
 		m_Animator.SetTrigger("Unlock");
@@ -107,6 +119,8 @@ public class LevelExit : InteractableObjects
 		StartCoroutine(WaitForDoorToOpen());
 	}
 
+	// Wait for the Animations to Play Before Opening the Door.
+	// @return The Current IEnumerator Step.
 	IEnumerator WaitForDoorToOpen()
 	{
 		yield return new WaitForSeconds(m_ExitDoorOpeningClip.length + m_ClipLengthExtraDelay);

@@ -13,11 +13,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 	[SerializeField]
-	private AudioSource m_SceneAudio;
-	[SerializeField]
 	private AudioClip m_ButtonPressClip;
 	[SerializeField]
 	private PlayerGlobals m_PlayerVariables;
+	[SerializeField]
+	private AudioSource m_SceneAudio;
 
 	[SerializeField]
 	private GameObject m_MainMenu;
@@ -38,11 +38,48 @@ public class MainMenu : MonoBehaviour
 			Debug.LogError("No Options Menu has been assigned to " + gameObject.name);
 	}
 
+	/// <summary>
+	/// Open the Options Menu.
+	/// </summary>
+	public void Options()
+	{
+		StartCoroutine(OptionsButton());
+	}
+
+	/// <summary>
+	/// Process the Options Button Being Clicked.
+	/// </summary>
+	/// <returns>The Current IEnumerator Step.</returns>
+	private IEnumerator OptionsButton()
+	{
+		PlayButtonClick();
+		yield return new WaitForSeconds(m_ButtonPressClip.length);
+		m_MainMenu.SetActive(false);
+		m_OptionsMenu.SetActive(true);
+	}
+
+	/// <summary>
+	/// Play the Button Click Audio.
+	/// </summary>
+	private void PlayButtonClick()
+	{
+		m_SceneAudio.Stop();
+		m_SceneAudio.clip = m_ButtonPressClip;
+		m_SceneAudio.Play();
+	}
+
+	/// <summary>
+	/// Start the Game.
+	/// </summary>
 	public void PlayGame()
 	{
 		StartCoroutine(PlayGameButton());
 	}
 
+	/// <summary>
+	/// Process the Play Button Being Clicked.
+	/// </summary>
+	/// <returns>The Current IEnumerator Step.</returns>
 	private IEnumerator PlayGameButton()
 	{
 		ResetPlayerVariables();
@@ -51,30 +88,18 @@ public class MainMenu : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
-	private void ResetPlayerVariables()
-	{
-		m_PlayerVariables.PlayerScore = 0;
-		m_PlayerVariables.PlayerHealth = m_PlayerVariables.DefaultHealth;
-	}
-
-	public void Options()
-	{
-		StartCoroutine(OptionsButton());
-	}
-
-	private IEnumerator OptionsButton()
-	{
-		PlayButtonClick();
-		yield return new WaitForSeconds(m_ButtonPressClip.length);
-		m_MainMenu.SetActive(false);
-		m_OptionsMenu.SetActive(true);		
-	}
-
+	/// <summary>
+	/// Quit the Game.
+	/// </summary>
 	public void QuitGame()
 	{
 		StartCoroutine(QuitGameButton());
 	}
 
+	/// <summary>
+	/// Process the Quit Button Being Clicked.
+	/// </summary>
+	/// <returns>The Current IEnumerator Step.</returns>
 	private IEnumerator QuitGameButton()
 	{
 		PlayButtonClick();
@@ -83,13 +108,18 @@ public class MainMenu : MonoBehaviour
 		Application.Quit();
 	}
 
-	private void PlayButtonClick()
+	/// <summary>
+	/// Reset the Player Variables.
+	/// </summary>
+	private void ResetPlayerVariables()
 	{
-		m_SceneAudio.Stop();
-		m_SceneAudio.clip = m_ButtonPressClip;
-		m_SceneAudio.Play();
+		m_PlayerVariables.PlayerScore = 0;
+		m_PlayerVariables.PlayerHealth = m_PlayerVariables.DefaultHealth;
 	}
 
+	/// <summary>
+	/// Open the Zone Selection Screen.
+	/// </summary>
 	public void ZoneSelection()
 	{
 		m_MainMenu.SetActive(false);

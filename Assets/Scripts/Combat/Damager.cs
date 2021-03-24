@@ -23,44 +23,41 @@ public class Damager : MonoBehaviour
 	public class NonDamagableEvent : UnityEvent<Damager>
 	{ }
 
-	//The last collider hit
-	public Collider2D LastHit { get { return m_LastHit; } }
-	public int Damage { get { return m_Damage; } }
-
 	[SerializeField, Tooltip("How much damage this object deals each hit")]
 	private int m_Damage = 1;
+
 	[Header("Collision Box")]
 	[SerializeField, Tooltip("The offset of the collision box from the Game Object")]
 	private Vector2 m_Offset = new Vector2(0f, 0f);
-	[SerializeField, Tooltip("The size of the collision box")]
-	private Vector2 m_Size = new Vector2(1f, 1f);
 	[SerializeField, Tooltip("If set to true, the offset will take into account the facing of the sprite")]
 	private bool m_OffsetBaseOnSpriteFacing = true;
+	[SerializeField, Tooltip("The size of the collision box")]
+	private Vector2 m_Size = new Vector2(1f, 1f);
+
 	[Header("Damage Checks")]
+	[SerializeField, Tooltip("If disabled, this object won't deal damage")]
+	protected bool m_CanDamage = true;
 	[SerializeField, Tooltip("If disabled, will ignore triggers when applying damage")]
 	private bool m_CanHitTriggers;
 	[SerializeField, Tooltip("If enabled, when this component has dealt damage this gameobject will be disabled")]
 	private bool m_DisableDamageAfterHit = false;
 	[SerializeField, Tooltip("If set causes the player to respawn from the latest checkpoint, in addition to losing a life")]
 	private bool m_ForceRespawn = false;
-	[SerializeField, Tooltip("If set, a invincible target will still receive the onHit message. But won't loose health")]
-	private bool m_IgnoreInvincibility = false;
 	[SerializeField, Tooltip("The layers which this Damager can interact with")]
 	private LayerMask m_HittableLayers;
+	[SerializeField, Tooltip("If set, a invincible target will still receive the onHit message. But won't loose health")]
+	private bool m_IgnoreInvincibility = false;
+
 	[Header("Misc")]
 	[SerializeField, Tooltip("SpriteRenderer used to read the flipX value used by m_OffsetBasedOnSpriteFacing")]
 	private SpriteRenderer m_SpriteRenderer;
+
 	[Header("Events")]
 	[SerializeField]
 	private DamagableEvent m_OnDamageableHit;
 	[SerializeField]
 	private NonDamagableEvent m_OnNonDamageableHit;
 
-	// Set to whether the sprite was flipped by default
-	protected bool m_SpriteOriginallyFlipped;
-	// If set then this Damager can cause damage
-	[SerializeField]
-	protected bool m_CanDamage = true;
 	// Filter to restrict what gameobjects this Damager interacts with
 	protected ContactFilter2D m_AttackContactFilter;
 	// An array to store the colliders found in a collision
@@ -69,11 +66,18 @@ public class Damager : MonoBehaviour
 	protected Transform m_DamagerTransform;
 	// The last collider this Damager collided with
 	protected Collider2D m_LastHit;
+	// Set to whether the sprite was flipped by default
+	protected bool m_SpriteOriginallyFlipped;
+
+	public int Damage { get { return m_Damage; } }
+	public Collider2D LastHit { get { return m_LastHit; } }
 
 	private void Start()
 	{
 		if (!m_SpriteRenderer)
+		{
 			Debug.LogWarning("No Sprite Renderer has been assigned to " + gameObject.name);
+		}
 	}
 
 	private void Awake()
@@ -83,19 +87,11 @@ public class Damager : MonoBehaviour
 		m_AttackContactFilter.useTriggers = m_CanHitTriggers;
 
 		if (m_OffsetBaseOnSpriteFacing && m_SpriteRenderer != null)
+		{
 			m_SpriteOriginallyFlipped = m_SpriteRenderer.flipX;
+		}
 
 		m_DamagerTransform = transform;
-	}
-
-	public void EnableDamage()
-	{
-		m_CanDamage = true;
-	}
-
-	public void DisableDamage()
-	{
-		m_CanDamage = false;
 	}
 
 	//Every frame this function will be called and check if this object has 
@@ -104,14 +100,18 @@ public class Damager : MonoBehaviour
 	{
 		//If the object is set to not deal damage then simply return
 		if (!m_CanDamage)
+		{
 			return;
-		
+		}
+
 		//Create the collision area
 		Vector2 scale = m_DamagerTransform.lossyScale;
 
 		Vector2 facingOffset = Vector2.Scale(m_Offset, scale);
 		if (m_OffsetBaseOnSpriteFacing && m_SpriteRenderer != null && m_SpriteRenderer.flipX != m_SpriteOriginallyFlipped)
+		{
 			facingOffset = new Vector2(-m_Offset.x * scale.x, m_Offset.y * scale.y);
+		}
 
 		Vector2 scaledSize = Vector2.Scale(m_Size, scale);
 
@@ -125,10 +125,10 @@ public class Damager : MonoBehaviour
 		{
 			//Store the latest collision hit
 			m_LastHit = m_AttackOverlapResults[i];
-			Damageable damageable = m_LastHit.GetComponentInParent<Damageable>(); 
-			
+			Damageable damageable = m_LastHit.GetComponentInParent<Damageable>();
+
 			//If the collided object has a Damageable component then deal damage
-			if(damageable)
+			if (damageable)
 			{
 				if (m_ForceRespawn)
 				{
@@ -138,7 +138,9 @@ public class Damager : MonoBehaviour
 				m_OnDamageableHit.Invoke(this, damageable);
 				damageable.TakeDamage(this, m_IgnoreInvincibility);
 				if (m_DisableDamageAfterHit)
+				{
 					DisableDamage();
+				}
 			}
 			else
 			{
@@ -147,6 +149,19 @@ public class Damager : MonoBehaviour
 		}
 	}
 
+	// Stop this Object From Dealing Damage.
+	public void DisableDamage()
+	{
+		m_CanDamage = false;
+	}
+
+	// Allow this Object to Deal Damage.
+	public void EnableDamage()
+	{
+		m_CanDamage = true;
+	}
+
+	// Draw Gizmos in the Editor.
 	private void OnDrawGizmos()
 	{
 		//Create the collision area
@@ -157,6 +172,7 @@ public class Damager : MonoBehaviour
 		Gizmos.DrawWireCube(transform.position + (Vector3)m_Offset, (Vector3)scaledSize);
 	}
 
+	// Draw Gizmos in the Editor, When this Object is Selected.
 	private void OnDrawGizmosSelected()
 	{
 		Vector2 scale = transform.lossyScale;

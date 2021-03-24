@@ -56,7 +56,7 @@ public class Snowman : BasicEnemy
 		base.ResetEnemy();
 	}
 
-	// Set the if the Snowman is Walking or Not.
+	// Tell the Animator if the Snowman is Walking or Not.
 	public override void SetWalking(bool walking)
 	{
 		base.SetWalking(walking);

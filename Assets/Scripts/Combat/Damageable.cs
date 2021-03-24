@@ -69,7 +69,6 @@ public class Damageable : MonoBehaviour
 	public float InvulnerableDuration { get { return m_InvulnerableDuration; } }
 	public float HealingBufferDuration { get { return m_HealingBuffer; } }
 
-	//When this gameobject is enabled reset the starting health and make sure that they are not invulnerable.
 	private void OnEnable()
 	{
 		m_CurrentHealth = m_StartingHealth;
@@ -101,14 +100,18 @@ public class Damageable : MonoBehaviour
 		}
 	}
 
-	// Get the Current Health.
-	// @return The Current Health of the Object.
+	/// <summary>
+	/// Get the current health.
+	/// </summary>
+	/// <returns>The current health of the object.</returns>
 	public int CurrentHealth()
 	{
 		return m_CurrentHealth;
 	}
 
-	// Disable Healing for this Object.
+	/// <summary>
+	/// Disable healing for this object.
+	/// </summary>
 	public void DisableHealing()
 	{
 		m_HealingBufferActive = true;
@@ -116,19 +119,25 @@ public class Damageable : MonoBehaviour
 		m_HealingBufferTimer = m_HealingBuffer;
 	}
 
-	// Disable Invulnerability for this Object.
+	/// <summary>
+	/// Disable invulnerability for this object.
+	/// </summary>
 	public void DisableInvulnerability()
 	{
 		m_IsInvulnerable = false;
 	}
 
-	// Enable Healing for this Object.
+	/// <summary>
+	/// Enable healing for this object.
+	/// </summary>
 	public void EnableHealing()
 	{
 		m_HealingBufferActive = false;
 	}
 
-	// Enable Invulnerability for this Object.
+	/// <summary>
+	/// Enable invulnerability for this object.
+	/// </summary>
 	public void EnableInvulnerability()
 	{
 		m_IsInvulnerable = true;
@@ -136,8 +145,10 @@ public class Damageable : MonoBehaviour
 		m_InvulnerabilityTimer = m_InvulnerableDuration;
 	}
 
-	// Check if this Object is Full Health.
-	// @return True if the Object is Full Health, False if Not.
+	/// <summary>
+	/// Check if this object is full health.
+	/// </summary>
+	/// <returns>True if the object is full health, false if not.</returns>
 	public bool IsFullHealth()
 	{
 		if (m_CurrentHealth < m_StartingHealth)
@@ -150,7 +161,9 @@ public class Damageable : MonoBehaviour
 		}
 	}
 
-	// Regain One Health.
+	/// <summary>
+	/// Regain one health.
+	/// </summary>
 	public void RegainHealth()
 	{
 		if (m_HealingBufferActive)
@@ -168,7 +181,10 @@ public class Damageable : MonoBehaviour
 		DisableHealing();
 	}
 
-	// Regain the Specified Amount of Health.
+	/// <summary>
+	/// Regain the specified amount of health.
+	/// </summary>
+	/// <param name="val">The amount of health to regain.</param>
 	public void RegainHealth(int val)
 	{
 		if (m_HealingBufferActive)
@@ -186,8 +202,10 @@ public class Damageable : MonoBehaviour
 		DisableHealing();
 	}
 
-	// Reset Health.
-	// If no Health Value is Passed into the Function Reset Health to the Starting Health.
+	/// <summary>
+	/// Reset health.
+	/// </summary>
+	/// <param name="health">What to set the health to.</param>
 	public void ResetHealth(int health = -1)
 	{
 		if (health != -1)
@@ -200,19 +218,29 @@ public class Damageable : MonoBehaviour
 		}
 	}
 
-	// Respawn the Object.
+	/// <summary>
+	/// Respawn the object.
+	/// </summary>
+	/// <param name="resetHealth">Should the characters health be reset.</param>
 	public void RespawnTarget(bool resetHealth = true)
 	{
 		m_RespawnEvent.Invoke(resetHealth);
 	}
 
-	// Set the Objects Health.
+	/// <summary>
+	/// Set the objects heath.
+	/// </summary>
+	/// <param name="val">The value to set the characters health to.</param>
 	public void SetHealth(int val)
 	{
 		m_CurrentHealth = val;
 	}
 
-	// Apply Damage to this Object.
+	/// <summary>
+	/// Apply damage to this object.
+	/// </summary>
+	/// <param name="damager">Damager dealing damage to this object.</param>
+	/// <param name="ignoreInvincible">Should invincibility be ignored.</param>
 	public void TakeDamage(Damager damager, bool ignoreInvincible = false)
 	{
 		//If the character should not take damage at this point return

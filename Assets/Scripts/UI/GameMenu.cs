@@ -49,14 +49,18 @@ public class GameMenu : MonoBehaviour
 		}
 	}
 
-	// Continue With the Game.
+	/// <summary>
+	/// Continue with the game.
+	/// </summary>
 	public void Continue()
 	{
 		StartCoroutine(ContinueButton());
 	}
 
-	// Process the Continue Button Being Clicked.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Process the continue button being clicked.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator ContinueButton()
 	{
 		PlayButtonClick();
@@ -64,14 +68,18 @@ public class GameMenu : MonoBehaviour
 		m_GameMenu.SetActive(false);
 	}
 
-	// Open the Options Menu.
+	/// <summary>
+	/// Open the options menu.
+	/// </summary>
 	public void Options()
 	{
 		StartCoroutine(OptionsButton());
 	}
 
-	// Process the Options Button Being Clicked.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Process the options button being clicked.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator OptionsButton()
 	{
 		PlayButtonClick();
@@ -80,7 +88,9 @@ public class GameMenu : MonoBehaviour
 		m_OptionsMenu.SetActive(true);
 	}
 
-	// Play the Buton Click Audio.
+	/// <summary>
+	/// Play the button click audio.
+	/// </summary>
 	private void PlayButtonClick()
 	{
 		m_SceneAudio.Stop();
@@ -88,13 +98,18 @@ public class GameMenu : MonoBehaviour
 		m_SceneAudio.Play();
 	}
 
-	// Quit the Game.
+	/// <summary>
+	/// Quit the game.
+	/// </summary>
 	public void QuitGame()
 	{
 		StartCoroutine(QuitGameButton());
 	}
 
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Process the quit game button being clicked.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator QuitGameButton()
 	{
 		PlayButtonClick();
@@ -103,7 +118,9 @@ public class GameMenu : MonoBehaviour
 		SceneManager.LoadScene((int)LevelTransition.Levels.MAIN_MENU);
 	}
 
-	// Respawn the Player.
+	/// <summary>
+	/// Respawn the player.
+	/// </summary>
 	public void RespawnPlayer()
 	{
 		m_PlayerCharacter.OnRespawn(true);

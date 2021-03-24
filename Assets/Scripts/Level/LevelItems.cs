@@ -47,7 +47,10 @@ public class LevelItems : MonoBehaviour
 		m_Inventory.SetupInventory(m_CollectableInventoryItems);
 	}
 
-	// Reveal the Closest Item to the Specified Transform.
+	/// <summary>
+	/// Reveal the closest item to the specified transform.
+	/// </summary>
+	/// <param name="playerTransform">Transform of the player.</param>
 	public void RevealClosestItem(Transform playerTransform)
 	{
 		float shortestDistance = float.MaxValue;

@@ -122,14 +122,18 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Perform Code when a Coin is Collected.
+	/// <summary>
+	/// Perform code when a coin is collected.
+	/// </summary>
 	public void CollectCoin()
 	{
 		m_PlayerScore++;
 		m_ScoreText.SetText(m_PlayerScore.ToString());
 	}
 
-	// Perform Code when Damage is Taken.
+	/// <summary>
+	/// Perform code when damage is taken.
+	/// </summary>
 	public void DamageTaken()
 	{
 		m_Animator.PlayerHurt();
@@ -141,8 +145,10 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// This function makes the character fade for 1 second, to show that they have taken damage.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// This function makes the character fade for 1 second, to show that they have taken damage.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DamageTakenCoroutine()
 	{
 		float delay = m_Damageable.InvulnerableDuration / 7;
@@ -156,8 +162,12 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Respawns the Player After a Period of Time.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Respawns the player after a period of time.
+	/// </summary>
+	/// <param name="useCheckpoint">Should a checkpoint be used.</param>
+	/// <param name="resetHealth">Should the players health be reset.</param>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DieRespawnCoroutine(bool useCheckpoint, bool resetHealth)
 	{
 		yield return new WaitForSeconds(1.0f);
@@ -165,7 +175,9 @@ public class PlayerCharacter : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 	}
 
-	// Interact with a Colliding Object.
+	/// <summary>
+	/// Interact with a colliding object.
+	/// </summary>
 	public void InteractWithObject()
 	{
 		List<Collider2D> interactableColliders = new List<Collider2D>();
@@ -187,7 +199,9 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Do This Code When the Player Dies.
+	/// <summary>
+	/// Execute this code when the player dies.
+	/// </summary>
 	public void OnDie()
 	{
 		//Play Death animation
@@ -199,7 +213,9 @@ public class PlayerCharacter : MonoBehaviour
 		StartCoroutine(DieRespawnCoroutine(true, true));
 	}
 
-	// Do This Code When the Player is Hurt.
+	/// <summary>
+	/// Execute this code when the player is hurt.
+	/// </summary>
 	public void OnHurt()
 	{
 		m_Damageable.EnableInvulnerability();
@@ -207,20 +223,27 @@ public class PlayerCharacter : MonoBehaviour
 		DamageTaken();
 	}
 
-	// Do This Code When the Player Respawns.
+	/// <summary>
+	/// Execute this code when the player respawns.
+	/// </summary>
+	/// <param name="resetHealth">Should the players health be reset.</param>
 	public void OnRespawn(bool resetHealth)
 	{
 		m_PlayerAudio.PlayHurtAudioClip();
 		Respawn(true, resetHealth);
 	}
 
-	// Update the UI to Show the Player has Regained Health.
+	/// <summary>
+	/// Update the ui to show the player has regained health.
+	/// </summary>
 	public void RegainHealth()
 	{
 		m_HealthIcons[m_Damageable.CurrentHealth() - 1].GainHealth();
 	}
 
-	// Reset the Players Health.
+	/// <summary>
+	/// Reset the players health.
+	/// </summary>
 	private void ResetHealth()
 	{
 		m_Damageable.ResetHealth();
@@ -230,7 +253,11 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Respawn the Player.
+	/// <summary>
+	/// Respawn the player.
+	/// </summary>
+	/// <param name="useCheckpoint">Should a checkpoint be used.</param>
+	/// <param name="resetHealth">Should the players health be reset.</param>
 	void Respawn(bool useCheckpoint, bool resetHealth)
 	{
 		m_RigidBody2D.velocity = Vector2.one;
@@ -253,13 +280,18 @@ public class PlayerCharacter : MonoBehaviour
 		m_ResetLevelEvent.Invoke(true);
 	}
 
-	// Set the Colliders for this Player.
+	/// <summary>
+	/// Set the colliders for this player.
+	/// </summary>
+	/// <param name="circle">Set the collider to this collider.</param>
 	public void SetColliders(Collider2D circle)
 	{
 		m_InteractableCollider = circle;
 	}
 
-	// Set the Health for this Player.
+	/// <summary>
+	/// Set the health for this player.
+	/// </summary>
 	public void SetHealth()
 	{
 		m_Damageable.SetHealth(m_PlayerGlobals.PlayerHealth);
@@ -272,7 +304,11 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Update the Players Checkpoint.
+	/// <summary>
+	/// Update the players checkpoint.
+	/// </summary>
+	/// <param name="newCheckpoint">The new checkpoint.</param>
+	/// <param name="checkpointID">The id of the checkpoint.</param>
 	public void UpdateCheckpoint(Transform newCheckpoint, int checkpointID)
 	{
 		if (checkpointID != m_ActiveCheckpointID)
@@ -282,7 +318,9 @@ public class PlayerCharacter : MonoBehaviour
 		}
 	}
 
-	// Update the Players Global Statistics.
+	/// <summary>
+	/// Update the players global statistics.
+	/// </summary>
 	public void UpdatePlayerGlobals()
 	{
 		m_PlayerGlobals.PlayerHealth = m_Damageable.m_CurrentHealth;

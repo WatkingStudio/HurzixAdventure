@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
 		m_ActiveDamager = m_StandingDamager;
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		//If Movement has been disabled do not allow player to move.
@@ -209,7 +208,6 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	//Use for Physics
 	private void FixedUpdate()
 	{
 		if (m_IsGrounded)
@@ -242,8 +240,10 @@ public class PlayerController : MonoBehaviour
 		m_Jump = false;
 	}
 
-	// Peforms an Attack.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Performs an attack.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator AttackTimer()
 	{
 		m_IsAttacking = true;
@@ -253,21 +253,28 @@ public class PlayerController : MonoBehaviour
 		m_IsAttacking = false;
 	}
 
-	// Disable the Players Movement.
+	/// <summary>
+	/// Disable the players movement.
+	/// </summary>
 	public void DisableMovement()
 	{
 		m_DisableMovement = true;
 		m_Movement.ResetVelocity();
 	}
 
-	// Enable the Players Movement.
+	/// <summary>
+	/// Enable the players movement.
+	/// </summary>
 	public void EnableMovement()
 	{
 		m_DisableMovement = false;
 	}
 
-	// Check if the Passed Collider is a Priority Collider.
-	// @return True if the Collider is a Priority Collider, False if not.
+	/// <summary>
+	/// Check if the passed collider is a priority collider.
+	/// </summary>
+	/// <param name="collider">The collider to check.</param>
+	/// <returns>True if the collider is a priority collider, false if not.</returns>
 	public bool IsPriorityCollider(Collider2D collider)
 	{
 		foreach (var col in m_PriorityCollider)
@@ -281,20 +288,26 @@ public class PlayerController : MonoBehaviour
 		return false;
 	}
 
-	// Start a Jump
+	/// <summary>
+	/// Start a jump.
+	/// </summary>
 	public void JumpStart()
 	{
 		m_IsGrounded = false;
 	}
 
-	// Perform this Code When The Player Lands.
+	/// <summary>
+	/// Perform this code when the player lands.
+	/// </summary>
 	public void OnLanding()
 	{
 		m_Animator.PlayerJumping(false);
 		m_IsGrounded = true;
 	}
 
-	// Set the Players Colliders When They Crouch.
+	/// <summary>
+	/// Set the players colliders when they crouch.
+	/// </summary>
 	private void SetCollidersCrouch()
 	{
 		m_CrouchingBoxCollider.enabled = true;
@@ -311,7 +324,9 @@ public class PlayerController : MonoBehaviour
 		m_ActiveDamager = m_CrouchingDamager;
 	}
 
-	// Set the Players Colliders When They Stand.
+	/// <summary>
+	/// Set the players colliders when they stand.
+	/// </summary>
 	private void SetCollidersStand()
 	{
 		m_StandingBoxCollider.enabled = true;
@@ -329,7 +344,9 @@ public class PlayerController : MonoBehaviour
 		m_ActiveDamager = m_StandingDamager;
 	}
 
-	// The Player Has Started Falling.
+	/// <summary>
+	/// The player has started falling.
+	/// </summary>
 	public void StartFalling()
 	{
 		m_Animator.PlayerFalling(true);
@@ -337,7 +354,9 @@ public class PlayerController : MonoBehaviour
 		m_IsGrounded = false;
 	}
 
-	// The Player Has Stopped Falling.
+	/// <summary>
+	/// The player has stopped falling.
+	/// </summary>
 	public void StopFalling()
 	{
 		m_Animator.PlayerFalling(false);

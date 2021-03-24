@@ -12,13 +12,17 @@ using UnityEngine.SceneManagement;
  */ 
 public class GameCompleteMenu : MonoBehaviour
 {
-	// Start the Game Again.
+	/// <summary>
+	/// Play the game again.
+	/// </summary>
     public void PlayAgain()
 	{
 		SceneManager.LoadScene(1);
 	}
 
-	// Quit the Game.
+	/// <summary>
+	/// Quit the game.
+	/// </summary>
 	public void QuitGame()
 	{
 		Debug.Log("QUIT!");

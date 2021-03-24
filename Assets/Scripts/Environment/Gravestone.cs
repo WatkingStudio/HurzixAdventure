@@ -62,15 +62,19 @@ public class Gravestone : MonoBehaviour
 		}
 	}
 
-	// Despawn This Object.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Despawn this object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator Despawn()
 	{
 		yield return new WaitForSeconds(m_DespawnTimer);
 		gameObject.SetActive(false);
 	}
 
-	// Execute This Function When The Gravestone is Damaged.
+	/// <summary>
+	/// Execute this function when the gravestone is damaged.
+	/// </summary>
 	public void GravestoneDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
@@ -81,7 +85,11 @@ public class Gravestone : MonoBehaviour
 		m_AudioSource.Play();
 	}
 
-	// Gravestone Has Been Destroyed.
+	/// <summary>
+	/// Gravestone has been destroyed.
+	/// </summary>
+	/// <param name="damager">The damager script of the object that destroyed this object.</param>
+	/// <param name="damageable">The damageable script of the object that destroyed this object.</param>
 	public void GravestoneDestroyed(Damager damager, Damageable damageable)
 	{
 		int random = Random.Range(0, 3);

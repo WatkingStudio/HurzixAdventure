@@ -44,7 +44,6 @@ public class BasicEnemy : MonoBehaviour
 		}
 	}
 
-	// Update is called once per frame
 	private void Update()
     {
 		if (m_ActiveAction == null)
@@ -54,7 +53,10 @@ public class BasicEnemy : MonoBehaviour
 		m_ActiveAction.PerformAction();
 	}
 
-	// Assign the Specified Action to the Enemy.
+	/// <summary>
+	/// Assign the specified action to the enemy.
+	/// </summary>
+	/// <param name="action">Action to assign.</param>
 	protected void AssignValidAction(EnemyAction.Actions action)
 	{
 		switch (action)
@@ -81,8 +83,11 @@ public class BasicEnemy : MonoBehaviour
 		m_ActiveAction.InitialiseAction();
 	}
 
-	// Check the this Enemy can use the Specified Action.
-	// @return True if the Action is Valid, False if Not.
+	/// <summary>
+	/// Check that this enemy can use the specified action.
+	/// </summary>
+	/// <param name="action">The action to check.</param>
+	/// <returns>True if the action is valid, false if not.</returns>
 	protected bool CheckValidAction(EnemyAction.Actions action)
 	{
 		foreach (EnemyAction.Actions act in m_AvailableActions)
@@ -95,7 +100,9 @@ public class BasicEnemy : MonoBehaviour
 		return false;
 	}
 
-	// Flips the Enemy Character
+	/// <summary>
+	/// Flips the character
+	/// </summary>
 	public void Flip()
 	{
 		// Switch the way the player is labelled as facing.
@@ -120,7 +127,9 @@ public class BasicEnemy : MonoBehaviour
 		transform.localPosition = pos;
 	}
 
-	// Resets the Enemy.
+	/// <summary>
+	/// Resets the enemy
+	/// </summary>
 	public virtual void ResetEnemy()
 	{
 		gameObject.SetActive(true);
@@ -129,7 +138,10 @@ public class BasicEnemy : MonoBehaviour
 		m_Animator.SetFloat("Speed", 0);
 	}
 
-	// Set the Active Action to the Action Specified.
+	/// <summary>
+	/// Set the action to the specified action.
+	/// </summary>
+	/// <param name="action">The desired action.</param>
 	public void SetActiveAction(EnemyAction.Actions action)
 	{
 		if (CheckValidAction(action))
@@ -142,19 +154,26 @@ public class BasicEnemy : MonoBehaviour
 		}
 	}
 
-	// Set the Enemies Action to the Default Action.
+	/// <summary>
+	/// Set the enemies action to the default action.
+	/// </summary>
 	public void SetDefaultAction()
 	{
 		AssignValidAction(m_DefaultAction);
 	}
 
-	// Tell the Animator if the Enemy is Walking or Not.
+	/// <summary>
+	/// Tell the animator if the character is walking or not.
+	/// </summary>
+	/// <param name="walking">If the character is walking</param>
 	public virtual void SetWalking(bool walking)
 	{
 		m_Animator.SetBool("Walking", walking);
 	}
 
-	// Stop the Enemy
+	/// <summary>
+	/// Stop the enemy.
+	/// </summary>
 	public virtual void StopEnemy()
 	{
 

@@ -17,17 +17,25 @@ Comments are communication and communication is vital. Whilst you don’t need t
 * Begin comment text with an uppercase letter.
 * End comment text with a period.
 * Insert one space between the comment delimiter (//) and the comment text.
-# Guidelines
+## Guidelines
 * Write self-documenting code
 * Comments should be useful and detailed
 * Don’t comment bad code, rewrite it
 * Don’t contradict code
-# Class Formatting
+## Class Formatting
 Each class and function should have a comment to explain to the reader what they do.
-## Class 
+### Class 
 A class comment should include a description of the problem this class solves.
-## Function 
-A function comment should include a description of what problem the function solves, if the function is a return type it should explain what variable will be returned (prefixed by @return), any additional information the writer seems relevant.
+### Function 
+A function comment should include a description of what problem the function solves, if the function is a return type it should explain what variable will be returned (prefixed by @return), any additional information the writer seems relevant.  
+Use the following format:  
+```
+/// <summary>
+///
+/// </summary>
+/// <param name=""></param>
+/// <returns></returns>
+```
 # Modern C# Language Syntax
 ## Code Formatting
 ### Braces 

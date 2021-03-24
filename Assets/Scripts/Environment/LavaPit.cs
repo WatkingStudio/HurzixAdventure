@@ -16,7 +16,9 @@ public class LavaPit : MonoBehaviour
 		}
     }
 
-	// Execute This Code When the Lava Causes Damage.
+	/// <summary>
+	/// Execute this code when the lava causes damage.
+	/// </summary>
     public void LavaCausesDamage()
 	{
 		if (m_AudioSource.clip != null && !m_AudioSource.isPlaying)

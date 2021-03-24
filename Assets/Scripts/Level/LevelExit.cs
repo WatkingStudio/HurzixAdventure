@@ -68,7 +68,9 @@ public class LevelExit : InteractableObjects
 		m_NumberOfLocks = m_DoorLocks.Count;
 	}
 
-	// Execute This Code When the Level Exit is Interacted With.
+	/// <summary>
+	/// Execute this code when the level exit is interacted with.
+	/// </summary>
 	public override void Interact()
 	{
 		if(m_Inventory.HasItem(Item.ItemType.Key))
@@ -111,7 +113,9 @@ public class LevelExit : InteractableObjects
 		}
 	}
 
-	// Unlock the Door.
+	/// <summary>
+	/// Unlock the door.
+	/// </summary>
 	public void UnlockDoor()
 	{
 		m_Animator.SetTrigger("Unlock");
@@ -119,8 +123,10 @@ public class LevelExit : InteractableObjects
 		StartCoroutine(WaitForDoorToOpen());
 	}
 
-	// Wait for the Animations to Play Before Opening the Door.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Wait for the animations to play before opening the door.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator WaitForDoorToOpen()
 	{
 		yield return new WaitForSeconds(m_ExitDoorOpeningClip.length + m_ClipLengthExtraDelay);

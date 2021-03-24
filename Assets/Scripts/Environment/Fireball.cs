@@ -60,7 +60,6 @@ public class Fireball : MonoBehaviour
 		StartCoroutine(InitialTimer());
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		if (m_InitialTimerDone)
@@ -85,7 +84,9 @@ public class Fireball : MonoBehaviour
 		}
 	}
 
-	// Execute When This Fireball Causes Damage.
+	/// <summary>
+	/// Execute when this fireball causes damage.
+	/// </summary>
 	public void FireballCausesDamage()
 	{
 		if (!m_AudioSource.isPlaying)
@@ -94,16 +95,20 @@ public class Fireball : MonoBehaviour
 		}
 	}
 
-	// Start a Initial Timer Before Starting the Loop.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Start a initial timer before starting the loop.
+	/// </summary>
+	/// <returns>The current ienumberator step.</returns>
 	IEnumerator InitialTimer()
 	{
 		yield return new WaitForSeconds(m_InitialTimer);
 		m_InitialTimerDone = true;
 	}
 
-	// Set the Velocity of This Fireball After a Delay.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Set the velocity of this fireball after a delay.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator PrepareFireball()
 	{
 		yield return new WaitForSeconds(m_FireballDelay);

@@ -30,7 +30,9 @@ public class EnemyAudio : MonoBehaviour
 		}
 	}
 
-	// Play the walking audio clip.
+	/// <summary>
+	/// Play the walking audio clip.
+	/// </summary>
 	public void PlayWalkAudioClip()
 	{
 		if(!m_AudioSource.isPlaying)
@@ -40,7 +42,9 @@ public class EnemyAudio : MonoBehaviour
 		}
 	}
 
-	// Stop the audio clip.
+	/// <summary>
+	/// Stop the audio clip.
+	/// </summary>
 	public void StopAudioClip()
 	{
 		m_AudioSource.Stop();

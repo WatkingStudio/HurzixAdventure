@@ -68,7 +68,9 @@ public class EnemyPatrolAction : EnemyAction
 		m_Action = Actions.EnemyPatrol;
 	}
 
-	// Initialise the Enemy Patrol Action.
+	/// <summary>
+	/// Initialise the enemy patrol action.
+	/// </summary>
 	public override void InitialiseAction()
 	{
 		base.InitialiseAction();
@@ -76,7 +78,9 @@ public class EnemyPatrolAction : EnemyAction
 		StartCoroutine(PatrolCooldown());
 	}
 
-	// Performs the Patrol Action.
+	/// <summary>
+	/// Performs the patrol action.
+	/// </summary>
 	public override void PerformAction()
 	{
 		if(!m_IsWalking)
@@ -117,8 +121,10 @@ public class EnemyPatrolAction : EnemyAction
 		}
 	}
 
-	// Start a Patrol Cooldown Period.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Start a partol cooldown period.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	private IEnumerator PatrolCooldown()
 	{
 		yield return new WaitForSeconds(m_PatrolCooldownTime);

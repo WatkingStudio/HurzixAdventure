@@ -51,22 +51,28 @@ public class BreakableCrate : MonoBehaviour
 		m_Damageable.ResetHealth(m_CrateHealth);
 	}
 
-	// Perform this Code when the Crate is Broken.
+	/// <summary>
+	/// Perform this code when the crate is broken.
+	/// </summary>
 	public void CrateBroken()
 	{
 		m_Collider2D.enabled = false;
 		StartCoroutine(DespawnCrate());
 	}
 
-	// Perform this Code when the Crate is Damaged.
+	/// <summary>
+	/// Perform this code when the crate is damaged.
+	/// </summary>
 	public void CrateDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
 		m_AudioSource.Play();
 	}
 
-	// Despawn this Object.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Despawn this object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DespawnCrate()
 	{
 		yield return new WaitForSeconds(m_DespawnTimer);

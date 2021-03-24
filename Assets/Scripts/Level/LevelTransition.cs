@@ -46,7 +46,9 @@ public class LevelTransition : MonoBehaviour
 		}
     }
 
-    // Go To The Next Level.
+	/// <summary>
+	/// Go to the next level.
+	/// </summary>
     public void GoToNextLevel()
 	{
 		m_PlayerCharacter.UpdatePlayerGlobals();
@@ -54,8 +56,10 @@ public class LevelTransition : MonoBehaviour
 		Debug.Log("Loading Scene: " + LevelsEnumToString());
 	}
 
-	// Get The Level Enum as a String.
-	// @return The Name of the Level as a String.
+	/// <summary>
+	/// Get the level enum as a string.
+	/// </summary>
+	/// <returns>The name of the level as a string.</returns>
 	private string LevelsEnumToString()
 	{
 		switch(m_NextLevel)

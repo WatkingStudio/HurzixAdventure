@@ -63,7 +63,7 @@ public class NarratorClickable : Clickable
 	}
 
 	/// <summary>
-	/// Execute this Code when the Narrator is Clicked.
+	/// Execute this code when the narrator is clicked.
 	/// </summary>
 	public override void Clicked()
 	{

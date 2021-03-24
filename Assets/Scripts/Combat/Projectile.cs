@@ -11,7 +11,11 @@ using UnityEngine;
  */ 
 public class Projectile : MonoBehaviour
 {
-	// Base Function for Instantiate
+	/// <summary>
+	/// Base function for instantiate.
+	/// </summary>
+	/// <param name="destination">Default Parameter</param>
+	/// <param name="speed">Default Parameter</param>
     public virtual void Instantiate(Vector3 destination, float speed)
 	{
 

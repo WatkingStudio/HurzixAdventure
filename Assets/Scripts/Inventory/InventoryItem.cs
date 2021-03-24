@@ -90,8 +90,10 @@ public class InventoryItem : Item
 		}
 	}
 
-	// Enable The Item Halo.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Enable the item halo.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator EnableHalo()
 	{
 		m_HaloActive = true;
@@ -101,7 +103,10 @@ public class InventoryItem : Item
 		m_HaloActive = false;
 	}
 
-	// Reveal the Item or Indicate Where the Item is.
+	/// <summary>
+	/// Reveal the item or indicate where the item is.
+	/// </summary>
+	/// <param name="playerTransform">The transform of the player.</param>
 	public void RevealItem(Transform playerTransform)
 	{
 		//This if statement will trigger if the sprite is visable on the Scene View

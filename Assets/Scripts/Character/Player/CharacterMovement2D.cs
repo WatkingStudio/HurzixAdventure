@@ -51,7 +51,7 @@ public class CharacterMovement2D : MonoBehaviour
 
 	// Radius of the overlap circle to determine if the player can stand up.
 	const float m_CeilingRadius = .2f; 
-	const float m_CrouchSoruteFlipOffset = -.5f;
+	const float m_CrouchSpriteFlipOffset = -.5f;
 	// For determining which way the player is currently facing.
 	private bool m_FacingRight = true;  
 	// Whether or not the player is grounded.
@@ -70,7 +70,6 @@ public class CharacterMovement2D : MonoBehaviour
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
-
 
 	private void Start()
 	{
@@ -150,8 +149,10 @@ public class CharacterMovement2D : MonoBehaviour
 		}
 	}
 
-	// Check for a Collision Between the Character and the Ground.
-	// @return True if There is a Collision with the Ground, False if Not.
+	/// <summary>
+	/// Check for a collision between the character and the ground.
+	/// </summary>
+	/// <returns>True if there is a collision with the ground, false if not.</returns>
 	private bool CheckForGroundCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))
@@ -162,7 +163,10 @@ public class CharacterMovement2D : MonoBehaviour
 		return false;
 	}
 
-	// Flip the Character.
+	/// <summary>
+	/// Flip the character
+	/// </summary>
+	/// <param name="xOffset">The offset of the character sprite.</param>
 	private void Flip(float xOffset)
 	{
 		// Switch the way the player is labelled as facing.
@@ -187,7 +191,13 @@ public class CharacterMovement2D : MonoBehaviour
 		transform.localPosition = pos;
 	}
 
-	// Perform a Move on the Character.
+	/// <summary>
+	/// Perform a move on the character.
+	/// </summary>
+	/// <param name="move">The horizonal movement of the character.</param>
+	/// <param name="crouch">Is the character crouching.</param>
+	/// <param name="jump">Is the character jumping.</param>
+	/// <param name="sprint">Is the character sprinting.</param>
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
 		// If the player should jump...
@@ -274,7 +284,7 @@ public class CharacterMovement2D : MonoBehaviour
 				}
 				else
 				{
-					Flip(m_CrouchSoruteFlipOffset);
+					Flip(m_CrouchSpriteFlipOffset);
 				}
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
@@ -287,7 +297,7 @@ public class CharacterMovement2D : MonoBehaviour
 				}
 				else
 				{
-					Flip(m_CrouchSoruteFlipOffset);
+					Flip(m_CrouchSpriteFlipOffset);
 				}
 			}
 
@@ -309,13 +319,18 @@ public class CharacterMovement2D : MonoBehaviour
 		}		
 	}
 
-	// Reset the Velocity of the Character.
+	/// <summary>
+	/// Reset the velocity of the character.
+	/// </summary>
 	public void ResetVelocity()
 	{
 		m_Rigidbody2D.velocity = Vector2.one;
 	}
 
-	// Set the Current Surface the Character is Walking on.
+	/// <summary>
+	/// Set the current surface the character is walking on.
+	/// </summary>
+	/// <param name="newSurface">The surface now being walked on.</param>
 	public void SetSurface(GroundFeatures.Surface newSurface)
 	{
 		m_CurrentSurface = newSurface;

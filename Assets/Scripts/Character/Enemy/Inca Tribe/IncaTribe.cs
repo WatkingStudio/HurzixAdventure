@@ -25,7 +25,6 @@ public class IncaTribe : BasicEnemy
 	private float m_DetectionTimerDefault = 0.5f;
 	private float m_DetectionTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
 		SetActiveAction(m_DefaultAction);
@@ -33,7 +32,6 @@ public class IncaTribe : BasicEnemy
 		m_StartPosition = gameObject.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
 		if(!m_EnemyMoveToPlayer)
@@ -75,25 +73,34 @@ public class IncaTribe : BasicEnemy
 		}
 	}
 
-	// Tells the Animator to Set the IsWalking Bool (Hard Coded For False).
+	/// <summary>
+	/// Tells the animator to set the iswalking bool (hard coded to false)
+	/// </summary>
+	/// <param name="walking">If walking is true or false.</param>
 	public override void SetWalking(bool walking)
 	{
 		m_Animator.SetBool("IsWalking", false);
 	}
 
-	// Performs the Code in Response to Detecting the Player.
+	/// <summary>
+	/// Performs the code in response to detecting the player.
+	/// </summary>
 	public void PlayerDetected()
 	{
 		SetActiveAction(EnemyAction.Actions.EnemyMoveToPlayer);
 	}
 
-	// Resets the Enemy.
+	/// <summary>
+	/// Resets the enemy
+	/// </summary>
 	public override void ResetEnemy()
 	{
 		base.ResetEnemy();
 	}
 
-	// Sets the Animation to Left.
+	/// <summary>
+	/// Sets the animation to left.
+	/// </summary>
 	public void SetAnimationLeft()
 	{
 		m_Animator.SetBool("IsWalking", true);
@@ -103,7 +110,9 @@ public class IncaTribe : BasicEnemy
 		}
 	}
 
-	// Sets the Animation to Right.
+	/// <summary>
+	/// Sets the animation to right.
+	/// </summary>
 	public void SetAnimationRight()
 	{
 		m_Animator.SetBool("IsWalking", true);
@@ -113,7 +122,9 @@ public class IncaTribe : BasicEnemy
 		}
 	}
 
-	// Tells the Animator the Enemy has Stopped.
+	/// <summary>
+	/// Tells the animator the enemy has stopped.
+	/// </summary>
 	public override void StopEnemy()
 	{
 		m_Animator.SetBool("IsWalking", false);

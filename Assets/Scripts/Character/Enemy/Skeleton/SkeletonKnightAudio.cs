@@ -14,7 +14,9 @@ public class SkeletonKnightAudio : EnemyAudio
 	[SerializeField]
 	private AudioClip m_AttackAudioClip;
 
-	// Play the Attack Audio Clip.
+	/// <summary>
+	/// Play the attack audio clip.
+	/// </summary>
     public void PlayAttackAudioClip()
 	{
 		if (m_AudioSource.isPlaying)

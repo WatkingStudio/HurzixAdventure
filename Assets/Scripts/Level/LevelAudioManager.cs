@@ -38,13 +38,17 @@ public class LevelAudioManager : MonoBehaviour
 		UpdateLevelAudio();
 	}
 
-	// Set the Background Audio Volume.
+	/// <summary>
+	/// Set the background audio volume.
+	/// </summary>
 	private void SetBackgroundAudioVolume()
 	{
 		m_BackgroundAudioSource.volume = m_GameAudio.BackgroundVolume;
 	}
 
-	// Set the Sound Effects Audio Volume.
+	/// <summary>
+	/// Set the sound effects audio volume.
+	/// </summary>
 	private void SetSoundEffectsAudioVolume()
 	{
 		foreach(AudioSource au in m_SoundEffectsAudioSources)
@@ -53,7 +57,9 @@ public class LevelAudioManager : MonoBehaviour
 		}
 	}
 
-	// Update the Levels Audio.
+	/// <summary>
+	/// Update the levels audio.
+	/// </summary>
 	public void UpdateLevelAudio()
 	{
 		SetBackgroundAudioVolume();

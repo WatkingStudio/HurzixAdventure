@@ -19,47 +19,69 @@ using UnityEngine;
 public class Gravestone : MonoBehaviour
 {
 	[SerializeField]
-	private Damageable m_Damageable;
-	[SerializeField]
-	private Damager m_Damager;
-	[SerializeField]
 	private Animator m_Animator;
 	[SerializeField]
 	private AudioSource m_AudioSource;
 	[SerializeField]
 	private AudioClip m_CrumbleAudioClip;
+	[SerializeField]
+	private Damageable m_Damageable;
+	[SerializeField]
+	private Damager m_Damager;
 
 	[SerializeField]
 	private AnimationClip m_CoinAnimation;
 	[SerializeField]
-	private AnimationClip m_HealthAnimation;
-	[SerializeField]
 	private AnimationClip m_DamageAnimation;
+	[SerializeField]
+	private AnimationClip m_HealthAnimation;
 
 	private float m_DespawnTimer;
 
 	private void Start()
 	{
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_CrumbleAudioClip)
+		{
 			Debug.LogError("No Crumbling audio clip has been assigned to " + gameObject.name);
+		}
 		if (!m_CoinAnimation)
+		{
 			Debug.LogError("No Coin Animation has been assigned to " + gameObject.name);
+		}
 		if (!m_HealthAnimation)
+		{
 			Debug.LogError("No Health Animation has been assigned to " + gameObject.name);
+		}
 		if (!m_DamageAnimation)
+		{
 			Debug.LogError("No Damage Animation has been assigned to " + gameObject.name);
+		}
 	}
 
+	// Despawn This Object.
+	// @return The Current IEnumerator Step.
+	public IEnumerator Despawn()
+	{
+		yield return new WaitForSeconds(m_DespawnTimer);
+		gameObject.SetActive(false);
+	}
+
+	// Execute This Function When The Gravestone is Damaged.
 	public void GravestoneDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
 		if (m_Damageable.CurrentHealth() == 0)
+		{
 			m_AudioSource.clip = m_CrumbleAudioClip;
+		}
 		m_AudioSource.Play();
 	}
 
+	// Gravestone Has Been Destroyed.
 	public void GravestoneDestroyed(Damager damager, Damageable damageable)
 	{
 		int random = Random.Range(0, 3);
@@ -84,11 +106,5 @@ public class Gravestone : MonoBehaviour
 		}
 
 		StartCoroutine(Despawn());
-	}
-
-	public IEnumerator Despawn()
-	{
-		yield return new WaitForSeconds(m_DespawnTimer);
-		gameObject.SetActive(false);
 	}
 }

@@ -20,6 +20,7 @@ public class Item : MonoBehaviour
 	};
 
 	// Get the Type of the Item.
+	// @return The ItemType of the Item
 	public ItemType GetItemType()
 	{
 		return m_ItemType;

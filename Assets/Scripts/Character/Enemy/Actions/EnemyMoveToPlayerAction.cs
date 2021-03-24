@@ -111,6 +111,7 @@ public class EnemyMoveToPlayerAction : EnemyAction
 	}
 
 	// Checks if the Collision Box Collides with the Floor.
+	// @return True if a Collision Happens, False if Not.
 	private bool CheckForCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))

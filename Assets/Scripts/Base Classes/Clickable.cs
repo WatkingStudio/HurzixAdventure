@@ -11,6 +11,7 @@ using UnityEngine;
  */ 
 public class Clickable : MonoBehaviour
 {
+	// Actives When This Object is Clicked.
     public virtual void Clicked()
 	{
 		Debug.Log(gameObject.name + " was clicked");

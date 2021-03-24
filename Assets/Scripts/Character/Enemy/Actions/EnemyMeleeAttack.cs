@@ -66,6 +66,7 @@ public class EnemyMeleeAttack : EnemyAction
 	}
 
 	// Performs the Attack Action.
+	// @return The Current IEnumerator Step.
 	IEnumerator AttackTimer()
 	{
 		m_IsAttacking = true;

@@ -118,6 +118,7 @@ public class EnemyPatrolAction : EnemyAction
 	}
 
 	// Start a Patrol Cooldown Period.
+	// @return The Current IEnumerator Step.
 	private IEnumerator PatrolCooldown()
 	{
 		yield return new WaitForSeconds(m_PatrolCooldownTime);

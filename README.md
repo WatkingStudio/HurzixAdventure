@@ -1,7 +1,7 @@
 # HurzixAdventure
 ![](https://img.shields.io/badge/Code-C_Sharp-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Program-Unity-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2B7CBC)
-![](https://img.shields.io/badge/Version-1.2-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=E1B445)
+![](https://img.shields.io/badge/Version-1.3-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=E1B445)
 
 # Overview
 Hurzix Adventure is a 2D platformer where the user plays as Hurzix the rare blue wolf. The user must direct Hurzix through numerous zones collecting keys and coins along the way, while also avoiding the enemies who wish to kill Hurzix and stop his progression. Each zone has different visuals, enemies and additional mechanics.

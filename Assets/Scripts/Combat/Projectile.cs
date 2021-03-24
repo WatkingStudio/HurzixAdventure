@@ -14,8 +14,8 @@ public class Projectile : MonoBehaviour
 	/// <summary>
 	/// Base function for instantiate.
 	/// </summary>
-	/// <param name="destination"></param>
-	/// <param name="speed"></param>
+	/// <param name="destination">Default Parameter</param>
+	/// <param name="speed">Default Parameter</param>
     public virtual void Instantiate(Vector3 destination, float speed)
 	{
 

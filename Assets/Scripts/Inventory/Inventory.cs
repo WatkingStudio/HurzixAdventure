@@ -140,7 +140,7 @@ public class Inventory : MonoBehaviour
 	/// <summary>
 	/// Setup the inventory.
 	/// </summary>
-	/// <param name="collectableItems"></param>
+	/// <param name="collectableItems">List of items to add to the inventory.</param>
 	public void SetupInventory(List<InventoryItem> collectableItems)
 	{
 		ResetInventory();

@@ -26,28 +26,21 @@ public class LevelExitLock : MonoBehaviour
 	private void Start()
 	{
 		if (!m_LockAnimator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_LockOpeningClip)
+		{
 			Debug.LogError("No Animation Clip has been assigned to " + gameObject.name);
-		if (!m_ItemAudio)
-			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+		}
+        if (!m_ItemAudio)
+        {
+            Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+        }
 	}
 
-	public bool Unlock()
-	{
-		if(m_IsLocked)
-		{
-			m_LockAnimator.SetTrigger("Unlock");
-			m_IsLocked = false;
-			StartCoroutine(DisableLock());
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
+	// Disable This Lock.
+	// @return The Current IEnumerator Step.
 	IEnumerator DisableLock()
 	{
 		m_ItemAudio.PlayAudioClip();
@@ -55,8 +48,25 @@ public class LevelExitLock : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
+	// Check if this Lock is Locked.
+	// @return True if the Lock is Locked, False if Not.
 	public bool IsLocked()
 	{
 		return m_IsLocked;
+	}
+
+	// Unlocks the Lock.
+	// @return True if the Unlock is Successful, False if Not,
+	public bool Unlock()
+	{
+		if (m_IsLocked)
+		{
+			m_LockAnimator.SetTrigger("Unlock");
+			m_IsLocked = false;
+			StartCoroutine(DisableLock());
+			return true;
+		}
+
+		return false;
 	}
 }

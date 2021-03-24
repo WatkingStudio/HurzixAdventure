@@ -13,9 +13,9 @@ using UnityEngine;
 public class LevelAudioManager : MonoBehaviour
 {
 	[SerializeField]
-	private GameAudioSO m_GameAudio;
-	[SerializeField]
 	private AudioSource m_BackgroundAudioSource;
+	[SerializeField]
+	private GameAudioSO m_GameAudio;
 	[SerializeField]
 	private List<AudioSource> m_SoundEffectsAudioSources;
 
@@ -23,21 +23,29 @@ public class LevelAudioManager : MonoBehaviour
 	private void Start()
 	{
 		if (!m_GameAudio)
+		{
 			Debug.LogError("No GameAudioSO has been assigned to " + gameObject.name);
+		}
 		if (!m_BackgroundAudioSource)
+		{
 			Debug.LogError("No Background Audio Source has been assigned to " + gameObject.name);
+		}
 		if (m_SoundEffectsAudioSources.Count <= 0)
+		{
 			Debug.LogError("No Sound Effects Audio Sources have been assigned to " + gameObject.name);
+		}
 
 		UpdateLevelAudio();
 	}
 
-	private void SetBackgroundAudio()
+	// Set the Background Audio Volume.
+	private void SetBackgroundAudioVolume()
 	{
 		m_BackgroundAudioSource.volume = m_GameAudio.BackgroundVolume;
 	}
 
-	private void SetSoundEffectsAudio()
+	// Set the Sound Effects Audio Volume.
+	private void SetSoundEffectsAudioVolume()
 	{
 		foreach(AudioSource au in m_SoundEffectsAudioSources)
 		{
@@ -45,9 +53,10 @@ public class LevelAudioManager : MonoBehaviour
 		}
 	}
 
+	// Update the Levels Audio.
 	public void UpdateLevelAudio()
 	{
-		SetBackgroundAudio();
-		SetSoundEffectsAudio();
+		SetBackgroundAudioVolume();
+		SetSoundEffectsAudioVolume();
 	}
 }

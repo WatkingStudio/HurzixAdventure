@@ -28,17 +28,26 @@ public class LevelItems : MonoBehaviour
 	private void Start()
 	{
 		if (m_CollectableInventoryItems.Count == 0)
+		{
 			Debug.LogError("Collectable Items Set To 0 for " + gameObject.name);
+		}
 		if (!m_Inventory)
+		{
 			Debug.LogError("No Inventory has been assigned to " + gameObject.name);
+		}
 		if (!m_AudioSource)
+		{
 			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		}
 		if (!m_RevealAudioClip)
+		{
 			Debug.LogError("No Audio Clip has been assigned to " + gameObject.name);
+		}
 
 		m_Inventory.SetupInventory(m_CollectableInventoryItems);
 	}
 
+	// Reveal the Closest Item to the Specified Transform.
 	public void RevealClosestItem(Transform playerTransform)
 	{
 		float shortestDistance = float.MaxValue;

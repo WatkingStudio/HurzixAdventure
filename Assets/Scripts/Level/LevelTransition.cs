@@ -38,13 +38,24 @@ public class LevelTransition : MonoBehaviour
 	[SerializeField]
 	private PlayerCharacter m_PlayerCharacter;
 
-	public void GoToNextLevel()
+    private void Start()
+    {
+        if(!m_PlayerCharacter)
+        {
+			Debug.LogError("No PlayerCharacter have been assigned to " + gameObject.name);
+		}
+    }
+
+    // Go To The Next Level.
+    public void GoToNextLevel()
 	{
 		m_PlayerCharacter.UpdatePlayerGlobals();
 		SceneManager.LoadScene((int)m_NextLevel);
 		Debug.Log("Loading Scene: " + LevelsEnumToString());
 	}
 
+	// Get The Level Enum as a String.
+	// @return The Name of the Level as a String.
 	private string LevelsEnumToString()
 	{
 		switch(m_NextLevel)

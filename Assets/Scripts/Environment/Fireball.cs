@@ -38,23 +38,32 @@ public class Fireball : MonoBehaviour
 	[SerializeField]
 	private AudioSource m_AudioSource;
 
-	public void FireballCausesDamage()
-	{
-		if (!m_AudioSource.isPlaying)
-		{
-			m_AudioSource.Play();
-		}		
-	}
-
 	private void Start()
 	{
+		if(!m_ProjectileRigidBody)
+        {
+			Debug.LogError("No Rigidbody2D has been assigned to " + gameObject.name);
+		}
+		if(!m_Projectile)
+        {
+			Debug.LogError("No Projectile GameObject has been assigned to " + gameObject.name);
+		}
+		if(!m_Animator)
+        {
+			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
+		if(!m_AudioSource)
+        {
+			Debug.LogError("No AudioSource has been assigned to " + gameObject.name);
+		}
+
 		StartCoroutine(InitialTimer());
 	}
 
 	// Update is called once per frame
 	void Update()
-    {
-		if(m_InitialTimerDone)
+	{
+		if (m_InitialTimerDone)
 		{
 			if (m_Projectile.transform.position.y < m_BasePoint.y)
 			{
@@ -73,18 +82,31 @@ public class Fireball : MonoBehaviour
 				m_Animator.SetBool("Up", false);
 				m_Animator.SetBool("Down", true);
 			}
-		}		
-    }
-
-	IEnumerator PrepareFireball()
-	{
-		yield return new WaitForSeconds(m_FireballDelay);
-		m_ProjectileRigidBody.velocity = new Vector2(m_ProjectileRigidBody.velocity.x, m_Force);
+		}
 	}
 
+	// Execute When This Fireball Causes Damage.
+	public void FireballCausesDamage()
+	{
+		if (!m_AudioSource.isPlaying)
+		{
+			m_AudioSource.Play();
+		}
+	}
+
+	// Start a Initial Timer Before Starting the Loop.
+	// @return The Current IEnumerator Step.
 	IEnumerator InitialTimer()
 	{
 		yield return new WaitForSeconds(m_InitialTimer);
 		m_InitialTimerDone = true;
+	}
+
+	// Set the Velocity of This Fireball After a Delay.
+	// @return The Current IEnumerator Step.
+	IEnumerator PrepareFireball()
+	{
+		yield return new WaitForSeconds(m_FireballDelay);
+		m_ProjectileRigidBody.velocity = new Vector2(m_ProjectileRigidBody.velocity.x, m_Force);
 	}
 }

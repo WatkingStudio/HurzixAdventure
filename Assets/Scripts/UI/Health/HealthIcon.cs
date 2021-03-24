@@ -19,25 +19,33 @@ public class HealthIcon : MonoBehaviour
 	private void Start()
 	{
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 	}
 
-	public bool IsActive()
-	{
-		return m_IsActive;
-	}
-
+	// Get This Health Icons Animator.
+	// @return The Animator of this Health Icon.
 	public Animator GetAnimator()
 	{
 		return m_Animator;
 	}
 
+	// Set the Health Icon to Active.
 	public void GainHealth()
 	{
 		m_Animator.SetBool("Active", true);
 		m_Animator.SetBool("InActive", false);
 	}
 
+	// Check if this Health Icon is Active.
+	// @return True if the Health Icon is Active, False if Not.
+	public bool IsActive()
+	{
+		return m_IsActive;
+	}
+
+	// Deactivate the Health Icon.
 	public void TakeDamage()
 	{
 		m_Animator.SetBool("Active", false);

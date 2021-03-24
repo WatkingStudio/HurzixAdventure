@@ -15,48 +15,59 @@ using UnityEngine;
 public class InventorySlot : MonoBehaviour
 {
 	[SerializeField]
-	private Item.ItemType m_ItemName = Item.ItemType.None;
+	private Animator m_Animation;
 	[SerializeField]
 	private bool m_IsCollected = false;
 	[SerializeField]
-	private Animator m_Animation;
+	private Item.ItemType m_ItemName = Item.ItemType.None;
 
 	private void Start()
 	{
 		if (!m_Animation)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 	}
 
-	public Item.ItemType GetItemName()
+	// Drop the Item in This Slot.
+	public void DropItem()
 	{
-		return m_ItemName;
+		m_IsCollected = false;
+		m_Animation.SetTrigger("Drop");
 	}
 
-	public bool IsItemCollected()
-	{
-		return m_IsCollected;
-	}
-
+	// Get This Inventory Slots Animator.
+	// @return The Animator.
 	public Animator GetAnimator()
 	{
 		return m_Animation;
 	}
 
-	public void SetData(Item.ItemType item, RuntimeAnimatorController animator)
+	// Get the ItemType of the Item in This Slot.
+	// @return The Item Type.
+	public Item.ItemType GetItemName()
 	{
-		m_ItemName = item;
-		m_Animation.runtimeAnimatorController = animator;
+		return m_ItemName;
 	}
 
+	// Has an Item Been Collected for This Slot.
+	// @return True if an Item Has Been Collected, False if Not.
+	public bool IsItemCollected()
+	{
+		return m_IsCollected;
+	}
+
+	// Pickup An Item.
 	public void PickupItem()
 	{
 		m_IsCollected = true;
 		m_Animation.SetTrigger("Pickup");
 	}
 
-	public void DropItem()
+	// Set the Data For This Inventory Slot.
+	public void SetData(Item.ItemType item, RuntimeAnimatorController animator)
 	{
-		m_IsCollected = false;
-		m_Animation.SetTrigger("Drop");
+		m_ItemName = item;
+		m_Animation.runtimeAnimatorController = animator;
 	}
 }

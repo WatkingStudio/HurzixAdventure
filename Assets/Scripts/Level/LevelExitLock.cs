@@ -26,28 +26,23 @@ public class LevelExitLock : MonoBehaviour
 	private void Start()
 	{
 		if (!m_LockAnimator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_LockOpeningClip)
+		{
 			Debug.LogError("No Animation Clip has been assigned to " + gameObject.name);
-		if (!m_ItemAudio)
-			Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+		}
+        if (!m_ItemAudio)
+        {
+            Debug.LogError("No Item Audio has been assigned to " + gameObject.name);
+        }
 	}
 
-	public bool Unlock()
-	{
-		if(m_IsLocked)
-		{
-			m_LockAnimator.SetTrigger("Unlock");
-			m_IsLocked = false;
-			StartCoroutine(DisableLock());
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
+	/// <summary>
+	/// Disable this lock.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DisableLock()
 	{
 		m_ItemAudio.PlayAudioClip();
@@ -55,8 +50,29 @@ public class LevelExitLock : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
+	/// <summary>
+	/// Check if this lock is locked.
+	/// </summary>
+	/// <returns>True if the lock is locked, false if not.</returns>
 	public bool IsLocked()
 	{
 		return m_IsLocked;
+	}
+
+	/// <summary>
+	/// Unlocks the lock.
+	/// </summary>
+	/// <returns>True if the unlock is successful, false if not.</returns>
+	public bool Unlock()
+	{
+		if (m_IsLocked)
+		{
+			m_LockAnimator.SetTrigger("Unlock");
+			m_IsLocked = false;
+			StartCoroutine(DisableLock());
+			return true;
+		}
+
+		return false;
 	}
 }

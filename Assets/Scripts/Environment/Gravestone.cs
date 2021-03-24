@@ -19,47 +19,77 @@ using UnityEngine;
 public class Gravestone : MonoBehaviour
 {
 	[SerializeField]
-	private Damageable m_Damageable;
-	[SerializeField]
-	private Damager m_Damager;
-	[SerializeField]
 	private Animator m_Animator;
 	[SerializeField]
 	private AudioSource m_AudioSource;
 	[SerializeField]
 	private AudioClip m_CrumbleAudioClip;
+	[SerializeField]
+	private Damageable m_Damageable;
+	[SerializeField]
+	private Damager m_Damager;
 
 	[SerializeField]
 	private AnimationClip m_CoinAnimation;
 	[SerializeField]
-	private AnimationClip m_HealthAnimation;
-	[SerializeField]
 	private AnimationClip m_DamageAnimation;
+	[SerializeField]
+	private AnimationClip m_HealthAnimation;
 
 	private float m_DespawnTimer;
 
 	private void Start()
 	{
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_CrumbleAudioClip)
+		{
 			Debug.LogError("No Crumbling audio clip has been assigned to " + gameObject.name);
+		}
 		if (!m_CoinAnimation)
+		{
 			Debug.LogError("No Coin Animation has been assigned to " + gameObject.name);
+		}
 		if (!m_HealthAnimation)
+		{
 			Debug.LogError("No Health Animation has been assigned to " + gameObject.name);
+		}
 		if (!m_DamageAnimation)
+		{
 			Debug.LogError("No Damage Animation has been assigned to " + gameObject.name);
+		}
 	}
 
+	/// <summary>
+	/// Despawn this object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
+	public IEnumerator Despawn()
+	{
+		yield return new WaitForSeconds(m_DespawnTimer);
+		gameObject.SetActive(false);
+	}
+
+	/// <summary>
+	/// Execute this function when the gravestone is damaged.
+	/// </summary>
 	public void GravestoneDamaged()
 	{
 		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
 		if (m_Damageable.CurrentHealth() == 0)
+		{
 			m_AudioSource.clip = m_CrumbleAudioClip;
+		}
 		m_AudioSource.Play();
 	}
 
+	/// <summary>
+	/// Gravestone has been destroyed.
+	/// </summary>
+	/// <param name="damager">The damager script of the object that destroyed this object.</param>
+	/// <param name="damageable">The damageable script of the object that destroyed this object.</param>
 	public void GravestoneDestroyed(Damager damager, Damageable damageable)
 	{
 		int random = Random.Range(0, 3);
@@ -84,11 +114,5 @@ public class Gravestone : MonoBehaviour
 		}
 
 		StartCoroutine(Despawn());
-	}
-
-	public IEnumerator Despawn()
-	{
-		yield return new WaitForSeconds(m_DespawnTimer);
-		gameObject.SetActive(false);
 	}
 }

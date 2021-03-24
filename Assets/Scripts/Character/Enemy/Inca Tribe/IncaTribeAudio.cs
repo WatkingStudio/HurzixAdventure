@@ -14,10 +14,25 @@ public class IncaTribeAudio : EnemyAudio
 	[SerializeField]
 	private AudioClip m_AttackAudioClip;
 
-	public void PlayerAttackAudioClip()
+    private new void Start()
+    {
+		base.Start();
+
+		if(!m_AttackAudioClip)
+        {
+			Debug.LogError("No Attack Audio Clip attached to " + gameObject.name);
+		}
+    }
+
+	/// <summary>
+	/// Players the attack audio clip.
+	/// </summary>
+    public void PlayAttackAudioClip()
 	{
 		if (m_AudioSource.isPlaying)
+		{
 			m_AudioSource.Stop();
+		}
 
 		m_AudioSource.clip = m_AttackAudioClip;
 		m_AudioSource.Play();

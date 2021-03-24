@@ -32,29 +32,47 @@ public class BreakableCrate : MonoBehaviour
 	private void Start()
 	{
 		if (!m_Collider2D)
+		{
 			Debug.LogError("No Collider2D has been assigned to " + gameObject.name);
+		}
 		if (!m_Animator)
+		{
 			Debug.LogError("No Animator has been assigned to " + gameObject.name);
+		}
 		if (!m_Damageable)
+		{
 			Debug.LogError("No Damageable has been assigned to " + gameObject.name);
+		}
 		if (!m_AudioSource)
+		{
 			Debug.LogError("No Audio Source has been assigned to " + gameObject.name);
+		}
 
 		m_Damageable.ResetHealth(m_CrateHealth);
 	}
 
-	public void CrateDamaged()
-	{
-		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
-		m_AudioSource.Play();
-	}
-
+	/// <summary>
+	/// Perform this code when the crate is broken.
+	/// </summary>
 	public void CrateBroken()
 	{
 		m_Collider2D.enabled = false;
 		StartCoroutine(DespawnCrate());
 	}
 
+	/// <summary>
+	/// Perform this code when the crate is damaged.
+	/// </summary>
+	public void CrateDamaged()
+	{
+		m_Animator.SetInteger("Health", m_Damageable.CurrentHealth());
+		m_AudioSource.Play();
+	}
+
+	/// <summary>
+	/// Despawn this object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DespawnCrate()
 	{
 		yield return new WaitForSeconds(m_DespawnTimer);

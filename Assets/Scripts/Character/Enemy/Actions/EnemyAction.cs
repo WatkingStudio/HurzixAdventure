@@ -31,13 +31,19 @@ public class EnemyAction : MonoBehaviour
 		EnemyRangedAttack
 	}
 
-    public virtual void PerformAction()
-	{
-
-	}
-
+	/// <summary>
+	/// The base initialise action function.
+	/// </summary>
 	public virtual void InitialiseAction()
 	{
 		Debug.Log(gameObject.name + " initialised");
+	}
+
+	/// <summary>
+	/// The base perform action function.
+	/// </summary>
+	public virtual void PerformAction()
+	{
+
 	}
 }

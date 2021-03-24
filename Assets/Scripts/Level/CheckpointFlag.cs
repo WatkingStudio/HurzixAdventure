@@ -21,14 +21,22 @@ public class CheckpointFlag : MonoBehaviour
 		if (collision.GetComponentInParent<PlayerController>())
 		{
 			if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision))
+			{
 				return;
+			}
 		}
 		else
+		{
 			return;
+		}
 
 		collision.GetComponentInParent<PlayerCharacter>().UpdateCheckpoint(transform, m_ID);
 	}
 
+	/// <summary>
+	/// Get the transform of this checkpoint
+	/// </summary>
+	/// <returns>This objects transform.</returns>
 	public Transform GetCheckpoint()
 	{
 		return transform;

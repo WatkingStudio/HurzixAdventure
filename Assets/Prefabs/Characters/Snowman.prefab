@@ -128,6 +128,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -208,6 +209,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -288,6 +290,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -368,6 +371,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -448,6 +452,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -657,6 +662,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -769,6 +775,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -880,6 +887,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -960,6 +968,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1104,6 +1113,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1452,12 +1462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb7511b218262247aa054ebfd911c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1083980752718608283}
-  m_LineOfSightEnd: {fileID: 7110653050845965321}
-  m_Player: {fileID: 0}
-  m_MinLOSAngle: -180
-  m_MaxLOSAngle: 180
   m_BasicEnemy: {fileID: 7051632276776526810}
+  m_LineOfSightEnd: {fileID: 7110653050845965321}
+  m_MaxLOSAngle: 180
+  m_MinLOSAngle: -180
+  m_Player: {fileID: 0}
+  m_Sprite: {fileID: 1083980752718608283}
 --- !u!58 &7110653050965318939
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1517,15 +1527,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c5bcb4afedd3a44b1994ea7beb1850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WallCheckCollider: {fileID: 7110653051600001666}
+  m_Animator: {fileID: 912528810559916965}
+  m_BasicEnemy: {fileID: 7051632276776526810}
+  m_EnemyPlayerDetection: {fileID: 7110653050965318936}
   m_FloorCheckCollider: {fileID: 7110653051493067993}
+  m_PatrolCooldownTime: 1
+  m_WalkSpeed: 0.8
+  m_WallCheckCollider: {fileID: 7110653051600001666}
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  m_WalkSpeed: 0.8
-  m_BasicEnemy: {fileID: 7051632276776526810}
-  m_EnemyPlayerDetection: {fileID: 7110653050965318936}
-  m_Animator: {fileID: 912528810559916965}
   m_PlayerDetected:
     m_PersistentCalls:
       m_Calls:
@@ -1698,16 +1709,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttackIntival: 1.25
-  m_ProjectileSpeed: 15
+  m_PlayerTransform: {fileID: 0}
   m_Projectile: {fileID: 9115343192715747583, guid: 0dd1dfb3862c87a4d879e58c2e7baae6,
     type: 3}
-  m_PlayerTransform: {fileID: 0}
   m_ProjectileOrigin: {fileID: 7110653052124224373}
+  m_ProjectileSpeed: 15
   m_RangedAttackMade:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7051632276776526811}
-        m_MethodName: PlayerAttackAudioClip
+        m_MethodName: PlayAttackAudioClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

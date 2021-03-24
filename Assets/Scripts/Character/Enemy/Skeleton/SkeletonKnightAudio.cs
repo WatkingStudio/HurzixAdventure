@@ -14,10 +14,15 @@ public class SkeletonKnightAudio : EnemyAudio
 	[SerializeField]
 	private AudioClip m_AttackAudioClip;
 
+	/// <summary>
+	/// Play the attack audio clip.
+	/// </summary>
     public void PlayAttackAudioClip()
 	{
 		if (m_AudioSource.isPlaying)
+		{
 			m_AudioSource.Stop();
+		}
 		
 		m_AudioSource.clip = m_AttackAudioClip;
 		m_AudioSource.Play();

@@ -12,18 +12,22 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
 	[Header("Collision Variables")]
-	[SerializeField, Tooltip("Which layers this object should be able to collect this item")]
-	private LayerMask m_InteractableLayers;
 	[SerializeField, Tooltip("When this object is picked up should it be disabled")]
 	private bool m_DisableOnEnter = false;
+	[SerializeField, Tooltip("Which layers this object should be able to collect this item")]
+	private LayerMask m_InteractableLayers;
 	[SerializeField]
 	private ItemAudio m_ItemAudio;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponentInParent<PlayerController>())
-			if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision))
-				return;
+		{
+            if (!collision.GetComponentInParent<PlayerController>().IsPriorityCollider(collision))
+            {
+                return;
+            }
+		}
 
 		if((m_InteractableLayers.value & 1 << collision.gameObject.layer) != 0)
 		{
@@ -35,7 +39,9 @@ public class Coin : MonoBehaviour
 					m_ItemAudio.PlayAudioClip();
 					pc.CollectCoin();
 					if (m_DisableOnEnter)
+					{
 						gameObject.SetActive(false);
+					}
 				}
 			}
 		}

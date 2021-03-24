@@ -20,9 +20,15 @@ public class Indicator : MonoBehaviour
 	private void Start()
 	{
 		if (!m_IndicatorArrow)
+		{
 			Debug.Log("No Indicator Arrow game object has been assigned to " + gameObject.name);
+		}
 	}
 
+	/// <summary>
+	/// Display the Indicator.
+	/// </summary>
+	/// <param name="itemTransform">The Transform of the Target Object</param>
 	public void DisplayIndicator(Transform itemTransform)
 	{
 		m_IndicatorArrow.gameObject.SetActive(true);
@@ -33,20 +39,22 @@ public class Indicator : MonoBehaviour
 		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 		m_IndicatorArrow.transform.rotation = Quaternion.RotateTowards(m_IndicatorArrow.transform.rotation, q, 180);
 
-		StartCoroutine(FlashIndicator());
+		StartCoroutine(FlashIndicator(3));
 	}
 
-	IEnumerator FlashIndicator()
+	/// <summary>
+	/// Flash the Indicator for a Specified Length of Time.
+	/// </summary>
+	/// <param name="duration">How Long to Flash for (seconds)</param>
+	/// <returns></returns>
+	IEnumerator FlashIndicator(int duration)
 	{
-		yield return new WaitForSeconds(0.5f);
-		m_IndicatorArrow.gameObject.SetActive(false);
-		yield return new WaitForSeconds(0.5f);
-		m_IndicatorArrow.gameObject.SetActive(true);
-		yield return new WaitForSeconds(0.5f);
-		m_IndicatorArrow.gameObject.SetActive(false);
-		yield return new WaitForSeconds(0.5f);
-		m_IndicatorArrow.gameObject.SetActive(true);
-		yield return new WaitForSeconds(0.5f);
-		m_IndicatorArrow.gameObject.SetActive(false);
+		for(int i = 0; i < duration; ++i)
+        {
+			yield return new WaitForSeconds(0.5f);
+			m_IndicatorArrow.gameObject.SetActive(false);
+			yield return new WaitForSeconds(0.5f);
+			m_IndicatorArrow.gameObject.SetActive(true);
+		}
 	}
 }

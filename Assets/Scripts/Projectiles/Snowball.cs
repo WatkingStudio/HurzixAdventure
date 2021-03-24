@@ -44,8 +44,10 @@ public class Snowball : Projectile
 		}
 	}
 
-	// Begin a Countdown to Despawn this Object.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Begin a countdown to despawn this object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator DespawnCountDown()
 	{
 		yield return new WaitForSeconds(m_LiveSpan);
@@ -55,8 +57,10 @@ public class Snowball : Projectile
 		}
 	}
 
-	// Despawn the Object.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Despawn the object.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	public IEnumerator Despawn()
 	{
 		yield return new WaitForEndOfFrame();
@@ -64,7 +68,11 @@ public class Snowball : Projectile
 		Destroy(gameObject);
 	}
 
-	// Instantiate a Snowball and the Specified Location.
+	/// <summary>
+	/// Instantiate a snowball travelling to the specified destination..
+	/// </summary>
+	/// <param name="destination">The destination of the snowball.</param>
+	/// <param name="speed">The speed of the snowball.</param>
 	public override void Instantiate(Vector3 destination, float speed)
 	{
 		m_DestinationPoint = destination;
@@ -72,13 +80,19 @@ public class Snowball : Projectile
 		StartCoroutine(DespawnCountDown());
 	}
 
-	// Set the Destination Point of the Snowball.
+	/// <summary>
+	/// Set the destination point of the snowball.
+	/// </summary>
+	/// <param name="pos">The destination point.</param>
 	public void SetDestinationPoint(Vector3 pos)
 	{
 		m_DestinationPoint = pos;
 	}
 
-	// Set the Projectile Speed of the Snowball.
+	/// <summary>
+	/// Set the projectile speed of the snowball.
+	/// </summary>
+	/// <param name="speed">The speed of the snowball.</param>
 	public void SetProjectileSpeed(float speed)
 	{
 		m_ProjectileSpeed = speed;

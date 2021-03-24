@@ -55,7 +55,9 @@ public class EnemyMeleeAttack : EnemyAction
 		}
 	}
 
-	// Sets up the Melee Attack Action.
+	/// <summary>
+	/// Sets up the melee attack action.
+	/// </summary>
 	public override void PerformAction()
 	{
 		if(!m_IsAttacking)
@@ -65,8 +67,10 @@ public class EnemyMeleeAttack : EnemyAction
 		}
 	}
 
-	// Performs the Attack Action.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Performs the attack action.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator AttackTimer()
 	{
 		m_IsAttacking = true;

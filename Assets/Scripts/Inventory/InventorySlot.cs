@@ -29,42 +29,56 @@ public class InventorySlot : MonoBehaviour
 		}
 	}
 
-	// Drop the Item in This Slot.
+	/// <summary>
+	/// Drop the item in this slot.
+	/// </summary>
 	public void DropItem()
 	{
 		m_IsCollected = false;
 		m_Animation.SetTrigger("Drop");
 	}
 
-	// Get This Inventory Slots Animator.
-	// @return The Animator.
+	/// <summary>
+	/// Get this inventory slots animator.
+	/// </summary>
+	/// <returns>The animator.</returns>
 	public Animator GetAnimator()
 	{
 		return m_Animation;
 	}
 
-	// Get the ItemType of the Item in This Slot.
-	// @return The Item Type.
+	/// <summary>
+	/// Get the item type of the item in this slot.
+	/// </summary>
+	/// <returns>The item type.</returns>
 	public Item.ItemType GetItemName()
 	{
 		return m_ItemName;
 	}
 
-	// Has an Item Been Collected for This Slot.
-	// @return True if an Item Has Been Collected, False if Not.
+	/// <summary>
+	/// Has an item been collected for this slot.
+	/// </summary>
+	/// <returns>True if an item has been collected, false if not.</returns>
 	public bool IsItemCollected()
 	{
 		return m_IsCollected;
 	}
 
-	// Pickup An Item.
+	/// <summary>
+	/// Pickup and item.
+	/// </summary>
 	public void PickupItem()
 	{
 		m_IsCollected = true;
 		m_Animation.SetTrigger("Pickup");
 	}
 
-	// Set the Data For This Inventory Slot.
+	/// <summary>
+	/// Set the data for this inventory slot.
+	/// </summary>
+	/// <param name="item">The item to add to the inventory slot.</param>
+	/// <param name="animator">The runtime animator controller for the item.</param>
 	public void SetData(Item.ItemType item, RuntimeAnimatorController animator)
 	{
 		m_ItemName = item;

@@ -75,7 +75,9 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		}
 	}
 
-	// Sets the Velocity of the Enemy Towars the Player.
+	/// <summary>
+	/// Sets the velocity of the enemy towards the player.
+	/// </summary>
 	public override void PerformAction()
 	{
 		if (!m_IsInitialised)
@@ -104,14 +106,18 @@ public class EnemyMoveToPlayerAction : EnemyAction
 		m_EnemyAudio.PlayWalkAudioClip();
 	}
 
-	// Invokes the Stop Enemy Event.
+	/// <summary>
+	/// Invokes the stop enemy event.
+	/// </summary>
 	public void StopEnemy()
 	{
 		m_StopEnemy.Invoke();
 	}
 
-	// Checks if the Collision Box Collides with the Floor.
-	// @return True if a Collision Happens, False if Not.
+	/// <summary>
+	/// Checks if the collision box collides with the floor.
+	/// </summary>
+	/// <returns>True if a collision happens, false if not.</returns>
 	private bool CheckForCollision()
 	{
 		if (m_CollisionCheckerCollider.IsTouchingLayers(m_WhatIsGround))

@@ -40,8 +40,11 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
-	// Drop the Specified Item.
-	// @return True if the Drop is Successful, False if Not.
+	/// <summary>
+	/// Drop the specified item.
+	/// </summary>
+	/// <param name="item">The item to drop.</param>
+	/// <returns>True if the drop is successful, false if not.</returns>
 	public bool DropItem(Item.ItemType item)
 	{
 		foreach (InventorySlot slot in m_InventorySlots)
@@ -56,8 +59,11 @@ public class Inventory : MonoBehaviour
 		return false;
 	}
 
-	// Does the Character Have the Specified item.
-	// @return True if the Character has the Item, False if Not.
+	/// <summary>
+	/// Does the character have the specified item.
+	/// </summary>
+	/// <param name="item">The item to look for.</param>
+	/// <returns>True if the character has the item, false if not.</returns>
 	public bool HasItem(Item.ItemType item)
 	{
 		//Check through item slots.
@@ -71,8 +77,11 @@ public class Inventory : MonoBehaviour
 		return false;
 	}
 
-	// How Many of the Specified Item Does the Character Have.
-	// @return The Number of the Specified Item That the Character Has.
+	/// <summary>
+	/// How many of the specified item does the character have.
+	/// </summary>
+	/// <param name="item">The item to check.</param>
+	/// <returns>The number of the specified item that the character has.</returns>
 	public int NumberOfItem(Item.ItemType item)
 	{
 		int val = 0;
@@ -84,8 +93,11 @@ public class Inventory : MonoBehaviour
 		return val;
 	}
 
-	// Pickup the Specified Item.
-	// @return True if the Pickup is Successful, False if Not.
+	/// <summary>
+	/// Pickup the specified item.
+	/// </summary>
+	/// <param name="item">The item to pickup.</param>
+	/// <returns>True if the pickup is successful, false if not.</returns>
 	public bool PickupItem(Item.ItemType item)
 	{
 		foreach (InventorySlot slot in m_InventorySlots)
@@ -100,7 +112,9 @@ public class Inventory : MonoBehaviour
 		return false;
 	}
 
-	// Reset the Inventory.
+	/// <summary>
+	/// Reset the inventory.
+	/// </summary>
 	private void ResetInventory()
 	{
 		m_NumberUsedSlots = 0;
@@ -112,7 +126,10 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
-	// Setup the Item Slot
+	/// <summary>
+	/// Setup the item slot.
+	/// </summary>
+	/// <param name="item">The item to add to the inventory.</param>
 	private void SetupItemSlot(LevelDictionary.CollectableItems item)
 	{
 		m_InventorySlots[m_NumberUsedSlots].SetData(item.GetItemType(), item.GetAnimatorController());
@@ -120,7 +137,10 @@ public class Inventory : MonoBehaviour
 		m_NumberUsedSlots++;
 	}
 
-	// Setup the Inventory.
+	/// <summary>
+	/// Setup the inventory.
+	/// </summary>
+	/// <param name="collectableItems"></param>
 	public void SetupInventory(List<InventoryItem> collectableItems)
 	{
 		ResetInventory();

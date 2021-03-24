@@ -14,7 +14,6 @@ public class Snowman : BasicEnemy
 	[SerializeField]
 	private EnemyPlayerDetection m_EnemyPlayerDetection;
 
-	// Start is called before the first frame update
 	void Start()
     {
 		if(!m_EnemyPlayerDetection)
@@ -26,7 +25,6 @@ public class Snowman : BasicEnemy
 		m_StartPosition = gameObject.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
 		if (m_ActiveAction == null)
@@ -44,25 +42,34 @@ public class Snowman : BasicEnemy
 		}
     }
 
-	// Activate When a Player has been Detected.
+	/// <summary>
+	/// Activate when a player has been detected.
+	/// </summary>
 	public void PlayerDetected()
 	{
 		SetActiveAction(EnemyAction.Actions.EnemyRangedAttack);
 	}
 
-	// Reset the Enemy.
+	/// <summary>
+	/// Reset the enemy.
+	/// </summary>
 	public override void ResetEnemy()
 	{
 		base.ResetEnemy();
 	}
 
-	// Tell the Animator if the Snowman is Walking or Not.
+	/// <summary>
+	/// Tell the animator if the snowman is walking or not.
+	/// </summary>
+	/// <param name="walking">If the snowman is walking or not.</param>
 	public override void SetWalking(bool walking)
 	{
 		base.SetWalking(walking);
 	}
 
-	// Stop the Enemy.
+	/// <summary>
+	/// Stops the enemy.
+	/// </summary>
 	public override void StopEnemy()
 	{
 		

@@ -94,8 +94,6 @@ public class Damager : MonoBehaviour
 		m_DamagerTransform = transform;
 	}
 
-	//Every frame this function will be called and check if this object has 
-	// collided with any other object.
 	private void FixedUpdate()
 	{
 		//If the object is set to not deal damage then simply return
@@ -149,19 +147,25 @@ public class Damager : MonoBehaviour
 		}
 	}
 
-	// Stop this Object From Dealing Damage.
+	/// <summary>
+	/// Stop this object from dealing damage.
+	/// </summary>
 	public void DisableDamage()
 	{
 		m_CanDamage = false;
 	}
 
-	// Allow this Object to Deal Damage.
+	/// <summary>
+	/// Allow this object to deal damage.
+	/// </summary>
 	public void EnableDamage()
 	{
 		m_CanDamage = true;
 	}
 
-	// Draw Gizmos in the Editor.
+	/// <summary>
+	/// Draw gizmos in the editor.
+	/// </summary>
 	private void OnDrawGizmos()
 	{
 		//Create the collision area
@@ -172,7 +176,9 @@ public class Damager : MonoBehaviour
 		Gizmos.DrawWireCube(transform.position + (Vector3)m_Offset, (Vector3)scaledSize);
 	}
 
-	// Draw Gizmos in the Editor, When this Object is Selected.
+	/// <summary>
+	/// Draw gizmos in the editor, when this object is selected.
+	/// </summary>
 	private void OnDrawGizmosSelected()
 	{
 		Vector2 scale = transform.lossyScale;

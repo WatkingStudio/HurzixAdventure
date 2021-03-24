@@ -82,8 +82,6 @@ public class Healer : MonoBehaviour
 		m_HealerTransform = transform;
 	}
 
-	//Every frame this function will be called and check if this object has
-	// collided with any other object.
 	private void FixedUpdate()
 	{
 		//If the object is set to not deal damage then simply return
@@ -129,19 +127,25 @@ public class Healer : MonoBehaviour
 		}
 	}
 
-	// Stop this Object From Healing.
+	/// <summary>
+	/// Stop this object from healing.
+	/// </summary>
 	public void DisableHeal()
 	{
 		m_CanHeal = false;
 	}
 
-	// Allow this Object to Heal.
+	/// <summary>
+	/// Allow this object to heal.
+	/// </summary>
 	public void EnableHeal()
 	{
 		m_CanHeal = true;
 	}
 
-	// Draw Gizmos in the Editor.
+	/// <summary>
+	/// Draw gizmos in the editor.
+	/// </summary>
 	private void OnDrawGizmos()
 	{
 		//Create the collision area
@@ -152,7 +156,9 @@ public class Healer : MonoBehaviour
 		Gizmos.DrawWireCube(transform.position + (Vector3)m_Offset, (Vector3)scaledSize);
 	}
 
-	// Draw Gizmos in the Editor, When this Object is Selected.
+	/// <summary>
+	/// Draw gizmos in the editor, when this object is selected.
+	/// </summary>
 	private void OnDrawGizmosSelected()
 	{
 		Vector2 scale = transform.lossyScale;

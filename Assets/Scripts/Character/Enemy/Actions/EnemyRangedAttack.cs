@@ -36,7 +36,9 @@ public class EnemyRangedAttack : EnemyAction
 		m_Action = Actions.EnemyRangedAttack;
 	}
 
-	// Perform the Ranged Attack Action.
+	/// <summary>
+	/// Perform the ranged attack action.
+	/// </summary>
 	public override void PerformAction()
 	{
 		m_AttackTimer -= Time.deltaTime;
@@ -49,7 +51,10 @@ public class EnemyRangedAttack : EnemyAction
 		}
 	}
 
-	// Set the Destination of the Projectile.
+	/// <summary>
+	/// Set the destination of the projectile.
+	/// </summary>
+	/// <param name="vec">The destination of the projectile.</param>
 	public void SetProjectileDestination(Vector2 vec)
 	{
 		m_ProjectileDestination = vec;

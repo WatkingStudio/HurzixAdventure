@@ -14,7 +14,9 @@ public class LevelEnemies : MonoBehaviour
 	[SerializeField]
 	List<BasicEnemy> m_EnemiesList;
 
-	// Reset All the Enemies in the Level.
+	/// <summary>
+	/// Reset all the enemies in the level.
+	/// </summary>
 	public void ResetEnemies()
 	{
 		foreach(BasicEnemy be in m_EnemiesList)

@@ -22,7 +22,6 @@ public class GroundFeatures : MonoBehaviour
 	[SerializeField]
 	private Surface m_GroundSurface;
 
-	// Execute When A Collider Collides With This Object.
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		CharacterMovement2D charMove2D = null;

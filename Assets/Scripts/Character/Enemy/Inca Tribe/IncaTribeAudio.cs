@@ -24,7 +24,9 @@ public class IncaTribeAudio : EnemyAudio
 		}
     }
 
-    // Plays the Attack Audio Clip.
+	/// <summary>
+	/// Players the attack audio clip.
+	/// </summary>
     public void PlayAttackAudioClip()
 	{
 		if (m_AudioSource.isPlaying)

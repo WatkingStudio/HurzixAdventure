@@ -39,8 +39,10 @@ public class LevelExitLock : MonoBehaviour
         }
 	}
 
-	// Disable This Lock.
-	// @return The Current IEnumerator Step.
+	/// <summary>
+	/// Disable this lock.
+	/// </summary>
+	/// <returns>The current ienumerator step.</returns>
 	IEnumerator DisableLock()
 	{
 		m_ItemAudio.PlayAudioClip();
@@ -48,15 +50,19 @@ public class LevelExitLock : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	// Check if this Lock is Locked.
-	// @return True if the Lock is Locked, False if Not.
+	/// <summary>
+	/// Check if this lock is locked.
+	/// </summary>
+	/// <returns>True if the lock is locked, false if not.</returns>
 	public bool IsLocked()
 	{
 		return m_IsLocked;
 	}
 
-	// Unlocks the Lock.
-	// @return True if the Unlock is Successful, False if Not,
+	/// <summary>
+	/// Unlocks the lock.
+	/// </summary>
+	/// <returns>True if the unlock is successful, false if not.</returns>
 	public bool Unlock()
 	{
 		if (m_IsLocked)

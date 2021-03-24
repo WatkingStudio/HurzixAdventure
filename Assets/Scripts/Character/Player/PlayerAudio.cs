@@ -82,7 +82,9 @@ public class PlayerAudio : MonoBehaviour
 		}
 	}
 	
-	// Play the Death Audio Clip.
+	/// <summary>
+	/// Player the death audio clip.
+	/// </summary>
 	public void PlayDeathAudioClip()
 	{
 		m_PlayerEffectsSource.Stop();
@@ -90,7 +92,9 @@ public class PlayerAudio : MonoBehaviour
 		m_PlayerEffectsSource.Play();
 	}
 
-	// Play the Hurt Audio Clip.
+	/// <summary>
+	/// Play the hurt audio clip.
+	/// </summary>
 	public void PlayHurtAudioClip()
 	{
 		m_PlayerEffectsSource.Stop();
@@ -98,7 +102,9 @@ public class PlayerAudio : MonoBehaviour
 		m_PlayerEffectsSource.Play();
 	}
 
-	// Play the Jump Audio Clip.
+	/// <summary>
+	/// Play the jump audio clip.
+	/// </summary>
 	public void PlayJumpingAudioClip()
 	{
 		m_PlayerMovementSource.Stop();
@@ -106,7 +112,9 @@ public class PlayerAudio : MonoBehaviour
 		m_PlayerMovementSource.Play();
 	}
 
-	// Play the Landing Audio Clip.
+	/// <summary>
+	/// Play the landing audio clip.
+	/// </summary>
 	public void PlayLandingAudioClip()
 	{
 		m_PlayerMovementSource.Stop();
@@ -114,7 +122,9 @@ public class PlayerAudio : MonoBehaviour
 		m_PlayerMovementSource.Play();
 	}
 
-	// Play the Sprint Audio Clip.
+	/// <summary>
+	/// Play the sprint audio clip.
+	/// </summary>
 	public void PlaySprintAudioClip()
 	{
 		if (!m_PlayerMovementSource.isPlaying)
@@ -124,7 +134,9 @@ public class PlayerAudio : MonoBehaviour
 		}
 	}
 
-	// Play the Walk Audio Clip.
+	/// <summary>
+	/// Play the walk audio clip.
+	/// </summary>
 	public void PlayWalkAudioClip()
 	{
 		if(!m_PlayerMovementSource.isPlaying)
@@ -134,7 +146,9 @@ public class PlayerAudio : MonoBehaviour
 		}		
 	}
 
-	// Set the Ground Audio Clips to Concrete.
+	/// <summary>
+	/// Set the ground audio clips to concreate.
+	/// </summary>
 	public void SetConcreteMovement()
 	{
 		m_ActiveLandingClips = m_ConcreteAudio.Landing;
@@ -142,7 +156,9 @@ public class PlayerAudio : MonoBehaviour
 		m_ActiveWalkingClips = m_ConcreteAudio.Walking;
 	}
 
-	// Set the Ground Audio Clips to Dirt.
+	/// <summary>
+	/// Set the ground audio clips to dirt.
+	/// </summary>
 	public void SetDirtMovement()
 	{
 		m_ActiveLandingClips = m_DirtAudio.Landing;
@@ -150,7 +166,9 @@ public class PlayerAudio : MonoBehaviour
 		m_ActiveWalkingClips = m_DirtAudio.Walking;
 	}
 
-	// Set the Ground Audio Clips to Snow.
+	/// <summary>
+	/// Set the ground audio clips to snow.
+	/// </summary>
 	public void SetSnowMovement()
 	{
 		m_ActiveLandingClips = m_SnowAudio.Landing;

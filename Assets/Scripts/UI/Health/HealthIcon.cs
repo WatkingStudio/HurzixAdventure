@@ -24,28 +24,36 @@ public class HealthIcon : MonoBehaviour
 		}
 	}
 
-	// Get This Health Icons Animator.
-	// @return The Animator of this Health Icon.
+	/// <summary>
+	/// Get this health icons animator.
+	/// </summary>
+	/// <returns>The animator of this health icon.</returns>
 	public Animator GetAnimator()
 	{
 		return m_Animator;
 	}
 
-	// Set the Health Icon to Active.
+	/// <summary>
+	/// Set the health icon to active.
+	/// </summary>
 	public void GainHealth()
 	{
 		m_Animator.SetBool("Active", true);
 		m_Animator.SetBool("InActive", false);
 	}
 
-	// Check if this Health Icon is Active.
-	// @return True if the Health Icon is Active, False if Not.
+	/// <summary>
+	/// Check if this health icon is active.
+	/// </summary>
+	/// <returns>True if the health icon is active, false if not.</returns>
 	public bool IsActive()
 	{
 		return m_IsActive;
 	}
 
-	// Deactivate the Health Icon.
+	/// <summary>
+	/// Deactivate the health icon.
+	/// </summary>
 	public void TakeDamage()
 	{
 		m_Animator.SetBool("Active", false);

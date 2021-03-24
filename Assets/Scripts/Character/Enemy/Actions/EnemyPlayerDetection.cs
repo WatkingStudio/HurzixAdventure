@@ -58,7 +58,9 @@ public class EnemyPlayerDetection : EnemyAction
 		}
 	}
 
-	// Perform the Player Detection Action.
+	/// <summary>
+	/// Perform the player detection action.
+	/// </summary>
 	public override void PerformAction()
 	{
 		if (CanPlayerBeSeen())
@@ -67,8 +69,10 @@ public class EnemyPlayerDetection : EnemyAction
 		}
 	}
 
-	// Can a Player be Seen.
-	// @return True if the Player can be Seen, False if Not.
+	/// <summary>
+	/// Can a player be seen.
+	/// </summary>
+	/// <returns>True if thee player can be seen, false if not.</returns>
 	public bool CanPlayerBeSeen()
 	{
 		//Only need to check visibility if the player is within range of the enemy.
@@ -83,7 +87,10 @@ public class EnemyPlayerDetection : EnemyAction
 		return false;
 	}
 
-	// Trigger if a Player is in this Objects Collision Box.
+	/// <summary>
+	/// Trigger is a player is in the objects collision box.
+	/// </summary>
+	/// <param name="collision">The collider colliding with this object.</param>
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		//If the collider is the player then they are in range.
@@ -93,7 +100,10 @@ public class EnemyPlayerDetection : EnemyAction
 		}
 	}
 
-	// Trigger if a Player Leaves this Objects Collision Box.
+	/// <summary>
+	/// Trigger if a player leaves this objects collision box.
+	/// </summary>
+	/// <param name="collision">The collider colliding with this object.</param>
 	private void OnTriggerExit2D(Collider2D collision)
 	{
         //If the collider is the player then they are no longer in range.
@@ -103,8 +113,10 @@ public class EnemyPlayerDetection : EnemyAction
         }
 	}
 
-	// Is the Player in this Objects Field Of View.
-	// @return True if the Player is in the Objects Field Of View, False if Not.
+	/// <summary>
+	/// Is the player in this objects field of view.
+	/// </summary>
+	/// <returns>True if the player is in the objects field of view, false if not.</returns>
 	private bool IsPlayerInFieldOfView()
 	{
 		Vector2 directionToPlayer = m_Player.position - transform.position;
@@ -123,8 +135,10 @@ public class EnemyPlayerDetection : EnemyAction
 		return false;
 	}
 
-	// Is the Player Hidden by Obstacles.
-	// @return True if the Player is Hidden by Obstacles, False if Not.
+	/// <summary>
+	/// Is the player hidden by obstacles.
+	/// </summary>
+	/// <returns>True if the player is hidden by obstacles, false if not.</returns>
 	private bool PlayerHiddenByObstacles()
 	{
 		float distanceToPlayer = Vector2.Distance(transform.position, m_Player.position);

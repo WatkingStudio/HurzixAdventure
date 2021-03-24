@@ -33,8 +33,10 @@ public class CheckpointFlag : MonoBehaviour
 		collision.GetComponentInParent<PlayerCharacter>().UpdateCheckpoint(transform, m_ID);
 	}
 
-	// Get the Transform of This Checkpoint.
-	// @return This Objects Transform.
+	/// <summary>
+	/// Get the transform of this checkpoint
+	/// </summary>
+	/// <returns>This objects transform.</returns>
 	public Transform GetCheckpoint()
 	{
 		return transform;

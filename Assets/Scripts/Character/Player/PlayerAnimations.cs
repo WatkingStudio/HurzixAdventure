@@ -20,7 +20,6 @@ public class PlayerAnimations : MonoBehaviour
 	[SerializeField, Tooltip("The animator for the player while standing")]
 	private RuntimeAnimatorController m_StandingController;
 
-    // Start is called before the first frame update
     void Start()
     {
 		if (!m_StandingController)
@@ -41,13 +40,18 @@ public class PlayerAnimations : MonoBehaviour
 		m_Animator.runtimeAnimatorController = m_StandingController;
 	}
 
-	// Tell the Animator to Perform an Attack Animation.
+	/// <summary>
+	/// Tell the animator to perform an attack animation.
+	/// </summary>
 	public void PlayerAttack()
 	{
 		m_Animator.SetTrigger("Attack");
 	}
 
-	// Tell the Animator to Crouch/Uncrouch.
+	/// <summary>
+	/// Tell the animator to crouch/uncrouch.
+	/// </summary>
+	/// <param name="isCrouching">Is the player crouching.</param>
 	public void PlayerCrouching(bool isCrouching)
 	{
 		//When the player crouches/uncrouches, both of the animators need to know this. So before
@@ -68,43 +72,62 @@ public class PlayerAnimations : MonoBehaviour
 		m_Animator.SetBool("IsCrouching", isCrouching);
 	}
 
-	// Tell the Animator to Perform the Dead Animation.
+	/// <summary>
+	/// Tell the animator to perform the dead animation.
+	/// </summary>
+	/// <param name="isDead">Is the player dead.</param>
 	public void PlayerDead(bool isDead)
 	{
 		m_Animator.SetBool("IsDead", isDead);
 	}
 
-	// Tell the Animator to Perform the Falling Animation.
+	/// <summary>
+	/// Tell the animator to perform the falling animation
+	/// </summary>
+	/// <param name="isFalling">Is the player falling.</param>
 	public void PlayerFalling(bool isFalling)
 	{
 		m_Animator.SetBool("IsFalling", isFalling);
 	}
 
-	// Tell the Animator to Perform the Hurt Animation.
+	/// <summary>
+	/// Tell the animator to perform the hurt animation.
+	/// </summary>
 	public void PlayerHurt()
 	{
 		m_Animator.SetTrigger("Hurt");
 	}
 
-	// Tell the Animator to Perform the Idle Animation.
+	/// <summary>
+	/// Tell the animator to perform the idle animation.
+	/// </summary>
 	public void PlayerIdle()
 	{
 		m_Animator.SetTrigger("Idle");
 	}
 
-	// Tell the Animator if the Player is Jumping.
+	/// <summary>
+	/// Tell the animator if the player is jumping.
+	/// </summary>
+	/// <param name="isJumping">Is the player jumping.</param>
 	public void PlayerJumping(bool isJumping)
 	{
 		m_Animator.SetBool("IsJumping", isJumping);
 	}
 
-	// Tells the Animator the Players Speed.
+	/// <summary>
+	/// Tells the animator the players speed.
+	/// </summary>
+	/// <param name="playerSpeed">The speed of the player.</param>
 	public void PlayerSpeed(float playerSpeed)
 	{
 		m_Animator.SetFloat("Speed", Mathf.Abs(playerSpeed));
 	}
 
-	// Tells the Animator if the Player is Sprinting.
+	/// <summary>
+	/// Tells the animator if the player is sprinting.
+	/// </summary>
+	/// <param name="isSprinting">Is the player sprinting.</param>
 	public void PlayerSprinting(bool isSprinting)
 	{
 		m_Animator.SetBool("IsSprinting", isSprinting);

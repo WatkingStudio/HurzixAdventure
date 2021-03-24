@@ -20,11 +20,13 @@ public class GameAudioSO : ScriptableObject
 	public float BackgroundVolume { get { return m_BackgroundVolume; } private set { } }
 	public float SoundEffectVolume { get { return m_SoundEffectVolume; } private set { } }
 
+	// Set the Background Volume.
 	public void SetBackgroundVolume(float volume)
 	{
 		m_BackgroundVolume = volume;
 	}
 
+	// Set the Sound Effect Volume.
 	public void SetSoundEffectVolume(float volume)
 	{
 		m_SoundEffectVolume = volume;

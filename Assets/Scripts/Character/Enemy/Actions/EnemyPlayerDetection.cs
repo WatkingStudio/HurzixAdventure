@@ -68,6 +68,7 @@ public class EnemyPlayerDetection : EnemyAction
 	}
 
 	// Can a Player be Seen.
+	// @return True if the Player can be Seen, False if Not.
 	public bool CanPlayerBeSeen()
 	{
 		//Only need to check visibility if the player is within range of the enemy.
@@ -103,6 +104,7 @@ public class EnemyPlayerDetection : EnemyAction
 	}
 
 	// Is the Player in this Objects Field Of View.
+	// @return True if the Player is in the Objects Field Of View, False if Not.
 	private bool IsPlayerInFieldOfView()
 	{
 		Vector2 directionToPlayer = m_Player.position - transform.position;
@@ -122,6 +124,7 @@ public class EnemyPlayerDetection : EnemyAction
 	}
 
 	// Is the Player Hidden by Obstacles.
+	// @return True if the Player is Hidden by Obstacles, False if Not.
 	private bool PlayerHiddenByObstacles()
 	{
 		float distanceToPlayer = Vector2.Distance(transform.position, m_Player.position);

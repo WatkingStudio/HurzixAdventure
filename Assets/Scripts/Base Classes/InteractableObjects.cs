@@ -11,6 +11,7 @@ using UnityEngine;
  */
 public class InteractableObjects : MonoBehaviour
 {
+	// The Base Interact Function.
     public virtual void Interact()
 	{
 

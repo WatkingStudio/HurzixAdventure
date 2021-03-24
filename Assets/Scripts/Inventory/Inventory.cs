@@ -27,13 +27,80 @@ public class Inventory : MonoBehaviour
 	private void Start()
 	{
 		if (m_InventorySlots.Length == 0)
+		{
 			Debug.LogError("No Inventory Slots have been assigned to " + gameObject.name);
+		}
 		if (!m_LevelDictionary)
+		{
 			Debug.LogError("No Level Dictionary has been assigned to " + gameObject.name);
+		}
 		if (!m_BlankInventorySlot)
+		{
 			Debug.LogError("No Blank Inventory Animator Controller has been assigned to " + gameObject.name);
+		}
 	}
 
+	// Drop the Specified Item.
+	// @return True if the Drop is Successful, False if Not.
+	public bool DropItem(Item.ItemType item)
+	{
+		foreach (InventorySlot slot in m_InventorySlots)
+		{
+			if (slot.GetItemName() == item && slot.IsItemCollected())
+			{
+				slot.DropItem();
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// Does the Character Have the Specified item.
+	// @return True if the Character has the Item, False if Not.
+	public bool HasItem(Item.ItemType item)
+	{
+		//Check through item slots.
+		//If item collected return true.
+		foreach (InventorySlot slot in m_InventorySlots)
+		{
+			if (slot.GetItemName() == item && slot.IsItemCollected())
+				return true;
+		}
+
+		return false;
+	}
+
+	// How Many of the Specified Item Does the Character Have.
+	// @return The Number of the Specified Item That the Character Has.
+	public int NumberOfItem(Item.ItemType item)
+	{
+		int val = 0;
+		foreach (InventorySlot slot in m_InventorySlots)
+		{
+			if (slot.GetItemName() == item && slot.IsItemCollected())
+				val++;
+		}
+		return val;
+	}
+
+	// Pickup the Specified Item.
+	// @return True if the Pickup is Successful, False if Not.
+	public bool PickupItem(Item.ItemType item)
+	{
+		foreach (InventorySlot slot in m_InventorySlots)
+		{
+			if (slot.GetItemName() == item && !slot.IsItemCollected())
+			{
+				slot.PickupItem();
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// Reset the Inventory.
 	private void ResetInventory()
 	{
 		m_NumberUsedSlots = 0;
@@ -45,7 +112,15 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
-	//For each level setup the inventory slots.
+	// Setup the Item Slot
+	private void SetupItemSlot(LevelDictionary.CollectableItems item)
+	{
+		m_InventorySlots[m_NumberUsedSlots].SetData(item.GetItemType(), item.GetAnimatorController());
+		m_InventorySlots[m_NumberUsedSlots].GetAnimator().GetComponent<Image>().enabled = true;
+		m_NumberUsedSlots++;
+	}
+
+	// Setup the Inventory.
 	public void SetupInventory(List<InventoryItem> collectableItems)
 	{
 		ResetInventory();
@@ -56,72 +131,9 @@ public class Inventory : MonoBehaviour
 			{
 				if(item.GetItemType() == m_LevelDictionary.GetData(i).GetItemType())
 				{
-					SetItemSlot(m_LevelDictionary.GetData(i));
+					SetupItemSlot(m_LevelDictionary.GetData(i));
 				}
 			}
 		}
-	}
-
-	//This is called when the Level to add a slot for the item on this level to be collected
-	private void SetItemSlot(LevelDictionary.CollectableItems item)
-	{
-		m_InventorySlots[m_NumberUsedSlots].SetData(item.GetItemType(), item.GetAnimatorController());
-		m_InventorySlots[m_NumberUsedSlots].GetAnimator().GetComponent<Image>().enabled = true;
-		m_NumberUsedSlots++;
-	}
-
-	//Check if the player has picked up the specific item.
-	public bool HasItem(Item.ItemType item)
-	{
-		//Check through item slots.
-		//If item collected return true.
-		foreach(InventorySlot slot in m_InventorySlots)
-		{
-			if (slot.GetItemName() == item && slot.IsItemCollected())
-				return true;
-		}
-
-		return false;
-	}
-
-	public int NumberOfItem(Item.ItemType item)
-	{
-		int val = 0;
-		foreach(InventorySlot slot in m_InventorySlots)
-		{
-			if (slot.GetItemName() == item && slot.IsItemCollected())
-				val++;
-		}
-		return val;
-	}
-
-	//Pickup the specified item, return false if pickup failed.
-	public bool PickupItem(Item.ItemType item)
-	{
-		foreach (InventorySlot slot in m_InventorySlots)
-		{
-			if(slot.GetItemName() == item && !slot.IsItemCollected())
-			{
-				slot.PickupItem();
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	//Drop the specified item, return false if drop failed.
-	public bool DropItem(Item.ItemType item)
-	{
-		foreach(InventorySlot slot in m_InventorySlots)
-		{
-			if(slot.GetItemName() == item && slot.IsItemCollected())
-			{
-				slot.DropItem();
-				return true;
-			}
-		}
-
-		return false;
 	}
 }

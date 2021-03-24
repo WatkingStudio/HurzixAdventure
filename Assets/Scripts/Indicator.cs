@@ -50,11 +50,11 @@ public class Indicator : MonoBehaviour
 	IEnumerator FlashIndicator(int duration)
 	{
 		for(int i = 0; i < duration; ++i)
-        {
+		{
+			m_IndicatorArrow.gameObject.SetActive(true);
 			yield return new WaitForSeconds(0.5f);
 			m_IndicatorArrow.gameObject.SetActive(false);
 			yield return new WaitForSeconds(0.5f);
-			m_IndicatorArrow.gameObject.SetActive(true);
 		}
 	}
 }

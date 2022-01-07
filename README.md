@@ -12,6 +12,15 @@ Hurzix Adventure was created in Unity using C#.
 # Program Output
 The program will allow you to play Hurzix Adventure a short 2D platformer. You can choose to either play through the entire game from start to finish, or you can select which zone you would start with and play from there.
 
+# Download Link
+https://drive.google.com/file/d/1ZHt4Cnlq9BOsnEs89_Xd02AGt08Pz3op/view?usp=sharing 
+
+# Download Steps
+1) Download the zip file.
+2) Place the file in a suitable location and un-zip.
+3) Open the "Hurzix Adventure.exe" file.
+4) Select "Play" to start the game.
+
 # How To Build/Run
 1) Download the project
 2) Place the project in a suitable location and un-zip.
